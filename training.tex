@@ -1,6 +1,6 @@
 \documentclass[a4paper]{article}
 \title{\textcolor{red}{Workshop on Public Key Infrastructure and Red Hat Certificate System}}
-\author{Niranjan M.R}
+\author{Niranjan M.R, Huzaifa Sidhpurwala, Asha Akkiangady}
 \date{}
 \usepackage{color}
 \usepackage{graphics}
@@ -103,10 +103,10 @@ referred to as \textit{Secret Key Cryptography} as opposed to \textit{Public Key
     \item Compared to symmetric key encryption, public key encryption requires more computation \& therefore not always appropriate for large amounts of data
     \item It is possible to use public-key encryption to send a symmetric key, which can then be used to encrypt additional data.
         \begin{figure}[h]
-        \centering
-        \includegraphics[width=80mm]{assymetric.png}
-        \caption{Assymetric Encryption}
-    \end{figure}
+            \centering
+            \includegraphics[width=80mm]{assymetric.png}
+            \caption{Assymetric Encryption}
+        \end{figure}
     \item Reverse of the above figure also happens i.e. encrypt with private key and decrypt with public-key. But not useful for sensitive information
         \begin{figure}[h]
         \centering
@@ -144,13 +144,164 @@ but with a key, So the MAC is dependent on both the key and the message being MA
 \subsection{Protocols}
 \subsection{Exercises}
 \section{Introduction to Public Key Infrastructure}
+Below is a simplified architectural model of Public Key Infrastructure using X.509 (PKIX) Specifications
+\begin{figure}[ht!]
+    \centering
+    \includegraphics[width=70mm]{pki-architectural-model.png}
+    \caption{PKI Architectural Model}
+\end{figure}
 \subsection{Common Terms used in PKI}
+\begin{itemize}
+    \item \underline{End Entiy}: User of the PKI certificates and/or end user system that is the subject of a certificate
+    \item \underline{CA}: Certificate Authority
+    \item \underline{RA}: Registration Authority, Optional System to which CA delegates certain management functions
+    \item \underline{CRL issuers}: A system that generates CRL
+    \item \underline{repository}: a system or collection of distributed systems that stores certificates and CRLs and services as a means of distributing these certificates and CRLs to end entities
+\end{itemize}
 \subsection{Detailed look on certificate/CRL}
+    \subsubsection {Certificates}
+        \begin{itemize}
+            \item Certificates are data structures that bind public key values to the subject. This binding is asserted by a trusted Certificate Authority.
+            \item X.509 defines the standard certificate format and v3 is the latest version.
+            \item Internet Privacy Enhanced Mail(PEM) RFC 1421 and 1422 also include specifications for PKI based on X.509 certs. 
+            \item Types of Certificates:
+                \begin{itemize}
+                    \item End-Entity
+                    \item CA
+                \end{itemize}
+            \item RFC 1422 defines hierarchial structure  of CA's and there are three types of PEM CA
+                \begin{itemize}
+                    \item IPRA: Internet Policy Registration Authority , acts as Root of Certificate authority. IPRA operates under Internet Society Organization
+                    \item PCA: Policy Certificae Authority ,(Verisign, Digicert, etc) signed by IPRA
+                    \item CA: Certificate Authorities signed by PCA (Organizational CA's)
+                \end{itemize}
+            \item Policies used by CA:
+                \begin{itemize}
+                    \item IPRA certifies only PCA and not CA's or users cert
+                    \item IPRA will make sure that the DN of the PCA is unique and will not certificate PCA's with similar DN
+                    \item Certificates should not be issued to distinct entities under the same distinguished Name. 
+                    \item IPRA should not certifiy two PCA's with same DN
+                    \item PCA's should not certify two CA's with same DN
+                    \item CA's are expected to sign certificates only if the subject DN in the
+                        certificates is subordinate to the issuer CA DN.
+                \end{itemize}
+            \item Types of Certificate Authorities
+                \begin{itemize}
+                    \item Cross-Certs: Where Issuer and Subject are different
+                    \item Self-Issue: Where Issuer and Subject are same
+                        \begin{itemize}
+                            \item Self-Signed: Where key bound in to the certificate is same as the key used to sgin the certificate
+                        \end{itemize}
+                \end{itemize}
+        \end{itemize}
+    \subsubsection{Revocation}
+        When a certificate is issued, it is expected to be used for it's entire validity period. Due to various circumstances, certificate can be invalidated like:
+        \begin{itemize}
+            \item Change of name
+            \item Change of association with subject and CA (Employee left)
+            \item Compromise or private key
+            \item CA wants to revoke the certificate
+        \end{itemize}
+        \begin{itemize}
+            \item X.509 defines one method of revoking certificates, where CA periodically issues a signed data structure called Certificate revocation list (CRL).
+            \item CRL is a time-stamped list identifying revoked certificates that is signed by CA or CRL issuer. 
+            \item This list is freely available through public repositories
+            \item It is expected that the certificate system user not only verifies certificate validity, signature but also aquires latest CRL from public repositories and check against CRL
+            \item CRL's are issued periodically (hourly, daily or weekly). 
+        \end{itemize}
+    \subsubsection{Basic Certificate Fileds}
+        \begin{itemize}
+            \item Version:
+                \begin{itemize}
+                    \item Describes the version of encoded certificate.
+                    \item if extensions are used: \textbf{0x2(3)}
+                    \item if extensions are not used but UniqueIdentifier is used: \textbf{0x1(2)}
+                    \item if only basic fields are there: \textbf{0x0(1)}
+                \end{itemize}
+                \begin{itemize}
+                    \item Values: \textbf{0x2(3), 0x1(2), 0x0(1)}
+                \end{itemize}
+            \item Serial Number:
+                \begin{itemize}
+                    \item Positive integer assigned by CA to each certificate
+                    \item It must be unique for each Certificate given by CA
+                    \item Can contain long integers (up to 20 Octets)
+                \end{itemize}
+                \begin{itemize}
+                    \item Values: Integers: 
+                    \begin{itemize}
+                        \item \textbf{16694152257348400000}
+                        \item \textbf{0xe7ad8b07558a1727}
+                        \item \textbf{cd:ba:7f:56:f0:df:e4:bc:54:fe:22:ac:b3:72:aa:55}
+                    \end{itemize}
+                \end{itemize}
+            \item Signature:
+                \begin{itemize}
+                    \item Algorithm used by \textbf{CA} to sign the certificate
+                    \item Value:
+                        \begin{itemize}
+                            \item \textbf{md2WithRSAEncryption}
+                            \item \textbf{sha1WithRSAEncryption}
+                        \end{itemize}
+                \end{itemize}
+            \item Issuer:
+                \begin{itemize}
+                    \item Identifies the entity that has signed and issued the certificate
+                    \item \textbf{MUST} contain non-empty Distinguished Names
+                    \item Names should confirm to X.501 standard
+                    \item Generally contains Country, Organization, Common name, SerialNumber,
+                        province, State, title, Surname, Generation Qualifier(Jr, Sr).
+                    \item Values:
+                    \begin{itemize}
+                        \item \textbf{C=US, O=VeriSign, Inc., OU=Class 1 Public Primary Certification Authority}
+                        \item \textbf{C=DE, ST=Bayern, L=Muenchen, O=Whatever it is, CN=IO::Socket::SSL Demo CA}
+                        \item \textbf{C=US, O=VeriSign, Inc., OU=Class 1 Public Primary Certification Authority}
+                    \end{itemize}
+                \end{itemize}
+            \item Validity:
+                \begin{itemize}
+                    \item The time interval during which the CA warrants that it will maintain status of the certificate
+                    \item Consists sequence of 2 dates
+                        \begin{itemize}
+                            \item Date on which certificate validity begins
+                            \item Date on which certificate validity ends
+                        \end{itemize}
+                    \item Validity period of a certificate is period from notBefore to notAfter(inclusive)
+                    \item Values:
+                        \begin{itemize}
+                            \item \textbf{Not Before: Jan 29 00:00:00 1996 GMT}
+                            \item \textbf{Not After : Aug  1 23:59:59 2028 GMT}
+                            \item Special Note:
+                                \begin{itemize}
+                                    \item Devices are given certificates where there is no expiration date
+                                    \item Value:
+                                    \item Certificate is to be used for entire lifetime of the device \textbf{ Not After: 99991231235959Z.(represented in Generalized Time)}
+                                \end{itemize}
+                        \end{itemize}
+                    \end{itemize}
+        \end{itemize}
 \subsection{Exercises}
 \section{Red Hat Certificate System}
 \subsection{Certificate Manager}
 \subsubsection{Introduction}
 Certificate Manager is the first subsystem that needs to be configured in PKI Environment, Certificate Manager can be configured as RootCA, Subordinate CA
+\subsubsection{Installation}
+    \begin{itemize}
+        \item RPM: \textrm{\textbf{pki-ca}}
+        \item configuration:  CA subsystem is configured using utility \textbf{pkispawn}. 
+            
+            pkispawn provides both interactive configuration  or silent configuration by reading a configuration file. 
+            
+            pkispawn first reads \textbf{default.cfg} first and gets other deployment specific information through interactive method
+            or through batch mode by reading a file. 
+
+            pkispawn then passes this information to a java servlet which performs the configuration. 
+        \begin{figure}[ht!]
+            \centering
+            \includegraphics[width=90mm]{pkispawn-ca.png}
+            \caption{Configuring CA subsystem using pkispawn}
+        \end{figure}
+    \end{itemize}
 \subsubsection{Key Features}
     \begin{itemize}
         \item CA subsystem issues, renews, revokes Certificates, generates Certificat Revocation lists
@@ -171,8 +322,164 @@ Certificate Manager is the first subsystem that needs to be configured in PKI En
         \item Admin interface(java console)
     \end{itemize}
 \subsubsection{Features}
+    \begin{itemize}
+        \item Enrollment:
+
+            End user Enrolls in the PKI infrastructure by submitting a Enrollment(certificate) request through End Entity Interface.
+            This request can be submitted through 2 Methods:
+            \begin{itemize}
+                \item Browser
+                \item CLI
+            \end{itemize}
+            There can be different kinds of Enrollment(Certificate) Request:
+            \begin{itemize}
+                \item Request for User, Server, SMIME, Dual Cert,.. certificate
+                \item Request certificate if authentication through ldap, pin, cert etc. 
+            \end{itemize}
+            Based on the above types, there are different certificate profiles associated with it. 
+            When end-entity(user) enrolls a certificate following events occur:
+            \begin{itemize}
+                \item The End-entity provides the information in one of the enrollment forms and submits a request
+                \item The enrollment forms triggers the creation of public-key and private-key or dual-key pairs
+                \item The End-entity provides authentication credentials before submitting the request,
+                     depending on the authentication type. This can be LDAP authentication, PIN-based authentication or certificate-based authentication.
+                \item The request is submitted either to an agent-approved enrollment process or an automated process.
+                    \begin{itemize}
+                        \item Agent-approved process requires no end-entity authentication, sends the request to the request queue in the agent-services interface.
+                        \item Automatic notification can be setup so an email can be sent to an agent any time a request appears in the queue
+                        \item The automated process, which involves end-entity authentication,process the certificate as soon as the end-entity successfully authenticates
+                    \end{itemize}
+                \item This form collects information about the end entity from the LDAP directory when the form is submitted
+                \item The profile associated with form determine the aspects of certificate that is issued. Depending upon the certificate profile the request is evaluated to determine if the request meets the constraints set.
+                \item The Certificate request is either rejected because it did not meet the certificate profile or authentication requirement, or a certificate is issued
+                \item The certificate is delivered to end-entity  through HTML interface or email or certificate can be retrieved through Agents interface by serial number or request-ID.
+                \item The new certificate is stored in Certificate Managers internal database.
+                    \begin{figure}[ht!]
+                    \centering
+                    \includegraphics[width=35mm]{enrollment.png}
+                    \caption{Certificate Enrollment}
+                    \end{figure}
+                \end{itemize}
+        \item Profiles:
+
+            Profile determine the content of a certificate. Certificate manager provides customizable framework to apply 
+            policies for incoming certificate requests and to control the input requests types and output certificate types
+
+            Certificate Profile define the following:
+            \begin{itemize}
+                \item  Authentication Method
+                \item  Authorization Method
+                \item  Certificate content
+                \item  Constraints for the values of content
+                \item  Contents of input
+                \item  Output
+            \end{itemize}
+            \begin{figure}[ht!]
+                \centering
+                \includegraphics[width=90mm]{CA-profiles-arch.png}
+                \caption{Certificate Profile Architecture}
+            \end{figure}
+            Profile Workflow:
+            \begin{figure}[ht!]
+                \centering
+                \includegraphics[width=80mm]{CA-Profiles-workflow.png}
+                \caption{Certificate Profiles Workflow}
+            \end{figure}
+            
+            Each profile are defined in \textbf{.cfg} file located at \textbf{/var/lib/instance\_name/profiles/ca} directory
+
+            Example \textbf{caUserCert} Profile:
+
+            The first part of the profile is the description and specifies whether profile is enabled or disabled, if enabled who
+            enabled it. 
+            \begin{figure}[ht!]
+                \centering
+                \includegraphics[width=80mm]{profile-1.png}
+                \caption{Profile Description}
+            \end{figure}
+            
+            The second part of the profile describes the inputs:
+            \begin{figure}[ht!]
+                \centering
+                \includegraphics[width=80mm]{profile-2.png}
+                \caption{Profile inputs}
+            \end{figure}
+            \begin{itemize}
+                \item \underline{KeyGenInputImpl}: specifies the key pair generation during the request submission, This provides if the request
+                    should be of type CRMF/PKCS10, also provides dropdown specifying the key size.
+                \item \underline{subjectNameInputImpl}: specifies the subject Distinguished Name(DN) to be used in the cert. The subject DN 
+                    can be constructed from \textit{UID, Email, Common Name, Organizational Unit, Country}
+                \item \underline{submitterInfoImpl}: This input specifies three fields: \textit{Requester Name, Requester email, Requester phone}
+            \end{itemize}
+            \begin{figure}[ht!]
+                \centering
+                \includegraphics[width=80mm]{profile-3.png}
+                \caption{Profile output}
+            \end{figure}
+            Third part of the profile is output, 
+            \begin{itemize}
+                \item \underline{certOutputImpl}: The certificate output format \textit{base64, pkcs7, prettyprint}
+            \end{itemize}
+            \begin{figure}[ht!]
+                \centering
+                \includegraphics[width=80mm]{profile-4.png}
+                \caption{Profile Policies}
+            \end{figure}
+
+            Last part of the profile is constraints, Policies like:
+            \begin{itemize}
+                \item validity of the cert
+                \item renewal settings, 
+                \item key Usage Extensions
+                \item User supplied extensions
+            \end{itemize}
+        \item Publishing 
+            Certificate System provides customizable framework from CA's to publish.
+            \begin{figure}[h!]
+                \centering
+                \includegraphics[width=40mm]{publishing3.png}
+                \caption{Publishing Architecture}
+            \end{figure}
+            \begin{itemize}
+                \item Key Features
+                    \begin{itemize}
+                        \item Publish to a single repositories or multiple repositories
+                        \item Split locations by certificates/CRL
+                        \item Set individual rules for each type of certs/crl
+                    \end{itemize}
+                \item Publishing framework consists
+                    \begin{itemize}
+                        \item Publishers
+                        \item Mappers
+                        \item Rules
+                    \end{itemize}
+                \item \underline{Publishers:}
+                    Publishers specify location to which certificates/CRL's are to be published. 
+                        Example: 
+                        \begin{itemize}
+                            \item To publish to a file, publishers specify the location of the publishing directory.
+                            \item To publish to LDAP, publishers specify the attribute in the directory that srores the cert/CRL.
+                            \item To publish to OCSP, we specify OCSP Server details. 
+                        \end{itemize}
+                    \item \underline{Rules}: Rules define 
+                        \begin{itemize}
+                            \item what is to be published and where ?
+                            \item What type of certs can be published to what location
+                            \item Set rules to publish certs to file and LDAP
+                            \item Set individual rules for each type of cert/rule
+                            \item There are rules for Files, LDAP and OCSP
+                        \end{itemize}
+                    \item \underline{Mappers}: Mappers are only used when publishing to LDAP
+                        \begin{itemize}
+                            \item Mappers construct the DN for an entry based on the information
+                                from the certificate or certificate request. 
+                            \item Mappers use certificate or certificate request's subject name to
+                                construct the DN of the entry to which cert/certificate request/CRL has to be published
+                        \end{itemize}
+            \end{itemize}
+    \end{itemize}
 \subsubsection{Exercises}
 \subsection{Key Recovery Authority}
 \subsection{Online Certificate Status Protocol}
 \subsection{Token Key Service \& Token Processing System}
-\end{document}
+\end{document} 
