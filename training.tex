@@ -194,22 +194,7 @@ Below is a simplified architectural model of Public Key Infrastructure using X.5
                         \end{itemize}
                 \end{itemize}
         \end{itemize}
-    \subsubsection{Revocation}
-        When a certificate is issued, it is expected to be used for it's entire validity period. Due to various circumstances, certificate can be invalidated like:
-        \begin{itemize}
-            \item Change of name
-            \item Change of association with subject and CA (Employee left)
-            \item Compromise or private key
-            \item CA wants to revoke the certificate
-        \end{itemize}
-        \begin{itemize}
-            \item X.509 defines one method of revoking certificates, where CA periodically issues a signed data structure called Certificate revocation list (CRL).
-            \item CRL is a time-stamped list identifying revoked certificates that is signed by CA or CRL issuer. 
-            \item This list is freely available through public repositories
-            \item It is expected that the certificate system user not only verifies certificate validity, signature but also aquires latest CRL from public repositories and check against CRL
-            \item CRL's are issued periodically (hourly, daily or weekly). 
-        \end{itemize}
-    \subsubsection{Basic Certificate Fileds}
+    \subsubsection{Basic Certificate Fields}
         \begin{itemize}
             \item Version:
                 \begin{itemize}
@@ -279,7 +264,396 @@ Below is a simplified architectural model of Public Key Infrastructure using X.5
                                 \end{itemize}
                         \end{itemize}
                     \end{itemize}
+            \item Subject:
+                \begin{itemize}
+                    \item Identifies the entry associated with public key stored in the subject public key field 
+                    \item If the subject is CA then it should be populated with same data as issuer 
+                    \item Names should confirm to X.501
+                    \item Values:
+                        \begin{itemize}
+                            \item \textbf{C=US, ST=North Carolina, O=Fedora Project, OU=Fedora User Cert, CN=mrniranjan/emailAddress=niranjan@ashoo.in}
+                        \end{itemize}
+                \end{itemize}
+            \item Subject Public key Info:
+                \begin{itemize}
+                    \item This field is used to carry public key and identify the algorithm with which the key is used (RSA, DSA)
+                    \item Supported Cryptographic Algorithms:
+                        \begin{itemize}
+                            \item \textbf{Rivest-Shamir-Adelman (RSA)}
+                            \item \textbf{Digital Signature Algorithm (DSA)}
+                            \item \textbf{Diffie-Hellman (DH)}
+                            \item \textbf{Elliptic Curve Digital Signature Algorithm (ECDSA)}
+                            \item \textbf{Key Encryption Algorithm (KEA)}
+                            \item \textbf{Elliptic Curve Diffie-Hellman (ECDH)}
+                        \end{itemize}
+                \end{itemize}
+            \end{itemize}
+    \subsubsection{Extensions}
+        \begin{itemize}
+            \item This field only appears in v3 Certs
+            \item This contains sequence of one or more Certificate Extensions 
+            \item Extensions provides method for associating additional attributes with public keys
+            \item Managing relationship between CA's
+            \item Can carry private extensions to carry information unique to their community
+            \item Each Extension is either Critical / Non Critical
+            \item Each Extension includes OID and ASN.1 DER  (OCTET)
+                \begin{itemize}
+                    \item Example: DE:65:01:16:19:2E:51:E0:9A:51:1A:37:50:94:7D:39:29:2A:42:2C
+                \end{itemize}
+            \item There cannot be duplicates of Extensions
+            \item Default CRITICAL value is false
+            \item If the Certificate is CA , then they should have below Extensions
+                \begin{itemize}
+                    \item Basic Key Identifier
+                    \item Authoritative key Identifier
+                    \item Basic Constraints
+                \end{itemize}
         \end{itemize}
+        \begin{itemize}
+            \item \textbf{Authority Key Identifier:}
+                \begin{itemize}
+                    \item Provides a means of identifying the public key corresponding to the private key used to sign the certificate
+                    \item This is required if the issuer has multiple signing keys 
+                    \item If the CA certificate is self signed Authority key identifier is skipped
+                    \item Values:
+                        \begin{itemize}
+                            \item \textbf{keyid:48:E6:68:F9:2B:D2:B2:95:D7:47:D8:23:20:10:4F:33:98:90:9F:D4}
+                        \end{itemize}
+                \end{itemize}
+            \item \textbf{Subject Key Identifier:}
+                \begin{itemize}
+                    \item Provides a means of identifying certificates that contain a particular public key
+                    \item This extension is must for CA certificates
+                    \item The value placed in this is same as Authority Key Identifier
+                    \item For End-entity Certificates, this extension provides a means for identifying certificates containing particular key used in application
+                    \item Value:
+                        \begin{itemize}
+                            \item \textbf{48:E6:68:F9:2B:D2:B2:95:D7:47:D8:23:20:10:4F:33:98:90:9F:D4}
+                        \end{itemize}
+                \end{itemize}
+            \item \textbf{Key Usage:}
+                \begin{itemize}
+                    \item Defines the purpose of the key contained in the certificate 
+                    \item This extension is used to restrict the usage of the key to be used for purpose 
+                        other than what is defined in Key Usage
+                    \begin{itemize}
+                        \item \textbf{digitalSignature}
+                            \begin{itemize}
+                                \item Public key should be used only to verify signatures on objects other than Public key certificates/CRL
+                            \end{itemize}
+                        \item \textbf{nonRepudiation/contentCommitment}
+                            \begin{itemize}
+                                \item subject Public key is used to verify digital signatures other than signatures on public key(CRL)
+                                \item used to provide nonRepudiation Service that protects against signing entity falsely denying any public action
+                            \end{itemize}
+                        \item \textbf{keyEncipherment}
+                            \begin{itemize}
+                                \item Public key is used for enciphering private key or secret keys , 
+                                \item Is used for encrypting symmetric content-decryption key or an assymetric private key
+                            \end{itemize}
+                        \item \textbf{dataEncipherment}
+                            \begin{itemize}
+                                \item is used for enciphering the raw data without the use any cipher  (very rarely used)
+                            \end{itemize}
+                        \item \textbf{keyAgreement}
+                            \begin{itemize}
+                                \item is used for key Agreement, 
+                                \item when used Deffie-Hellman key is to be used for key management
+                            \end{itemize}
+                        \item \textbf{keyCertSign}
+                            \begin{itemize}
+                                \item Public key is used for verifying the signatures on public keys , if this is true then 
+                            \end{itemize}
+                        \item \textbf{cRLSign}
+                            \begin{itemize}
+                                \item when the subject public key is used for verifying signatures of CRL 
+                            \end{itemize}
+                        \item \textbf{encipherOnly}
+                            \begin{itemize}
+                                \item subject's public key may be used only for enciphering data while performing key agreement
+                            \end{itemize}
+                        \item \textbf{decipherOnly}
+                            \begin{itemize}
+                                \item subject's public key may be used only for deciphering data while performing key agreement
+                            \end{itemize}
+                        \item Important Note:
+                            \begin{itemize}
+                                \item \begin{figure}[ht!]
+                                    \centering
+                                    \includegraphics[width=70mm]{KeyUsage1.png}
+                                    \caption{Key Usage restrictions}
+                                \end{figure}
+                            \end{itemize}
+                    \end{itemize}
+                \end{itemize}
+            \item \textbf{Certificate Policies}
+                \begin{itemize}
+                    \item Contains sequence of one or more policy information terms each of which consits of
+                        OID, optional Queries
+                    \item OID Should not appear more than once
+                    \item for End-entity policy information terms indicate the policy under which the certificate
+                        has been issued and purposes for which the certificate must be used
+                    \item For CA the policy limits the policies for certificate paths that include this certificate
+                    \item if CA does not want to limit the set of policies for certification paths then it may assert
+                        \textbf{anyPolicy} with value \textbf{2.5.29.32.0}
+                    \item Policy Qualifiers:
+                        \begin{itemize}
+                            \item CPSNotice: Points URL to \textit{certificate practice statement} document that describes
+                                the policy under which the subject was issued
+                            \item userNotice: text that describes the policy(not more than 200 characters)
+                        \end{itemize}
+                \end{itemize}
+            \item \textbf{Policy Mappings}
+                \begin{itemize}
+                    \item This extension is used by CA certificates 
+                    \item Lists one or more pairs of OID, which indicate that the corresponding policies 
+                        of one CA are equivalent to policies of another CA [used in context of Cross pair certificates]
+                    \item \textbf{OID: 2.5.29.33}
+                \end{itemize}
+            \item \textbf{Subject Alternative Name}
+                \begin{itemize}
+                    \item Allows alternate names to be bound to subject of the certificate. 
+                    \item The names specified in subjectAltName may be included in addition to
+                        or in place of the identity in the subject field of the certificate
+                    \item Defined subject names used:
+                        \begin{itemize}
+                            \item rfc822Name:       IA5String
+                            \item otherName:        OtherName
+                            \item dNSName:          IA5String
+                            \item directoryName:    Name
+                            \item URI:              IA5string
+                            \item iPAddress:        OCTET String
+                            \item UniformResourceIdentifier: IA5String
+                        \end{itemize}
+                \end{itemize}
+            \item \textbf{Issuer Alternative Name}
+                \begin{itemize}
+                    \item Allows alternate names to be bound to certificate issuer
+                    \item Issuer alternative names are not processed as part of certification path validation
+                    \item Issuer Alternative name extension when present should be non-critical
+                \end{itemize}
+            \item \textbf{Subject Directory Attributes}
+                \begin{itemize}
+                    \item This extension is used to convey identification attributes of the subject
+                    \item Value:
+                        \begin{itemize}
+                            \item nationality of the subject
+                        \end{itemize}
+                \end{itemize}
+            \item \textbf{Basic Constraints}
+                \begin{itemize}
+                    \item This extension identifies whether the subject of the certificate is CA ?
+                    \item It also identifies Maximum depth of valid certification paths that include this certificate
+                    \item Values:
+                        \begin{itemize}
+                            \item cA: (boolean): indicates whether certificate is CA cert
+                            \item pathLenConstraint: applicable if cA boolean is true. if prsent asserts keyCertSign bit. 
+                            \item It gives maximum number of non-self-issued intermediate Certificates that may follows this certificate in a valid certification path. The last cert is End-entity certificate
+                            \item Ex: PathLength is 2:
+                                \begin{itemize}
+                                    \item RootCA - EE Cert
+                                    \item RootCA - subca1-EE Cert
+                                    \item RootCA - subca1-subca2-EE Cert
+                                    \item RootCA - subca1-subca2-subca3-EE Cert
+                                \end{itemize}
+                        \end{itemize}
+                \end{itemize}
+            \item \textbf{Name Constraints}
+                \begin{itemize}
+                    \item Used only in CA certificate
+                    \item Specifies name space within which all subject names in 
+                        subsequent certificates ina certification path MUST be located.
+                    \item Restrictions apply to Subject Dishtinguished Name and 
+                        subject alternative names.
+                    \item Restrictions do not apply for self-issued certs
+                    \item Restrictions are defined in terms of permitted or excluded name subtrees
+                    \item if name matches a restricted excluded subtrees, it 's invalid eventhough the name matches permittedsubtrees.
+                    \item Examples:
+                    \begin{itemize}
+                        \item URI:  constraint applies to host part of the name
+                        \item emailAddress: Example .example.org [indicates all emails with domain .example.com]
+                        \item DNS : pki.example.org [www.host1.pki.example.org would satisfy but host1.example.org will not]
+                        \item directoryName: Compares the DN attributes. 
+                    \end{itemize}
+                \end{itemize}
+            \item \textbf{Policy Constraints}
+                \begin{itemize}
+                    \item policy constraints extension can be used in certificates issued to CAs.
+                    \item Asserts policy related constraints
+                        \begin{itemize}
+                            \item \underline{inhibitPolicyMapping:} if present policy mapping is to be inhibited while processing subsequent certificates
+                            \item \underline{requireExplicitPolicy:} if present indicates subsequent certificates need to include an acceptable policy identifier
+                        \end{itemize}
+                \end{itemize}
+            \item \textbf{Extended Key Usage}:
+                \begin{itemize}
+                    \item This extension is used to indicate one or more purposes for which certificates public key can be used:
+                        \begin{itemize}
+                            \item id-kp-serverAuth: TLS WWW server authentication
+                            \item id-kp-clientAuth: TLS WWW client authentication
+                            \item id-kp-codeSigning: Signing of downloadable executable code
+                            \item id-kp-emailProtection: Email protection
+                            \item id-kp-timeStamping: Binding the hash of an object to a time
+                            \item id-kp-OCSPSigning: Signing OCSP responses
+                        \end{itemize}
+                \end{itemize}
+            \item \textbf{CRL Distribution Points}
+                \begin{itemize}
+                    \item cRLDistributionPoints extension is combination:
+                        \begin{itemize}
+                            \item distributionPoint
+                            \item reasons
+                            \item cRLIssuer
+                        \end{itemize}
+                \end{itemize}
+            \item \textbf{Authority Information Access}
+                \begin{itemize}
+                    \item Indicates how to access information and services for the issuer of the certificate in which the extension appears
+                    \item Information and services include, On-line validation services, CA policy data
+                    \item This extension is added in both EE and  CA cert
+                \end{itemize}
+            \item \textbf{Subject Information Access}
+                \begin{itemize}
+                    \item This extension indicates how to access information and services for the subject of the certificate in which the extension appears
+                    \item If the subject is CA, informaiton and services may include certificate validation and CA policy data. 
+                    \item If the subject is EE, information describes the type of services offerred and how to access them
+                \end{itemize}
+        \end{itemize}
+    \subsubsection{Revocation}
+        When a certificate is issued, it is expected to be used for it's entire validity period. Due to various circumstances, certificate can be invalidated like:
+        \begin{itemize}
+            \item Change of name
+            \item Change of association with subject and CA (Employee left)
+            \item Compromise or private key
+            \item CA wants to revoke the certificate
+        \end{itemize}
+        \begin{itemize}
+            \item X.509 defines one method of revoking certificates, where CA periodically issues a signed data structure called Certificate revocation list (CRL).
+            \item CRL is a time-stamped list identifying revoked certificates that is signed by CA or CRL issuer. 
+            \item This list is freely available through public repositories
+            \item It is expected that the certificate system user not only verifies certificate validity, signature but also aquires latest CRL from public repositories and check against CRL
+            \item CRL's are issued periodically (hourly, daily or weekly). 
+            \item CRLissuers or CA issue CRL
+            \item CAs publish CRLs to provide status information about the certificates they issued
+            \item CA may delegate this responsibility to another trusted authority
+        \end{itemize}
+        \begin{itemize}
+            \item Details of CRL
+            \begin{itemize}
+                \item Each CRL ahas particular scope
+                \item CRL scope is the ste of certificates that could appear in a given CRL
+                \item Examples:
+                    \begin{itemize}
+                        \item all certificates issued by CA x
+                        \item all CA certificates that has been revoked by key compromise or CA compromise
+                        \item set of certificates base on arbitrary local information (all certificate issued to employees at location X)
+                     \end{itemize}
+                \item CRL list all \textbf{unexpired} certificates, within it's scope that have been revoked for one or other reason
+                \item If the scope of the CRL includes one or more certificates issued by an entity other the CRL issuer it's called \textbf{indirect CRL}
+                \item CRL issuer may also generate delta CRL. 
+                \item \textbf{Delta CRL} only lists those certificates whose revocation status has changed since the issuance of referenced complete CRL.
+                \item Referenced complete CRL is called \textbf{complete CRL}
+                \item Scope of the delta crl should be same as base CRL that it references
+                \item When CRL's are issued CRLs must be version 2 CRLs. 
+            \end{itemize}
+        \end{itemize}
+    \subsubsection{CRL Fields}
+    \begin{itemize}
+        \item \textbf{Version} All CRLs must be Version 2 CRLs
+        \item \textbf{Signature Algorithm}
+            \begin{itemize}
+                \item Contains algorithm identifier for the algorithm used by the CRL issuer to sign the certificatesList
+                \item Values:
+                    \begin{itemize}
+                        \item \textbf{SHA256withRSA - 1.2.840.113549.1.1.11}
+                    \end{itemize}
+            \end{itemize}
+        \item \textbf{Issuer Name}
+            \begin{itemize}
+                \item Issuer Name identifies the entity that has signed and issued the CRL
+                \item Alternative name forms may also appear in the issuerAltName Extension
+                \item The issuer must contain a non-empty X.500 DN.
+            \end{itemize}
+        \item \textbf{This Update}
+            \begin{itemize}
+                \item This field indicates th issue date of this CRL. 
+                \item Example:
+                    \begin{itemize}
+                        \item \textbf{This Update: Sunday, January 17, 2016 8:06:03 AM IST Asia/Kolkata}
+                    \end{itemize}
+            \end{itemize}
+        \item \textbf{Next Update}
+            \begin{itemize}
+                \item This field indicates the date by which the next CRL will be issued. 
+                \item The next CRL may be issued before the indicated date, but it will not
+                    be issued later than indicated date.
+                \item CRL issuers(CA) \textbf{SHOULD} issue CRLs with nextUpdate time equal
+                    to or later thean all previous CRLs.
+            \end{itemize}
+        \item \textbf{Revoked Certificates}
+            \begin{itemize}
+                \item Contains list of certificates revoked by CA
+                \item Certificates revoked by CA are uniquely identified by their certificate serial Number. 
+                \item Date on which revocation occurred is specified.
+            \end{itemize}
+    \end{itemize}
+    \subsubsection{CRL Extensions}
+        \begin{itemize}
+            \item \textbf{Authority Key Identifier}
+                \begin{itemize}
+                    \item This extension provides a means of identifying the public key correspondign to the private key used to sign the CRL. This identifier can be based on either the key identifier or issuer's name and serial number. 
+                    \item Example:
+                        \begin{itemize}
+                            \item Authority Key Identifier Example:
+
+                                \begin{figure}[ht!]
+                                    \centering
+                                    \includegraphics[width=65mm]{crl-aki.png}
+                                    \caption{CRL Authority Key identifier}
+                                \end{figure}
+                        \end{itemize}
+                \end{itemize}
+            \item \textbf{Issuer Alternative Name}
+                \begin{itemize}
+                    \item This extension allows additional identities to be associated with the issuer or CRL.
+                \end{itemize}
+            \item \textbf{CRL Number}
+                \begin{itemize}
+                    \item This is a non critical extension that specifies sequence number for a given CRL scope and issuer. 
+                    \item This extension allows users to determine if a particular CRL supersedes another CRL. 
+                    \item if a CRL issuer generates delta CRLs in addition to complete CRLs for a given scope, the complete CRLs and delta CRLs must share one numbering sequence. 
+                \end{itemize}
+            \item \textbf{Delta CRL Indicator}
+                \begin{itemize}
+                    \item Delta CRL indicator is a critical CRL extension that identifies a CRL beging a delta CRL. 
+                    \item Delta CRLs contain updates to the revocation information previously 
+                        distributed, rather than all the information that would appear in 
+                        complete CRL.
+                    \item This helps in reducing network load and processing time in certain
+                        environments
+                    \item Example:
+                        \begin{itemize}
+                            \item \begin{figure}[ht!]
+                                    \centering
+                                    \includegraphics[width=80mm]{delta-crl-extension.png}
+                                    \caption{Delta CRL Indicator Extension}
+                                \end{figure}
+                        \end{itemize}
+                \end{itemize}
+            \item \textbf{Issuing Distribution Point}
+                \begin{itemize}
+                    \item This is a critical CRL extension that identifies the CRL distribution point and scope for a particular CRL. 
+                    \item It indicates whether CRL covers revocation of EE Certificates only, CA certificates etc. 
+                    \item Example:
+                        \begin{itemize}
+                            \item \begin{figure}[ht!]
+                                    \centering
+                                    \includegraphics[width=80mm]{issuing-distribution-point.png}
+                                    \caption{Issuing Distribution Point extension}
+                                  \end{figure}
+                        \end{itemize}
+                \end{itemize}
+    \end{itemize}
 \subsection{Exercises}
 \section{Red Hat Certificate System}
 \subsection{Certificate Manager}
