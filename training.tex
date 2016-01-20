@@ -3,8 +3,45 @@
 \author{Niranjan M.R, Huzaifa Sidhpurwala, Asha Akkiangady}
 \date{}
 \usepackage{color}
+\usepackage{xcolor}
 \usepackage{graphics}
 \usepackage{graphicx,subfig}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{enumitem}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{frame=tb,
+  language=python,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=3
+}
+\lstdefinestyle{BashInputStyle}{
+    language=bash,
+    basicstyle=\small\sffamily,
+    %numbers=left,
+    %numberstyle=\tiny,
+    %numbersep=3pt,
+    frame=tb,
+    columns=fullflexible,
+    backgroundcolor=\color{yellow!5},
+    linewidth=0.9\linewidth,
+    xleftmargin=0.1\linewidth
+}
 \begin{document}
 \maketitle
 \tableofcontents
@@ -863,6 +900,122 @@ Below is a simplified architectural model of Public Key Infrastructure using X.5
                 \end{itemize}
     \end{itemize}
 \subsection{Exercises}
+\begin{enumerate}[label*=\arabic*.]
+    \item Setup: Create PKI Infrastructure using OpenSSL
+        \begin{lstlisting}[style=BashInputStyle]
+            $ mkdir -p ~/pki/ca/{certs,crl,newcerts,private}
+            cd ~/pki/ca
+            chmod 700 private
+            touch index.txt
+            touch index.txt.attr
+            echo 01 > serial
+            wget https://raw.githubusercontent.com/mrniranjan/pkiworkshop/master/openssl.cnf
+        \end{lstlisting}
+    \item Create a CA cert using Openssl
+        \begin{lstlisting}[style=BashInputStyle]
+            $ cd ~/pki/ca
+            $ openssl genrsa -out private/ca.key.pem 2048 -config openssl.cnf
+            $ chmod 400 private/ca.key.pem
+            $ openssl req -config openssl.cnf -key private/ca.key.pem -new -x509 \
+                -days 365 -extensions v3_ca -out certs/ca.cert.pem
+        \end{lstlisting}
+    \item Create a End User cert with CN=Pki User1
+        \begin{lstlisting}[style=BashInputStyle]
+            # Create a private key
+            
+            $ cd ~/pki/ca
+            
+            $ openssl genrsa -out private/pkiuser1.key 2048
+            
+            # Create Certificate Request
+
+            $ openssl req -new -key private/pkiuser1.key \
+                -out pkiuser1.csr -config openssl.cnf
+            
+            $ openssl ca -config openssl.cnf -extensions usr_cert \
+                -days 375 -in pkiuser1.csr -out certs/pkiuser1.cert.pem
+        \end{lstlisting}
+    \item Create a User cert \textit{cn=Pki User1} with adding extension "Authority Key Identifier" where 
+        extension adds the hash of CA public key
+
+        Add the below lines to \textbf{usr\_cert} section of openssl.cnf
+        \begin{lstlisting}
+            basicConstraints=CA:FALSE
+            subjectKeyIdentifier=hash
+            authorityKeyIdentifier=keyid
+        \end{lstlisting}
+    \item Create a user cert by adding followin extensions digitalSignature, nonRepudiation
+
+        Add the below lines to \textbf{user\_cert} section of openssl.cnf
+        \begin{lstlisting}
+            keyUsage = nonRepudiation, digitalSignature
+        \end{lstlisting}
+
+    \item create a server cert by adding following extensions:
+
+        Add the below  lines to \textbf{server\_cert} section of openssl.cnf
+        \begin{lstlisting}
+            keyUsage = keyAgreement, digitalSignature
+        \end{lstlisting}
+    
+    \item Create a user cert with subjectAltname having an email address
+
+        Add the below lines to \textbf{user\_cert} section of openssl.cnf
+        \begin{lstlisting}
+            subjectAltName = email:copy
+        \end{lstlisting}
+
+    \item create a CA cert with pathlength of 2 . Verify path validation by creating multiple CAs
+
+        Create a new section \textbf{v3\_usr\_ca} in openssl.cnf and create certs
+        \begin{lstlisting}
+            subjectKeyIdentifier=hash
+            authorityKeyIdentifier=keyid
+            basicConstraints = critical,CA:true,pathlen:2
+            keyUsage = cRLSign, keyCertSign
+        \end{lstlisting}
+    
+    \item Create a server cert with TLS server and client authentication
+
+        Create a new section \textbf{server\_cert} in openssl.cnf with below contents
+        \begin{lstlisting}
+            [ server_cert ]
+            basicConstraints=CA:FALSE
+            subjectKeyIdentifier=hash
+            authorityKeyIdentifier=keyid
+            keyUsage = digitalSignature, keyAgreement
+            extendedKeyUsage = serverAuth,clientAuth
+        \end{lstlisting}
+
+    \item create a server cert with subject CN=server2.example.org having subjectAltName *.example.org
+        
+        Add below line to \textbf{server\_cert} section and create a new section \textbf{alt\_names}
+        \begin{lstlisting}
+             [ server_cert ]
+             subjectAltName = @alt_names
+
+            [alt_names]
+            DNS.1 = *.example.org
+       \end{lstlisting}
+
+        \item Create a Name constraint where permitted DN attribute is "CN=pki*,OU=PKI,O=Example Org,C=US"
+
+            Add below lines to \textbf{v3\_usr\_ca} 
+            \begin{lstlisting}
+                [ v3_usr_ca ]
+                subjectKeyIdentifier=hash
+                authorityKeyIdentifier=keyid
+                basicConstraints = critical,CA:true,pathlen:0
+                keyUsage = cRLSign, keyCertSign
+                nameConstraints = permitted;dirName:dir_sect
+
+                [dir_sect]
+                C=IN
+                O=Example Org
+                OU=PKI
+                CN=*
+            \end{lstlisting}
+\end{enumerate}
 \section{Red Hat Certificate System}
 \subsection{Certificate Manager}
 \subsubsection{Introduction}
