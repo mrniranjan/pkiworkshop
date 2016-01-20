@@ -122,17 +122,45 @@ emailAddress_max		= 64
 [ usr_cert ]
 basicConstraints=CA:FALSE
 subjectKeyIdentifier=hash
-authorityKeyIdentifier=issuer
+authorityKeyIdentifier=keyid:always,issuer:always
+#keyUsage = nonRepudiation, digitalSignature
+keyUsage = digitalSignature, keyAgreement
+#subjectAltName = email:copy
+
+[ server_cert ]
+basicConstraints=CA:FALSE
+subjectKeyIdentifier=hash
+authorityKeyIdentifier=keyid
+keyUsage = digitalSignature, keyAgreement
+extendedKeyUsage = serverAuth,clientAuth
+subjectAltName = @alt_names
 
 [ v3_req ]
 basicConstraints = CA:FALSE
-keyUsage = nonRepudiation, digitalSignature, keyEncipherment
+subjectAltName = email:copy
+#subjectAltName = @alt_names
+
+[alt_names]
+DNS.1 = *.example.org
 
 [ v3_ca ]
 subjectKeyIdentifier=hash
 authorityKeyIdentifier=keyid
-basicConstraints = CA:true
+basicConstraints = critical,CA:true,pathlen:2
 keyUsage = cRLSign, keyCertSign
+
+[ v3_usr_ca ]
+subjectKeyIdentifier=hash
+authorityKeyIdentifier=keyid
+basicConstraints = critical,CA:true,pathlen:0
+keyUsage = cRLSign, keyCertSign
+nameConstraints = permitted;dirName:dir_sect
+
+[dir_sect]
+C=IN
+O=Example Org
+OU=PKI
+CN=*
 
 [ crl_ext ]
 authorityKeyIdentifier=keyid:always
