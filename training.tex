@@ -118,11 +118,6 @@ referred to as \textit{Secret Key Cryptography} as opposed to \textit{Public Key
     \item When the 2 parties want to communicate, the attacker can intercept the keys \& instead send his own key to each other, 
         thus each party encrypts to him and \& he re-encrypts it to the real recipient. 
         This is called \textit{man-in-the-middle attack}
-        \begin{figure}[ht!]
-            \centering
-            \includegraphics[width=50mm]{mitm.png}
-            \caption{Man-in-the-middle attack}
-        \end{figure}
 \end{itemize}
 \subsection{Message Digest}
 A message digest is simply a function that takes as an input an arbitrary message and outputs a fixed length string 
@@ -141,7 +136,219 @@ Consider \textit{Alice} and \textit{Bob} share a key and Alice wants to send a m
 and send it across to \textit{Bob}, but we are not sure that the encrypted message would be tampered and also not sure 
 if \textit{Alice} was the one who sent the encrypted message.  So we use a new tool called \textit{MAC} . \textit{MAC} is a digest algorithm,
 but with a key, So the MAC is dependent on both the key and the message being MACed.
+\subsection{Algorithms}
+\begin{itemize}
+    \item \textbf{RSA}
+        \begin{itemize}
+            \item RSA is the public-key algorithm widely used in Public-key Cryptography
+            \item Invented by Ron-Rivest, Adi Shamir and Len Adelman (RSA). Each user has a public-key and a private-key
+            \item The public-key can be freely distributed and the private-key must be kept secret.
+            \item Brief Explanation:
+                \begin{itemize}
+                    \item Generate 2 prime numbers (3, 17), call them p and q
+                    \item n = modulus(p * q)
+                    \item p and q are kept secret
+                    \item Difficulty is in factoring m, so that we get p and q
+                    \item Take another number "e" which is called public exponent, which is a prime
+                        number , it's usually small prime numers {3, 17 or 65537}
+                    \item Compute d = $e^{-1}mod((p-1)(q-1))$
+                    \item Public Key = (e, n)
+                    \item Private Key = (d, n)
+                    \item Message M is encrypted with public key and decrypted with private key
+                    \item RSA assumes that M is a number,  So we need a convention to convert strings in to numbers.
+                \end{itemize}
+        \end{itemize}
+    \item \textbf{DSA}
+        \begin{itemize}
+            \item National Institute of standards and technology (NIST) published the Digital signature
+                algorithm in the Digital signature standard.  
+            \item Compared to RSA where it can be used for both encryption and digital signature
+            \item In DSA the signature generation is faster than signature verification
+        \end{itemize}
+    \item \textbf{RC4}
+        \begin{itemize}
+            \item RC4 is a stream cipher.
+            \item Assume we have a function (f) which produces 1 byte of data. 
+                This output is called keystream (ks)
+            \item The function (f) takes a encryption key as an input to generate keystream
+            \item Without the key we can't predict keystream
+            \item So combine each byte with one byte of plain text which is our cipher-text
+            \item C[i] denotes the ith unit of ciphertext 
+            \item where a unit refers a 1 byte of data.
+            \item ks[i] refers the ith unit of keystream
+            \item M[i] refers to the ith unit of the message.
+            \item C[i] = ks[i] xor M[i]
+            \item m[i] = ks[i] xor C[i] 
+            \item Disadvantages:
+                \begin{itemize}
+                    \item Assume we have used the same key to encrypt the Messages M and M' 
+                    \item If the attacker learns M and can compute ks by simply computing M xor C.
+                    \item Once the attacker knows KS he can generate M'
+                \end{itemize}
+            \item RC4 was designed by Ron Rivest . RC4 is a variable key length cipher , with key can be
+                anywhere between 8 to 2048 bytes long
+            \item SSL/TLS protocol use RC4 with 128-bit (16 bytes) key length
+            \item RC4 is extremely fast. 
+        \end{itemize}
+    \item \textbf{Block Ciphers}
+        \begin{itemize}
+            \item \textbf{DES}
+                \begin{itemize}
+                    \item The data to be encrypted is processed in blocks of bytes  (8 or 16).
+                    \item Each possible plain text block corresponds to a row in the table
+                    \item So to encrypt a block you find a column corresponding to the key, 
+                        run down the table to find the row corresponding to the block you want 
+                        to encrypt. 
+                    \item If the data is huge, it's very difficult to manage, 
+                        so we define a function that does the computation
+                    \item The idea is to simulate a random table
+                    \item  we have a key(k), and a data block .  and we define 2 function E for encryption ,and
+                        D for decryption
+                    \item C=E(K,M)
+                    \item M=D(k,c) 
+                    \item When we have large messages , we do in Electronic code book mode. 
+                        \begin{itemize}
+                            \item Break the message up to block sized-chunks.
+                            \item individually encrypt it using encryption algorithm 
+                            \item C[i]=E(k,M[i])
+                            \item M[i]=D(K,C[i]) 
+                        \end{itemize}
+                    \item DES was desinged by IBM , it's  patented but freely available
+                    \item DES is a 64 block cipher with 56-bit key . The data is encrypted in blocks of 8 bytes and a key space of 56 bits.
+                    \item DES is used with public-key techniques. 
+                    \item Disadvantages:
+                        \begin{itemize}
+                            \item if M[i] and M[j] are same, then we get the same C[j] and C[k]. Attacker can get the pattern
+                            \item Cipher block chaining mode, The encryption of each plain text block M[i] depends on 
+                                cipher text of previous block C[i-1].
+                            \item That can be accomplished by XORing previous Cipher text block C[i-1]] Xor M[i] before encryption
+                         \end{itemize}
+                    \end{itemize}
+            \item \textbf{3DES}
+                \begin{itemize}
+                    \item Run the DES algorithm 3 times.
+                    \item It's  used in Encrypt-Decrypt-Encrypt (EDE mode).
+                    \item Message is encrypted with key-1, Decrypted with Key-2 and Encrypted with key-3.  
+                    \item 3DES is 3 times slower than DES.
+                \end{itemize}
+            \item \textbf{RC2}
+                \begin{itemize}
+                    \item RC2 is a block cipher invented by Ron Rivest,
+                    \item RC2 is a variable-length cipher , with variable length key.  It uses 64 bit block size.
+                \end{itemize}
+            \item \textbf{AES}
+                \begin{itemize}
+                    \item Advanced Encryption Standard uses a minimum of 128 bits and 3 key lengths, 128. 192 and 256 bits
+                \end{itemize}
+        \end{itemize}
+    \item \textbf{Digest Algorithms}
+        \begin{itemize}
+            \item The two most popular Digest Algorithms are MD5, which was designed by Ron Rivest and SHA-1 by NIST.
+            \item MD5 and SHA share a common ancestor MD4 also designed by Ron Rivest
+        \end{itemize}
+\end{itemize}
 \subsection{Protocols}
+\subsubsection{SSL}
+    \begin{itemize}
+        \item Secure Socket Layer (SSL) is a protocol that provides a secure channel between machines
+        \item It has facilities for protecting data in transit and identifying machine with which it is begin communicated
+        \item Protocol is transparent , so it can be run on any protocol. 
+        \item SSL has gone through many versions and currently is culminating with the adoption by IETF as Transport Layer Security
+        \item SSL was originally designed for world wide web , but also was intended as a unifying solution to all the other communications (web, mail, news traffic)
+        \item The current version of SSL is tlsv2 which fixes a lot of security problems
+        \item \textbf{Overview of SSL Protocol}
+            \begin{itemize}
+                \item Primary goal of SSL is to provide privacy and reliability between 2 communicating applications
+                \item The protocol is composed of 2 layers : \textbf{Handshake protocol} and \textbf{record protocol}
+                \item \underline{In brief Handshake protocol provides}
+                    \begin{itemize}
+                        \item allows server \& client to authenticate to each other
+                        \item Negotiate encryption algorithm or Cryptography keys. 
+                    \end{itemize}
+                \item \underline{Record protocol provides:}
+                    \begin{itemize}
+                        \item Confidentiality
+                        \item Authenticity
+                        \item replay protection
+                    \end{itemize}
+            \end{itemize}
+        \item \textbf{Handshake Protocol}
+            \begin{itemize}
+                \item Client sends a list of algorithms it's willing to support along with a random number
+                    used as input to a key generation proces
+                \item Server chooses out of that list and sends it back along with a certificate
+                    containing servers public-key. 
+                \item certificate also provides the server's identity for authentication purpose and the 
+                    server supplies a random number which is used as a part of key generation process
+                \item Client verifies the servers certificate and extracts the server's public-key
+                    from the certificate
+                \item Client then generates a random secret called \textit{pre\_master\_secret} and encrypts this 
+                    with  server's public-key
+                \item Client sends this encrypted \textit{pre\_master\_secret} to the server 
+                \item Client and the Server independently compute the encryption and MAC keys from 
+                    \textit{the pre\_master\_secret} and client and server's random values
+                \item Client sends a MAC of all the handshake messages to the server
+                \item The server sends a MAC of all the handshake messages to the client
+                \item \begin{figure}[ht!]
+                        \centering
+                        \includegraphics[width=40mm]{sslhandshake1.png}
+                        \caption{SSL Handshake}
+                      \end{figure}
+                \item Step:1 corresponds to single SSL Handshake message, Client Hello
+                \item Step:2 corresponds to SSL Handshake messages
+                    \begin{itemize}
+                        \item First is a ServerHello { Algorithm preference, Certificate }
+                        \item Send ServerHelloDone
+                    \end{itemize}
+                \item Step3 correponds to ClientKeyExchange
+                \item Step 5 and 6 correspond to the finished message. The Finished message is the first
+                    message that's the protected using Just-Negotiated algorithms.
+                \item To protect the handshake from tampering, the content of the message is MAC of 
+                    all the previous handshake messages
+                \item \begin{figure}[ht!]
+                        \centering
+                        \includegraphics[width=40mm]{sslhandshake2.png}
+                        \caption{SSL Handshake}
+                      \end{figure}
+                \item \textbf{Resuming Session}
+                    \begin{itemize}
+                        \item client sends a clientHello with a Session-ID of the session to be resumed.
+                        \item server check it's session cache for a match
+                        \item If the match is found \& the server is willing to re-establish the connection under specified
+                            session state , it will send a ServerHello with same session-ID
+                        \item At this point both client and server must send change Cipher spec messages \& proceed
+                            directly to finished messages 
+                        \item There is no exchange of certificates here.
+                        \item Once the re-establishment is complete the client \& server may begin exchange of application data
+                        \item If the Session-ID match is not found the server generates a new session-ID \& the client and
+                            Server have to perform a full handshake
+                    \end{itemize}
+           \end{itemize}
+        \item \textbf{SSL Record Protcol}
+            \begin{itemize}
+                \item The actual data transfer is accomplished by SSL Record Protocol
+                \item Record Protocol works by breaking up the data stream to be transmitted in to a series of
+                    fragments, each of which is independently protected and transmitted.
+                \item On the receiving end , each record is independently decrypted and verified.
+                \item Before transmission , a  MAC is computed on each record , This MAC is transferred along with the record
+                \item The concatenated data and MAC are encrypted to form encrypted Payload. We attach a header to 
+                    that encrypted payload which we refer to as a record
+                \item \begin{figure}[ht!]
+                        \centering
+                        \includegraphics[width=50mm]{ssldatafrag.png}
+                        \caption{ssl data fragment and protection}
+                      \end{figure}
+                \item The record header provides the information for the other end to interpret the record. It contains:
+                    \begin{itemize}
+                        \item Content Type (Application data, alert messages, handshake message, change cipher spec)
+                        \item length  (how many bytes to read off wire)
+                        \item SSL Version
+                    \end{itemize}
+                \item The \textit{change\_cipher\_spec} message indicates a change in encryption and authentication of records
+                \item Once the handshake is completed a new set of keys is negotiated, \textit{change\_cipher\_spec} record is 
+                    sent to indicate that those keys will now be used.
+            \end{itemize}
+    \end{itemize}
 \subsection{Exercises}
 \section{Introduction to Public Key Infrastructure}
 Below is a simplified architectural model of Public Key Infrastructure using X.509 (PKIX) Specifications
@@ -315,6 +522,7 @@ Below is a simplified architectural model of Public Key Infrastructure using X.5
                     \item Provides a means of identifying the public key corresponding to the private key used to sign the certificate
                     \item This is required if the issuer has multiple signing keys 
                     \item If the CA certificate is self signed Authority key identifier is skipped
+                    \item Authority key Identifier helps in identifying the issuer certificate. 
                     \item Values:
                         \begin{itemize}
                             \item \textbf{keyid:48:E6:68:F9:2B:D2:B2:95:D7:47:D8:23:20:10:4F:33:98:90:9F:D4}
