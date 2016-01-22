@@ -9,7 +9,7 @@
 \usepackage{listings}
 \usepackage{color}
 \usepackage{enumitem}
-
+\usepackage{float}
 \definecolor{dkgreen}{rgb}{0,0.6,0}
 \definecolor{gray}{rgb}{0.5,0.5,0.5}
 \definecolor{mauve}{rgb}{0.58,0,0.82}
@@ -32,7 +32,7 @@
 }
 \lstdefinestyle{BashInputStyle}{
     language=bash,
-    basicstyle=\small\sffamily,
+    basicstyle=\small\ttfamily,
     %numbers=left,
     %numberstyle=\tiny,
     %numbersep=3pt,
@@ -1016,6 +1016,18 @@ Below is a simplified architectural model of Public Key Infrastructure using X.5
                 CN=*
             \end{lstlisting}
 \end{enumerate}
+\section{Common Terms Used in RHCS}
+\begin{itemize}
+    \item TMS
+    \item Non-TMS
+    \item CIMC
+    \item CMS
+    \item Security Domain
+    \item CRMF
+    \item PKCS10
+    \item FIPS
+    \item FIPS-140
+\end{itemize}
 \section{Red Hat Certificate System}
 \subsection{Certificate Manager}
 \subsubsection{Introduction}
@@ -1045,7 +1057,7 @@ Certificate Manager is the first subsystem that needs to be configured in PKI En
         \item Some CA's can delegate some of it's responsibility to another Subordinate CA
     \end{itemize}
 \subsubsection{Architecture}
-     \begin{figure}[ht!]
+     \begin{figure}[H]
           \centering
           \includegraphics[width=80mm]{CA-subsystem-Arch3.png}
           \caption{CA Subsystem Architecture}
@@ -1213,8 +1225,105 @@ Certificate Manager is the first subsystem that needs to be configured in PKI En
                         \end{itemize}
             \end{itemize}
     \end{itemize}
+\subsubsection{Instance Layout}
 \subsubsection{Exercises}
 \subsection{Key Recovery Authority}
+\subsubsection{Introduction}
+Key Recovery Authority is an optional subsystem that is configured to archive private keys. Key Recovery Authority
+subsystem is by default installed after CA subsystem is installed and is dependent on CA for certain operations
+but can be installed as a standalone subsystem too.
+\subsubsection{Installation}
+\begin{itemize}
+    \item RPM: pki-kra
+    \item Configuration: KRA subsystem can be configured through pkispawn using interactive or to have a customize
+        setup a separate file can be specified with pkispawn.
+
+    \item KRA subsystem can share the same tomcat instance created by the CA subsystem. This allows KRA subsystem
+        to run on the same ports as that of CA.
+
+        \begin{figure}[H]
+            \centering
+            \includegraphics[width=80mm]{pkispawn-kra.png}
+            \caption{pkispawn KRA subsystem}
+        \end{figure}
+\end{itemize}
+\subsection{Installation Layout}
+\begin{itemize}
+    \item \textbf{/var/lib/pki/$<$instance$>$}: $<$Instance$>$ here is the tomcat Instance name 
+        given during configuring subsystem
+    \item \textbf{/var/lib/pki/$<$instance$>$/alias}: Is the NSS Database of the system where the subsystem system 
+        certs are stored. When a subsystem is configured, Certain certificates are created for certain tasks 
+        like Transport Cert for securely transporting private keys, storage cert for storing the private key, 
+        These system certificates reside in alias directory. List of system certs are mentioned below, 
+        All the below system certs are issued by CA during configuration of KRA.
+        \begin{itemize}
+            \item transportCert
+            \item Server-Cert
+            \item auditSigningCert
+            \item storageCert
+            \item subsystemCert
+        \end{itemize}
+    \item \textbf{/var/lib/pki/$<$instance$>$/conf/}: Configuration directory containing tomcat configuration,
+        password file containing internal database(ldap) password, and NSS Database password
+    \item \textbf{/var/lib/pki/$<$instance$>$/kra/}: Contains KRA Subsystem configuration file CS.cfg. This file is
+        the main configuration file for KRA subsystem
+    \item \textbf{/var/lib/pki/$<$instance$>$/lib/}: Contains kra subsystem related jar files 
+    \item \textbf{/var/lib/pki/$<$instance$>$/bin/}: Tomcat related jar files
+\end{itemize}
+\subsubsection{Key Features}
+\begin{itemize}
+    \item Key Recovery Authority when configured with with certificate Manager(CA) stores private keys as part of
+        certificate issuance process
+    \item Supports two key recovery modes:
+        \begin{itemize}
+            \item Synchronous Recovery(Deprecated)
+            \item Asynchronous Recovery
+        \end{itemize}
+    \item Supports Archiving passwords, symmetric keys, aka acts as a vault to store anything that needs
+        to be stored securely and transported back securely
+    \item Private keys are generally wrapped with a key called storage key and private keys
+        while transporting are wrapped with transport keys, These keys can be rotated
+\end{itemize}
+\subsubsection{Architecture}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=80mm]{KRA-Architecture.png}
+    \caption{KRA Architecture}
+\end{figure}
+\subsubsection{Interfaces}
+\begin{itemize}
+    \item End User Interface through \textbf{pki} cli
+    \item Agent Interface(Browser/CLI)
+    \item Admin Interface(Java console)
+\end{itemize}
+\subsubsection{Features}
+\begin{itemize}
+    \item Key Archival
+        \begin{itemize}
+            \item key archival is triggered when a user creates a certificate request through
+                firefox(31.0 or older only)/pki/CRMFPopClient utility
+            \item The key pair generated as part of the request(public/Private key) is submitted
+                through a defined profile. 
+            \item While submitting the private key is wrapped(encrypted) with transport cert(public key)
+                and submitted to CA
+            \item CA inturn retrieves the encrypted private key, decripts with transport private key 
+            \item Private key is then stored in interan ldap of kRA by encrypting again with Storage Cert
+            \item CA upon successful archival issues certificate
+        \end{itemize}
+        \begin{figure}[H]
+            \centering
+            \includegraphics[width=100mm]{key-archival1.png}
+            \caption{Key Archival Workflow}
+        \end{figure}
+        \begin{figure}[H]
+            \centering
+            \includegraphics[width=100mm]{key-archival-process.png}
+            \caption{Key Archival Process}
+        \end{figure}
+    \item Key Recovery
+\end{itemize}
+\subsubsection{Instance Layout}
+\subsubsection{Exercises}
 \subsection{Online Certificate Status Protocol}
 \subsection{Token Key Service \& Token Processing System}
 \end{document} 
