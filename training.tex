@@ -1,6 +1,6 @@
 \documentclass[a4paper]{article}
 \title{Workshop on Public Key Infrastructure and Red Hat Certificate System}
-\author{\underline{Niranjan M.R, Huzaifa Sidhpurwala, Asha Akkiangady}}
+\author{\underline{Asha Akkiangady, Huzaifa Sidhpurwala, Niranjan Mallapadi}}
 \date{}
 \usepackage{color}
 \usepackage{xcolor}
@@ -1390,21 +1390,123 @@ but can be installed as a standalone subsystem too.
 \subsubsection{Exercises}
 \subsection{Online Certificate Status Protocol}
 \subsubsection{Introduction}
-\begin{itemize}
-    \item Online Certificate Status Manager is an subsystem external to CA.
-    \item This subsystem acts as an external OCSP which can be publicly accessible.
-    \item Multiple CA's can publish CRL to a single OCSP 
-    \item Clients can verify certs using OCSP 
-\end{itemize}
+    \begin{itemize}
+        \item Online Certificate Status Manager is an subsystem external to CA.
+        \item This subsystem acts as an external OCSP which can be publicly accessible.
+        \item Multiple CA's can publish CRL to a single OCSP 
+        \item Clients can verify certs using OCSP 
+    \end{itemize}
 \subsubsection{Installation}
-\begin{itemize}
-    \item
-\end{itemize}
-\subsubsection{Key Features}
-\subsubsection{Architecture}
+    \begin{itemize}
+        \item RPM: \textbf{pki-ocsp}
+            OCSP subsystem can be configured through pkispawn using interactive or to have a customize
+            setup a separate file can be specified with pkispawn
+
+            OCSP subsystem can share the same tomcat instance created by the CA subsystem which allows
+            OCSP to use same ports as that of CA.
+            \begin{figure}[H]
+                \centering
+                \includegraphics[width=80mm]{pkispawn-ocsp.png}
+                \caption{pkispawn KRA subsystem}
+            \end{figure}
+    \end{itemize}
 \subsubsection{Interfaces}
-\subsubsection{Features}
+\begin{itemize}
+    \item End User Interface through \textbf{pki} cli
+    \item Agent Interface(Browser/CLI)
+    \item Admin Interface(Java console)
+\end{itemize}
 \subsubsection{Exercises}
-\subsection{Token Key Service \& Token Processing System}
+\subsection{SmartCard Management}
+\subsubsection{Introduction}
+    \begin{itemize}
+        \item \textbf{What:} Smartcard contains an embedded microprocessor. This microprocess runs Java Virtual Machine(JVM) and 
+            provides environment to run applications on top of it. 
+            \begin{itemize}
+                \item Smartcard contains a chip with java on it. 
+                \item it contains a JVM, Java Runtime Environment, and some API for applications to access the card.
+            \end{itemize}
+        \item \textbf{Why:} 
+            \begin{itemize}
+                \item Smartcards are typically used by enterprise to provide identification and authentication
+                \item Smartcards provide 2-Factor Authentication which is 
+                    \begin{itemize}
+                        \item Something you have - smartcard
+                        \item Something you know - pin(password) to access the smartcard
+                    \end{itemize}
+            \end{itemize}
+        \item \textbf{Use cases:}
+            \begin{itemize}
+                \item System Authentication using Smartcard (Linux/Windows System Authentication)
+                \item Secure VPN Access
+                \item Email Signature and Encryption
+                \item Disc Encryption
+            \end{itemize}
+        \item \textbf{How:}
+            \begin{itemize}
+                \item For enterprise to use smartcard a digital Certificate is issued to the smartcard
+                \item This certificate is used to identify the user of the smartcard
+                \item User uses digital certificate on the smartcard to perform 2-factor authentication 
+            \end{itemize}
+        \item \textbf{Mangement:}
+            \begin{itemize}
+                \item We need a management software to manage certificates on the smartcard
+                    \begin{itemize}
+                        \item Enrolling certificate
+                        \item Formatting Smartcard
+                        \item What to do with the certificate if smartcard is lost
+                        \item What to do if the user of the smartcard is no longer in the company
+                    \end{itemize}
+                \item To do the above operations, we have Token Management system in Certificate Services which comprises of the following:
+                    \begin{itemize}
+                        \item \textbf{TPS}: The Token Processing System (TPS) interacts with smart cards to help them generate and store
+                            keys and certificates for a specific entity, such as a user or device.
+                        \item \textbf{TKS}: The Token Key Service (T KS) generates, or derives, symmetric keys used for communication
+                            between the TPS and smart card.
+                        \item \textbf{CA}: The Certificate Authority (CA) creates and revokes user certificates stored on the smart card.
+                        \item \textbf{DRM}: Optionally, the Data Recovery Manager (DRM) archives and recovers keys for the smart card.
+                        \item \textbf{Enterprise Security Client}: is the conduit through which TPS communicates with each token over
+                            a secure HTTP channel (HTTPS), and, through the TPS, with the Certificate System.
+                    \end{itemize}
+            \end{itemize}
+    \end{itemize}
+\subsubsection{Architecture}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=80mm]{TMS-workflow.png}
+    \caption{Token Management System}
+\end{figure}
+\subsubsection{Common Terms Used with regard to Smartcard}
+    \begin{itemize}
+        \item Secure Channel Protocol: A secure communication protocol and set of security protocol used to 
+            create a secure channel with token during TPS Operations.
+        \item Applets: TPS communicates with an applet on the smartcard. 
+        \item APDU(Application Protocol Data Unit): Standard communication messaging protocol between a card accepting device(Reader)
+            and a smart card 
+        \item SmartCards come with a cardmanager applet and a vendor applet or with only card manager applet. 
+        \item Coolkey: applet is the supported Card Manager applet
+        \item Smartcard has cryptographic functionality supporting symmetric and Assymetric Encryption(like RSA)
+        \item CCID: CCID (chip card interface device) protocol is a USB protocol that allows a smartcard to be 
+            connected to a computer via a card reader using a standard USB interface, without the need for 
+            each manufacturer of smartcards to provide its own reader or protocol.~\cite{wiki:ccid}
+    \end{itemize}
+\subsubsection{Token Key Service}
+    \begin{itemize}
+        \item Introduction
+            \begin{itemize}
+                \item A subsystem in the token management system which derives specific, separate keys for every
+                    smart card based on the smart card APDUs and other shared information, like the token CUID.~\cite{RedHat:AdminGuide}
+                \item The TKS derives keys based on the token CCID, private information, and a defined algorithm. 
+                    These derived keys are used by the TPS to format tokens and enroll, or process, certificates on the token(smartcard).~\cite{RedHat:AdminGuide}
+            \end{itemize}
+        \item RPM: \textbf{pki-tks}
+        \item Configuration: 
+            TKS subsystem can be configured through pkispawn using interactive or to have a customize
+            setup a separate file can be specified with pkispawn
+
+            TKS subsystem can share the same tomcat instance created by the CA subsystem which allows
+            TKS to use same ports as that of CA.
+    \end{itemize}
+\subsubsection{Token Processing Service}
 \bibliography{references}
 \end{document} 
