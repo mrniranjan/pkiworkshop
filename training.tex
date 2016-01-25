@@ -1,6 +1,6 @@
 \documentclass[a4paper]{article}
-\title{\textcolor{red}{Workshop on Public Key Infrastructure and Red Hat Certificate System}}
-\author{Niranjan M.R, Huzaifa Sidhpurwala, Asha Akkiangady}
+\title{Workshop on Public Key Infrastructure and Red Hat Certificate System}
+\author{\underline{Niranjan M.R, Huzaifa Sidhpurwala, Asha Akkiangady}}
 \date{}
 \usepackage{color}
 \usepackage{xcolor}
@@ -10,10 +10,10 @@
 \usepackage{color}
 \usepackage{enumitem}
 \usepackage{float}
+\bibliographystyle{plain}
 \definecolor{dkgreen}{rgb}{0,0.6,0}
 \definecolor{gray}{rgb}{0.5,0.5,0.5}
 \definecolor{mauve}{rgb}{0.58,0,0.82}
-
 \lstset{frame=tb,
   language=python,
   aboveskip=3mm,
@@ -42,13 +42,14 @@
     linewidth=0.9\linewidth,
     xleftmargin=0.1\linewidth
 }
+
 \begin{document}
 \maketitle
 \tableofcontents
 \section{Introduction to Public Key Cryptography}
 Before we start discussing about public key cryptography, we will in general discuss about how system communicate
 and what are the various threat models that are associated with the communication medium and what are the tools to 
-overcome them.
+overcome them.~\cite{eric}
 
 \textbf{Example1:}
 The most common protocol used to communicate between 2 systems is TCP/IP. TCP/IP allows information to be sent 
@@ -78,7 +79,8 @@ Below are some of the threat models associated with above communcation:
     \end{itemize}
 \end{itemize}
 \textbf{Example2:}
-Consider Alice , Bob and attacker are the parties , where alice and bob want to communicate to each other and Attacker is a threat to the communication.
+Consider Alice , Bob and attacker are the parties , where alice and bob want to communicate 
+to each other and Attacker is a threat to the communication.~\cite{eric}
 
 \begin{itemize}
     \item Alice can send a postcard to bob to communicate, but this method is very weak as any random eavesdropper could read the postcard.
@@ -128,7 +130,7 @@ referred to as \textit{Secret Key Cryptography} as opposed to \textit{Public Key
 \begin{figure}[h]
     \centering
     \includegraphics[width=50mm]{symmetric.png}
-    \caption{Symmetric Encryption}
+    \caption{Symmetric Encryption ~\cite{RedHat:Symmetric}}
 \end{figure}
 \subsubsection{Assymetric Encryption}
 \begin{itemize}
@@ -1018,17 +1020,45 @@ Below is a simplified architectural model of Public Key Infrastructure using X.5
 \end{enumerate}
 \section{Common Terms Used in RHCS}
 \begin{itemize}
-    \item TMS
-    \item Non-TMS
-    \item CIMC
-    \item CMS
-    \item Security Domain
+    \item Enrollment
+        The point when the certificate is issued to the User/client is called enrollment
+    \item Renewal
+        When certificate is about to be expired or already expired and has CA requires to 
+        renew the certificate
+    \item Dual Keys
+        Conventional hierarchical PKI uses a single key pair – one public key and one
+        private key. According to VeriSign, “Key Pairs are used for one or more of three basic purposes:
+        \begin{itemize}
+            \item Encryption
+            \item Authentication
+            \item non-repudiation
+        \end{itemize}
+         A single key used for multiple purposes violates non-repudiation.
+         It is recommended that you assign two key pairs per person -- one key pair for signing messages 
+         providing authentication and non-repudiation, and a second key pair for encryption. 
+         This allows someone to recover the encryption key and decrypt documents that were encrypted using it,
+         without their gaining the ability to sign documents with that user’s private key as well (which
+         could lead to forgery and violation of non-repudiation)
+    \item ECC
+        is a cryptographic system that uses elliptic curves to create keys for encrypting data. 
+        ECC creates cryptographically-stronger keys with shorter key lengths  than RSA, which makes it faster 
+        and more efficient to implement. But it is not widely supported as RSA
     \item CRMF
+        Certificate Request Message Format is a syntax use to convey a request for a certificate to Certificate
+        Authority (CA). This request contains a public key, Proof of Possession(POP), Additional registration informtion
+        combined with pop and public key.\cite{4211}
     \item PKCS10
     \item FIPS
     \item FIPS-140
+    \item Token
+        \begin{itemize}
+            \item Internal Token
+            \item External Token
+        \end{itemize}
+    \item HSM
 \end{itemize}
 \section{Red Hat Certificate System}
+\subsection{Overview}
 \subsection{Certificate Manager}
 \subsubsection{Introduction}
 Certificate Manager is the first subsystem that needs to be configured in PKI Environment, Certificate Manager can be configured as RootCA, Subordinate CA
@@ -1247,7 +1277,7 @@ but can be installed as a standalone subsystem too.
             \caption{pkispawn KRA subsystem}
         \end{figure}
 \end{itemize}
-\subsection{Installation Layout}
+\subsubsection{Installation Layout}
 \begin{itemize}
     \item \textbf{/var/lib/pki/$<$instance$>$}: $<$Instance$>$ here is the tomcat Instance name 
         given during configuring subsystem
@@ -1317,13 +1347,64 @@ but can be installed as a standalone subsystem too.
         \end{figure}
         \begin{figure}[H]
             \centering
-            \includegraphics[width=100mm]{key-archival-process.png}
+            \includegraphics[width=70mm]{key-archival-process.png}
             \caption{Key Archival Process}
         \end{figure}
     \item Key Recovery
+        \begin{itemize}
+            \item KRA supports Agent initiated key recovery
+            \item Designated Agents use the key recovery form on Agent services page
+                to Approve/Reject key recovery
+            \item CS uses m-of-n ACL-based recovery scheme
+            \item CS uses it's ACL to ensure recovery agents are appropriately authenticated
+                over SSL
+            \item ACL also requires that agents belong to specific recovery agent group
+            \item Recovery request is executed only when m of n agents have granted authorization
+            \begin{figure}[H]
+                \centering
+                \includegraphics[width=70mm]{key-recovery.png}
+                \caption{Key Recovery Process}
+            \end{figure}
+        \end{itemize}
+    \item Archive Symmetric Keys, passwords, Asymetric keys (Vault)
+        \begin{itemize}
+            \item KRA has new REST interface to archive and recover 
+                \begin{itemize}
+                    \item Symmetric Keys
+                    \item Random Security Data
+                    \item Asymmetric Keys
+                \end{itemize}
+            \item This features is implemented through pki key CLI to generate, archive,retrieve
+                keys.
+        \end{itemize}
+    \item Transport Key Rotation
+        \begin{itemize}
+            \item Transport Certs are created when KRA instance is configured using pkispawn
+            \item Transport Certs are issued by CA to KRA
+            \item Transport Certs public key is used to \textit{encrypt} private key while it's being
+                transport by CA to KRA 
+            \item In Large organizations, this transport key needs to be rotated. 
+            \item The feature here adds support for second Transport Key 
+        \end{itemize}
 \end{itemize}
-\subsubsection{Instance Layout}
 \subsubsection{Exercises}
 \subsection{Online Certificate Status Protocol}
+\subsubsection{Introduction}
+\begin{itemize}
+    \item Online Certificate Status Manager is an subsystem external to CA.
+    \item This subsystem acts as an external OCSP which can be publicly accessible.
+    \item Multiple CA's can publish CRL to a single OCSP 
+    \item Clients can verify certs using OCSP 
+\end{itemize}
+\subsubsection{Installation}
+\begin{itemize}
+    \item
+\end{itemize}
+\subsubsection{Key Features}
+\subsubsection{Architecture}
+\subsubsection{Interfaces}
+\subsubsection{Features}
+\subsubsection{Exercises}
 \subsection{Token Key Service \& Token Processing System}
+\bibliography{references}
 \end{document} 
