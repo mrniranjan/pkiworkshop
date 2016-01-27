@@ -1461,10 +1461,10 @@ but can be installed as a standalone subsystem too.
                     \begin{itemize}
                         \item \textbf{TPS}: The Token Processing System (TPS) interacts with smart cards to help them generate and store
                             keys and certificates for a specific entity, such as a user or device.
-                        \item \textbf{TKS}: The Token Key Service (T KS) generates, or derives, symmetric keys used for communication
+                        \item \textbf{TKS}: The Token Key Service (TKS) generates, or derives, symmetric keys used for communication
                             between the TPS and smart card.
                         \item \textbf{CA}: The Certificate Authority (CA) creates and revokes user certificates stored on the smart card.
-                        \item \textbf{DRM}: Optionally, the Data Recovery Manager (DRM) archives and recovers keys for the smart card.
+                        \item \textbf{KRA}: Optionally, the Key Recovery Authority (KRA) archives and recovers keys for the smart card.
                         \item \textbf{Enterprise Security Client}: is the conduit through which TPS communicates with each token over
                             a secure HTTP channel (HTTPS), and, through the TPS, with the Certificate System.
                     \end{itemize}
@@ -1498,33 +1498,99 @@ but can be installed as a standalone subsystem too.
                     smart card based on the smart card APDUs and other shared information, like the token CUID.~\cite{RedHat:AdminGuide}
                 \item The TKS derives keys based on the token CCID, private information, and a defined algorithm. 
                     These derived keys are used by the TPS to format tokens and enroll, or process, certificates on the token(smartcard).~\cite{RedHat:AdminGuide}
+                \item TKS and TPS have a sharedSecret to wrap sensitive info sent between TKS and TPS
             \end{itemize}
-        \item RPM: \textbf{pki-tks}
-        \item Configuration: 
-            TKS subsystem can be configured through pkispawn using interactive or to have a customize
-            setup a separate file can be specified with pkispawn
-
-            TKS subsystem can share the same tomcat instance created by the CA subsystem which allows
-            TKS to use same ports as that of CA.
-            \begin{figure}[H]
-                \centering
-                \includegraphics[width=80mm]{pkispawn-tks.png}
-                \caption{Interactive installation of TKS using pkispawn}
-            \end{figure}
         \item Features:
             \begin{itemize}
                 \item \textbf{Manage shared keys}
                     \begin{itemize}
-                        \item \textbf{Key Derivation}
-                            \begin{figure}[H]
-                                \centering
-                                \includegraphics[width=80mm]{tks-key-derivation.png}
-                                \caption{TKS Key Derivation}
-                            \end{figure}
-                        \item \textbf{Generate Master Key}
+                        \item Token Key Service (TKS) derives keys for the TPS to use.
+                        \item Based on Token CUID, and other token material , Derive keys that encrypt session between TPS and ESC
+                        \item Keys are derived based on Common Master Key which is known to TKS and existent on smartcards
+                    \end{itemize}
+                \item \textbf{Generate Master Key}
+                    \begin{itemize}
+                        \item Master key is 3DES symmetric Key stored in software/Hardware
+                        \item Transport Key wraps the other keys derived(from master key) and used by TKS and TPS
                     \end{itemize}
             \end{itemize}
     \end{itemize}
 \subsubsection{Token Processing Service}
+    \begin{itemize}
+            \item Introduction
+                \begin{itemize}
+                    \item TPS interacts with smart cards to help them generate and store keys and certificates for a specific entity
+                    \item Smart card operations go through TPS and are forwarded to the appropriate subsystem for action, 
+                        such as the Certificate Authority to generate certificates or the Key Recovery Authority to archive and recover key
+                \end{itemize}
+            \item Features
+                \begin{itemize}
+                    \item Secure Channel
+                        \begin{itemize}
+                            \item The Token Key Service (TKS) generates the (token) keys (a set of 3 keys derived) from Master keys
+                            \item These keys are used by TPS to communicate with ESC(smartcard)
+                            \item TPS communicates with the TKS over SSL but TPS communicates with ESC over secure channel
+                            \item Every smartcard has 3 keys:
+                                \begin{itemize}
+                                    \item An \textbf{auth key} which is used for encryption and authentication: a session key dervied from the auth key
+                                        each time a secure channel is opened.
+                                    \item A \textbf{MAC key} which is used for message authentication; like the auth keys, a session key is derived
+                                        from the MAC key each time a secure channel is opened.
+                                    \item A \textbf{key encryption key (KEK)} which is to encrypt the session keys.
+                                \end{itemize}
+                            \begin{figure}[H]
+                                \centering
+                                \includegraphics[width=80mm]{tks-key-derivation1.png}
+                                \caption{TKS Key Derivation}
+                            \end{figure}
+                        \end{itemize}
+                    \item Supported TPS Operations
+                        \begin{itemize}
+                            \item Formatting Smartcards
+                            \item Resetting PIN on smartcards
+                            \item Upgrading the applet for smartcard tokens
+                            \item Perform LDAP Authentication
+                            \item Managing token database
+                            \item Logging Token events
+                        \end{itemize}
+                    \item Token Profiles
+                        \begin{itemize}
+                            \item Just like certificate profiles there are different token profiles to format different kind of tokens 
+                            \item Token profiles define the below:
+                                \begin{itemize}
+                                    \item The steps to format and enroll the token
+                                    \item The configuration of the final enrolled token
+                                    \item Profiles also specify which LDAP server to be used for authentication and 
+                                        which CA should be used for enrolling certificates
+                                    \item List of Token profiles:
+                                        \begin{figure}[H]
+                                            \centering
+                                            \includegraphics[width=80mm]{tokenprofiles1.png}
+                                            \caption{List of Token Profiles}
+                                        \end{figure}
+                                \end{itemize}
+                        \end{itemize}
+                    \item TPS-TKS-Smartcard Workflow
+                        \begin{figure}[H]
+                            \centering
+                            \includegraphics[width=120mm]{tks-tps-drm-esc-enrollment2.png}
+                            \caption{TPS-TKS-Smartcard Worfklow}
+                        \end{figure}
+                    \item TKS Configuration 
+                        \begin{itemize}
+                            \item RPM: \textbf{pki-tks}
+                            \item Configuration: TKS subsystem can be configured through pkispawn using interactive or to have a 
+                                customize setup a separate file can be specified with pkispawn
+                            \item TKS subsystem can share the same tomcat instance created by the CA subsystem which allows 
+                                TKS to use same ports as that of CA
+                            \begin{figure}[H]
+                                \centering
+                                \includegraphics[width=80mm]{pkispawn-tks.png}
+                                \caption{Interactive installation of TKS using pkispawn}
+                            \end{figure}
+                        \end{itemize}
+                    \item Creating sharedSecret 
+                \end{itemize}
+    \end{itemize}
 \bibliography{references}
 \end{document} 
