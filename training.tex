@@ -1590,6 +1590,83 @@ but can be installed as a standalone subsystem too.
                             \end{figure}
                         \end{itemize}
                     \item Creating sharedSecret 
+                        \begin{itemize}
+                            \item TKS generates a \textbf{\underline{sharedSecret}} to wrap sensitive information passed over TPS.
+                            \item This sharedSecret is to be created on TKS NSS database using tool called \textbf{tkstool}
+                            \begin{figure}[H]
+                                \centering
+                                \includegraphics[width=50mm]{tkstool-create-sharedSecret1.png}
+                                \caption{NSS Internal database password}
+                            \end{figure}
+                            \begin{figure}[H]
+                                \centering
+                                \includegraphics[width=50mm]{tkstool-create-sharedSecret2.png}
+                                \caption{tkstool Usage}
+                            \end{figure}
+                            \begin{figure}[H]
+                                \centering
+                                \includegraphics[width=50mm]{tkstool-create-sharedSecret3.png}
+                                \caption{First Session Key}
+                            \end{figure}
+                            \begin{figure}[H]
+                                \centering
+                                \includegraphics[width=50mm]{tkstool-create-sharedSecret4.png}
+                                \caption{Second Session Key}
+                            \end{figure}
+                            \begin{figure}[H]
+                                \centering
+                                \includegraphics[width=50mm]{tkstool-create-sharedSecret5.png}
+                                \caption{Third Session Key}
+                            \end{figure}
+                            \item tkstool utility prints out the key shares and KCV values for each of the three
+                                session keys that are generated. These are necessary to import the \textbf{sharedSecret} to TPS
+                        \end{itemize}
+                    \item TPS Configuration
+                        \begin{itemize}
+                            \item RPM: \textbf{pki-tps}
+                                \item Configuration: TPS subsystem can be configured through pkispawn using interactive or to have a
+                                    customize setup a separate file can be specified with pkispawn
+                                \item TPS subsystem can share the same tomcat instance created by the CA subsystem which allows
+                                    TPS to use same ports as that of CA
+                                \begin{figure}[H]
+                                    \centering
+                                    \includegraphics[width=80mm]{pkispawn-tps.png}
+                                    \caption{Interactive installation of TKS using pkispawn}
+                                \end{figure}
+                                \begin{figure}[H]
+                                    \centering
+                                    \includegraphics[width=80mm]{pkispawn-tps2.png}
+                                    \caption{Continuation of pkispawn}
+                                \end{figure}
+                            \item Import SharedSecret
+                                \begin{itemize}
+                                    \item Import the sharedSecret created by TKS so that TKS and TPS can wrap sensitive information
+                                    \item sharedSecret needs to be imported in to TPS NSS Database
+                                \end{itemize}
+                                \begin{figure}[H]
+                                    \centering
+                                    \includegraphics[width=80mm]{tkstool-import-sharedSecret1.png}
+                                    \caption{Get NSS Password of TPS NSS database}
+                                \end{figure}
+                                \begin{figure}[H]
+                                    \centering
+                                    \includegraphics[width=80mm]{tkstool-import-sharedSecret2.png}
+                                    \caption{tkstool to import first session key}
+                                \end{figure}
+                                \begin{figure}[H]
+                                    \centering
+                                    \includegraphics[width=80mm]{tkstool-import-sharedSecret4.png}
+                                    \caption{tkstool to import second session key}
+                                \end{figure}
+                                \begin{figure}[H]
+                                    \centering
+                                    \includegraphics[width=80mm]{tkstool-import-sharedSecret5.png}
+                                    \caption{tkstool to import third session key}
+                                \end{figure}
+                            \item TKS Instance Layout
+                                \begin{itemize}
+                                \end{itemize}
+                        \end{itemize}
                 \end{itemize}
     \end{itemize}
 \bibliography{references}
