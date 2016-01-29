@@ -1261,6 +1261,63 @@ Below is a simplified architectural model of Public Key Infrastructure using X.5
                     \item Full support (including hardware updates): September 02, 2015 – September 02, 2018
                 \end{itemize}
         \end{itemize}
+\subsection{Builds}
+    \subsubsection{Architecture}
+        \begin{itemize}
+            \item RHCS8 is supported in below architectures:
+                \begin{itemize}
+                    \item x86\_64
+                    \item i686
+                \end{itemize}
+            \item RHCS9 is supported in x86\_64 only
+        \end{itemize}
+    \subsubsection{Builds}
+        \begin{itemize}
+            \item RHCS8 Brew Tags:
+                \begin{itemize}
+                    \item certsys-8-advanced-rhel-5-candidate
+                \end{itemize}
+            \item RHCS9 Brew Tags:
+                \begin{itemize}
+                    \item pki-9-rhel-7-candidate [QE Build]
+                \end{itemize}
+            \item RHCS9 Builds
+                \begin{itemize}
+                    \item pki-core-10.2.6.9.el7pki , which provides:
+                        \begin{itemize}
+                            \item pki-ca
+                            \item pki-kra
+                            \item pki-ocsp
+                            \item pki-tks
+                            \item pki-tps
+                            \item pki-symkey
+                            \item pki-base
+                            \item pki-javadoc
+                            \item pki-tools
+                            \item pki-server
+                        \end{itemize}
+                    \item pki-console-10.2.6-1.el7pki
+                    \item redhat-pki-10.2.6-1.el7pki
+                    \item redhat-pki-theme-10.2.6-1.el7pki
+                \end{itemize}
+        \end{itemize}
+\subsection{Features}
+    Some of Key Features of RHCS9 are: 
+    \begin{itemize}
+        \item RHCS 9 continues to support separate PKI instances for all subsystems
+        \item RHCS 9 introduces the notion of a shared PKI instance:
+        \item \textit{pkispawn} CLI to install and configure new PKI subsystems, support both 
+            interactive and batch mode or combination of both.
+        \item \textit{pkidestroy} CLI to remove PKI instance
+        \item RHCS9 services are managed using systemd 
+            \begin{itemize}
+                \item systemctl [start|status|stop|restart] pki-tomcatd@$<$instance$>$.service
+            \end{itemize}
+        \item RHCS9 Process management can be done using cli \textit{pki-server} and \textit{pkidaemon}
+        \item Support for REST Web Services APIs
+        \item Web User Interface (UI) Customization
+        \item New Command-Line Interface (CLI) Utilities
+    \end{itemize}
 \subsection{Certificate Manager}
 \subsubsection{Introduction}
 Certificate Manager is the first subsystem that needs to be configured in PKI Environment, Certificate Manager can be configured as RootCA, Subordinate CA
