@@ -1,5 +1,7 @@
 \documentclass[a4paper]{article}
-\title{Workshop on Public Key Infrastructure and Red Hat Certificate System}
+\title{Workshop on Public Key Infrastructure \\
+    and \\
+Red Hat Certificate System}
 \author{\underline{Asha Akkiangady, Huzaifa Sidhpurwala, Niranjan Mallapadi}}
 \date{}
 \usepackage{color}
@@ -11,6 +13,12 @@
 \usepackage{enumitem}
 \usepackage{float}
 \usepackage{url}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true, %set true if you want colored links
+    linktoc=all,     %set to all if you want both sections and subsections linked
+    linkcolor=blue,  %choose some color if you want links to stand out
+}
 \bibliographystyle{plain}
 \definecolor{dkgreen}{rgb}{0,0.6,0}
 \definecolor{gray}{rgb}{0.5,0.5,0.5}
@@ -43,7 +51,6 @@
     linewidth=0.9\linewidth,
     xleftmargin=0.1\linewidth
 }
-
 \begin{document}
 \maketitle
 \tableofcontents
@@ -1282,7 +1289,16 @@ Certificate Manager is the first subsystem that needs to be configured in PKI En
             These system certificates reside in alias directory. List of system certs are mentioned below, All the below system certs are issued by
             CA during configuration of CA.
             \begin{itemize}
+                \item caSigningCert (\textit{Used to sign Certs})
+                \item Server-Cert (\textit{Certificate of the server having CA})
+                \item auditSigningCert (\textit{Certificate used to sign Audit messages})
+                \item subsystemCert (\textit{Subsystem Certificate})
             \end{itemize}
+        \item \textbf{/var/lib/pki/$<$instance$>$/conf:} Configuration directory containing
+            tomcat configuration, password file containing internal database(ldap) password, 
+            and NSS Database password
+        \item \textbf{/var/lib/pki/$<$instance$>$/ca/:} Contains CA Subsystem configuration 
+                file CS.cfg. This file is the main configuration file for CA subsystem
     \end{itemize}
 \subsubsection{Key Features}
     \begin{itemize}
@@ -1460,7 +1476,6 @@ Certificate Manager is the first subsystem that needs to be configured in PKI En
                         \end{itemize}
             \end{itemize}
     \end{itemize}
-\subsubsection{Instance Layout}
 \subsubsection{Exercises}
 \subsection{Key Recovery Authority}
 \subsubsection{Introduction}
