@@ -1,6 +1,6 @@
 \documentclass[a4paper]{article}
 \title{Workshop on Public Key Infrastructure \\
-    and \\
+and \\
 Red Hat Certificate System}
 \author{\underline{Asha Akkiangady, Huzaifa Sidhpurwala, Niranjan Mallapadi}}
 \date{}
@@ -15,26 +15,22 @@ Red Hat Certificate System}
 \usepackage{url}
 \usepackage{hyperref}
 \hypersetup{
-    colorlinks=true, %set true if you want colored links
-    linktoc=all,     %set to all if you want both sections and subsections linked
-    linkcolor=blue,  %choose some color if you want links to stand out
+    colorlinks=true, 
+    linktoc=all,     
+    linkcolor=blue,
 }
 \bibliographystyle{plain}
 \definecolor{dkgreen}{rgb}{0,0.6,0}
 \definecolor{gray}{rgb}{0.5,0.5,0.5}
 \definecolor{mauve}{rgb}{0.58,0,0.82}
 \lstset{frame=tb,
-  language=python,
   aboveskip=3mm,
   belowskip=3mm,
   showstringspaces=false,
   columns=flexible,
   basicstyle={\small\ttfamily},
   numbers=none,
-  numberstyle=\tiny\color{gray},
-  keywordstyle=\color{blue},
   commentstyle=\color{dkgreen},
-  stringstyle=\color{mauve},
   breaklines=true,
   breakatwhitespace=true,
   tabsize=3
@@ -42,14 +38,12 @@ Red Hat Certificate System}
 \lstdefinestyle{BashInputStyle}{
     language=bash,
     basicstyle=\small\ttfamily,
-    %numbers=left,
-    %numberstyle=\tiny,
-    %numbersep=3pt,
+    showspaces=false,
+    numberstyle=\tiny,
+    numbersep=3pt,
     frame=tb,
     columns=fullflexible,
-    backgroundcolor=\color{yellow!5},
-    linewidth=0.9\linewidth,
-    xleftmargin=0.1\linewidth
+    backgroundcolor=\color{red!5}
 }
 \begin{document}
 \maketitle
@@ -936,117 +930,117 @@ Below is a simplified architectural model of Public Key Infrastructure using X.5
 \begin{enumerate}[label*=\arabic*.]
     \item Setup: Create PKI Infrastructure using OpenSSL
         \begin{lstlisting}[style=BashInputStyle]
-            $ mkdir -p ~/pki/ca/{certs,crl,newcerts,private}
-            cd ~/pki/ca
-            chmod 700 private
-            touch index.txt
-            touch index.txt.attr
-            echo 01 > serial
-            wget https://raw.githubusercontent.com/mrniranjan/pkiworkshop/master/openssl.cnf
+$ mkdir -p ~/pki/ca/{certs,crl,newcerts,private}
+cd ~/pki/ca
+chmod 700 private
+touch index.txt
+touch index.txt.attr
+echo 01 > serial
+wget https://raw.githubusercontent.com/mrniranjan/pkiworkshop/master/openssl.cnf
         \end{lstlisting}
     \item Create a CA cert using Openssl
         \begin{lstlisting}[style=BashInputStyle]
-            $ cd ~/pki/ca
-            $ openssl genrsa -out private/ca.key.pem 2048 -config openssl.cnf
-            $ chmod 400 private/ca.key.pem
-            $ openssl req -config openssl.cnf -key private/ca.key.pem -new -x509 \
-                -days 365 -extensions v3_ca -out certs/ca.cert.pem
+$ cd ~/pki/ca
+$ openssl genrsa -out private/ca.key.pem 2048 -config openssl.cnf
+$ chmod 400 private/ca.key.pem
+$ openssl req -config openssl.cnf -key private/ca.key.pem -new -x509 \
+    -days 365 -extensions v3_ca -out certs/ca.cert.pem
         \end{lstlisting}
     \item Create a End User cert with CN=Pki User1
         \begin{lstlisting}[style=BashInputStyle]
-            # Create a private key
-            
-            $ cd ~/pki/ca
-            
-            $ openssl genrsa -out private/pkiuser1.key 2048
-            
-            # Create Certificate Request
+# Create a private key
+        
+$ cd ~/pki/ca
+        
+$ openssl genrsa -out private/pkiuser1.key 2048
+        
+# Create Certificate Request
 
-            $ openssl req -new -key private/pkiuser1.key \
-                -out pkiuser1.csr -config openssl.cnf
-            
-            $ openssl ca -config openssl.cnf -extensions usr_cert \
-                -days 375 -in pkiuser1.csr -out certs/pkiuser1.cert.pem
+$ openssl req -new -key private/pkiuser1.key \
+    -out pkiuser1.csr -config openssl.cnf
+        
+$ openssl ca -config openssl.cnf -extensions usr_cert \
+     -days 375 -in pkiuser1.csr -out certs/pkiuser1.cert.pem
         \end{lstlisting}
     \item Create a User cert \textit{cn=Pki User1} with adding extension "Authority Key Identifier" where 
         extension adds the hash of CA public key
 
         Add the below lines to \textbf{usr\_cert} section of openssl.cnf
         \begin{lstlisting}
-            basicConstraints=CA:FALSE
-            subjectKeyIdentifier=hash
-            authorityKeyIdentifier=keyid
+basicConstraints=CA:FALSE
+subjectKeyIdentifier=hash
+authorityKeyIdentifier=keyid
         \end{lstlisting}
     \item Create a user cert by adding followin extensions digitalSignature, nonRepudiation
 
         Add the below lines to \textbf{user\_cert} section of openssl.cnf
         \begin{lstlisting}
-            keyUsage = nonRepudiation, digitalSignature
+keyUsage = nonRepudiation, digitalSignature
         \end{lstlisting}
 
     \item create a server cert by adding following extensions:
 
         Add the below  lines to \textbf{server\_cert} section of openssl.cnf
         \begin{lstlisting}
-            keyUsage = keyAgreement, digitalSignature
+keyUsage = keyAgreement, digitalSignature
         \end{lstlisting}
     
     \item Create a user cert with subjectAltname having an email address
 
         Add the below lines to \textbf{user\_cert} section of openssl.cnf
         \begin{lstlisting}
-            subjectAltName = email:copy
+subjectAltName = email:copy
         \end{lstlisting}
 
     \item create a CA cert with pathlength of 2 . Verify path validation by creating multiple CAs
 
         Create a new section \textbf{v3\_usr\_ca} in openssl.cnf and create certs
         \begin{lstlisting}
-            subjectKeyIdentifier=hash
-            authorityKeyIdentifier=keyid
-            basicConstraints = critical,CA:true,pathlen:2
-            keyUsage = cRLSign, keyCertSign
+subjectKeyIdentifier=hash
+authorityKeyIdentifier=keyid
+basicConstraints = critical,CA:true,pathlen:2
+keyUsage = cRLSign, keyCertSign
         \end{lstlisting}
     
     \item Create a server cert with TLS server and client authentication
 
         Create a new section \textbf{server\_cert} in openssl.cnf with below contents
         \begin{lstlisting}
-            [ server_cert ]
-            basicConstraints=CA:FALSE
-            subjectKeyIdentifier=hash
-            authorityKeyIdentifier=keyid
-            keyUsage = digitalSignature, keyAgreement
-            extendedKeyUsage = serverAuth,clientAuth
+[ server_cert ]
+basicConstraints=CA:FALSE
+subjectKeyIdentifier=hash
+authorityKeyIdentifier=keyid
+keyUsage = digitalSignature, keyAgreement
+extendedKeyUsage = serverAuth,clientAuth
         \end{lstlisting}
 
     \item create a server cert with subject CN=server2.example.org having subjectAltName *.example.org
         
         Add below line to \textbf{server\_cert} section and create a new section \textbf{alt\_names}
         \begin{lstlisting}
-             [ server_cert ]
-             subjectAltName = @alt_names
+[ server_cert ]
+subjectAltName = @alt_names
 
-            [alt_names]
-            DNS.1 = *.example.org
+[alt_names]
+DNS.1 = *.example.org
        \end{lstlisting}
 
     \item Create a Name constraint where permitted DN attribute is "CN=pki*,OU=PKI,O=Example Org,C=US"
 
             Add below lines to \textbf{v3\_usr\_ca} 
             \begin{lstlisting}
-                [ v3_usr_ca ]
-                subjectKeyIdentifier=hash
-                authorityKeyIdentifier=keyid
-                basicConstraints = critical,CA:true,pathlen:0
-                keyUsage = cRLSign, keyCertSign
-                nameConstraints = permitted;dirName:dir_sect
+[ v3_usr_ca ]
+subjectKeyIdentifier=hash
+authorityKeyIdentifier=keyid
+basicConstraints = critical,CA:true,pathlen:0
+keyUsage = cRLSign, keyCertSign
+nameConstraints = permitted;dirName:dir_sect
 
-                [dir_sect]
-                C=IN
-                O=Example Org
-                OU=PKI
-                CN=*
+[dir_sect]
+C=IN
+O=Example Org
+OU=PKI
+CN=*
             \end{lstlisting}
     \item Creating Certificate and key databases using NSS 
         \begin{itemize}
@@ -1059,66 +1053,66 @@ Below is a simplified architectural model of Public Key Infrastructure using X.5
             
             \item create a new certificate database CA\_db
                 \begin{lstlisting}[style=BashInputStyle]
-                    $ cd /etc/pki/nssdb
-                    $ mkdir CA_db
-                    $ certutil -N -d CA_db
+$ cd /etc/pki/nssdb
+$ mkdir CA_db
+$ certutil -N -d CA_db
                 \end{lstlisting}
             \item Create a Self signed Root CA certificate, specify the subject name
                 \begin{lstlisting}[style=BashInputStyle]
-                    $ certutil -s -d CA_db -n "Example RootCA" -s "CN=Example RootCA,OU=IDMQE,O=Example Org,L=Pune,ST=Maharashtra,C=IN" -t "CT,," -x -2
+$ certutil -s -d CA_db -n "Example RootCA" -s "CN=Example RootCA,OU=IDMQE,O=Example Org,L=Pune,ST=Maharashtra,C=IN" -t "CT,," -x -2
                 \end{lstlisting}
                 Explanation of the flags:
                 \begin{lstlisting}
-                    -S specifies create a individual certificate and add it to the database
-                    -d specifies the directory of the nss database ( -d .  specifies current directory)
-                    -n "Name of the certificate"
-                    -t "CT,,"  specifies that this certificate is a Trusted CA which can issue server certficates
-                    -x use the certutil tool to generate the signature for certificate being created or added to the database rather than obtaining from separate CA
-                    -2 specifies that add basic constraint extensions,  like the certificate can be used to sign specific operations like SSL, opbject signing, SMIME
+-S specifies create a individual certificate and add it to the database
+-d specifies the directory of the nss database ( -d .  specifies current directory)
+-n "Name of the certificate"
+-t "CT,,"  specifies that this certificate is a Trusted CA which can issue server certficates
+-x use the certutil tool to generate the signature for certificate being created or added to the database rather than obtaining from separate CA
+-2 specifies that add basic constraint extensions,  like the certificate can be used to sign specific operations like SSL, opbject signing, SMIME
                 \end{lstlisting}
             \item Extract the CA certificate from CA's cert database to a file
                 \begin{lstlisting}[style=BashInputStyle]
-                    $ certutil -L -d CA_db -n "Example RootCA" -a -o rootca.crt
+$ certutil -L -d CA_db -n "Example RootCA" -a -o rootca.crt
                 \end{lstlisting}
             \item Display the contents fot the CA's Certificate database
                 \begin{lstlisting}[style=BashInputStyle] 
-                    $ certutil -L -d .
+$ certutil -L -d .
                 \end{lstlisting}
             \item Creating Certificates for Servers, For servers SSL servers or clients
                 \begin{lstlisting}[style=BashInputStyle]
-                    $ mkdir /etc/pki/nssdb/server_db
-                    $ certutil -N -d server_db
+$ mkdir /etc/pki/nssdb/server_db
+$ certutil -N -d server_db
                 \end{lstlisting}
             \item Import the new CA certificate in the Server certificate's database and we mark it as trusted CA
                 \begin{lstlisting}[style=BashInputStyle]
-                    $ certutil  -A -d server_db -n "Example CA" -t "TC,," -a -i CA_db/rootca.crt
+$ certutil  -A -d server_db -n "Example CA" -t "TC,," -a -i CA_db/rootca.crt
                 \end{lstlisting}
             Explanation of the flags:
                 \begin{lstlisting}
-                    -A Add an existing certificate to a certificate database
-                    -d server_db  (directory of certificate database)
-                    -t "TC", specifies that this certificate is a Trusted CA which can issue server certficates, client certificates. ",," specifies  uu i.e "CT,u,u" , where u specifies certificate can be used
-                    -a is ascii format
-                    -i input file
+-A Add an existing certificate to a certificate database
+-d server_db  (directory of certificate database)
+-t "TC", specifies that this certificate is a Trusted CA which can issue server certficates, client certificates. ",," specifies  uu i.e "CT,u,u" , where u specifies certificate can be used
+-a is ascii format
+-i input file
                 \end{lstlisting}
             \item Create the server certificate request, specifying the subject name for the server certificate. Generally CN should be identical to the hostname of the server
                 \begin{lstlisting}[style=BashInputStyle]
-                    $ certutil -R -d server_db  -s "CN=pki1.example.org,OU=IDMQE,O=Example Org,L=Pune,ST=Maharashtra,C=IN" -a -o server_db/pki1.req -v 12
+$ certutil -R -d server_db  -s "CN=pki1.example.org,OU=IDMQE,O=Example Org,L=Pune,ST=Maharashtra,C=IN" -a -o server_db/pki1.req -v 12
                 \end{lstlisting}
             \item Sign the Certificate from CA , and  issues a  new certificate in ascii format
 
                 \begin{lstlisting}[style=BashInputStyle]
-                    certutil -C -d CA\_db -c "Example RootCA" -a -i server_db/pki1.req -o server_db/pki1.pem -2 -6
+$ certutil -C -d CA\_db -c "Example RootCA" -a -i server_db/pki1.req -o server_db/pki1.pem -2 -6
                 \end{lstlisting}
 
             \item Import (Add) the new server certificate to the server's certificate database in the server\_db directory with appropriate nickname
                  \begin{lstlisting}[style=BashInputStyle]
-                    $ certutil -A -d server_db -n pki1 -a -i server_db\pki1.pem -t ",,"
+$ certutil -A -d server_db -n pki1 -a -i server_db\pki1.pem -t ",,"
                  \end{lstlisting}
 
             \item View the certificate
                 \begin{lstlisting}[style=BashInputStyle]
-                    certutil -V -d server_db -u V -n pki1
+$ certutil -V -d server_db -u V -n pki1
                 \end{lstlisting}
 
             \item By default the certificates that have been created using the above procedure are in pkcs12 standard to use the certificates on Applications,  You would require the following
@@ -1131,15 +1125,15 @@ Below is a simplified architectural model of Public Key Infrastructure using X.5
 
             \item Exporting the Server certifcate pki1.example.org in to file pki1.p12 
                 \begin{lstlisting}[style=BashInputStyle]
-                    $ pk12util -d server_db -o pki1.pk12 -n pki1
+$ pk12util -d server_db -o pki1.pk12 -n pki1
                 \end{lstlisting}
 
             \item The Above pki1.pk12 file has both the certificate and the key file encrypted
 
             \item For Applications which require certificate and key file to be in pem format we can use Openssl command to convert the file from \.p12 to pem format.
                 \begin{lstlisting}[style=BashInputStyle]
-                    $ openssl pkcs12 -clcerts -nokeys -in pki1.pk12 -out pki1.pem
-                    $ openssl pkcs12 -nocerts -in pki1.pk12 -out pki1.key.pem -nodes
+$ openssl pkcs12 -clcerts -nokeys -in pki1.pk12 -out pki1.pem
+$ openssl pkcs12 -nocerts -in pki1.pk12 -out pki1.key.pem -nodes
                 \end{lstlisting}
         \end{itemize}
 \end{enumerate}
@@ -1534,6 +1528,212 @@ Certificate Manager is the first subsystem that needs to be configured in PKI En
             \end{itemize}
     \end{itemize}
 \subsubsection{Exercises}
+    \begin{enumerate}[label*=\arabic*.]
+        \item Setup CS9 and RHEL7 Optional Repos
+            \begin{lstlisting}[style=BashInputStyle]
+$ cat /etc/yum.repos.d/rhcs9.repo
+
+[rhcs9]
+name=Red Hat Certificate Services 9
+baseurl=http://download.eng.bos.redhat.com/rcm-guest/puddles/RHCS/9.0.1/latest/x86_64/os/
+enabled=1   
+gpgcheck=0
+
+$ cat /etc/yum.repos.d/rhel7-optional.repo
+
+[rhel7-optional]
+name=Red Hat Enterprise Linux 7.2 Optional
+baseurl=http://download.eng.pnq.redhat.com/released/RHEL-7/7.2/Server-optional/x86_64/os/
+enabled=1
+gpgcheck=0
+            \end{lstlisting}
+
+        \item Setup Install \textbf{\textit{redhat-pki}} and \textbf{\textit{389-ds-base}} package 
+
+            \begin{lstlisting}[style=BashInputStyle]
+$ yum install redhat-pki
+$ yum install 389-ds-base
+            \end{lstlisting}
+        
+        \item Setup CA Subsystem using pkispawn in interactive mode
+            \begin{enumerate}[label*=\arabic*.]
+                \item \label{ds1} Setup Directory Server in silent mode by specify config parameters in file 
+                    \begin{lstlisting}[style=bashInputStyle]
+$vim ca-ds.inf
+[General]
+FullMachineName=pki2.example.org 
+SuiteSpotUserID=nobody
+SuiteSpotGroup=nobody
+
+[slapd]
+ServerIdentifier=Example1-RootCA
+ServerPort=389
+Suffix=dc=example,dc=org
+RootDN=cn=Directory Manager
+RootDNPwd=Secret123
+
+[admin]
+ServerAdminID=admin
+ServerAdminPwd=Secret123
+SysUser=nobody
+                    \end{lstlisting}
+                    \begin{lstlisting}[style=bashInputStyle]
+$ setup-ds.pl --silent --file=ca-ds.inf --debug
+                    \end{lstlisting}
+                \item \label{ca1}Run \textbf{\textit{pkispawn}} in interactive mode use default ports and specify Directory
+                    server information configured above. Use Tomcat Instance name as Example1-RootCA
+            \end{enumerate}
+        \item \label{ca2} Setup Subordinate CA to the CA configured in \ref{ca1} within the same security domain as RootCA
+            \begin{enumerate}[label*=\arabic*.]
+                \item Configure Directory server instance similar to \ref{ds1} but with different port and use instance name as Example1-SubCA
+                \item Create a config file with below information to setup Subordinate CA or RootCA in same security Domain
+                    \begin{lstlisting}
+$ cat subca1.inf 
+
+[DEFAULT]
+pki_instance_name=Example1-SubCA1
+pki_https_port=18443
+pki_http_port=18080
+pki_admin_password=Secret123
+pki_client_database_password=Secret123
+pki_client_pkcs12_password=Secret123
+pki_ds_password=Secret123
+pki_security_domain_password=Secret123
+pki_security_domain_hostname=pki2.example.org
+pki_security_domain_https_port=8443
+pki_security_domain_user=caadmin
+
+[Tomcat]
+pki_ajp_port=18009
+pki_tomcat_server_port=18005
+
+[CA]
+pki_subordinate=True
+pki_issuing_ca=https://pki2.example.org:8443
+pki_ca_signing_subject_dn=cn=CA Subordinate Signing,o=example.org
+pki_ds_hostname=pki2.example.org
+pki_ds_ldap_port=1389
+pki_ds_password=Secret123
+pki_ds_secure_connection=False
+                    \end{lstlisting}
+                \item  Run pkispawn with above configuration to configure SubCA.
+                    \begin{lstlisting}[style=bashInputStyle]
+$ pkispawn -s CA -f subca1.inf -vv
+                    \end{lstlisting}
+                \end{enumerate}
+            \item \label{ca3} Configure External CA signed by RootCA configured in \ref{ca1}
+                \begin{enumerate}[label*=\arabic*.]
+                    \item Configure Directory server instance similar to \ref{ds1} but with different port and use instance name as Example1-SubCA2
+                        \begin{lstlisting}
+$vim ca-ds.inf
+
+[General]
+FullMachineName=pki2.example.org 
+SuiteSpotUserID=nobody
+SuiteSpotGroup=nobody
+
+[slapd]
+ServerIdentifier=Example1-Subca2
+ServerPort=2389
+Suffix=dc=example,dc=org
+RootDN=cn=Directory Manager
+RootDNPwd=Secret123
+
+[admin]
+ServerAdminID=admin
+ServerAdminPwd=Secret123
+SysUser=nobody
+                        \end{lstlisting}            
+                    \item \label{ca3.1} Setting up External CA is 2 step process.  In the first step, a certificate signing request (CSR) 
+                    is generated for the signing certificate and ca-ext.inf contains the following text:
+                        \begin{lstlisting}
+$ vim ca-ext.inf 
+
+[DEFAULT]
+pki_instance_name=Example1-ExtCA1
+pki_https_port=30042
+pki_http_port=30044
+pki_admin_password=Secret123
+pki_client_database_password=Secret123
+pki_client_pkcs12_password=Secret123
+pki_ds_password=Secret123
+pki_security_domain_password=Secret123
+
+[Tomcat]
+pki_ajp_port=30009
+pki_tomcat_server_port=30005
+
+[CA]
+pki_external=True
+pki_external_csr_path=/tmp/ca_signing.csr
+pki_ca_signing_subject_dn=cn=CA Signing,ou=External,o=example.org
+pki_ds_hostname=pki2.example.org
+pki_ds_ldap_port=389
+pki_ds_password=Secret123
+pki_ds_secure_connection=False
+                        \end{lstlisting}
+                    \item \label{ca3.2} issue pkispawn command with the above file and this creates a certificate request at location \textit{/tmp/ca\_signing.csr}
+                        \begin{lstlisting}[style=bashInputStyle]
+$ pkispawn -s CA -f ca-ext.inf -vv
+                        \end{lstlisting}
+                    \item Get the certificate request signed by RootCA configured in \ref{ca1}
+                    \item Import CA Admin cert to firefox and Approve the request using belwo procedure:
+                        \begin{itemize}
+                            \item Access CA EE interface
+                            \item Copy the certificate request and submit using the profile:
+                                    "Manual Certificate Manager Signing Certificate Enrollment"
+                            \item From Agent interface approve the request
+                            \item Copy the Approved cert and save it to a file /tmp/ca\_signing.cert
+                            \item Also copy the CA cert chain and save it to file /tmp/ca\_cert\_chain.cert
+                        \end{itemize}
+                    \item Edit ca-ext.inf as show below
+                        \begin{lstlisting}
+[DEFAULT]
+pki_instance_name=Example1-ExtCA1
+pki_https_port=30042
+pki_http_port=30044
+pki_admin_password=Secret123
+pki_client_database_password=Secret123
+pki_client_pkcs12_password=Secret123
+pki_ds_password=Secret123
+pki_security_domain_password=Secret123
+
+[Tomcat]
+pki_ajp_port=30009
+pki_tomcat_server_port=30005
+
+
+[CA]
+pki_external=True
+pki_external_ca_cert_chain_path=/tmp/ca_cert_chain.cert
+pki_external_ca_cert_path=/tmp/ca_signing.cert
+pki_external_step_two=True
+pki_ca_signing_subject_dn=cn=CA Signing Certificate,ou=External,o=example.org
+pki_ds_hostname=pki2.example.org
+pki_ds_ldap_port=389
+pki_ds_password=Secret123
+pki_ds_secure_connection=False
+                        \end{lstlisting}
+                    \item Run pkispawn with above modified configuration file
+                        \begin{lstlisting}[style=bashInputStyle]
+$ pkispawn -s CA -f ca-ext.inf -vv 
+                        \end{lstlisting}
+                \end{enumerate}
+            \item Configure Clone of RootCA configured in \ref{ca1}
+                \begin{enumerate}[label*=\arabic*.]
+                    \item Features of clone
+                        \begin{itemize}
+                            \item A clone of subsystem is a replica of Master subsystem 
+                            \item A cloned subsystem has same set of system certs including signing cert 
+                            \item Clone acts as a load balancer
+                        \end{itemize}
+                    \item Create a Backup of RootCA's System Certs in pkcs12 format using PKCS12Export
+                        \begin{lstlisting}[style=bashInputStyle]
+$ PKCS12Export -d /var/lib/pki/Example-RootCA1/alias -p /tmp/nssdb-pass  -w /tmp/pkcs12-pass -o ca-backup.p12
+                        \end{lstlisting}
+                    \item Copy \textit{ca-backup.p12} to the Clone system
+                \end{enumerate}
+    \end{enumerate}
 \subsection{Key Recovery Authority}
 \subsubsection{Introduction}
 Key Recovery Authority is an optional subsystem that is configured to archive private keys. Key Recovery Authority
@@ -1543,6 +1743,7 @@ but can be installed as a standalone subsystem too.
 \begin{itemize}
     \item RPM: pki-kra
     \item Configuration: KRA subsystem can be configured through pkispawn using interactive or to have a customize
+
         setup a separate file can be specified with pkispawn.
 
     \item KRA subsystem can share the same tomcat instance created by the CA subsystem. This allows KRA subsystem
