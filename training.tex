@@ -10,6 +10,7 @@
 \usepackage{color}
 \usepackage{enumitem}
 \usepackage{float}
+\usepackage{url}
 \bibliographystyle{plain}
 \definecolor{dkgreen}{rgb}{0,0.6,0}
 \definecolor{gray}{rgb}{0.5,0.5,0.5}
@@ -47,7 +48,7 @@
 \maketitle
 \tableofcontents
 \section{Introduction to Public Key Cryptography}
-Before we start discussing about public key cryptography, we will in general discuss about how system communicate
+Before we start discussing about public key cryptography, we will in general discuss about how systems communicate
 and what are the various threat models that are associated with the communication medium and what are the tools to 
 overcome them.~\cite{eric}
 
@@ -55,12 +56,12 @@ overcome them.~\cite{eric}
 The most common protocol used to communicate between 2 systems is TCP/IP. TCP/IP allows information to be sent 
 from one system to another system directly or through many intermediate systems.
 
-Below are some of the threat models associated with above communcation:
+Below are some of the threat models associated with TCP/IP:
 \begin{itemize}
     \item \textbf{Eavesdropping:}
         
-        Information remains intact, But it's privacy is compromised, For example: some one could learn credit card number, record a sensitive conversation or intercept a
-        classified information.
+        Information remains intact, but it's privacy is compromised. For example: someone could retrieve the credit card number, 
+          record a sensitive conversation or intercept a classified information.
     \item \textbf{Tampering:}
 
         Information in transit is changed or replaced and then sent to the recipient. For example: Some one could alter an order of goods or change a persons resume.
@@ -900,7 +901,31 @@ Below is a simplified architectural model of Public Key Infrastructure using X.5
                         \end{itemize}
                 \end{itemize}
     \end{itemize}
-\subsection{Exercises}
+    \subsection{Mozilla NSS}
+        \subsubsection{Introduction}
+            \begin{itemize}
+                \item RHEL has 3 sets of security libraries:
+                        \begin{itemize}
+                            \item OpenSSL
+                            \item NSS
+                            \item GnuTLS
+                        \end{itemize}
+                \item Network Security Services(NSS) is a project by Mozilla which provides crypto API majorly for Mozilla's products like 
+                    \textit{Firefox}, \textit{Thunderbird}. 
+                \item Mozilla NSS provides all the Public Key cryptography stands which other implementations provide. 
+            \end{itemize}
+        \subsubsection{Architecture}
+            \begin{itemize}
+                \item With default installation of RHEL, a NSS directory \textbf{/etc/pki/nssdb} is created for system wide usage. 
+                \item Unlike openssl where certificates are created and stored in text files, certificates created by nss-tools are stored in nss database
+                \item All certificates and keys  are stored in berkelely database(or SQLite). There are 3 major files generally seen in a nss directory are:
+                    \begin{itemize}
+                        \item \textbf{key3.db} file contains a key used to encrypt and decrypt saved passwords
+                        \item \textbf{cert8.db} contains certificates
+                        \item \textbf{secmod.db} contains pathnames of pkcs\#11 modules
+                    \end{itemize}
+             \end{itemize}
+    \subsection{Exercises}
 \begin{enumerate}[label*=\arabic*.]
     \item Setup: Create PKI Infrastructure using OpenSSL
         \begin{lstlisting}[style=BashInputStyle]
@@ -999,7 +1024,7 @@ Below is a simplified architectural model of Public Key Infrastructure using X.5
             DNS.1 = *.example.org
        \end{lstlisting}
 
-        \item Create a Name constraint where permitted DN attribute is "CN=pki*,OU=PKI,O=Example Org,C=US"
+    \item Create a Name constraint where permitted DN attribute is "CN=pki*,OU=PKI,O=Example Org,C=US"
 
             Add below lines to \textbf{v3\_usr\_ca} 
             \begin{lstlisting}
@@ -1016,6 +1041,100 @@ Below is a simplified architectural model of Public Key Infrastructure using X.5
                 OU=PKI
                 CN=*
             \end{lstlisting}
+    \item Creating Certificate and key databases using NSS 
+        \begin{itemize}
+            \item Create the below structure of directories to store CA, Server and user certificates
+                \begin{itemize}
+                    \item \textbf{/etc/pki/nssdb/CA\_db} (for storing root CA certificates)
+                    \item \textbf{/etc/pki/nssdb/server\_db} (for storing certificates of servers)
+                    \item \textbf{/etc/pki/nssdb/client\_db} (for storing certificates of users)
+                \end{itemize}
+            
+            \item create a new certificate database CA\_db
+                \begin{lstlisting}[style=BashInputStyle]
+                    $ cd /etc/pki/nssdb
+                    $ mkdir CA_db
+                    $ certutil -N -d CA_db
+                \end{lstlisting}
+            \item Create a Self signed Root CA certificate, specify the subject name
+                \begin{lstlisting}[style=BashInputStyle]
+                    $ certutil -s -d CA_db -n "Example RootCA" -s "CN=Example RootCA,OU=IDMQE,O=Example Org,L=Pune,ST=Maharashtra,C=IN" -t "CT,," -x -2
+                \end{lstlisting}
+                Explanation of the flags:
+                \begin{lstlisting}
+                    -S specifies create a individual certificate and add it to the database
+                    -d specifies the directory of the nss database ( -d .  specifies current directory)
+                    -n "Name of the certificate"
+                    -t "CT,,"  specifies that this certificate is a Trusted CA which can issue server certficates
+                    -x use the certutil tool to generate the signature for certificate being created or added to the database rather than obtaining from separate CA
+                    -2 specifies that add basic constraint extensions,  like the certificate can be used to sign specific operations like SSL, opbject signing, SMIME
+                \end{lstlisting}
+            \item Extract the CA certificate from CA's cert database to a file
+                \begin{lstlisting}[style=BashInputStyle]
+                    $ certutil -L -d CA_db -n "Example RootCA" -a -o rootca.crt
+                \end{lstlisting}
+            \item Display the contents fot the CA's Certificate database
+                \begin{lstlisting}[style=BashInputStyle] 
+                    $ certutil -L -d .
+                \end{lstlisting}
+            \item Creating Certificates for Servers, For servers SSL servers or clients
+                \begin{lstlisting}[style=BashInputStyle]
+                    $ mkdir /etc/pki/nssdb/server_db
+                    $ certutil -N -d server_db
+                \end{lstlisting}
+            \item Import the new CA certificate in the Server certificate's database and we mark it as trusted CA
+                \begin{lstlisting}[style=BashInputStyle]
+                    $ certutil  -A -d server_db -n "Example CA" -t "TC,," -a -i CA_db/rootca.crt
+                \end{lstlisting}
+            Explanation of the flags:
+                \begin{lstlisting}
+                    -A Add an existing certificate to a certificate database
+                    -d server_db  (directory of certificate database)
+                    -t "TC", specifies that this certificate is a Trusted CA which can issue server certficates, client certificates. ",," specifies  uu i.e "CT,u,u" , where u specifies certificate can be used
+                    -a is ascii format
+                    -i input file
+                \end{lstlisting}
+            \item Create the server certificate request, specifying the subject name for the server certificate. Generally CN should be identical to the hostname of the server
+                \begin{lstlisting}[style=BashInputStyle]
+                    $ certutil -R -d server_db  -s "CN=pki1.example.org,OU=IDMQE,O=Example Org,L=Pune,ST=Maharashtra,C=IN" -a -o server_db/pki1.req -v 12
+                \end{lstlisting}
+            \item Sign the Certificate from CA , and  issues a  new certificate in ascii format
+
+                \begin{lstlisting}[style=BashInputStyle]
+                    certutil -C -d CA\_db -c "Example RootCA" -a -i server_db/pki1.req -o server_db/pki1.pem -2 -6
+                \end{lstlisting}
+
+            \item Import (Add) the new server certificate to the server's certificate database in the server\_db directory with appropriate nickname
+                 \begin{lstlisting}[style=BashInputStyle]
+                    $ certutil -A -d server_db -n pki1 -a -i server_db\pki1.pem -t ",,"
+                 \end{lstlisting}
+
+            \item View the certificate
+                \begin{lstlisting}[style=BashInputStyle]
+                    certutil -V -d server_db -u V -n pki1
+                \end{lstlisting}
+
+            \item By default the certificates that have been created using the above procedure are in pkcs12 standard to use the certificates on Applications,  You would require the following
+                \begin{itemize}
+                    \item RootCA's Certificate (public key)
+                    \item Server Certificate (Certificate and key). The Server's participating in SSL communication should have the certificates and key file
+                \end{itemize}
+
+            \item nss-tools comes with pk12util command , pk12util is a pkcs\#12 Tool allowing to share certificates. The tool supports importing certificates and keys from pkcs\#12 files in to NSS or export them and also list certificates and keys in such files
+
+            \item Exporting the Server certifcate pki1.example.org in to file pki1.p12 
+                \begin{lstlisting}[style=BashInputStyle]
+                    $ pk12util -d server_db -o pki1.pk12 -n pki1
+                \end{lstlisting}
+
+            \item The Above pki1.pk12 file has both the certificate and the key file encrypted
+
+            \item For Applications which require certificate and key file to be in pem format we can use Openssl command to convert the file from \.p12 to pem format.
+                \begin{lstlisting}[style=BashInputStyle]
+                    $ openssl pkcs12 -clcerts -nokeys -in pki1.pk12 -out pki1.pem
+                    $ openssl pkcs12 -nocerts -in pki1.pk12 -out pki1.key.pem -nodes
+                \end{lstlisting}
+        \end{itemize}
 \end{enumerate}
 \section{Common Terms Used in RHCS}
 \begin{itemize}
@@ -1046,18 +1165,95 @@ Below is a simplified architectural model of Public Key Infrastructure using X.5
         Certificate Request Message Format is a syntax use to convey a request for a certificate to Certificate
         Authority (CA). This request contains a public key, Proof of Possession(POP), Additional registration informtion
         combined with pop and public key.\cite{4211}
-    \item PKCS10
-    \item FIPS
-    \item FIPS-140
-    \item Token
+    \item PKCS10 
+        is a standard which specifies syntax for Certificate Request. A certificate request consists of: ~\cite{2986}
         \begin{itemize}
-            \item Internal Token
-            \item External Token
+            \item Dishtinguished Name
+            \item Public Key
+            \item Optional Set of attributes
         \end{itemize}
+    \item FIPS
+        Federal Information Processing Standards (FIPS) are standards to be followed by US Federal Govt for use in system by non-military govt. agencies and contractors.  
+    \item FIPS-140
+        standard specifies the security requirements for a cryptographic module utilized within a security system protecting sensitive information in computer and telecommunication systems. US national Institute of Standards and Technology(NIST) publishes FIPS series of standards for the implementation of Cryptographic modules. Cryptographic Module Validation Program (CMVP) validates cryptographic modules to Federal Information Processing Standard (FIPS) 140-2 and other cryptography based standards. 
+
+        FIPS 140-2 is primarily of interest to U.S., Canadian, and UK government agencies which have formal policies requiring use of FIPS 140 validated cryptographic software. ~\cite{nist:fips}
+
+        Products that have received a NIST/CSE validation are listed on the Cryptographic Module Validation List : http://csrc.nist.gov/groups/STM/cmvp/documents/140-1/140val-all.htm
     \item HSM
+        is a physical computing device that safeguards and manages digital keys for strong authentication and provides cryptoprocessing. HSM's are used in PKI environment. HSM's are designed to protect keys(private). A private key in HSM cannot be extracted.     
 \end{itemize}
 \section{Red Hat Certificate System}
+    \begin{itemize}
+        \item RHCS is an Enterprise PKI implementation providing various PKI operations like Enrollment, renewal, revocation
+        \item Provides Certificate Lifecycle Management  like CA, Key archival, smartcard management. 
+        \item Key Features:
+            \begin{itemize}
+                \item Certificate issuance, revocation, and retrieval 
+                \item Certificate Revocation List (CRL) generation and publishing
+                \item Certificate profiles
+                \item Encryption key archival and recovery 
+                \item Smartcard lifecycle management 
+            \end{itemize}
+    \end{itemize}
 \subsection{Overview}
+    RHCS Comprises of 5 subsystems each providing a set of PKI operations:
+    \begin{itemize}
+        \item Certificate Manager:Also called Certificate Authority is the core of PKI.
+            \begin{itemize}
+                \item Issues certs
+                \item Revokes Certs
+                \item Publishes CRL
+                \item Establishes Security Domain of trusted subsystems
+            \end{itemize}
+        \item Key Recovery Authority(KRA):It's also called Data Recovery Manager(DRM) 
+            \begin{itemize}
+                \item where private key is archived for certificates which have been created based on unique pair. 
+                \item KRA archives the key pair and can later be retrieved if the private key of the certificate is lost
+            \end{itemize}
+        \item Online Certificate Status Protcol(OCSP): 
+            \begin{itemize}
+                \item OCSP Verifies certificate is valid or not expired
+            \end{itemize}
+        \item Token Processing System(TPS)
+            \begin{itemize}
+                \item TPS interacts with smartcard and manages keys and certificates on those tokens. TPS to interact
+                    with Smartcard it takes help of Token Key service which creates keys to interact with smartcard securely
+            \end{itemize}
+        \item Token key System(TKS)
+            \begin{itemize}
+                \item TKS derives keys based on the token CCID, private information,and a defined algorithm. 
+                    These derived keys are used by the TPS to format tokens and enroll, or process, certificates on the token.
+            \end{itemize}
+        \item Enterprise Security Client(ESC)
+            \begin{itemize}
+                \item ESC is software installed on client systems which have tokens connected to it.
+                \item ESC is used to enroll, format smartcard 
+                \item TPS talks to ESC to insert certificates in to smartcards.
+            \end{itemize}
+    \end{itemize}
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=80mm]{rhcs-subsystem-overview.png}
+        \caption{RHCS Subsystems ~\cite{RedHat:CSoverview}}
+    \end{figure}
+\subsection{Version}
+    \subsubsection{Older Versions}
+        \begin{itemize}
+            \item Red Hat Certificate System 7.2 (2006) 
+            \item Red Hat Certificate System 7.3 (2007)
+        \end{itemize}
+    \subsubsection{Current Version}
+        \begin{itemize}
+            \item Red Hat Certificate System 8 (2009) 
+                \begin{itemize}
+                    \item Support Status: Maitainance Support July 22, 2014 – July 03, 2017 
+                \end{itemize}
+            \item Red Hat Certificate System 9 (2015)
+                \begin{itemize}
+                    \item Full support (including hardware updates): September 02, 2015 – September 02, 2018
+                \end{itemize}
+        \end{itemize}
 \subsection{Certificate Manager}
 \subsubsection{Introduction}
 Certificate Manager is the first subsystem that needs to be configured in PKI Environment, Certificate Manager can be configured as RootCA, Subordinate CA
@@ -1077,6 +1273,16 @@ Certificate Manager is the first subsystem that needs to be configured in PKI En
             \includegraphics[width=65mm]{pkispawn-ca.png}
             \caption{Configuring CA subsystem using pkispawn}
         \end{figure}
+    \end{itemize}
+\subsubsection{Installation Layout}
+    \begin{itemize}
+        \item \textbf{/var/lib/pki/$<$instanceName$>$}: <Instance> here is the tomcat Instance name given during configuring subsystem
+        \item \textbf{/var/lib/pki/$<$instance$>$/alias}: Is the NSS Database of the system where the subsystem system certs are stored.
+            When a subsystem is configured, Certain certificates are created for certain tasks like audit signing, OCSP Signing, CA Signing cert.
+            These system certificates reside in alias directory. List of system certs are mentioned below, All the below system certs are issued by
+            CA during configuration of CA.
+            \begin{itemize}
+            \end{itemize}
     \end{itemize}
 \subsubsection{Key Features}
     \begin{itemize}
