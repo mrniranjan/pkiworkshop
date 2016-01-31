@@ -55,7 +55,7 @@ overcome them.~\cite{eric}
 
 \textbf{Example1:}
 The most common protocol used to communicate between 2 systems is TCP/IP. TCP/IP allows information to be sent 
-from one system to another system directly or through many intermediate systems.
+from one system to another system directly or through many intermediate systems.~\cite{eric}
 
 Below are some of the threat models associated with TCP/IP:
 \begin{itemize}
@@ -128,7 +128,7 @@ An attack where attacker doesn't know the plaintext , it's called \textit{``ciph
 \textit{Ex:} If the attacker knows that plaintext is ASCII , so any decryption which uses non-ascii characters must be using the wrong key.
 \subsubsection{Symmetric Encryption}
 When Sender and recipient share the same key(which must be kept secret) is referred to as \textit{Symmetric Key Cryptograph} or also
-referred to as \textit{Secret Key Cryptography} as opposed to \textit{Public Key Cryptography}citation required?.
+referred to as \textit{Secret Key Cryptography} as opposed to \textit{Public Key Cryptography}~\cite{eric}.
 \begin{figure}[h]
     \centering
     \includegraphics[width=50mm]{symmetric.png}
@@ -152,7 +152,7 @@ referred to as \textit{Secret Key Cryptography} as opposed to \textit{Public Key
         \begin{figure}[h]
         \centering
         \includegraphics[width=80mm]{digitalsignature.png}
-        \caption{Digital Signature}
+        \caption{Digital Signature ~\cite{RedHat:CSoverview}} 
         \end{figure}
     \item There's a problem with the above method, how would the parties get each other's public-key ? 
         If we send the keys through electronically, then the attacker an tamper, while they are in transit to the receiver.
@@ -176,10 +176,10 @@ Property of the message digest:
 Consider \textit{Alice} and \textit{Bob} share a key and Alice wants to send a message to \textit{Bob}. The message can be encrypted, 
 and send it across to \textit{Bob}, but we are not sure that the encrypted message would be tampered and also not sure 
 if \textit{Alice} was the one who sent the encrypted message.  So we use a new tool called \textit{MAC} . \textit{MAC} is a digest algorithm,
-but with a key, So the MAC is dependent on both the key and the message being MACed.
+but with a key, So the MAC is dependent on both the key and the message being MACed ~\cite{eric}.
 \subsection{Algorithms}
 \begin{itemize}
-    \item \textbf{RSA}
+    \item \textbf{RSA ~\cite{eric}}
         \begin{itemize}
             \item RSA is the public-key algorithm widely used in Public-key Cryptography
             \item Invented by Ron-Rivest, Adi Shamir and Len Adelman (RSA). Each user has a public-key and a private-key
@@ -199,7 +199,7 @@ but with a key, So the MAC is dependent on both the key and the message being MA
                     \item RSA assumes that M is a number,  So we need a convention to convert strings in to numbers.
                 \end{itemize}
         \end{itemize}
-    \item \textbf{DSA}
+    \item \textbf{DSA ~\cite{eric}}
         \begin{itemize}
             \item National Institute of standards and technology (NIST) published the Digital signature
                 algorithm in the Digital signature standard.  
@@ -231,7 +231,7 @@ but with a key, So the MAC is dependent on both the key and the message being MA
             \item SSL/TLS protocol use RC4 with 128-bit (16 bytes) key length
             \item RC4 is extremely fast. 
         \end{itemize}
-    \item \textbf{Block Ciphers}
+    \item \textbf{Block Ciphers}~\cite{eric}
         \begin{itemize}
             \item \textbf{DES}
                 \begin{itemize}
@@ -265,24 +265,24 @@ but with a key, So the MAC is dependent on both the key and the message being MA
                             \item That can be accomplished by XORing previous Cipher text block C[i-1]] Xor M[i] before encryption
                          \end{itemize}
                     \end{itemize}
-            \item \textbf{3DES}
+                \item \textbf{3DES}~\cite{eric}
                 \begin{itemize}
                     \item Run the DES algorithm 3 times.
                     \item It's  used in Encrypt-Decrypt-Encrypt (EDE mode).
                     \item Message is encrypted with key-1, Decrypted with Key-2 and Encrypted with key-3.  
                     \item 3DES is 3 times slower than DES.
                 \end{itemize}
-            \item \textbf{RC2}
+            \item \textbf{RC2}~\cite{eric}
                 \begin{itemize}
                     \item RC2 is a block cipher invented by Ron Rivest,
                     \item RC2 is a variable-length cipher , with variable length key.  It uses 64 bit block size.
                 \end{itemize}
-            \item \textbf{AES}
+            \item \textbf{AES}~\cite{eric}
                 \begin{itemize}
                     \item Advanced Encryption Standard uses a minimum of 128 bits and 3 key lengths, 128. 192 and 256 bits
                 \end{itemize}
         \end{itemize}
-    \item \textbf{Digest Algorithms}
+    \item \textbf{Digest Algorithms}~\cite{eric}
         \begin{itemize}
             \item The two most popular Digest Algorithms are MD5, which was designed by Ron Rivest and SHA-1 by NIST.
             \item MD5 and SHA share a common ancestor MD4 also designed by Ron Rivest
@@ -377,7 +377,7 @@ but with a key, So the MAC is dependent on both the key and the message being MA
                 \item \begin{figure}[ht!]
                         \centering
                         \includegraphics[width=50mm]{ssldatafrag.png}
-                        \caption{ssl data fragment and protection}
+                        \caption{ssl data fragment and protection ~\cite{eric}}
                       \end{figure}
                 \item The record header provides the information for the other end to interpret the record. It contains:
                     \begin{itemize}
@@ -395,7 +395,7 @@ Below is a simplified architectural model of Public Key Infrastructure using X.5
 \begin{figure}[ht!]
     \centering
     \includegraphics[width=70mm]{pki-architectural-model.png}
-    \caption{PKI Architectural Model}
+    \caption{PKI Architectural Model ~\cite{5280}}
 \end{figure}
 \subsection{Common Terms used in PKI}
 \begin{itemize}
@@ -1529,6 +1529,13 @@ Certificate Manager is the first subsystem that needs to be configured in PKI En
     \end{itemize}
 \subsubsection{Exercises}
     \begin{enumerate}[label*=\arabic*.]
+        \item Require 2 RHEL7/Fedora 23 systems , setup hostnames as specified below and make setup hostname
+            resolutions through \textit{/etc/hosts}:
+            \begin{lstlisting}
+pki1.example.org
+pki2.example.org
+            \end{lstlisting}
+        \item Configure vncserver on both systems
         \item Setup CS9 and RHEL7 Optional Repos
             \begin{lstlisting}[style=BashInputStyle]
 $ cat /etc/yum.repos.d/rhcs9.repo
@@ -1620,6 +1627,11 @@ pki_ds_secure_connection=False
                     \begin{lstlisting}[style=bashInputStyle]
 $ pkispawn -s CA -f subca1.inf -vv
                     \end{lstlisting}
+                \item Verify Subsystem status using systemctl and pkidaemon commands
+                    \begin{lstlisting}[style=bashInputStyle]
+$ systemctl status pki-tomcatd@Example-SubCA1
+$ pkidaemon status tomcat Example1-SubCA1
+                    \end{lstlisting}
                 \end{enumerate}
             \item \label{ca3} Configure External CA signed by RootCA configured in \ref{ca1}
                 \begin{enumerate}[label*=\arabic*.]
@@ -1676,6 +1688,11 @@ pki_ds_secure_connection=False
                         \begin{lstlisting}[style=bashInputStyle]
 $ pkispawn -s CA -f ca-ext.inf -vv
                         \end{lstlisting}
+                    \item Verify subsystem status using systemctl and pkidaemon commands
+                    \begin{lstlisting}[style=bashInputStyle]
+$ systemctl status pki-tomcatd@Example-SubCA1
+$ pkidaemon status tomcat Example1-SubCA1
+                    \end{lstlisting}
                     \item Get the certificate request signed by RootCA configured in \ref{ca1}
                     \item Import CA Admin cert to firefox and Approve the request using belwo procedure:
                         \begin{itemize}
@@ -1718,6 +1735,11 @@ pki_ds_secure_connection=False
                         \begin{lstlisting}[style=bashInputStyle]
 $ pkispawn -s CA -f ca-ext.inf -vv 
                         \end{lstlisting}
+                    \item Verify subsystem status using systemctl and pkidaemon commands
+                    \begin{lstlisting}[style=bashInputStyle]
+$ systemctl status pki-tomcatd@Example-ExtCA1
+$ pkidaemon status tomcat Example1-ExtCA1
+                    \end{lstlisting}
                 \end{enumerate}
             \item Configure Clone of RootCA configured in \ref{ca1}
                 \begin{enumerate}[label*=\arabic*.]
@@ -1729,10 +1751,159 @@ $ pkispawn -s CA -f ca-ext.inf -vv
                         \end{itemize}
                     \item Create a Backup of RootCA's System Certs in pkcs12 format using PKCS12Export
                         \begin{lstlisting}[style=bashInputStyle]
-$ PKCS12Export -d /var/lib/pki/Example-RootCA1/alias -p /tmp/nssdb-pass  -w /tmp/pkcs12-pass -o ca-backup.p12
+$ PKCS12Export -d /var/lib/pki/Example-RootCA1/alias -p /tmp/nssdb-pass  -w /tmp/pkcs12-pass -o ca_backup_keys.p12
                         \end{lstlisting}
                     \item Copy \textit{ca-backup.p12} to the Clone system
-                \end{enumerate}
+                    \item On clone system setup Directory Server using silent mode
+
+ca-clone-ds.inf:                         
+                        \begin{lstlisting}
+[General]
+FullMachineName=pki3.example.org
+SuiteSpotUserID=nobody
+SuiteSpotGroup=nobody
+
+[slapd]
+ServerIdentifier=Example1-Clone-CA1
+ServerPort=389
+Suffix=dc=example,dc=org
+RootDN=cn=Directory Manager
+RootDNPwd=Secret123
+
+[admin]
+ServerAdminID=admin
+ServerAdminPwd=Secret123
+SysUser=nobody                       
+                        \end{lstlisting}
+                    \item Setup Directory Server using \textit{setup-ds.pl} command
+                        \begin{lstlisting}[style=bashInputStyle]
+$ setup-ds.pl --silent --file=ca-clone-ds.inf --debug                    
+                        \end{lstlisting}
+
+                    \item Setup Clone using pkispawn
+                    
+                    \textbf{Note:} Clone configuration of RHCS subsystems cannot be done in interactive mode, hence requires
+                    an input file containing all configuration parameters to be passed to pkispawn.
+
+ca-clone-inst.inf:                    
+                    \begin{lstlisting}
+[DEFAULT]
+pki_instance_name=Example1-CloneCA
+pki_https_port=8443
+pki_http_port=8080
+
+#Admin
+pki_admin_password=Secret123
+
+#client Dir
+pki_client_database_password=Secret123
+pki_client_pkcs12_password=Secret123
+pki_client_dir=/opt/Foobar1-CloneCA
+
+#Security Domain
+pki_security_domain_password=Secret123
+pki_security_domain_hostname=pki2.example.org
+pki_security_domain_https_port=8443
+pki_security_domain_user=caadmin
+
+[Tomcat]
+pki_ajp_port=8009
+pki_tomcat_server_port=8005
+
+[CA]
+pki_clone=True
+pki_clone_pkcs12_password=Secret123
+pki_clone_pkcs12_path=/tmp/ca_backup_keys.p12
+pki_clone_replicate_schema=True
+pki_clone_uri=https://pki2.example.org:8443
+#Directory Server
+pki_ds_password=Secret123
+pki_ds_hostname=pki3.example.org
+pki_ds_ldap_port=389
+pki_ds_base_dn=o=Example1-RootCA-CA
+pki_clone_replication_master_port=389
+pki_clone_replication_clone_port=389
+pki_ds_secure_connection=False
+pki_ds_remove_data=True
+                    \end{lstlisting}
+                    \begin{lstlisting}[style=bashInputStyle]
+$ pkispawn -s CA -f ca-clone-inst.inf -vv 
+                    \end{lstlisting}
+            \end{enumerate}
+        \item Configure a Custom profile \textbf{\underline{caFoobarSanCert}} which generates cert with user provided SAN from CSR
+                        along with CN from Subject DN
+            \begin{enumerate}[label*=\arabic*.]
+                \item Access pkiconsole of RootCA configured in \ref{ca1} using caadmin user
+                    \begin{lstlisting}[style=bashInputStyle]
+$ pkiconsole https://pki1.example.org:8443/ca                     
+                    \end{lstlisting}
+                \item From the \textbf{Configuration} tab expand \textbf{certificate Manager} and then select \textbf{certificate profiles}
+                \item To create a new certificate profile, click \textbf{Add}.
+                \item In the Select Certificate Profile Plugin Implementation window, 
+                    select \textbf{Server Certificate Enrollment Profile}
+                \item Fill in the profile information in the Certificate Profile Instance Editor.
+                    \begin{itemize}
+                        \item Certificate Profile Instance ID: caFoobarSanCert
+                        \item Certificate Profile Name: Manual Server Certificate with SAN from CSR
+                        \item Certificate Description: This certificate profile is for enrolling server certificate
+                        \item Certificate Profile Authentication: None 
+                            \begin{itemize}
+                                \item Note: This sets the authentication method. An automated authentication is set by providing the 
+                                instance ID for the authentication instance. If this field is blank, the authentication method 
+                                is agent-approved enrollment; the request is submitted to the request queue of the agent services 
+                                interface
+                            \end{itemize}
+                        \item Click OK. The plug-in editor closes, and the new profile is listed in the profiles tab.
+                        \item Configure the policies, inputs, and outputs for the new profile. Select the new profile from the list,
+                            and click \textbf{Edit/View}
+                        \item Set up policies in the Policies tab of the Certificate Profile Rule Editor window.
+                            The Policies tab lists policies that are already set by default for the profile type.
+                                \begin{itemize}
+                                    \item To add a policy, click Add.
+                                    \item Choose the \textbf{User Supplied Extension Default}  from the Default field, 
+                                        choose the constraint \textbf{Subject Name Constraint} and click OK
+                                    \item Select \textbf{No Constraint}.
+                                    \item In the profile editor 
+                                        \begin{itemize}
+                                            \item Policy Id: p6
+                                            \item Under Default tab->userExtOID: 2.5.29.17
+                                            \item click Ok
+                                        \end{itemize}
+                                    \item Select \textbf{Subject Alternative Name Extension Default} and select \textbf{No Constraint}
+                                        \begin{itemize}
+                                            \item Policy Id: p7
+                                            \item Under Default tab
+                                                \begin{itemize}
+                                                    \item subjAltNameExtCritical: false
+                                                    \item subjAltNameNumGNs: 1
+                                                    \item subjAltExtType\_0:  DirectoryName
+                                                    \item subjAltExtPattern\_0: \$request.req\_subject\_name.cn\$
+                                                    \item sjbjAltExtGNEnable\_0: true
+                                                \end{itemize}
+                                        \end{itemize}
+                                    \item Select \textbf{Extended Key usage Extension} and select \textbf{No Extension}
+                                        \begin{itemize}
+                                            \item Policy Id: p8
+                                            \item Under Default tab
+                                                \begin{itemize}
+                                                    \item exKeyUsageCrtical: false
+                                                    \item exkeyUsageOIDs: 1.3.6.1.5.5.7.3.2.1,1.3.6.1.5.5.7.3.4
+                                                \end{itemize}
+                                        \end{itemize}
+                                    \item Using \textbf{openssl} generate CSR for server "www.example.org" with SubjectAltName extensions and specifying alternat
+                                        hostnames "host1.example.org", host2.example.org"
+                                        \begin{itemize}
+                                            \item Alternatively you could Download CSR from below url
+                                        \end{itemize}
+                                    \end{itemize}
+                        \item Enable the profile from Agent Interface
+                            \begin{itemize}
+                                \item Select Manage Certificate Profiles
+                                \item Select "Manual Server Certificate with SAN from CSR"
+                                \item Click on "Approve"
+                            \end{itemize}
+                    \end{itemize}
+            \end{enumerate}
     \end{enumerate}
 \subsection{Key Recovery Authority}
 \subsubsection{Introduction}
