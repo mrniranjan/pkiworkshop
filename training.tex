@@ -38,9 +38,10 @@ Red Hat Certificate System}
 \lstdefinestyle{BashInputStyle}{
     language=bash,
     basicstyle=\small\ttfamily,
+    showstringspaces=false,
     showspaces=false,
     numberstyle=\tiny,
-    numbersep=3pt,
+    numbersep=1pt,
     frame=tb,
     columns=fullflexible,
     backgroundcolor=\color{red!5}
@@ -1568,7 +1569,7 @@ $ yum install 389-ds-base
                     \begin{lstlisting}[style=bashInputStyle]
 $vim ca-ds.inf
 [General]
-FullMachineName=pki2.example.org 
+FullMachineName=pki1.example.org 
 SuiteSpotUserID=nobody
 SuiteSpotGroup=nobody
 
@@ -1606,7 +1607,7 @@ pki_client_database_password=Secret123
 pki_client_pkcs12_password=Secret123
 pki_ds_password=Secret123
 pki_security_domain_password=Secret123
-pki_security_domain_hostname=pki2.example.org
+pki_security_domain_hostname=pki1.example.org
 pki_security_domain_https_port=8443
 pki_security_domain_user=caadmin
 
@@ -1616,9 +1617,9 @@ pki_tomcat_server_port=18005
 
 [CA]
 pki_subordinate=True
-pki_issuing_ca=https://pki2.example.org:8443
+pki_issuing_ca=https://pki1.example.org:8443
 pki_ca_signing_subject_dn=cn=CA Subordinate Signing,o=example.org
-pki_ds_hostname=pki2.example.org
+pki_ds_hostname=pki1.example.org
 pki_ds_ldap_port=1389
 pki_ds_password=Secret123
 pki_ds_secure_connection=False
@@ -1640,12 +1641,12 @@ $ pkidaemon status tomcat Example1-SubCA1
 $vim ca-ds.inf
 
 [General]
-FullMachineName=pki2.example.org 
+FullMachineName=pki1.example.org 
 SuiteSpotUserID=nobody
 SuiteSpotGroup=nobody
 
 [slapd]
-ServerIdentifier=Example1-Subca2
+ServerIdentifier=Example1-ExtCA1
 ServerPort=2389
 Suffix=dc=example,dc=org
 RootDN=cn=Directory Manager
@@ -1679,8 +1680,8 @@ pki_tomcat_server_port=30005
 pki_external=True
 pki_external_csr_path=/tmp/ca_signing.csr
 pki_ca_signing_subject_dn=cn=CA Signing,ou=External,o=example.org
-pki_ds_hostname=pki2.example.org
-pki_ds_ldap_port=389
+pki_ds_hostname=pki1.example.org
+pki_ds_ldap_port=2389
 pki_ds_password=Secret123
 pki_ds_secure_connection=False
                         \end{lstlisting}
@@ -1726,8 +1727,8 @@ pki_external_ca_cert_chain_path=/tmp/ca_cert_chain.cert
 pki_external_ca_cert_path=/tmp/ca_signing.cert
 pki_external_step_two=True
 pki_ca_signing_subject_dn=cn=CA Signing Certificate,ou=External,o=example.org
-pki_ds_hostname=pki2.example.org
-pki_ds_ldap_port=389
+pki_ds_hostname=pki1.example.org
+pki_ds_ldap_port=2389
 pki_ds_password=Secret123
 pki_ds_secure_connection=False
                         \end{lstlisting}
@@ -1759,7 +1760,7 @@ $ PKCS12Export -d /var/lib/pki/Example-RootCA1/alias -p /tmp/nssdb-pass  -w /tmp
 ca-clone-ds.inf:                         
                         \begin{lstlisting}
 [General]
-FullMachineName=pki3.example.org
+FullMachineName=pki2.example.org
 SuiteSpotUserID=nobody
 SuiteSpotGroup=nobody
 
@@ -1802,7 +1803,7 @@ pki_client_dir=/opt/Foobar1-CloneCA
 
 #Security Domain
 pki_security_domain_password=Secret123
-pki_security_domain_hostname=pki2.example.org
+pki_security_domain_hostname=pki1.example.org
 pki_security_domain_https_port=8443
 pki_security_domain_user=caadmin
 
@@ -1815,10 +1816,10 @@ pki_clone=True
 pki_clone_pkcs12_password=Secret123
 pki_clone_pkcs12_path=/tmp/ca_backup_keys.p12
 pki_clone_replicate_schema=True
-pki_clone_uri=https://pki2.example.org:8443
+pki_clone_uri=https://pki1.example.org:8443
 #Directory Server
 pki_ds_password=Secret123
-pki_ds_hostname=pki3.example.org
+pki_ds_hostname=pki2.example.org
 pki_ds_ldap_port=389
 pki_ds_base_dn=o=Example1-RootCA-CA
 pki_clone_replication_master_port=389
@@ -1894,6 +1895,9 @@ $ pkiconsole https://pki1.example.org:8443/ca
                                         hostnames "host1.example.org", host2.example.org"
                                         \begin{itemize}
                                             \item Alternatively you could Download CSR from below url
+                                            \begin{lstlisting}
+https://github.com/mrniranjan/pkiworkshop/blob/master/san.csr
+                                            \end{lstlisting}
                                         \end{itemize}
                                     \end{itemize}
                         \item Enable the profile from Agent Interface
@@ -1902,8 +1906,61 @@ $ pkiconsole https://pki1.example.org:8443/ca
                                 \item Select "Manual Server Certificate with SAN from CSR"
                                 \item Click on "Approve"
                             \end{itemize}
+                        \item From EE page Slect profile "Manual Server Certificate with SAN from CSR" and submit the CSR
+                        \item From Agent page Approve the certificate request
                     \end{itemize}
-            \end{enumerate}
+                    \end{enumerate}
+        \item Use \textbf{pki} cli and try different options
+            \begin{enumerate}[label*=\arabic*.]
+                \item Create a NSS database using pki client cli with password 'Secret123'
+                    \begin{lstlisting}[style=bashInputStyle]
+$ pki -d /opt/rhqa_pki -c 'Secret123' client-init                                    
+                    \end{lstlisting}
+                \item Import CA Admin Cert of RootCA(\ref{ca1}) to /opt/rhqa\_pki
+                    \begin{lstlisting}[style=bashInputStyle]
+$ pki -d /opt/rhqa_pki -c 'Secret123' client-cert-import --pkcs12 /root/.dogtag/Example1-RootCA/ca_admin_cert.p12  --pkcs12-password Secret123                                    
+                    \end{lstlisting}
+                \item Import CA Cert of RootCA(\ref{ca1})
+                    \begin{lstlisting}[style=bashInputStyle]
+$ pki -d /opt/rhqa_pki1 -c 'Secret123' -h pki1.example.org -p 8080 client-cert-import "RootCA" --ca-server                                    
+                    \end{lstlisting}
+                \item Submit a certificate request for user "foo" with subject DN:
+                    \begin{lstlisting}
+UID=foo,E=foo@example.org,CN=Foo User1,OU=IDMQE,O=Example Org
+                    \end{lstlisting}
+                    \begin{lstlisting}[style=bashInputStyle]
+$ pki -d /opt/rhqa_pki -c 'Secret123' \
+    -h pki1.example.org -p 8080 client-cert-request \
+    "UID=foo,E=foo@example.org,CN=Foo User1,O=Example Org" 
+                    \end{lstlisting}
+                \item Approve the Certificate request using Admin Cert
+                    \begin{lstlisting}[style=bashInputStyle]
+$ pki -d /opt/rhqa_pki -c 'Secret123' -h pki1.example.org\
+    -p 8080 -n "PKI Administrator for example.org" \
+    cert-request-review 12 --action approve
+-------------------------------
+Approved certificate request 12
+-------------------------------
+  Request ID: 12
+  Type: enrollment
+  Request Status: complete
+  Operation Result: success
+  Certificate ID: 0xc
+                    \end{lstlisting}
+                \item Revoke a certificate with reason "Certificate On Hold"
+                    \begin{lstlisting}[style=bashInputStyle]
+$ pki -d /opt/rhqa_pki -c 'Secret123' \
+    -h pki1.example.org -p 8080 \
+    -n "PKI Administrator for example.org" \
+    cert-revoke 0xc --reason "Certificate_Hold"
+                    \end{lstlisting}
+            \item Verify the status of the certificate
+                \begin{lstlisting}[style=bashInputStyle]
+$ pki -d /opt/rhqa_pki -c 'Secret123' \
+    -h pki2.example.org -p 8080 \
+    cert-show 0xc
+                \end{lstlisting}
+        \end{enumerate}
     \end{enumerate}
 \subsection{Key Recovery Authority}
 \subsubsection{Introduction}
