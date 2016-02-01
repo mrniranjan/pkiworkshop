@@ -947,9 +947,9 @@ wget https://raw.githubusercontent.com/mrniranjan/pkiworkshop/master/openssl.cnf
 $ cd ~/pki/ca
 $ openssl genrsa -out private/ca.key.pem 2048 -config openssl.cnf
 $ chmod 400 private/ca.key.pem
-$ openssl req -config openssl.cnf -key private/ca.key.pem \
+$ openssl req -config openssl.cnf -key private/cakey.pem \
     -new -x509 -days 365 -extensions v3_ca \
-    -out certs/ca.cert.pem
+    -out certs/cacert.pem
         \end{lstlisting}
     \item Create a End User cert with CN=Pki User1
         \begin{lstlisting}[style=BashInputStyle]
@@ -967,12 +967,11 @@ $ openssl req -new -key private/pkiuser1.key \
 $ openssl ca -config openssl.cnf -extensions usr_cert \
      -days 375 -in pkiuser1.csr -out certs/pkiuser1.cert.pem
         \end{lstlisting}
-    \item Create a User cert \textit{cn=Pki User1} with adding extension "Authority Key Identifier" where 
+    \item Create a User cert \textit{cn=Pki User2} with adding extension "Authority Key Identifier" where 
         extension adds the hash of CA public key
 
         Add the below lines to \textbf{usr\_cert} section of openssl.cnf
         \begin{lstlisting}
-basicConstraints=CA:FALSE
 subjectKeyIdentifier=hash
 authorityKeyIdentifier=keyid
         \end{lstlisting}
