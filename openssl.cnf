@@ -22,7 +22,7 @@ default_ca	= CA_default		# The default ca section
 ####################################################################
 [ CA_default ]
 
-dir		= /home/ashoo/pki/ca		# Where everything is kept
+dir		    = /home/ashoo/pki/ca		# Where everything is kept
 certs		= $dir/certs		# Where the issued certs are kept
 crl_dir		= $dir/crl		# Where the issued crl are kept
 database	= $dir/index.txt	# database index file.
@@ -30,7 +30,7 @@ database	= $dir/index.txt	# database index file.
 					# several ctificates with same subject.
 new_certs_dir	= $dir/newcerts		# default place for new certs.
 
-certificate	= $dir/cacert.pem 	# The CA certificate
+certificate	= $dir/certs/cacert.pem 	# The CA certificate
 serial		= $dir/serial 		# The current serial number
 crlnumber	= $dir/crlnumber	# the current crl number
 					# must be commented out to leave a V1 CRL
@@ -122,3 +122,5 @@ emailAddress_max		= 64
 
 [ v3_ca ]
 keyUsage = cRLSign, keyCertSign
+subjectKeyIdentifier=hash
+authorityKeyIdentifier=keyid
