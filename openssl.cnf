@@ -22,7 +22,7 @@ default_ca	= CA_default		# The default ca section
 ####################################################################
 [ CA_default ]
 
-dir		    = /etc/pki/CA		# Where everything is kept
+dir		= /home/ashoo/pki/ca		# Where everything is kept
 certs		= $dir/certs		# Where the issued certs are kept
 crl_dir		= $dir/crl		# Where the issued crl are kept
 database	= $dir/index.txt	# database index file.
@@ -96,7 +96,7 @@ string_mask         = utf8only
 # req_extensions = v3_req # The extensions to add to a certificate request
 
 [ req_distinguished_name ]
-countryName			    = Country Name (2 letter code)
+countryName			= Country Name (2 letter code)
 countryName_default		= IN
 countryName_min			= 2
 countryName_max			= 2
@@ -104,10 +104,10 @@ countryName_max			= 2
 stateOrProvinceName		= State or Province Name (full name)
 stateOrProvinceName_default	= Maharashtra
 
-localityName			    = Locality Name (eg, city)
+localityName			= Locality Name (eg, city)
 localityName_default		= Pune
 
-0.organizationName		    = Organization Name (eg, company)
+0.organizationName		= Organization Name (eg, company)
 0.organizationName_default	= Example Org
 
 organizationalUnitName		= Organizational Unit Name (eg, section)
@@ -119,48 +119,6 @@ commonName_max			= 64
 emailAddress			= Email Address
 emailAddress_max		= 64
 
-[ usr_cert ]
-basicConstraints=CA:FALSE
-subjectKeyIdentifier=hash
-authorityKeyIdentifier=keyid:always,issuer:always
-#keyUsage = nonRepudiation, digitalSignature
-keyUsage = digitalSignature, keyAgreement
-#subjectAltName = email:copy
-
-[ server_cert ]
-basicConstraints=CA:FALSE
-subjectKeyIdentifier=hash
-authorityKeyIdentifier=keyid
-keyUsage = digitalSignature, keyAgreement
-extendedKeyUsage = serverAuth,clientAuth
-subjectAltName = @alt_names
-
-[ v3_req ]
-basicConstraints = CA:FALSE
-subjectAltName = email:copy
-#subjectAltName = @alt_names
-
-[alt_names]
-DNS.1 = *.example.org
 
 [ v3_ca ]
-subjectKeyIdentifier=hash
-authorityKeyIdentifier=keyid
-basicConstraints = critical,CA:true,pathlen:2
 keyUsage = cRLSign, keyCertSign
-
-[ v3_usr_ca ]
-subjectKeyIdentifier=hash
-authorityKeyIdentifier=keyid
-basicConstraints = critical,CA:true,pathlen:0
-keyUsage = cRLSign, keyCertSign
-nameConstraints = permitted;dirName:dir_sect
-
-[dir_sect]
-C=IN
-O=Example Org
-OU=PKI
-CN=*
-
-[ crl_ext ]
-authorityKeyIdentifier=keyid:always

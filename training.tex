@@ -431,10 +431,8 @@ Below is a simplified architectural model of Public Key Infrastructure using X.5
             \item Policies used by CA:
                 \begin{itemize}
                     \item IPRA certifies only PCA and not CA's or users cert
-                    \item IPRA will make sure that the DN of the PCA is unique and will not certificate PCA's with similar DN
+                    \item IPRA will make sure that the DN of the PCA is unique and will not issue certificate for PCA's with similar DN
                     \item Certificates should not be issued to distinct entities under the same distinguished Name. 
-                    \item IPRA should not certifiy two PCA's with same DN
-                    \item PCA's should not certify two CA's with same DN
                     \item CA's are expected to sign certificates only if the subject DN in the
                         certificates is subordinate to the issuer CA DN.
                 \end{itemize}
@@ -443,7 +441,7 @@ Below is a simplified architectural model of Public Key Infrastructure using X.5
                     \item Cross-Certs: Where Issuer and Subject are different
                     \item Self-Issue: Where Issuer and Subject are same
                         \begin{itemize}
-                            \item Self-Signed: Where key bound in to the certificate is same as the key used to sgin the certificate
+                            \item Self-Signed: Where key bound in to the certificate is same as the key used to sign the certificate
                         \end{itemize}
                 \end{itemize}
         \end{itemize}
@@ -602,7 +600,7 @@ Below is a simplified architectural model of Public Key Infrastructure using X.5
                             \end{itemize}
                         \item \textbf{keyEncipherment}
                             \begin{itemize}
-                                \item Public key is used for enciphering private key or secret keys , 
+                                \item Public key is used for enciphering private or secret keys.
                                 \item Is used for encrypting symmetric content-decryption key or an assymetric private key
                             \end{itemize}
                         \item \textbf{dataEncipherment}
@@ -696,12 +694,12 @@ Below is a simplified architectural model of Public Key Infrastructure using X.5
                 \end{itemize}
             \item \textbf{Basic Constraints}
                 \begin{itemize}
-                    \item This extension identifies whether the subject of the certificate is CA ?
+                    \item This extension identifies whether the subject of the certificate is CA 
                     \item It also identifies Maximum depth of valid certification paths that include this certificate
                     \item Values:
                         \begin{itemize}
-                            \item cA: (boolean): indicates whether certificate is CA cert
-                            \item pathLenConstraint: applicable if cA boolean is true. if prsent asserts keyCertSign bit. 
+                            \item CA: (boolean): indicates whether certificate is CA cert
+                            \item pathLenConstraint: applicable if CA boolean is true. if prsent asserts keyCertSign bit. 
                             \item It gives maximum number of non-self-issued intermediate Certificates that may follows this certificate in a valid certification path. The last cert is End-entity certificate
                             \item Ex: PathLength is 2:
                                 \begin{itemize}
@@ -949,8 +947,9 @@ wget https://raw.githubusercontent.com/mrniranjan/pkiworkshop/master/openssl.cnf
 $ cd ~/pki/ca
 $ openssl genrsa -out private/ca.key.pem 2048 -config openssl.cnf
 $ chmod 400 private/ca.key.pem
-$ openssl req -config openssl.cnf -key private/ca.key.pem -new -x509 \
-    -days 365 -extensions v3_ca -out certs/ca.cert.pem
+$ openssl req -config openssl.cnf -key private/ca.key.pem \
+    -new -x509 -days 365 -extensions v3_ca \
+    -out certs/ca.cert.pem
         \end{lstlisting}
     \item Create a End User cert with CN=Pki User1
         \begin{lstlisting}[style=BashInputStyle]
