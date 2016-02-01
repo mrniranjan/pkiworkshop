@@ -37,7 +37,7 @@ Red Hat Certificate System}
 }
 \lstdefinestyle{BashInputStyle}{
     language=bash,
-    basicstyle=\small\ttfamily,
+    basicstyle={\small\ttfamily},
     showstringspaces=false,
     showspaces=false,
     numberstyle=\tiny,
@@ -140,7 +140,7 @@ referred to as \textit{Secret Key Cryptography} as opposed to \textit{Public Key
     \item First started in stanford university by Whitfield Diffie and Martin Hellman
     \item The most commonly used implementation of PKC are based on algorithm based on algorithm patented by RSA data security.
     \item Each public key is published \& private key is kept secret. Data encrypted with public key can be decrypted only with private key.
-    \item In general, to send encrypted data to someone, we encrypt with public key \& the person encrypt receiving the 
+    \item In general, to send encrypted data to someone, we encrypt with public key \& the person receiving the 
         encrypted data decrypts with private key
     \item Compared to symmetric key encryption, public key encryption requires more computation \& therefore not always appropriate for large amounts of data
     \item It is possible to use public-key encryption to send a symmetric key, which can then be used to encrypt additional data.
@@ -389,6 +389,11 @@ but with a key, So the MAC is dependent on both the key and the message being MA
                 \item The \textit{change\_cipher\_spec} message indicates a change in encryption and authentication of records
                 \item Once the handshake is completed a new set of keys is negotiated, \textit{change\_cipher\_spec} record is 
                     sent to indicate that those keys will now be used.
+                    \begin{figure}[H]
+                        \centering
+                        \includegraphics[width=30mm]{ssl-overview.png}
+                        \caption{SSL Overview}
+                    \end{figure}
             \end{itemize}
     \end{itemize}
 \section{Introduction to Public Key Infrastructure}
@@ -1771,7 +1776,7 @@ $ systemctl status pki-tomcatd@Example-ExtCA1
 $ pkidaemon status tomcat Example1-ExtCA1
                     \end{lstlisting}
                 \end{enumerate}
-            \item Configure Clone of RootCA configured in \ref{ca1}
+            \item \label{clone_rootca} Configure Clone of RootCA configured in \ref{ca1}
                 \begin{enumerate}[label*=\arabic*.]
                     \item Features of clone
                         \begin{itemize}
@@ -1779,7 +1784,7 @@ $ pkidaemon status tomcat Example1-ExtCA1
                             \item A cloned subsystem has same set of system certs including signing cert 
                             \item Clone acts as a load balancer
                         \end{itemize}
-                    \item Create a Backup of RootCA's System Certs in pkcs12 format using PKCS12Export
+                    \item \label{pkcs12export} Create a Backup of RootCA's System Certs in pkcs12 format using PKCS12Export
                         \begin{lstlisting}[style=bashInputStyle]
 $ PKCS12Export -d /var/lib/pki/pki-tomcat/alias -p /tmp/nssdb-pass  -w /tmp/pkcs12-pass -o ca_backup_keys.p12
                         \end{lstlisting}
@@ -2150,7 +2155,7 @@ SysUser=nobody
                     \begin{lstlisting}[style=bashInputStyle]
 $ setup-ds.pl --silent --file=kra-ds.inf --debug            
                     \end{lstlisting}
-                \item Setup KRA using pkispawn in separate Tomcat Instance. Use the below configuration with pkispawn
+                \item \label{kra_sep_tomcat} Setup KRA using pkispawn in separate Tomcat Instance. Use the below configuration with pkispawn
                     \begin{lstlisting}
 kra_inst.inf:
 
@@ -2198,7 +2203,7 @@ pki_ds_password=Secret123
 $ pkispawn -s KRA -f kra_inst -vv            
                 \end{lstlisting}
             \end{enumerate}
-        \item Enroll a certificate for user Foo1 and archive Private Key in KRA instance
+        \item \label{arch_privatekey} Enroll a certificate for user Foo1 and archive Private Key in KRA instance
             \begin{enumerate}[label*=\arabic*.]
                 \item Create a NSS Database and Import CA Admin cert , CA cert. Refer:\ref{pki1}, \ref{pki2}, \ref{pki3}
                 \item Import KRA Admin cert from /opt/Example1-RootKRA
@@ -2316,7 +2321,7 @@ $  pki -d /opt/rhqa_pki -c 'Secret123'\
     <certificate_serial_Number_of Agent_Cert>
                             \end{lstlisting}
                     \end{enumerate}
-                \item  Archive a passphrase(password) using Agent User
+                \item \label{arch_password}  Archive a passphrase(password) using Agent User
                     \begin{lstlisting}[style=bashInputStyle]
 $ pki -d /opt/rhqa_pki -c 'Secret123' \
     -h pki1.example.org -p 14080 \
@@ -2331,7 +2336,7 @@ Archival request details
   Type: securityDataEnrollment
   Status: complete
                     \end{lstlisting}
-                \item Generate Symmetric keys with AES algo of size 128 and archive it
+                \item \label{arch_symmetric} Generate Symmetric keys with AES algo of size 128 and archive it
                     \begin{lstlisting}[style=bashInputStyle]
 $ pki -d /opt/rhqa_pki -c 'Secret123' \
     -h pki1.example.org -p 14080 \
@@ -2339,6 +2344,189 @@ $ pki -d /opt/rhqa_pki -c 'Secret123' \
     --key-algo aes --key-size 128 \
     --usages wrap 
                     \end{lstlisting}
+            \end{enumerate}
+        \item  Retrieve archived symmetric/Asymmetric keys 
+            \begin{enumerate}[label*=\arabic*.]
+                \item Retrieve Archived Symmetric key using \textbf{key-retreive}
+                    \begin{lstlisting}[style=bashInputStyle]
+$ pki -d /opt/rhqa_pki -c 'Secret123' \
+    -h pki1.example.org -p 14080 \
+    -n "KRA_AgentV" kra-key-retrieve --keyID <KEY_ID>
+                    \end{lstlisting}
+                \item Retrieve Archived Passwords , Refer \ref{arch_password}
+                    \begin{lstlisting}[style=bashInputStyle]
+$ pki -d /opt/rhqa_pki -c 'Secret123' \
+    -h pki1.example.org -p 14080 \
+    -n "KRA_AgentV" kra-key-retrieve --keyID <KEY_ID>
+                    \end{lstlisting}
+                \item Retrieve Asymmetric keys (private Key). Refer Section \ref{arch_privatekey}
+                    \begin{lstlisting}[style=bashInputStyle]
+$ pki -d /opt/rhqa_pki -c 'Secret123' \
+    -h pki1.example.org -p 14080 \
+    -n "KRA_AgentV" kra-key-retrieve --keyID <KEY_ID>
+                    \end{lstlisting}
+                \item Retrieving Asymmetric Keys From Browser(firefox)
+                    \begin{itemize}
+                        \item Import CA Admin Cert and KRA Admin p12 file to Firefox browser
+                        \item Trust the CA cert 
+                        \item Access KRA Agent Page \textit{https://pki1.example.org:14443}
+                        \item Authenticate it with KRA Agent Cert
+                        \item Click "Recover Keys" 
+                        \item From the Available Recovery Options select "Certificate"
+                        \item Paste the Certificate foo1 user archived, use CA EE interface to get the certificate
+                        \item Click on Show key 
+                        \item From the Search Results , Click on "Recover"
+                        \item In the Next screen , Select "Async Recovery", Click on "Recover"
+                        \item This should return a Key Recovery Status with reference Number
+                        \item Click on The request Number and "Grant" the request
+                        \item click on the request id shown on the page
+                        \item Specify the PKCS12 Password and click on Retrieve PKCS12
+                    \end{itemize}
+            \end{enumerate}
+        \item Transport Key Rotation
+            \begin{enumerate}[label*=\arabic*.]
+                \item Setup CA clone , Refer to steps described in Section: \ref{clone_rootca}
+                \item Setup KRA Clone
+                    \begin{enumerate}[label*=\arabic*.]
+                        \item While setting up KRA instance (Refer Section: \ref{kra_sep_tomcat}, we had
+                            backed the system keys using parameter \texttt{pki\_backup\_keys=True}. This 
+                            is equivalent of PKCS12Export ran in section \ref{pkcs12export} 
+                        \item The backup of system keys of KRA is saved in alias Directory of KRA which is
+                            \texttt{/var/lib/pki/Example1-RootKRA/alias/}
+                            \begin{lstlisting}[style=bashInputStyle]
+# ls -l /var/lib/pki/Example1-RootKRA/alias/
+total 104
+-rw-------. 1 pkiuser pkiuser 65536 Jan 31 17:17 cert8.db
+-rw-------. 1 pkiuser pkiuser 28672 Feb  1 17:08 key3.db
+-rw-r--r--. 1 pkiuser pkiuser 11327 Jan 31 17:17 kra_backup_keys.p12
+-rw-------. 1 pkiuser pkiuser 16384 Jan 31 17:16 secmod.db
+                            \end{lstlisting}
+                        \item Copy the kra\_backup\_keys.p12 to clone system \texttt{pki2.example.org}
+
+                        \item Setup Directory server on clone system for KRA
+                            \begin{lstlisting}
+[General]
+FullMachineName=pki2.example.org
+SuiteSpotUserID=nobody
+SuiteSpotGroup=nobody
+
+[slapd]
+ServerIdentifier=Foobar1-CloneKRA
+ServerPort=1902
+Suffix=dc=example,dc=org
+RootDN=cn=Directory Manager
+RootDNPwd=Secret123
+
+[admin]
+ServerAdminID=admin
+ServerAdminPwd=Secret123
+SysUser=nobody
+                            \end{lstlisting}
+                        \item Setup Clone KRA using below configuration
+                            \begin{lstlisting}
+clone_kra.inf :
+
+[DEFAULT]
+pki_instance_name=Example1-CloneKRA
+pki_https_port=14443
+pki_http_port=14080
+
+# Token password
+pki_token_password=Secret123
+
+#Security Domain
+pki_security_domain_hostname=pki1.example.org
+pki_security_domain_https_port=8443
+pki_security_domain_user=caadmin
+pki_security_domain_password=Secret123
+
+# Admin Password
+pki_admin_password=Secret123
+
+# client Dir
+pki_client_pkcs12_password=Secret123
+pki_client_database_password=Secret123
+pki_client_dir=/opt/Example1-CloneKRA
+
+
+[Tomcat]
+pki_ajp_port=14009
+pki_tomcat_server_port=14005
+
+[KRA]
+pki_clone=True
+pki_clone_pkcs12_password=Secret123
+pki_clone_pkcs12_path=/tmp/kra_backup_keys.p12
+pki_clone_replication_master_port=1901
+pki_clone_replication_clone_port=1902
+pki_clone_repicate_schema=True
+pki_clone_uri=https://pki1.example.org:14443
+pki_import_admin_cert=False
+pki_ds_hostname=pki3.example.org
+pki_ds_ldap_port=1902
+pki_ds_bind_dn=cn=Directory Manager
+pki_ds_password=Secret123
+pki_ds_secure_connection=False
+pki_ds_remove_data=True
+pki_ds_base_dn=o=Example1-RootKRA-KRA
+                            \end{lstlisting}
+                            \begin{lstlisting}[style=bashInputStyle]
+$ pkispawn -s KRA -f clone_kra.inf -vv                            
+                            \end{lstlisting}
+                        \item Request a new DRM Transport Cert
+                            \begin{enumerate}[label*=\arabic*.]
+                                \item Stop the Master KRA instance 
+                                    \begin{lstlisting}
+$ systemctl stop pki-tomcatd@Example1-RootKRA                                    
+                                    \end{lstlisting}
+                                \item Go to KRA's NSS DB directory and take the backup of existing NSS DB in a subdirectory
+                                    called backup
+                                    \begin{lstlisting}[style=bashInputStyle]
+$ cd /var/lib/pki/Example1-RootKRA/kra/alias
+$ mkdir backup
+$ cp -a *.db backup             
+                                    \end{lstlisting}
+                                \item \label{transport-new-pkcs10} Create a new pkcs10 request
+                                    \begin{lstlisting}[style=bashInputStyle]
+$  PKCS10Client -p <password> -d '.' -o 'req.txt' -n 'CN=DRM Transport 2 Certificate,O=Example Org'
+                                    \end{lstlisting}
+                                    \textbf{Note:} password of NSS Database can be found in password.conf in conf directory of KRA instance
+                                \item Submit the certificate request to CA using EE interface and approve the request using Agent inteface
+                                    \begin{itemize}
+                                        \item Open the CA EE Page and select profile "Manual Data recovery Manager transport certificate Enrollment"
+                                        \item paste the certificate request created in step \ref{transport-new-pkcs10}  and submit the request
+                                        \item From CA Agent page approve the request
+                                    \end{itemize}
+                                \item Get the approved cert  and save the base64 format in a file new-drm-transport.pem
+                                \item Import the DRM Certificate in NSSDB and Update DRM Configuration
+                                    \begin{lstlisting}[style=bashInputStyle]
+$ certutil -d /var/lib/pki/Example1-RootKRA/alias \
+    -A -n "transportCert-new Cert-Example1-Rootkra KRA" \
+    -t u,u,u -i new-drm-transport.pem 
+                                    \end{lstlisting}
+                                \item Add the new transport certs nick name in KRA's CS.cfg
+                                    \begin{lstlisting}
+kra.transportUnit.newNickName=transportCert-new Cert-Example1-Rootkra KRA
+                                    \end{lstlisting}
+                                \item Update the CA's CS.cfg with new transport Certificate
+                                    \begin{lstlisting}[style=bashInputStyle]
+$cp new-drm-transport.pem new-drm-transport-backup.pem                                    
+
+$ unix2dos new-drm-transport-backup.pem
+# remove cetificate headers 
+$ cat new-drm-transport.pem | perl -p -i -e 's/\r\n//'
+                                    \end{lstlisting}
+                                    
+                                    Copy the output of above command and edit CA CS.cfg and replace the exisiting transport Cert
+
+                                    \begin{lstlisting}
+ca.connector.KRA.transportCert=<new transport cert> [ base64 cert which has been trimmed in to one line]                                    
+                                    \end{lstlisting}
+
+                                \item Restart CA and KRA instances
+                                \item Perform Archival Operation as specified in section: \ref{arch_privatekey} with new transport cert
+                            \end{enumerate}
+                    \end{enumerate}
             \end{enumerate}
     \end{enumerate}
 \subsection{Online Certificate Status Protocol}
