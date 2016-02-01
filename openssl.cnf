@@ -124,3 +124,6 @@ emailAddress_max		= 64
 keyUsage = cRLSign, keyCertSign
 subjectKeyIdentifier=hash
 authorityKeyIdentifier=keyid
+
+[ usr_cert ]
+basicConstraints=CA:FALSE
