@@ -1026,7 +1026,7 @@ Email Address []:pkiuser2@example.org
 $openssl ca -config openssl.cnf -extensions usr_cert \
     -days 375 -in pkiuser2.csr -out certs/pkiuser2.cert.pem
 
-#view the certificate
+# view the certificate
 $ openssl x509 -in certs/pkiuser2.cert.pem -noout -text
         \end{lstlisting}
     \item Create a user cert by adding followin extensions digitalSignature, nonRepudiation
@@ -1140,7 +1140,7 @@ Email Address []:
 # Approve the certificate request by RootCA signing the request
 $ openssl ca -config openssl.cnf -extensions v3_usr_ca -days 375 -in subca1.csr -out certs/subca1.cert.pem
     
-$ view the certificate
+# view the certificate
 $ openssl x509 -in certs/subca1.cert.pem -noout -text
         \end{lstlisting}
         Edit v3\_usr\_ca section of openssl.cnf and make the pathlength to 1 
