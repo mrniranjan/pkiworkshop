@@ -1115,12 +1115,104 @@ $ openssl x509 -in certs/pkiuser4.cert.pem -noout -text
 
         Create a new section \textbf{v3\_usr\_ca} in openssl.cnf and create certs
         \begin{lstlisting}
+basicConstraints=CA:TRUE        
 subjectKeyIdentifier=hash
 authorityKeyIdentifier=keyid
 basicConstraints = critical,CA:true,pathlen:2
 keyUsage = cRLSign, keyCertSign
         \end{lstlisting}
+        \begin{lstlisting}[style=bashInputStyle]
+# RootCA->SubCA1
+# Generate key pair for SubCA1 
+$ openssl genrsa -out private/subca1.key 2048
+
+# Generate certificate request
+$ openssl req -new -key private/subca1.key -out subca1.csr -config openssl.cnf
+-----
+Country Name (2 letter code) [IN]:
+State or Province Name (full name) [Maharashtra]:
+Locality Name (eg, city) [Pune]:
+Organization Name (eg, company) [Example Org]:
+Organizational Unit Name (eg, section) [PKI]:
+Common Name (eg, your name or your server's hostname) []:Example SubCA1
+Email Address []:
+
+# Approve the certificate request by RootCA signing the request
+$ openssl ca -config openssl.cnf -extensions v3_usr_ca -days 375 -in subca1.csr -out certs/subca1.cert.pem
     
+$ view the certificate
+$ openssl x509 -in certs/subca1.cert.pem -noout -text
+        \end{lstlisting}
+        Edit v3\_usr\_ca section of openssl.cnf and make the pathlength to 1 
+        \begin{lstlisting}[style=bashInputStyle]
+# RootCA->SubCA1->SubCA1.1
+
+#Generate Key pair 
+$ openssl genrsa -out private/subca1.1.key 2048
+
+# Generate certificate request
+$ openssl req -new -key private/subca1.1.key -out subca1.1.csr -config openssl.cnf
+Country Name (2 letter code) [IN]:
+State or Province Name (full name) [Maharashtra]:
+Locality Name (eg, city) [Pune]:
+Organization Name (eg, company) [Example Org]:
+Organizational Unit Name (eg, section) [PKI]:
+Common Name (eg, your name or your server's hostname) []:Example SubCA1.1
+Email Address []:
+
+# Approve the certificate request by subca1 signing the request
+$ openssl ca -keyfile private/subca1.key -cert certs/subca1.cert.pem \
+    -config openssl.cnf -extensions v3_usr_ca -days 375 \
+    -in subca1.1.csr -out certs/subca1.1.cert.pem
+
+# View the certificate 
+$ openssl x509 -in certs/subca1.1.cert.pem -noout -text
+        \end{lstlisting}
+        Edit v3\_usr\_ca section of openssl.cnf and make the pathlength to 0
+        \begin{lstlisting}[style=bashInputStyle]
+
+# RootCA->SubCA1->SubCA1.1->SubCA1.1.1
+
+#Generate Key pair 
+$ openssl genrsa -out private/subca1.1.1.key 2048
+
+# Generate certificate request
+$ openssl req -new -key private/subca1.1.1key -out subca1.1.1.csr -config openssl.cnf
+Country Name (2 letter code) [IN]:
+State or Province Name (full name) [Maharashtra]:
+Locality Name (eg, city) [Pune]:
+Organization Name (eg, company) [Example Org]:
+Organizational Unit Name (eg, section) [PKI]:
+Common Name (eg, your name or your server's hostname) []:Example SubCA1.1.1
+Email Address []:
+
+# Approve the certificate request by subca1.1 signing the request
+$ openssl ca -keyfile private/subca1.1.key -cert certs/subca1.1.cert.pem \
+    -config openssl.cnf -extensions v3_usr_ca -days 375 \
+    -in subca1.1.1.csr -out certs/subca1.1.1.cert.pem
+
+# View the certificate 
+$ openssl x509 -in certs/subca1.1.1.cert.pem -noout -text
+        \end{lstlisting}
+        There should not be any Subordinate CA of \textbf{Example SubCA1.1.1}. Generate 
+        a EE Certificate request and sign using Example SubCA1.1.1
+        \begin{lstlisting}[style=bashInputStyle]
+# Generate Key pair
+$ openssl genrsa -out private/pkiuser4.key
+
+# Generate Certificate request
+$ openssl req -new -key private/pkiuser4.key -out pkiuser4.csr -config openssl.cnf
+
+# Approve the certificate request by Example subca1.1.1 signing the request
+$ openssl ca -keyfile private/subca1.1.1.key \
+    -cert certs/subca1.1.1.cert.pem -config openssl.cnf \
+    -extensions usr_cert -days 375 -in pkiuser4.csr \
+    -out certs/pkiuser4.cert.pem
+
+# View the certificate 
+$ openssl x509 -in certs/pkiuser4.cert.pem -noout -text
+        \end{lstlisting}
+
     \item Create a server cert with TLS server and client authentication
 
         Create a new section \textbf{server\_cert} in openssl.cnf with below contents
