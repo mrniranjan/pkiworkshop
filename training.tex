@@ -289,6 +289,8 @@ but with a key, So the MAC is dependent on both the key and the message being MA
             \item MD5 and SHA share a common ancestor MD4 also designed by Ron Rivest
         \end{itemize}
 \end{itemize}
+\subsection{Mathematics behind cryptography}
+    For more information on mathematics behind Cryptography please refer to: ~\cite{RedHat:huzaifs}
 \subsection{Protocols}
 \subsubsection{SSL}
     \begin{itemize}
@@ -698,8 +700,8 @@ Below is a simplified architectural model of Public Key Infrastructure using X.5
                     \item It also identifies Maximum depth of valid certification paths that include this certificate
                     \item Values:
                         \begin{itemize}
-                            \item CA: (boolean): indicates whether certificate is CA cert
-                            \item pathLenConstraint: applicable if CA boolean is true. if prsent asserts keyCertSign bit. 
+                            \item cA: (boolean): indicates whether certificate is CA cert
+                            \item pathLenConstraint: applicable if cA boolean is true. if prsent asserts keyCertSign bit. 
                             \item It gives maximum number of non-self-issued intermediate Certificates that may follows this certificate in a valid certification path. The last cert is End-entity certificate
                             \item Ex: PathLength is 2:
                                 \begin{itemize}
@@ -945,8 +947,8 @@ wget https://raw.githubusercontent.com/mrniranjan/pkiworkshop/master/openssl.cnf
     \item Create a CA cert using Openssl
         \begin{lstlisting}[style=BashInputStyle]
 $ cd ~/pki/ca
-$ openssl genrsa -out private/ca.key.pem 2048 -config openssl.cnf
-$ chmod 400 private/ca.key.pem
+$ openssl genrsa -out private/cakey.pem 2048 -config openssl.cnf
+$ chmod 400 private/cakey.pem
 $ openssl req -config openssl.cnf -key private/cakey.pem \
     -new -x509 -days 365 -extensions v3_ca \
     -out certs/cacert.pem
