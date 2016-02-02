@@ -407,7 +407,7 @@ Below is a simplified architectural model of Public Key Infrastructure using X.5
 \end{figure}
 \subsection{Common Terms used in PKI}
 \begin{itemize}
-    \item \underline{End Entiy}: User of the PKI certificates and/or end user system that is the subject of a certificate
+    \item \underline{End Entity}: User of the PKI certificates and/or end user system that is the subject of a certificate
     \item \underline{CA}: Certificate Authority
     \item \underline{RA}: Registration Authority, Optional System to which CA delegates certain management functions
     \item \underline{CRL issuers}: A system that generates CRL
@@ -1443,7 +1443,7 @@ $ certutil -V -d server_db -u V -n pki1
 
             \item nss-tools comes with pk12util command , pk12util is a pkcs\#12 Tool allowing to share certificates. The tool supports importing certificates and keys from pkcs\#12 files in to NSS or export them and also list certificates and keys in such files
 
-            \item Exporting the Server certifcate pki1.example.org in to file pki1.p12 
+            \item Exporting the Server certificate pki1.example.org in to file pki1.p12 
                 \begin{lstlisting}[style=BashInputStyle]
 $ pk12util -d server_db -o pki1.pk12 -n pki1
                 \end{lstlisting}
