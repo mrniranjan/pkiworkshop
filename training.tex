@@ -940,18 +940,45 @@ $ mkdir -p ~/pki/ca/{certs,crl,newcerts,private}
 cd ~/pki/ca
 chmod 700 private
 touch index.txt
-touch index.txt.attr
 echo 01 > serial
-wget https://raw.githubusercontent.com/mrniranjan/pkiworkshop/master/openssl.cnf
+wget \
+https://raw.githubusercontent.com/mrniranjan/pkiworkshop/master/openssl.cnf
+# Edit openssl.cnf and replace the directory mentioned under
+# dir parameter with the actual directory where ~pki/ca was
+#created
         \end{lstlisting}
     \item Create a CA cert using Openssl
         \begin{lstlisting}[style=BashInputStyle]
 $ cd ~/pki/ca
+# Generate Key Pair
 $ openssl genrsa -out private/cakey.pem 2048 -config openssl.cnf
+
+# set permissions
 $ chmod 400 private/cakey.pem
+
+#Generate Self signed cert
 $ openssl req -config openssl.cnf -key private/cakey.pem \
     -new -x509 -days 365 -extensions v3_ca \
     -out certs/cacert.pem
+#view the certificate    
+$ openssl x509 -in certs/cacert.pem -noout -text
+        \end{lstlisting}
+        \begin{lstlisting}
+Output:
+You are about to be asked to enter information that will be incorporated
+into your certificate request.
+What you are about to enter is what is called a Distinguished Name or a DN.
+There are quite a few fields but you can leave some blank
+For some fields there will be a default value,
+If you enter '.', the field will be left blank.
+-----
+Country Name (2 letter code) [IN]:
+State or Province Name (full name) [Maharashtra]:
+Locality Name (eg, city) [Pune]:
+Organization Name (eg, company) [Example Org]:
+Organizational Unit Name (eg, section) [PKI]:
+Common Name (eg, your name or your server's hostname) []:Example RootCA
+Email Address []:
         \end{lstlisting}
     \item Create a End User cert with CN=Pki User1
         \begin{lstlisting}[style=BashInputStyle]
@@ -965,9 +992,12 @@ $ openssl genrsa -out private/pkiuser1.key 2048
 
 $ openssl req -new -key private/pkiuser1.key \
     -out pkiuser1.csr -config openssl.cnf
-        
+
+# Approve the request by signing with CA certificate
 $ openssl ca -config openssl.cnf -extensions usr_cert \
      -days 375 -in pkiuser1.csr -out certs/pkiuser1.cert.pem
+# view the certificate
+$ openssl x509 -in certs/pkiuser1.cert.pem -noout -text
         \end{lstlisting}
     \item Create a User cert \textit{cn=Pki User2} with adding extension "Authority Key Identifier" where 
         extension adds the hash of CA public key
@@ -977,25 +1007,108 @@ $ openssl ca -config openssl.cnf -extensions usr_cert \
 subjectKeyIdentifier=hash
 authorityKeyIdentifier=keyid
         \end{lstlisting}
+        \begin{lstlisting}[style=bashInputStyle]
+# Generate Key pair
+$ openssl genrsa -out private/pkiuser2.key 2048
+
+# Generate Certificate Request 
+$ openssl req -new -key private/pkiuser2.key -out pkiuser2.csr -config openssl.cnf
+-----
+Country Name (2 letter code) [IN]:
+State or Province Name (full name) [Maharashtra]:
+Locality Name (eg, city) [Pune]:
+Organization Name (eg, company) [Example Org]:
+Organizational Unit Name (eg, section) [PKI]:
+Common Name (eg, your name or your server's hostname) []:pkiuser2
+Email Address []:pkiuser2@example.org
+
+# Sign/Approve the request by signing with CA Cert
+$openssl ca -config openssl.cnf -extensions usr_cert \
+    -days 375 -in pkiuser2.csr -out certs/pkiuser2.cert.pem
+
+#view the certificate
+$ openssl x509 -in certs/pkiuser2.cert.pem -noout -text
+        \end{lstlisting}
     \item Create a user cert by adding followin extensions digitalSignature, nonRepudiation
 
-        Add the below lines to \textbf{user\_cert} section of openssl.cnf
+        Add the below lines to \textbf{usr\_cert} section of openssl.cnf
         \begin{lstlisting}
 keyUsage = nonRepudiation, digitalSignature
+        \end{lstlisting}
+        \begin{lstlisting}[style=bashInputStyle]
+# Generate Key Pair
+$ openssl genrsa -out private/pkiuser3.key 2048        
+
+# Generate Certificate Request
+$ openssl req -new -key private/pkiuser3.key -out pkiuser3.csr -config openssl.cnf
+-----
+Country Name (2 letter code) [IN]:
+State or Province Name (full name) [Maharashtra]:
+Locality Name (eg, city) [Pune]:
+Organization Name (eg, company) [Example Org]:
+Organizational Unit Name (eg, section) [PKI]:
+Common Name (eg, your name or your server's hostname) []:pkiuser3
+Email Address []:pkiuser3@example.org
+
+# CA sign the Certificate request 
+$ openssl ca -config openssl.cnf -extensions usr_cert -days 375 -in pkiuser3.csr -out certs/pkiuser3.cert.pem
+#view the certificate
+$ openssl x509 -in certs/pkiuser3.cert.pem -noout -text
         \end{lstlisting}
 
     \item create a server cert by adding following extensions:
 
-        Add the below  lines to \textbf{server\_cert} section of openssl.cnf
+        create a new section \textbf{server\_cert} section of openssl.cnf and add below lines:
         \begin{lstlisting}
 keyUsage = keyAgreement, digitalSignature
+        \end{lstlisting}
+        \begin{lstlisting}[style=bashInputStyle]
+# Generate key pair
+$  openssl genrsa -out private/server1.key 2048        
+
+#Generate certificate request
+$ openssl req -new -key private/server1.key -out server1.csr -config openssl.cnf
+-----
+Country Name (2 letter code) [IN]:
+State or Province Name (full name) [Maharashtra]:
+Locality Name (eg, city) [Pune]:
+Organization Name (eg, company) [Example Org]:
+Organizational Unit Name (eg, section) [PKI]:
+Common Name (eg, your name or your server's hostname) []:server1.example.org
+
+# Approve the request by CA signing the request
+$ openssl ca -config openssl.cnf -extensions server_cert -days 375 -in server1.csr -out certs/server1.cert.pem
+
+#view the certificate
+$ openssl x509 -in certs/server1.cert.pem -noout -text
         \end{lstlisting}
     
     \item Create a user cert with subjectAltname having an email address
 
-        Add the below lines to \textbf{user\_cert} section of openssl.cnf
+        Add the below lines to \textbf{usr\_cert} section of openssl.cnf
         \begin{lstlisting}
 subjectAltName = email:copy
+        \end{lstlisting}
+        \begin{lstlisting}[style=bashInputStyle]
+# Generate Key Pair
+$ openssl genrsa -out private/pkiuser4.key 2048        
+
+# Generate Certificate Request
+$ openssl req -new -key private/pkiuser4.key -out pkiuser4.csr -config openssl.cnf
+-----
+Country Name (2 letter code) [IN]:
+State or Province Name (full name) [Maharashtra]:
+Locality Name (eg, city) [Pune]:
+Organization Name (eg, company) [Example Org]:
+Organizational Unit Name (eg, section) [PKI]:
+Common Name (eg, your name or your server's hostname) []:pkiuser4
+Email Address []:pkiuser4@example.org
+
+# CA sign the Certificate request 
+$ openssl ca -config openssl.cnf -extensions usr_cert -days 375 -in pkiuser4.csr -out certs/pkiuser4.cert.pem
+
+#view the certificate
+$ openssl x509 -in certs/pkiuser4.cert.pem -noout -text
         \end{lstlisting}
 
     \item create a CA cert with pathlength of 2 . Verify path validation by creating multiple CAs
