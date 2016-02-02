@@ -1215,7 +1215,7 @@ $ openssl x509 -in certs/pkiuser4.cert.pem -noout -text
 
     \item Create a server cert with TLS server and client authentication
 
-        Create a new section \textbf{server\_cert} in openssl.cnf with below contents
+        Edit section \textbf{server\_cert} in openssl.cnf and add below
         \begin{lstlisting}
 [ server_cert ]
 basicConstraints=CA:FALSE
@@ -1224,8 +1224,28 @@ authorityKeyIdentifier=keyid
 keyUsage = digitalSignature, keyAgreement
 extendedKeyUsage = serverAuth,clientAuth
         \end{lstlisting}
+        \begin{lstlisting}[style=bashInputStyle]
+# Generate Key Pair
+$ openssl genrsa -out private/server2.key        
 
-    \item create a server cert with subject CN=server2.example.org having subjectAltName *.example.org
+# Generate certificate request
+$ openssl req -new -key private/server2.key -out server2.csr -config openssl.cnf
+-----
+Country Name (2 letter code) [IN]:
+State or Province Name (full name) [Maharashtra]:
+Locality Name (eg, city) [Pune]:
+Organization Name (eg, company) [Example Org]:
+Organizational Unit Name (eg, section) [PKI]:
+Common Name (eg, your name or your server's hostname) []:server2.example.org
+
+# Approve the certificate request by RootCA signing the request
+$ openssl ca -config openssl.cnf -extensions server_cert -days 375 -in server2.csr -out certs/server2.cert.pem
+
+# View the certificate
+$ openssl x509 -in certs/server2.cert.pem -noout -text
+        \end{lstlisting}
+
+    \item create a server cert with subject CN=server3.example.org having subjectAltName *.example.org
         
         Add below line to \textbf{server\_cert} section and create a new section \textbf{alt\_names}
         \begin{lstlisting}
@@ -1234,6 +1254,26 @@ subjectAltName = @alt_names
 
 [alt_names]
 DNS.1 = *.example.org
+       \end{lstlisting}
+       \begin{lstlisting}[style=bashInputStyle]
+#Generate key pair
+$ openssl genrsa -out private/server3.key
+
+# Generate Certificate request
+$ openssl req -new -key private/server3.key -out server3.csr -config openssl.cnf
+-----
+Country Name (2 letter code) [IN]:
+State or Province Name (full name) [Maharashtra]:
+Locality Name (eg, city) [Pune]:
+Organization Name (eg, company) [Example Org]:
+Organizational Unit Name (eg, section) [PKI]:
+Common Name (eg, your name or your server's hostname) []:server3.example.org
+
+# Approve the certificate request by RootCA signing the request
+$ openssl ca -config openssl.cnf -extensions server_cert -days 375 -in server3.csr -out certs/server3.cert.pem 
+
+# View the certificate
+$ openssl x509 -in certs/server3.cert.pem -noout -text
        \end{lstlisting}
 
     \item Create a Name constraint where permitted DN attribute is "CN=pki*,OU=PKI,O=Example Org,C=US"
@@ -1252,6 +1292,75 @@ C=IN
 O=Example Org
 OU=PKI
 CN=*
+            \end{lstlisting}
+            \begin{lstlisting}[style=bashInputStyle]
+# Generate key pair
+$ openssl genrsa -out private/subca2.key
+
+# Generate certificate request
+$ openssl req -new -key private/subca2.key -out subca2.csr -config openssl.cnf
+-----
+Country Name (2 letter code) [IN]:
+State or Province Name (full name) [Maharashtra]:
+Locality Name (eg, city) [Pune]:
+Organization Name (eg, company) [Example Org]:
+Organizational Unit Name (eg, section) [PKI]:
+Common Name (eg, your name or your server's hostname) []:Example SubCA2
+
+# Approve the certificate request using RootCA
+$ openssl ca -config openssl.cnf -extensions v3_usr_ca -days 375 -in subca2.csr -out certs/subca2.cert.pem
+
+# View the certificate
+$ openssl x509 -in certs/subca2.cert.pem -noout -text
+            \end{lstlisting}
+            Generate a EE Cert which matches the Name constraint 
+            \begin{lstlisting}[style=bashInputStyle]
+# Generate key pair
+$ openssl genrsa -out private/pkiuser5.key
+
+# Generate Certificate requeset
+$ openssl req -new -key private/pkiuser5.key -out pkiuser5.csr -config openssl.cnf
+-----
+Country Name (2 letter code) [IN]:
+State or Province Name (full name) [Maharashtra]:
+Locality Name (eg, city) [Pune]:
+Organization Name (eg, company) [Example Org]:
+Organizational Unit Name (eg, section) [PKI]:
+Common Name (eg, your name or your server's hostname) []:pkiuser5
+Email Address []:pkiuser5@example.org
+
+# Approve the certificate request using "Example SubCA2"
+$ openssl ca -keyfile private/subca2.key -cert certs/subca2.cert.pem \ 
+    -config openssl.cnf -extensions usr_cert \
+    -days 375 -in pkiuser5.csr -out certs/pkiuser5.cert.pem    
+            \end{lstlisting}
+            Generate a EE Cert which Violates the Name constraint set and Example SubCA2
+            will not be able to sign the cert
+            \begin{lstlisting}[style=bashInputStyle]
+# Generate key pair
+$ openssl genrsa -out private/cracker.key
+
+# Generate certificate request
+openssl req -new -key private/cracker.key -out cracker.csr -config openssl.cnf
+-----
+Country Name (2 letter code) [IN]:
+State or Province Name (full name) [Maharashtra]:
+Locality Name (eg, city) [Pune]:
+Organization Name (eg, company) [Example Org]:Cracker Org
+Organizational Unit Name (eg, section) [PKI]:HACKING
+Common Name (eg, your name or your server's hostname) []:server1.cracker.org
+
+# Try approving the certificate request by signing by "Example SubCA2"
+$ openssl ca -keyfile private/subca2.key \
+    -cert certs/subca2.cert.pem -config openssl.cnf \
+    -extensions usr_cert -days 375 -in cracker.csr \
+    -out certs/cracker.cert.pem
+--- output---
+Using configuration from openssl.cnf
+Check that the request matches the signature
+Signature ok
+The organizationName field needed to be the same in the
+CA certificate (Example Org) and the request (Cracker Org)
             \end{lstlisting}
     \item Creating Certificate and key databases using NSS 
         \begin{itemize}
