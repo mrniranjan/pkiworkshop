@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.6-1.40.14 (TeX Live 2014/dev) (format=pdflatex 2014.9.22)  4 FEB 2016 05:43
+This is pdfTeX, Version 3.1415926-2.6-1.40.14 (TeX Live 2014/dev) (format=pdflatex 2014.9.22)  4 FEB 2016 10:43
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -864,171 +864,171 @@ Overfull \hbox (5.14964pt too wide) in paragraph at lines 2738--2739
 /10 pki2.example.org 
  []
 
-[65] [66] [67] <pkispawn-ocsp.png, id=1841, 633.36626pt x 780.9175pt>
+[65] [66] [67] <pkispawn-ocsp.png, id=1840, 633.36626pt x 780.9175pt>
 File: pkispawn-ocsp.png Graphic file (type png)
 
 <use pkispawn-ocsp.png>
-Package pdftex.def Info: pkispawn-ocsp.png used on input line 2884.
+Package pdftex.def Info: pkispawn-ocsp.png used on input line 2889.
 (pdftex.def)             Requested size: 227.62204pt x 280.64153pt.
- [68 <./pkispawn-ocsp.png>] [69]
-<TMS-workflow.png, id=1851, 618.31pt x 425.59pt>
+ [68 <./pkispawn-ocsp.png>] [69] [70] [71]
+<TMS-workflow.png, id=1922, 618.31pt x 425.59pt>
 File: TMS-workflow.png Graphic file (type png)
  <use TMS-workflow.png>
-Package pdftex.def Info: TMS-workflow.png used on input line 2969.
+Package pdftex.def Info: TMS-workflow.png used on input line 3047.
 (pdftex.def)             Requested size: 227.62204pt x 156.67355pt.
 
-[70]
 
-LaTeX Warning: Citation `wiki:ccid' on page 71 undefined on input line 2984.
+LaTeX Warning: Citation `wiki:ccid' on page 72 undefined on input line 3062.
+
+[72 <./TMS-workflow.png>]
+
+LaTeX Warning: Citation `RedHat:AdminGuide' on page 73 undefined on input line 
+3069.
 
 
-LaTeX Warning: Citation `RedHat:AdminGuide' on page 71 undefined on input line 
-2991.
+LaTeX Warning: Citation `RedHat:AdminGuide' on page 73 undefined on input line 
+3071.
 
 
-LaTeX Warning: Citation `RedHat:AdminGuide' on page 71 undefined on input line 
-2993.
-
-[71 <./TMS-workflow.png>]
-Overfull \hbox (5.17157pt too wide) in paragraph at lines 3024--3025
+Overfull \hbox (5.17157pt too wide) in paragraph at lines 3102--3103
 []\OT1/cmr/m/n/10 These keys are used by TPS to com-mu-ni-cate with ESC(smartca
 rd) 
  []
 
-<tks-key-derivation1.png, id=1862, 420.772pt x 379.016pt>
+[73] <tks-key-derivation1.png, id=1935, 420.772pt x 379.016pt>
 File: tks-key-derivation1.png Graphic file (type png)
 
 <use tks-key-derivation1.png>
-Package pdftex.def Info: tks-key-derivation1.png used on input line 3036.
+Package pdftex.def Info: tks-key-derivation1.png used on input line 3114.
 (pdftex.def)             Requested size: 227.62204pt x 205.03572pt.
- [72]
-<tokenprofiles1.png, id=1867, 1131.22626pt x 605.26125pt>
+
+<tokenprofiles1.png, id=1936, 1131.22626pt x 605.26125pt>
 File: tokenprofiles1.png Graphic file (type png)
 
 <use tokenprofiles1.png>
-Package pdftex.def Info: tokenprofiles1.png used on input line 3061.
+Package pdftex.def Info: tokenprofiles1.png used on input line 3139.
 (pdftex.def)             Requested size: 227.62204pt x 121.78894pt.
- [73 <./tks-key-derivation1.png>]
-<tks-tps-drm-esc-enrollment2.png, id=1875, 510.708pt x 497.86pt>
+ [74 <./tks-key-derivation1.png>]
+<tks-tps-drm-esc-enrollment2.png, id=1943, 510.708pt x 497.86pt>
 File: tks-tps-drm-esc-enrollment2.png Graphic file (type png)
 
 <use tks-tps-drm-esc-enrollment2.png>
-Package pdftex.def Info: tks-tps-drm-esc-enrollment2.png used on input line 306
-9.
+Package pdftex.def Info: tks-tps-drm-esc-enrollment2.png used on input line 314
+7.
 (pdftex.def)             Requested size: 341.43306pt x 332.85037pt.
 
-Overfull \hbox (11.56061pt too wide) in paragraph at lines 3075--3077
+Overfull \hbox (11.56061pt too wide) in paragraph at lines 3153--3155
 []\OT1/cmr/m/n/10 Configuration: TKS sub-sys-tem can be con-fig-ured through pk
 ispawn
  []
 
-[74 <./tokenprofiles1.png> <./tks-tps-drm-esc-enrollment2.png>]
-<pkispawn-tks.png, id=1883, 761.84625pt x 857.2025pt>
+[75 <./tokenprofiles1.png> <./tks-tps-drm-esc-enrollment2.png>]
+<pkispawn-tks.png, id=1951, 761.84625pt x 857.2025pt>
 File: pkispawn-tks.png Graphic file (type png)
  <use pkispawn-tks.png>
-Package pdftex.def Info: pkispawn-tks.png used on input line 3081.
+Package pdftex.def Info: pkispawn-tks.png used on input line 3159.
 (pdftex.def)             Requested size: 227.62204pt x 256.10327pt.
 
-<tkstool-create-sharedSecret1.png, id=1884, 650.43pt x 158.5925pt>
+<tkstool-create-sharedSecret1.png, id=1952, 650.43pt x 158.5925pt>
 File: tkstool-create-sharedSecret1.png Graphic file (type png)
 
 <use tkstool-create-sharedSecret1.png>
-Package pdftex.def Info: tkstool-create-sharedSecret1.png used on input line 30
-91.
+Package pdftex.def Info: tkstool-create-sharedSecret1.png used on input line 31
+69.
 (pdftex.def)             Requested size: 142.26378pt x 34.68716pt.
 
-<tkstool-create-sharedSecret2.png, id=1885, 628.3475pt x 273.02pt>
+<tkstool-create-sharedSecret2.png, id=1953, 628.3475pt x 273.02pt>
 File: tkstool-create-sharedSecret2.png Graphic file (type png)
 
 <use tkstool-create-sharedSecret2.png>
-Package pdftex.def Info: tkstool-create-sharedSecret2.png used on input line 30
-96.
+Package pdftex.def Info: tkstool-create-sharedSecret2.png used on input line 31
+74.
 (pdftex.def)             Requested size: 142.26378pt x 61.81427pt.
 
-<tkstool-create-sharedSecret3.png, id=1886, 620.3175pt x 266.9975pt>
+<tkstool-create-sharedSecret3.png, id=1954, 620.3175pt x 266.9975pt>
 File: tkstool-create-sharedSecret3.png Graphic file (type png)
 
 <use tkstool-create-sharedSecret3.png>
 Package pdftex.def Info: tkstool-create-sharedSecret3.png used on input line 31
-01.
+79.
 (pdftex.def)             Requested size: 142.26378pt x 61.23294pt.
 
-<tkstool-create-sharedSecret4.png, id=1887, 607.26875pt x 279.0425pt>
+<tkstool-create-sharedSecret4.png, id=1955, 607.26875pt x 279.0425pt>
 File: tkstool-create-sharedSecret4.png Graphic file (type png)
 
 <use tkstool-create-sharedSecret4.png>
 Package pdftex.def Info: tkstool-create-sharedSecret4.png used on input line 31
-06.
+84.
 (pdftex.def)             Requested size: 142.26378pt x 65.3706pt.
- [75 <./pkispawn-tks.png> <./tkstool-create-sharedSecret1.png> <./tkstool-creat
+ [76 <./pkispawn-tks.png> <./tkstool-create-sharedSecret1.png> <./tkstool-creat
 e-sharedSecret2.png>]
-<tkstool-create-sharedSecret5.png, id=1895, 504.88625pt x 298.11375pt>
+<tkstool-create-sharedSecret5.png, id=1963, 504.88625pt x 298.11375pt>
 File: tkstool-create-sharedSecret5.png Graphic file (type png)
 
 <use tkstool-create-sharedSecret5.png>
 Package pdftex.def Info: tkstool-create-sharedSecret5.png used on input line 31
-11.
+89.
 (pdftex.def)             Requested size: 142.26378pt x 83.99895pt.
 
-Overfull \hbox (10.58838pt too wide) in paragraph at lines 3120--3122
+Overfull \hbox (10.58838pt too wide) in paragraph at lines 3198--3200
 []\OT1/cmr/m/n/10 Configuration: TPS sub-sys-tem can be con-fig-ured through pk
 ispawn
  []
 
-<pkispawn-tps.png, id=1896, 560.0925pt x 791.95876pt>
+<pkispawn-tps.png, id=1964, 560.0925pt x 791.95876pt>
 File: pkispawn-tps.png Graphic file (type png)
  <use pkispawn-tps.png>
-Package pdftex.def Info: pkispawn-tps.png used on input line 3126.
+Package pdftex.def Info: pkispawn-tps.png used on input line 3204.
 (pdftex.def)             Requested size: 227.62204pt x 321.8533pt.
 
-<pkispawn-tps2.png, id=1897, 667.49374pt x 376.40625pt>
+<pkispawn-tps2.png, id=1965, 667.49374pt x 376.40625pt>
 File: pkispawn-tps2.png Graphic file (type png)
 
 <use pkispawn-tps2.png>
-Package pdftex.def Info: pkispawn-tps2.png used on input line 3131.
+Package pdftex.def Info: pkispawn-tps2.png used on input line 3209.
 (pdftex.def)             Requested size: 227.62204pt x 128.3555pt.
- [76 <./tkstool-create-sharedSecret3.png> <./tkstool-create-sharedSecret4.png> 
+ [77 <./tkstool-create-sharedSecret3.png> <./tkstool-create-sharedSecret4.png> 
 <./tkstool-create-sharedSecret5.png>]
-<tkstool-import-sharedSecret1.png, id=1905, 643.40375pt x 135.50626pt>
+<tkstool-import-sharedSecret1.png, id=1973, 643.40375pt x 135.50626pt>
 File: tkstool-import-sharedSecret1.png Graphic file (type png)
 
 <use tkstool-import-sharedSecret1.png>
-Package pdftex.def Info: tkstool-import-sharedSecret1.png used on input line 31
-41.
+Package pdftex.def Info: tkstool-import-sharedSecret1.png used on input line 32
+19.
 (pdftex.def)             Requested size: 227.62204pt x 47.9386pt.
 
-<tkstool-import-sharedSecret2.png, id=1906, 647.41875pt x 354.32375pt>
+<tkstool-import-sharedSecret2.png, id=1974, 647.41875pt x 354.32375pt>
 File: tkstool-import-sharedSecret2.png Graphic file (type png)
 
 <use tkstool-import-sharedSecret2.png>
-Package pdftex.def Info: tkstool-import-sharedSecret2.png used on input line 31
-46.
+Package pdftex.def Info: tkstool-import-sharedSecret2.png used on input line 32
+24.
 (pdftex.def)             Requested size: 227.62204pt x 124.57204pt.
- [77 <./pkispawn-tps.png> <./pkispawn-tps2.png>] <tkstool-import-sharedSecret4.
-png, id=1913, 653.44125pt x 350.30875pt>
+ [78 <./pkispawn-tps.png> <./pkispawn-tps2.png>] <tkstool-import-sharedSecret4.
+png, id=1981, 653.44125pt x 350.30875pt>
 File: tkstool-import-sharedSecret4.png Graphic file (type png)
 
 <use tkstool-import-sharedSecret4.png>
-Package pdftex.def Info: tkstool-import-sharedSecret4.png used on input line 31
-51.
+Package pdftex.def Info: tkstool-import-sharedSecret4.png used on input line 32
+29.
 (pdftex.def)             Requested size: 227.62204pt x 122.02725pt.
 
-<tkstool-import-sharedSecret5.png, id=1914, 657.45625pt x 352.31625pt>
+<tkstool-import-sharedSecret5.png, id=1982, 657.45625pt x 352.31625pt>
 File: tkstool-import-sharedSecret5.png Graphic file (type png)
 
 <use tkstool-import-sharedSecret5.png>
-Package pdftex.def Info: tkstool-import-sharedSecret5.png used on input line 31
-56.
+Package pdftex.def Info: tkstool-import-sharedSecret5.png used on input line 32
+34.
 (pdftex.def)             Requested size: 227.62204pt x 121.97392pt.
- [78 <./tkstool-import-sharedSecret1.png> <./tkstool-import-sharedSecret2.png> 
+ [79 <./tkstool-import-sharedSecret1.png> <./tkstool-import-sharedSecret2.png> 
 <./tkstool-import-sharedSecret4.png> <./tkstool-import-sharedSecret5.png>]
 No file training.bbl.
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 3167.
-[79]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 3167.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 3245.
+[80]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 3245.
  (./training.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 3167.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 3167.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 3245.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 3245.
 
 Package rerunfilecheck Info: File `training.out' has not changed.
 (rerunfilecheck)             Checksum: 6C9C60698CCEBA0259DC13BF23C79D15;4485.
@@ -1036,13 +1036,13 @@ Package rerunfilecheck Info: File `training.out' has not changed.
 
 LaTeX Warning: There were undefined references.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 3167.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 3245.
  ) 
 Here is how much of TeX's memory you used:
- 10476 strings out of 495034
- 157976 string characters out of 6181677
- 287459 words of memory out of 5000000
- 12327 multiletter control sequences out of 15000+600000
+ 10540 strings out of 495034
+ 158982 string characters out of 6181677
+ 287500 words of memory out of 5000000
+ 12328 multiletter control sequences out of 15000+600000
  9234 words of font info for 33 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  44i,9n,58p,520b,2156s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1061,10 +1061,10 @@ y10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb
 /share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share
 /texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb></usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/latxfont/line10.pfb>
-Output written on training.pdf (79 pages, 2681314 bytes).
+Output written on training.pdf (80 pages, 2685281 bytes).
 PDF statistics:
- 2237 PDF objects out of 2487 (max. 8388607)
- 2058 compressed objects within 21 object streams
- 1241 named destinations out of 1440 (max. 500000)
+ 2321 PDF objects out of 2487 (max. 8388607)
+ 2140 compressed objects within 22 object streams
+ 1304 named destinations out of 1440 (max. 500000)
  730 words of extra memory for PDF output out of 10000 (max. 10000000)
 
