@@ -2228,12 +2228,11 @@ $ pkiconsole https://pki1.example.org:8443/ca
                                 \begin{itemize}
                                     \item To add a policy, click Add.
                                     \item Choose the \textbf{User Supplied Extension Default}  from the Default field, 
-                                        choose the constraint \textbf{Subject Name Constraint} and click OK
                                     \item Select \textbf{No Constraint}.
                                     \item In the profile editor 
                                         \begin{itemize}
                                             \item Policy Id: p6
-                                            \item Under Default tab->userExtOID: 2.5.29.17
+                                            \item Under Default tab: userExtOID: 2.5.29.17
                                             \item click Ok
                                         \end{itemize}
                                     \item Select \textbf{Subject Alternative Name Extension Default} and select \textbf{No Constraint}
@@ -2278,30 +2277,30 @@ https://github.com/mrniranjan/pkiworkshop/blob/master/san.csr
                     \end{enumerate}
         \item Use \textbf{pki} cli and try different options
             \begin{enumerate}[label*=\arabic*.]
-                \item \label{pki1} Create a NSS database using pki client cli with password 'Secret123'
+                \item \label{pki1} Create a NSS database using pki client cli with password Secret123
                     \begin{lstlisting}[style=bashInputStyle]
-$ pki -d /opt/rhqa_pki -c 'Secret123' client-init                                    
+$ pki -d /opt/rhqa_pki -c Secret123 client-init                                    
                     \end{lstlisting}
                 \item \label{pki2} Import CA Admin Cert of RootCA(\ref{ca1}) to /opt/rhqa\_pki
                     \begin{lstlisting}[style=bashInputStyle]
-$ pki -d /opt/rhqa_pki -c 'Secret123' client-cert-import --pkcs12 /root/.dogtag/pki-tomcat/ca_admin_cert.p12  --pkcs12-password Secret123                                    
+$ pki -d /opt/rhqa_pki -c Secret123 client-cert-import --pkcs12 /root/.dogtag/pki-tomcat/ca_admin_cert.p12  --pkcs12-password Secret123                                    
                     \end{lstlisting}
                 \item \label{pki3} Import CA Cert of RootCA(\ref{ca1})
                     \begin{lstlisting}[style=bashInputStyle]
-$ pki -d /opt/rhqa_pki1 -c 'Secret123' -h pki1.example.org -p 8080 client-cert-import "RootCA" --ca-server                                    
+$ pki -d /opt/rhqa_pki1 -c Secret123 -h pki1.example.org -p 8080 client-cert-import "RootCA" --ca-server                                    
                     \end{lstlisting}
                 \item \label{pki4} Submit a certificate request for user "foo" with subject DN:
                     \begin{lstlisting}
 UID=foo,E=foo@example.org,CN=Foo User1,OU=IDMQE,O=Example Org
                     \end{lstlisting}
                     \begin{lstlisting}[style=bashInputStyle]
-$ pki -d /opt/rhqa_pki -c 'Secret123' \
+$ pki -d /opt/rhqa_pki -c Secret123 \
     -h pki1.example.org -p 8080 client-cert-request \
     "UID=foo,E=foo@example.org,CN=Foo User1,O=Example Org" 
                     \end{lstlisting}
                 \item \label{pki5} Approve the Certificate request using Admin Cert
                     \begin{lstlisting}[style=bashInputStyle]
-$ pki -d /opt/rhqa_pki -c 'Secret123' -h pki1.example.org\
+$ pki -d /opt/rhqa_pki -c Secret123 -h pki1.example.org\
     -p 8080 -n "PKI Administrator for example.org" \
     cert-request-review 12 --action approve
 -------------------------------
@@ -2315,14 +2314,14 @@ Approved certificate request 12
                     \end{lstlisting}
                 \item Revoke a certificate with reason "Certificate On Hold"
                     \begin{lstlisting}[style=bashInputStyle]
-$ pki -d /opt/rhqa_pki -c 'Secret123' \
+$ pki -d /opt/rhqa_pki -c Secret123 \
     -h pki1.example.org -p 8080 \
     -n "PKI Administrator for example.org" \
     cert-revoke 0xc --reason "Certificate_Hold"
                     \end{lstlisting}
             \item Verify the status of the certificate
                 \begin{lstlisting}[style=bashInputStyle]
-$ pki -d /opt/rhqa_pki -c 'Secret123' \
+$ pki -d /opt/rhqa_pki -c Secret123 \
     -h pki2.example.org -p 8080 \
     cert-show 0xc
                 \end{lstlisting}
@@ -2542,9 +2541,9 @@ $ pkispawn -s KRA -f kra-inst.inf -vv
                 \item Create a NSS Database and Import CA Admin cert , CA cert. Refer:\ref{pki1}, \ref{pki2}, \ref{pki3}
                 \item Import KRA Admin cert from /opt/Example1-RootKRA
                     \begin{lstlisting}[style=bashInputStyle]
-$ pki -d /opt/rhqa_pki -c ’Secret123’ \
+$ pki -d /opt/rhqa_pki -c Secret123 \
     client-cert-import --pkcs12 \
-    /opt/Example1-RootKRA \
+    /opt/Example1-RootKRA/kra_admin_cert.p12 \
     --pkcs12-password Secret123
                     \end{lstlisting}
                     \begin{lstlisting}
@@ -2563,14 +2562,14 @@ $ certutil -L -d /var/lib/pki/Example1-RootKRA/alias/ \
                     \end{lstlisting}
                 \item Create a certificate request for user Foo1 to a profile in CA which archives private key
                     \begin{lstlisting}[style=bashInputStyle]
-$ pki -d /opt/rhqa_pki -c 'Secret123' \
+$ pki -d /opt/rhqa_pki -c Secret123 \
     -h pki1.example.org -p 8080 client-cert-request \
     "uid=foo1,O=Example Org" --profile caDualCert \
     --type crmf --transport transportCert.pem                    
                     \end{lstlisting}
                 \item Approve The certificate request using CA Admin cert
                     \begin{lstlisting}[style=bashInputStyle]
-$ pki -d /opt/rhqa_pki -c 'Secret123' \
+$ pki -d /opt/rhqa_pki -c Secret123 \
     -h pki2.example.org -p 8080 \
     -n "PKI Administrator for example.org" \
     cert-request-review <request_id> --action approve                    
@@ -2578,7 +2577,7 @@ $ pki -d /opt/rhqa_pki -c 'Secret123' \
                 \item Check Audit logs of KRA instance and see if the Archival request was successful
                 \item Use kra key cli to list the keys archived
                     \begin{lstlisting}[style=bashInputStyle]
-$ pki -d /opt/rhqa_pki -c 'Secret123' \
+$ pki -d /opt/rhqa_pki -c Secret123 \
     -h pki1.example.org -p 14080 \
     -n "PKI KRA Administrator for Example Org" kra-key-find
                     \end{lstlisting}
@@ -2589,17 +2588,17 @@ $ pki -d /opt/rhqa_pki -c 'Secret123' \
                     \begin{enumerate}[label*=\arabic*.]
                         \item List all the Groups available for KRA Subsystem
                             \begin{lstlisting}[style=bashInputStyle]
-$ pki -d /opt/rhqa_pki -c 'Secret123' -h pki1.example.org \
+$ pki -d /opt/rhqa_pki -c Secret123 -h pki1.example.org \
     -p 14080 -n "PKI KRA Administrator for Example Org" \
     kra-group-find                                
                             \end{lstlisting}
                         \item Create a User "KRA\_AgentV" and add him as member of \textbf{Data Recovery Manager Agents} 
                             \begin{lstlisting}[style=bashInputStyle]
-$ pki -d /opt/rhqa_pki -c 'Secret123' \
+$ pki -d /opt/rhqa_pki -c Secret123 \
 -h pki1.example.org -p 14080 \
 -n "PKI KRA Administrator for Exmaple Org" \
 kra-user-add KRA_AgentV --fullName "KRA Agent User" \
---password 'Secret123'
+--password Secret123
 -----------------------
 Added user "KRA_AgentV"
 -----------------------
@@ -2609,14 +2608,14 @@ Added user "KRA_AgentV"
                         \item Create a Cert request for "KRA Agent User" using CA Subsystem 
                             \begin{lstlisting}[style=bashInputStyle]
 #This command returns a request id , use the request id to approve the request
-$ pki -d /opt/rhqa_pki -c 'Secret123' \
+$ pki -d /opt/rhqa_pki -c Secret123 \
     -h pki1.example.org -p 8080 client-cert-request \
     "UID=KRA_AgentV,E=KRA_AgentV@example.org,CN="KRA Agent User",O=Example Org" 
                             \end{lstlisting}
                         \item Approve the certificate request using CA Admin User
                             \begin{lstlisting}[style=bashInputStyle]
 #This command after approving the request returns certificate serial Number
-$ pki -d  /opt/rhqa_pki -c 'Secret123' \
+$ pki -d  /opt/rhqa_pki -c Secret123 \
     -h pki1.example.org -p 8080 \
     -n "PKI Administrator for example.org" \
     cert-request-review <request_id> --action approve
@@ -2632,7 +2631,7 @@ Approved certificate request 29
                         \item Add the certificate created above to KRA Agent User
                             \begin{lstlisting}[style=bashInputStyle]
 #This will prompt for the CA URL, specify CA's Non secure url(8080)                            
-$ pki -d /opt/rhqa_pki -c 'Secret123' \
+$ pki -d /opt/rhqa_pki -c Secret123 \
     -h pki1.example.org -p 14080 \
     -n "PKI KRA Administrator for Example Org" \
     kra-user-cert-add KRA_AgentV --serial \
@@ -2640,7 +2639,7 @@ $ pki -d /opt/rhqa_pki -c 'Secret123' \
                             \end{lstlisting}
                         \item Make the KRA Agent user member of \textbf{"Data Recovery Manager Agents"}
                             \begin{lstlisting}[style=bashInputStyle]
-$ pki -d /opt/rhqa_pki -c 'Secret123' \
+$ pki -d /opt/rhqa_pki -c Secret123 \
     -h pki1.example.org -p 14080 \
     -n "PKI KRA Administrator for Example Org" \
     kra-group-member-add "Data Recovery Manager Agents" \
@@ -2648,7 +2647,7 @@ $ pki -d /opt/rhqa_pki -c 'Secret123' \
                             \end{lstlisting}
                         \item Import the KRA Agent Cert to NSS DB /opt/rhqa\_pki Directory
                             \begin{lstlisting}[style=bashInputStyle]
-$  pki -d /opt/rhqa_pki -c 'Secret123'\
+$  pki -d /opt/rhqa_pki -c Secret123\
     -h pki1.example.org -p 8080 \
     client-cert-import "KRA_AgentV" \
     --serial \
@@ -2657,7 +2656,7 @@ $  pki -d /opt/rhqa_pki -c 'Secret123'\
                     \end{enumerate}
                 \item \label{arch_password}  Archive a passphrase(password) using Agent User
                     \begin{lstlisting}[style=bashInputStyle]
-$ pki -d /opt/rhqa_pki -c 'Secret123' \
+$ pki -d /opt/rhqa_pki -c Secret123 \
     -h pki1.example.org -p 14080 \
     -n "KRA_AgentV" kra-key-archive \
     --clientKeyID beaker_server1 \
@@ -2672,7 +2671,7 @@ Archival request details
                     \end{lstlisting}
                 \item \label{arch_symmetric} Generate Symmetric keys with AES algo of size 128 and archive it
                     \begin{lstlisting}[style=bashInputStyle]
-$ pki -d /opt/rhqa_pki -c 'Secret123' \
+$ pki -d /opt/rhqa_pki -c Secret123 \
     -h pki1.example.org -p 14080 \
     -n "KRA_AgentV" kra-key-generate \
     --key-algo aes --key-size 128 \
@@ -2683,19 +2682,19 @@ $ pki -d /opt/rhqa_pki -c 'Secret123' \
             \begin{enumerate}[label*=\arabic*.]
                 \item Retrieve Archived Symmetric key using \textbf{key-retreive}
                     \begin{lstlisting}[style=bashInputStyle]
-$ pki -d /opt/rhqa_pki -c 'Secret123' \
+$ pki -d /opt/rhqa_pki -c Secret123 \
     -h pki1.example.org -p 14080 \
     -n "KRA_AgentV" kra-key-retrieve --keyID <KEY_ID>
                     \end{lstlisting}
                 \item Retrieve Archived Passwords , Refer \ref{arch_password}
                     \begin{lstlisting}[style=bashInputStyle]
-$ pki -d /opt/rhqa_pki -c 'Secret123' \
+$ pki -d /opt/rhqa_pki -c Secret123 \
     -h pki1.example.org -p 14080 \
     -n "KRA_AgentV" kra-key-retrieve --keyID <KEY_ID>
                     \end{lstlisting}
                 \item Retrieve Asymmetric keys (private Key). Refer Section \ref{arch_privatekey}
                     \begin{lstlisting}[style=bashInputStyle]
-$ pki -d /opt/rhqa_pki -c 'Secret123' \
+$ pki -d /opt/rhqa_pki -c Secret123 \
     -h pki1.example.org -p 14080 \
     -n "KRA_AgentV" kra-key-retrieve --keyID <KEY_ID>
                     \end{lstlisting}
