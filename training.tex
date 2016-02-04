@@ -2565,12 +2565,12 @@ $ certutil -L -d /var/lib/pki/Example1-RootKRA/alias/ \
 $ pki -d /opt/rhqa_pki -c Secret123 \
     -h pki1.example.org -p 8080 client-cert-request \
     "uid=foo1,O=Example Org" --profile caDualCert \
-    --type crmf --transport transportCert.pem                    
+    --type crmf --transport /opt/rhqa_pki/transportCert.pem                    
                     \end{lstlisting}
                 \item Approve The certificate request using CA Admin cert
                     \begin{lstlisting}[style=bashInputStyle]
 $ pki -d /opt/rhqa_pki -c Secret123 \
-    -h pki2.example.org -p 8080 \
+    -h pki1.example.org -p 8080 \
     -n "PKI Administrator for example.org" \
     cert-request-review <request_id> --action approve                    
                     \end{lstlisting}
