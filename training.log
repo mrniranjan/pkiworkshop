@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.6-1.40.14 (TeX Live 2014/dev) (format=pdflatex 2014.9.22)  29 JAN 2016 23:37
+This is pdfTeX, Version 3.1415926-2.6-1.40.14 (TeX Live 2014/dev) (format=pdflatex 2014.9.22)  4 FEB 2016 05:43
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -269,33 +269,802 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 )
 \Hy@SectionHShift=\skip49
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 19.
+Package hyperref Info: Option `colorlinks' set `true' on input line 21.
+
+(./training.aux)
+\openout1 = `training.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 64.
+LaTeX Font Info:    ... okay on input line 64.
+ (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count116
+\scratchdimen=\dimen122
+\scratchbox=\box31
+\nofMPsegments=\count117
+\nofMParguments=\count118
+\everyMPshowfont=\toks19
+\MPscratchCnt=\count119
+\MPscratchDim=\dimen123
+\MPnumerator=\count120
+\makeMPintoPDFobject=\count121
+\everyMPtoPDFconversion=\toks20
+) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
+
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2010/08/19 v1.1 Manage graphics extensions (HO)
+)
+Package grfext Info: Graphics extension search list:
+(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 452.
+
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: subfig package v1.3 is loaded.
+Package caption Info: float package is loaded.
+Package caption Info: hyperref package is loaded.
+Package caption Info: listings package is loaded.
+Package caption Info: End \AtBeginDocument code.
+\c@lstlisting=\count122
+\AtBeginShipoutBox=\box32
+Package hyperref Info: Link coloring ON on input line 64.
+
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
+Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
+Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
+)
+\c@section@level=\count123
+)
+LaTeX Info: Redefining \ref on input line 64.
+LaTeX Info: Redefining \pageref on input line 64.
+LaTeX Info: Redefining \nameref on input line 64.
+
+(./training.out) (./training.out)
+\@outlinefile=\write3
+\openout3 = `training.out'.
+
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 66.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 66.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 66.
+ (./training.toc
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 2.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 2.
+ [1
+
+{/usr/share/texlive/texmf-dist/fonts/map/pdftex/updmap/pdftex.map}])
+\tf@toc=\write4
+\openout4 = `training.toc'.
+
+
+
+LaTeX Warning: Citation `eric' on page 2 undefined on input line 70.
+
+
+LaTeX Warning: Citation `eric' on page 2 undefined on input line 74.
+
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 78.
+(/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
+File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 78.
+ [2]
+
+LaTeX Warning: Citation `eric' on page 3 undefined on input line 101.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 133--135
+[][]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 133--135
+
+ []
+
+[3]
+
+LaTeX Warning: Citation `eric' on page 4 undefined on input line 147.
+
+<symmetric.png, id=405, 444.66125pt x 125.46875pt>
+File: symmetric.png Graphic file (type png)
+ <use symmetric.png>
+Package pdftex.def Info: symmetric.png used on input line 150.
+(pdftex.def)             Requested size: 142.26378pt x 40.14124pt.
+
+
+LaTeX Warning: Citation `RedHat:Symmetric' on page 4 undefined on input line 15
+1.
+
+
+LaTeX Warning: Citation `RedHat:Symmetric' on page 4 undefined on input line 15
+1.
+
+<assymetric.png, id=407, 444.66125pt x 125.46875pt>
+File: assymetric.png Graphic file (type png)
+ <use assymetric.png>
+Package pdftex.def Info: assymetric.png used on input line 164.
+(pdftex.def)             Requested size: 227.62204pt x 64.22751pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<digitalsignature.png, id=408, 654.445pt x 223.83624pt>
+File: digitalsignature.png Graphic file (type png)
+
+<use digitalsignature.png>
+Package pdftex.def Info: digitalsignature.png used on input line 170.
+(pdftex.def)             Requested size: 227.62204pt x 77.85202pt.
+
+
+LaTeX Warning: Citation `RedHat:CSoverview' on page 4 undefined on input line 1
+71.
+
+
+LaTeX Warning: Citation `RedHat:CSoverview' on page 4 undefined on input line 1
+71.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[4 <./symmetric.png>]
+
+LaTeX Warning: Citation `eric' on page 5 undefined on input line 195.
+
+[5 <./assymetric.png> <./digitalsignature.png>]
+
+LaTeX Warning: Citation `eric' on page 6 undefined on input line 198.
+
+
+LaTeX Warning: Citation `eric' on page 6 undefined on input line 218.
+
+[6]
+
+LaTeX Warning: Citation `eric' on page 7 undefined on input line 250.
+
+[7]
+
+LaTeX Warning: Citation `eric' on page 8 undefined on input line 284.
+
+
+LaTeX Warning: Citation `eric' on page 8 undefined on input line 291.
+
+
+LaTeX Warning: Citation `eric' on page 8 undefined on input line 296.
+
+
+LaTeX Warning: Citation `eric' on page 8 undefined on input line 301.
+
+
+LaTeX Warning: Citation `RedHat:huzaifs' on page 8 undefined on input line 308.
+
+
+[8] <sslhandshake1.png, id=441, 331.2375pt x 305.14pt>
+File: sslhandshake1.png Graphic file (type png)
+ <use sslhandshake1.png>
+Package pdftex.def Info: sslhandshake1.png used on input line 353.
+(pdftex.def)             Requested size: 113.81102pt x 104.8404pt.
+
+[9] <sslhandshake2.png, id=446, 328.22626pt x 270.00874pt>
+File: sslhandshake2.png Graphic file (type png)
+
+<use sslhandshake2.png>
+Package pdftex.def Info: sslhandshake2.png used on input line 369.
+(pdftex.def)             Requested size: 113.81102pt x 93.62279pt.
+ [10 <./sslhandshake1.png> <./sslhandshake2.png>]
+<ssldatafrag.png, id=454, 571.13374pt x 332.24126pt>
+File: ssldatafrag.png Graphic file (type png)
+ <use ssldatafrag.png>
+Package pdftex.def Info: ssldatafrag.png used on input line 397.
+(pdftex.def)             Requested size: 142.26378pt x 82.75592pt.
+
+
+LaTeX Warning: Citation `eric' on page 11 undefined on input line 398.
+
+
+LaTeX Warning: Citation `eric' on page 11 undefined on input line 398.
+
+<ssl-overview.png, id=455, 394.47375pt x 891.33pt>
+File: ssl-overview.png Graphic file (type png)
+ <use ssl-overview.png>
+Package pdftex.def Info: ssl-overview.png used on input line 411.
+(pdftex.def)             Requested size: 85.35826pt x 192.86987pt.
+
+[11 <./ssldatafrag.png>]
+<pki-architectural-model.png, id=461, 628.3475pt x 536.0025pt>
+File: pki-architectural-model.png Graphic file (type png)
+
+<use pki-architectural-model.png>
+Package pdftex.def Info: pki-architectural-model.png used on input line 420.
+(pdftex.def)             Requested size: 199.16928pt x 169.89673pt.
+
+
+LaTeX Warning: Citation `5280' on page 12 undefined on input line 421.
+
+
+LaTeX Warning: Citation `5280' on page 12 undefined on input line 421.
+
+[12 <./ssl-overview.png> <./pki-architectural-model.png>] [13]
+Overfull \hbox (30.75069pt too wide) in paragraph at lines 522--523
+[]\OT1/cmr/m/n/10 Validity pe-riod of a cer-tifi-cate is pe-riod from not-Be-fo
+re to no-tAfter(inclusive) 
+ []
+
+[14]
+Overfull \hbox (21.88309pt too wide) in paragraph at lines 542--543
+[]\OT1/cmr/bx/n/10 C=US, ST=North Car-olina, O=Fedora Project, OU=Fedora
+ []
+
+
+Overfull \hbox (31.72325pt too wide) in paragraph at lines 542--543
+\OT1/cmr/bx/n/10 User Cert, CN=mrniranjan/emailAddress=niranjan@ashoo.in 
+ []
+
+[15]
+Overfull \hbox (20.05646pt too wide) in paragraph at lines 569--570
+[]\OT1/cmr/m/n/10 Example: DE:65:01:16:19:2E:51:E0:9A:51:1A:37:50:94:7D:39:29:2
+A:42:2C 
+ []
+
+
+Overfull \hbox (64.66344pt too wide) in paragraph at lines 589--590
+[]\OT1/cmr/bx/n/10 keyid:48:E6:68:F9:2B:D2:B2:95:D7:47:D8:23:20:10:4F:33:98:90:
+9F:D4 
+ []
+
+
+Overfull \hbox (34.79553pt too wide) in paragraph at lines 600--601
+[]\OT1/cmr/bx/n/10 48:E6:68:F9:2B:D2:B2:95:D7:47:D8:23:20:10:4F:33:98:90:9F:D4 
+
+ []
+
+[16] <KeyUsage1.png, id=485, 613.492pt x 399.894pt>
+File: KeyUsage1.png Graphic file (type png)
+ <use KeyUsage1.png>
+Package pdftex.def Info: KeyUsage1.png used on input line 652.
+(pdftex.def)             Requested size: 199.16928pt x 129.82365pt.
+
+[17 <./KeyUsage1.png>]
+Overfull \hbox (1.0005pt too wide) in paragraph at lines 702--703
+[]\OT1/cmr/m/n/10 Issuer Al-ter-na-tive name ex-ten-sion when present should be
+ non-critical 
+ []
+
+[18] [19] [20] [21] <crl-aki.png, id=509, 569.12625pt x 141.52875pt>
+File: crl-aki.png Graphic file (type png)
+
+<use crl-aki.png>
+Package pdftex.def Info: crl-aki.png used on input line 880.
+(pdftex.def)             Requested size: 184.9429pt x 45.99197pt.
+ [22 <./crl-aki.png>]
+<delta-crl-extension.png, id=515, 607.26875pt x 234.8775pt>
+File: delta-crl-extension.png Graphic file (type png)
+
+<use delta-crl-extension.png>
+Package pdftex.def Info: delta-crl-extension.png used on input line 907.
+(pdftex.def)             Requested size: 227.62204pt x 88.03583pt.
+
+<issuing-distribution-point.png, id=516, 606.265pt x 262.9825pt>
+File: issuing-distribution-point.png Graphic file (type png)
+
+<use issuing-distribution-point.png>
+Package pdftex.def Info: issuing-distribution-point.png used on input line 920.
+
+(pdftex.def)             Requested size: 227.62204pt x 98.73857pt.
+ [23 <./delta-crl-extension.png>]
+Overfull \hbox (0.15796pt too wide) in paragraph at lines 943--945
+[]\OT1/cmr/m/n/10 All cer-tifi-cates and keys are stored in berkelely database(
+or SQLite). There
+ []
 
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2013/08/26 1.5b listings language file
 )
-Runaway argument?
-{ \begin {document} \maketitle \tableofcontents \section {Introductio\ETC.
-! Paragraph ended before \lst@DefDriver@ was complete.
-<to be read again> 
-                   \par 
-l.58 
-     
-? 
-! Emergency stop.
-<to be read again> 
-                   \par 
-l.58 
-     
-End of file on the terminal!
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2013/08/26 1.5b listings language file
+)
+LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <9> not available
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 955.
 
- 
+Overfull \hbox (34.37091pt too wide) in paragraph at lines 960--961
+[][][][][][][][][][][][][][][][][][][][]  
+ []
+
+[24 <./issuing-distribution-point.png>] [25]
+Missing character: There is no Â in font cmtt9!
+Missing character: There is no   in font cmtt9!
+ [26]
+Missing character: There is no Â in font cmtt9!
+Missing character: There is no   in font cmtt9!
+Missing character: There is no Â in font cmtt9!
+Missing character: There is no   in font cmtt9!
+ [27]
+Missing character: There is no Â in font cmtt9!
+Missing character: There is no   in font cmtt9!
+ [28] [29] [30]
+Overfull \hbox (78.99971pt too wide) in paragraph at lines 1294--1295
+[]\OT1/cmr/m/n/10 Create a Name con-straint where per-mit-ted DN at-tribute is 
+"CN=pki*,OU=PKI,O=Example
+ []
+
+[31] [32] [33] [34]
+Missing character: There is no â in font cmr10!
+Missing character: There is no € in font cmr10!
+Missing character: There is no “ in font cmr10!
+Missing character: There is no â in font cmr10!
+Missing character: There is no € in font cmr10!
+Missing character: There is no œ in font cmr10!
+ [35]
+Missing character: There is no â in font cmr10!
+Missing character: There is no € in font cmr10!
+Missing character: There is no ™ in font cmr10!
+
+
+LaTeX Warning: Citation `4211' on page 36 undefined on input line 1503.
+
+
+LaTeX Warning: Citation `2986' on page 36 undefined on input line 1505.
+
+
+LaTeX Warning: Citation `nist:fips' on page 36 undefined on input line 1516.
+
+
+Overfull \hbox (80.50092pt too wide) in paragraph at lines 1518--1519
+\OT1/cmr/m/n/10 to-graphic Mod-ule Val-i-da-tion List : http://csrc.nist.gov/gr
+oups/STM/cmvp/documents/140-
+ []
+
+[36]
+Overfull \hbox (16.05617pt too wide) in paragraph at lines 1545--1547
+[]\OT1/cmr/m/n/10 Key Re-cov-ery Au-thor-ity(KRA):It's also called Data Re-cov-
+ery Man-ager(DRM) 
+ []
+
+<rhcs-subsystem-overview.png, id=998, 445.665pt x 425.59pt>
+File: rhcs-subsystem-overview.png Graphic file (type png)
+
+<use rhcs-subsystem-overview.png>
+Package pdftex.def Info: rhcs-subsystem-overview.png used on input line 1573.
+(pdftex.def)             Requested size: 227.62204pt x 217.36623pt.
+
+
+LaTeX Warning: Citation `RedHat:CSoverview' on page 37 undefined on input line 
+1574.
+
+
+LaTeX Warning: Citation `RedHat:CSoverview' on page 37 undefined on input line 
+1574.
+
+[37] [38 <./rhcs-subsystem-overview.png>]
+Overfull \hbox (21.22287pt too wide) in paragraph at lines 1643--1644
+[]\OT1/cmr/m/n/10 systemctl [start|status|stop|restart] pki-tomcatd@$\OML/cmm/m
+/it/10 <$\OT1/cmr/m/n/10 instance$\OML/cmm/m/it/10 >$\OT1/cmr/m/n/10 .service 
+ []
+
+[39] <pkispawn-ca.png, id=1014, 637.38126pt x 724.7075pt>
+File: pkispawn-ca.png Graphic file (type png)
+
+<use pkispawn-ca.png>
+Package pdftex.def Info: pkispawn-ca.png used on input line 1666.
+(pdftex.def)             Requested size: 184.9429pt x 210.28143pt.
+
+Overfull \hbox (0.83424pt too wide) in paragraph at lines 1672--1673
+[]\OT1/cmr/bx/n/10 /var/lib/pki/$\OML/cmm/m/it/10 <$\OT1/cmr/bx/n/10 instanceNa
+me$\OML/cmm/m/it/10 >$\OT1/cmr/m/n/10 : <In-stance> here is the tom-cat In-stan
+ce
+ []
+
+[40 <./pkispawn-ca.png>]
+Overfull \hbox (9.04274pt too wide) in paragraph at lines 1683--1686
+[]\OT1/cmr/bx/n/10 /var/lib/pki/$\OML/cmm/m/it/10 <$\OT1/cmr/bx/n/10 instance$\
+OML/cmm/m/it/10 >$\OT1/cmr/bx/n/10 /conf: \OT1/cmr/m/n/10 Con-fig-u-ra-tion di-
+rec-tory con-tain-ing tom-
+ []
+
+<CA-subsystem-Arch3.png, id=1020, 798.985pt x 442.453pt>
+File: CA-subsystem-Arch3.png Graphic file (type png)
+
+<use CA-subsystem-Arch3.png>
+Package pdftex.def Info: CA-subsystem-Arch3.png used on input line 1699.
+(pdftex.def)             Requested size: 227.62204pt x 126.0464pt.
+ [41 <./CA-subsystem-Arch3.png>]
+Overfull \hbox (31.24959pt too wide) in paragraph at lines 1712--1715
+[]\OT1/cmr/m/n/10 End user En-rolls in the PKI in-fras-truc-ture by sub-mit-tin
+g a En-roll-ment(certificate)
+ []
+
+[42] <enrollment.png, id=1031, 450.68375pt x 439.6425pt>
+File: enrollment.png Graphic file (type png)
+ <use enrollment.png>
+Package pdftex.def Info: enrollment.png used on input line 1743.
+(pdftex.def)             Requested size: 99.58464pt x 97.14427pt.
+
+Overfull \hbox (3.47269pt too wide) in paragraph at lines 1740--1746
+[]\OT1/cmr/m/n/10 The new cer-tifi-cate is stored in Cer-tifi-cate Man-agers in
+-ter-nal database.
+ []
+
+<CA-profiles-arch.png, id=1032, 834.317pt x 320.397pt>
+File: CA-profiles-arch.png Graphic file (type png)
+
+<use CA-profiles-arch.png>
+Package pdftex.def Info: CA-profiles-arch.png used on input line 1763.
+(pdftex.def)             Requested size: 256.0748pt x 98.33449pt.
+
+<CA-Profiles-workflow.png, id=1033, 779.713pt x 574.145pt>
+File: CA-Profiles-workflow.png Graphic file (type png)
+
+<use CA-Profiles-workflow.png>
+Package pdftex.def Info: CA-Profiles-workflow.png used on input line 1769.
+(pdftex.def)             Requested size: 227.62204pt x 167.6104pt.
+
+Overfull \hbox (48.54474pt too wide) in paragraph at lines 1773--1774
+[]\OT1/cmr/m/n/10 Each pro-file are de-fined in \OT1/cmr/bx/n/10 .cfg \OT1/cmr/
+m/n/10 file lo-cated at \OT1/cmr/bx/n/10 /var/lib/in-stance[]name/profiles/ca
+ []
+
+<profile-1.png, id=1034, 587.19376pt x 89.33376pt>
+File: profile-1.png Graphic file (type png)
+ <use profile-1.png>
+Package pdftex.def Info: profile-1.png used on input line 1781.
+(pdftex.def)             Requested size: 227.62204pt x 34.62872pt.
+ [43 <./enrollment.png> <./CA-profiles-arch.png>]
+<profile-2.png, id=1043, 461.725pt x 75.28125pt>
+File: profile-2.png Graphic file (type png)
+ <use profile-2.png>
+Package pdftex.def Info: profile-2.png used on input line 1788.
+(pdftex.def)             Requested size: 227.62204pt x 37.11212pt.
+
+Overfull \hbox (7.05612pt too wide) in paragraph at lines 1794--1796
+[]$[]$\OT1/cmr/m/n/10 : spec-i-fies the sub-ject Dis-tin-guished Name(DN)
+ []
+
+<profile-3.png, id=1044, 309.155pt x 28.105pt>
+File: profile-3.png Graphic file (type png)
+ <use profile-3.png>
+Package pdftex.def Info: profile-3.png used on input line 1800.
+(pdftex.def)             Requested size: 227.62204pt x 20.69357pt.
+
+<profile-4.png, id=1045, 836.12375pt x 555.07375pt>
+File: profile-4.png Graphic file (type png)
+ <use profile-4.png>
+Package pdftex.def Info: profile-4.png used on input line 1809.
+(pdftex.def)             Requested size: 227.62204pt x 151.10849pt.
+
+[44 <./CA-Profiles-workflow.png> <./profile-1.png> <./profile-2.png>]
+<publishing3.png, id=1054, 294.701pt x 178.266pt>
+File: publishing3.png Graphic file (type png)
+ <use publishing3.png>
+Package pdftex.def Info: publishing3.png used on input line 1824.
+(pdftex.def)             Requested size: 113.81102pt x 68.84341pt.
+
+[45 <./profile-3.png> <./profile-4.png> <./publishing3.png>]
+Overfull \hbox (11.08818pt too wide) in paragraph at lines 1860--1862
+\OT1/cmr/m/n/10 con-struct the DN of the en-try to which cert/cer-tifi-cate re-
+quest/CRL
+ []
+
+
+Overfull \hbox (100.52014pt too wide) in paragraph at lines 1880--1881
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]  
+ []
+
+
+Overfull \hbox (100.52014pt too wide) in paragraph at lines 1888--1889
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][]  
+ []
+
+[46] [47] [48] [49]
+Overfull \hbox (18.92711pt too wide) in paragraph at lines 2065--2066
+[]\OT1/cmr/m/n/10 Also copy the CA cert chain and save it to file /tm-p/ca[]cer
+t[]chain.cert 
+ []
+
+[50]
+Overfull \hbox (82.53127pt too wide) in paragraph at lines 2118--2120
+\OT1/cmr/m/n/10 word stored in \OT1/cmtt/m/n/10 "Internal" \OT1/cmr/m/n/10 in t
+he file \OT1/cmtt/m/n/10 /var/lib/pki-tomcat/conf/password.conf\OT1/cmr/m/n/10 
+. 
+ []
+
+[51] [52] [53]
+Overfull \hbox (3.22827pt too wide) in paragraph at lines 2260--2263
+\OT1/cmr/m/n/10 with Sub-jec-tAlt-Name ex-ten-sions and spec-i-fy-ing al-ter-na
+t host-
+ []
+
+
+Overfull \hbox (35.92165pt too wide) in paragraph at lines 2265--2266
+[][][][][][][][][][][][][][][][][][][][]  
+ []
+
+[54] <pkispawn-kra.png, id=1413, 632.3625pt x 791.95876pt>
+File: pkispawn-kra.png Graphic file (type png)
+
+<use pkispawn-kra.png>
+Package pdftex.def Info: pkispawn-kra.png used on input line 2348.
+(pdftex.def)             Requested size: 227.62204pt x 285.06868pt.
+ [55] [56 <./pkispawn-kra.png>]
+Overfull \hbox (8.05615pt too wide) in paragraph at lines 2377--2379
+[]\OT1/cmr/m/n/10 Key Re-cov-ery Au-thor-ity when con-fig-ured with with cer-ti
+fi-cate Man-ager(CA)
+ []
+
+<KRA-Architecture.png, id=1447, 809.424pt x 487.421pt>
+File: KRA-Architecture.png Graphic file (type png)
+
+<use KRA-Architecture.png>
+Package pdftex.def Info: KRA-Architecture.png used on input line 2392.
+(pdftex.def)             Requested size: 227.62204pt x 137.0645pt.
+ [57 <./KRA-Architecture.png>]
+<key-archival2.png, id=1454, 827.893pt x 562.1pt>
+File: key-archival2.png Graphic file (type png)
+ <use key-archival2.png>
+Package pdftex.def Info: key-archival2.png used on input line 2417.
+(pdftex.def)             Requested size: 284.52756pt x 193.17851pt.
+
+<key-archival-process.png, id=1455, 563.10374pt x 308.15125pt>
+File: key-archival-process.png Graphic file (type png)
+
+<use key-archival-process.png>
+Package pdftex.def Info: key-archival-process.png used on input line 2422.
+(pdftex.def)             Requested size: 199.16928pt x 108.99243pt.
+ [58 <./key-archival2.png> <./key-archival-process.png>] <key-recovery.png, id=
+1464, 628.3475pt x 449.68pt>
+File: key-recovery.png Graphic file (type png)
+
+<use key-recovery.png>
+Package pdftex.def Info: key-recovery.png used on input line 2437.
+(pdftex.def)             Requested size: 199.16928pt x 142.53508pt.
+
+Overfull \hbox (35.4717pt too wide) in paragraph at lines 2449--2451
+[]\OT1/cmr/m/n/10 This fea-tures is im-ple-mented through pki key CLI to gen-er
+-ate, archive,retrieve
+ []
+
+[59 <./key-recovery.png>] [60]
+Missing character: There is no â in font cmtt9!
+Missing character: There is no € in font cmtt9!
+Missing character: There is no ™ in font cmtt9!
+Missing character: There is no â in font cmtt9!
+Missing character: There is no € in font cmtt9!
+Missing character: There is no ™ in font cmtt9!
+
+Overfull \hbox (46.4461pt too wide) in paragraph at lines 2552--2554
+[][][][][][][][][][][][][]  
+ []
+
+[61] [62] [63] [64]
+Overfull \hbox (5.14964pt too wide) in paragraph at lines 2738--2739
+[]\OT1/cmr/m/n/10 Copy the kra[]backup[]keys.p12 to clone sys-tem \OT1/cmtt/m/n
+/10 pki2.example.org 
+ []
+
+[65] [66] [67] <pkispawn-ocsp.png, id=1841, 633.36626pt x 780.9175pt>
+File: pkispawn-ocsp.png Graphic file (type png)
+
+<use pkispawn-ocsp.png>
+Package pdftex.def Info: pkispawn-ocsp.png used on input line 2884.
+(pdftex.def)             Requested size: 227.62204pt x 280.64153pt.
+ [68 <./pkispawn-ocsp.png>] [69]
+<TMS-workflow.png, id=1851, 618.31pt x 425.59pt>
+File: TMS-workflow.png Graphic file (type png)
+ <use TMS-workflow.png>
+Package pdftex.def Info: TMS-workflow.png used on input line 2969.
+(pdftex.def)             Requested size: 227.62204pt x 156.67355pt.
+
+[70]
+
+LaTeX Warning: Citation `wiki:ccid' on page 71 undefined on input line 2984.
+
+
+LaTeX Warning: Citation `RedHat:AdminGuide' on page 71 undefined on input line 
+2991.
+
+
+LaTeX Warning: Citation `RedHat:AdminGuide' on page 71 undefined on input line 
+2993.
+
+[71 <./TMS-workflow.png>]
+Overfull \hbox (5.17157pt too wide) in paragraph at lines 3024--3025
+[]\OT1/cmr/m/n/10 These keys are used by TPS to com-mu-ni-cate with ESC(smartca
+rd) 
+ []
+
+<tks-key-derivation1.png, id=1862, 420.772pt x 379.016pt>
+File: tks-key-derivation1.png Graphic file (type png)
+
+<use tks-key-derivation1.png>
+Package pdftex.def Info: tks-key-derivation1.png used on input line 3036.
+(pdftex.def)             Requested size: 227.62204pt x 205.03572pt.
+ [72]
+<tokenprofiles1.png, id=1867, 1131.22626pt x 605.26125pt>
+File: tokenprofiles1.png Graphic file (type png)
+
+<use tokenprofiles1.png>
+Package pdftex.def Info: tokenprofiles1.png used on input line 3061.
+(pdftex.def)             Requested size: 227.62204pt x 121.78894pt.
+ [73 <./tks-key-derivation1.png>]
+<tks-tps-drm-esc-enrollment2.png, id=1875, 510.708pt x 497.86pt>
+File: tks-tps-drm-esc-enrollment2.png Graphic file (type png)
+
+<use tks-tps-drm-esc-enrollment2.png>
+Package pdftex.def Info: tks-tps-drm-esc-enrollment2.png used on input line 306
+9.
+(pdftex.def)             Requested size: 341.43306pt x 332.85037pt.
+
+Overfull \hbox (11.56061pt too wide) in paragraph at lines 3075--3077
+[]\OT1/cmr/m/n/10 Configuration: TKS sub-sys-tem can be con-fig-ured through pk
+ispawn
+ []
+
+[74 <./tokenprofiles1.png> <./tks-tps-drm-esc-enrollment2.png>]
+<pkispawn-tks.png, id=1883, 761.84625pt x 857.2025pt>
+File: pkispawn-tks.png Graphic file (type png)
+ <use pkispawn-tks.png>
+Package pdftex.def Info: pkispawn-tks.png used on input line 3081.
+(pdftex.def)             Requested size: 227.62204pt x 256.10327pt.
+
+<tkstool-create-sharedSecret1.png, id=1884, 650.43pt x 158.5925pt>
+File: tkstool-create-sharedSecret1.png Graphic file (type png)
+
+<use tkstool-create-sharedSecret1.png>
+Package pdftex.def Info: tkstool-create-sharedSecret1.png used on input line 30
+91.
+(pdftex.def)             Requested size: 142.26378pt x 34.68716pt.
+
+<tkstool-create-sharedSecret2.png, id=1885, 628.3475pt x 273.02pt>
+File: tkstool-create-sharedSecret2.png Graphic file (type png)
+
+<use tkstool-create-sharedSecret2.png>
+Package pdftex.def Info: tkstool-create-sharedSecret2.png used on input line 30
+96.
+(pdftex.def)             Requested size: 142.26378pt x 61.81427pt.
+
+<tkstool-create-sharedSecret3.png, id=1886, 620.3175pt x 266.9975pt>
+File: tkstool-create-sharedSecret3.png Graphic file (type png)
+
+<use tkstool-create-sharedSecret3.png>
+Package pdftex.def Info: tkstool-create-sharedSecret3.png used on input line 31
+01.
+(pdftex.def)             Requested size: 142.26378pt x 61.23294pt.
+
+<tkstool-create-sharedSecret4.png, id=1887, 607.26875pt x 279.0425pt>
+File: tkstool-create-sharedSecret4.png Graphic file (type png)
+
+<use tkstool-create-sharedSecret4.png>
+Package pdftex.def Info: tkstool-create-sharedSecret4.png used on input line 31
+06.
+(pdftex.def)             Requested size: 142.26378pt x 65.3706pt.
+ [75 <./pkispawn-tks.png> <./tkstool-create-sharedSecret1.png> <./tkstool-creat
+e-sharedSecret2.png>]
+<tkstool-create-sharedSecret5.png, id=1895, 504.88625pt x 298.11375pt>
+File: tkstool-create-sharedSecret5.png Graphic file (type png)
+
+<use tkstool-create-sharedSecret5.png>
+Package pdftex.def Info: tkstool-create-sharedSecret5.png used on input line 31
+11.
+(pdftex.def)             Requested size: 142.26378pt x 83.99895pt.
+
+Overfull \hbox (10.58838pt too wide) in paragraph at lines 3120--3122
+[]\OT1/cmr/m/n/10 Configuration: TPS sub-sys-tem can be con-fig-ured through pk
+ispawn
+ []
+
+<pkispawn-tps.png, id=1896, 560.0925pt x 791.95876pt>
+File: pkispawn-tps.png Graphic file (type png)
+ <use pkispawn-tps.png>
+Package pdftex.def Info: pkispawn-tps.png used on input line 3126.
+(pdftex.def)             Requested size: 227.62204pt x 321.8533pt.
+
+<pkispawn-tps2.png, id=1897, 667.49374pt x 376.40625pt>
+File: pkispawn-tps2.png Graphic file (type png)
+
+<use pkispawn-tps2.png>
+Package pdftex.def Info: pkispawn-tps2.png used on input line 3131.
+(pdftex.def)             Requested size: 227.62204pt x 128.3555pt.
+ [76 <./tkstool-create-sharedSecret3.png> <./tkstool-create-sharedSecret4.png> 
+<./tkstool-create-sharedSecret5.png>]
+<tkstool-import-sharedSecret1.png, id=1905, 643.40375pt x 135.50626pt>
+File: tkstool-import-sharedSecret1.png Graphic file (type png)
+
+<use tkstool-import-sharedSecret1.png>
+Package pdftex.def Info: tkstool-import-sharedSecret1.png used on input line 31
+41.
+(pdftex.def)             Requested size: 227.62204pt x 47.9386pt.
+
+<tkstool-import-sharedSecret2.png, id=1906, 647.41875pt x 354.32375pt>
+File: tkstool-import-sharedSecret2.png Graphic file (type png)
+
+<use tkstool-import-sharedSecret2.png>
+Package pdftex.def Info: tkstool-import-sharedSecret2.png used on input line 31
+46.
+(pdftex.def)             Requested size: 227.62204pt x 124.57204pt.
+ [77 <./pkispawn-tps.png> <./pkispawn-tps2.png>] <tkstool-import-sharedSecret4.
+png, id=1913, 653.44125pt x 350.30875pt>
+File: tkstool-import-sharedSecret4.png Graphic file (type png)
+
+<use tkstool-import-sharedSecret4.png>
+Package pdftex.def Info: tkstool-import-sharedSecret4.png used on input line 31
+51.
+(pdftex.def)             Requested size: 227.62204pt x 122.02725pt.
+
+<tkstool-import-sharedSecret5.png, id=1914, 657.45625pt x 352.31625pt>
+File: tkstool-import-sharedSecret5.png Graphic file (type png)
+
+<use tkstool-import-sharedSecret5.png>
+Package pdftex.def Info: tkstool-import-sharedSecret5.png used on input line 31
+56.
+(pdftex.def)             Requested size: 227.62204pt x 121.97392pt.
+ [78 <./tkstool-import-sharedSecret1.png> <./tkstool-import-sharedSecret2.png> 
+<./tkstool-import-sharedSecret4.png> <./tkstool-import-sharedSecret5.png>]
+No file training.bbl.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 3167.
+[79]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 3167.
+ (./training.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 3167.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 3167.
+
+Package rerunfilecheck Info: File `training.out' has not changed.
+(rerunfilecheck)             Checksum: 6C9C60698CCEBA0259DC13BF23C79D15;4485.
+
+
+LaTeX Warning: There were undefined references.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 3167.
+ ) 
 Here is how much of TeX's memory you used:
- 7558 strings out of 495034
- 115216 string characters out of 6181677
- 236224 words of memory out of 5000000
- 10752 multiletter control sequences out of 15000+600000
- 3640 words of font info for 14 fonts, out of 8000000 for 9000
+ 10476 strings out of 495034
+ 157976 string characters out of 6181677
+ 287459 words of memory out of 5000000
+ 12327 multiletter control sequences out of 15000+600000
+ 9234 words of font info for 33 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 44i,0n,42p,218b,219s stack positions out of 5000i,500n,10000p,200000b,80000s
-!  ==> Fatal error occurred, no output PDF file produced!
+ 44i,9n,58p,520b,2156s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/share/te
+xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type
+1/public/amsfonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cms
+y10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb
+></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr
+/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share
+/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb></usr/share/texliv
+e/texmf-dist/fonts/type1/public/amsfonts/latxfont/line10.pfb>
+Output written on training.pdf (79 pages, 2681314 bytes).
+PDF statistics:
+ 2237 PDF objects out of 2487 (max. 8388607)
+ 2058 compressed objects within 21 object streams
+ 1241 named destinations out of 1440 (max. 500000)
+ 730 words of extra memory for PDF output out of 10000 (max. 10000000)
+

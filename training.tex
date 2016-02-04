@@ -2738,7 +2738,9 @@ total 104
                         \item Copy the kra\_backup\_keys.p12 to clone system \texttt{pki2.example.org}
 
                         \item Setup Directory server on clone system for KRA
-                            \begin{lstlisting}
+
+                            kra-clone-ds.inf
+                            \begin{lstlisting}[style=configFile]
 [General]
 FullMachineName=pki2.example.org
 SuiteSpotUserID=nobody
@@ -2756,10 +2758,13 @@ ServerAdminID=admin
 ServerAdminPwd=Secret123
 SysUser=nobody
                             \end{lstlisting}
+                            \begin{lstlisting}[style=bashInputStyle]
+$ setup-ds.pl --silent --file=kra-clone-ds.inf
+                            \end{lstlisting}
                         \item Setup Clone KRA using below configuration
-                            \begin{lstlisting}
-clone_kra.inf :
-
+                            
+                            kra-clone.inf :
+                            \begin{lstlisting}[style=configFile]
 [DEFAULT]
 pki_instance_name=Example1-CloneKRA
 pki_https_port=14443
@@ -2805,7 +2810,7 @@ pki_ds_remove_data=True
 pki_ds_base_dn=o=Example1-RootKRA-KRA
                             \end{lstlisting}
                             \begin{lstlisting}[style=bashInputStyle]
-$ pkispawn -s KRA -f clone_kra.inf -vv                            
+$ pkispawn -s KRA -f kra-clone.inf -vv                            
                             \end{lstlisting}
                         \item Request a new DRM Transport Cert
                             \begin{enumerate}[label*=\arabic*.]
@@ -2887,7 +2892,21 @@ ca.connector.KRA.transportCert=<new transport cert> [ base64 cert which has been
     \end{itemize}
 \subsubsection{Instance Layout}
     \begin{itemize}
-        \item test
+        \item \textbf{/var/lib/pki/$<$instance$>$}: $<$Instance$>$ here is the tomcat Instance name 
+            given during configuring subsystem
+        \item \textbf{/var/lib/pki/$<$instance$>$/alias}: Is the NSS Database of the system where the subsystem system 
+            certs are stored. 
+        \begin{itemize}
+            \item Server-Cert
+            \item auditSigningCert
+            \item ocspSigningCert
+            \item subsystemCert
+        \end{itemize}
+        \item \textbf{/var/lib/pki/$<$instance$>$/conf/}: Configuration directory containing tomcat configuration,
+            password file containing internal database(ldap) password, and NSS Database password
+        \item \textbf{/var/lib/pki/$<$instance$>$/OCSP/}: Contains KRA Subsystem configuration file CS.cfg. This file is
+            the main configuration file for KRA subsystem
+        \item \textbf{/var/lib/pki/$<$instance$>$/ocsp/}: Contains kra subsystem related jar files 
     \end{itemize}
 \subsubsection{Interfaces}
 \begin{itemize}
@@ -2896,6 +2915,79 @@ ca.connector.KRA.transportCert=<new transport cert> [ base64 cert which has been
     \item Admin Interface(Java console)
 \end{itemize}
 \subsubsection{Exercises}
+    \begin{enumerate}[label*=\arabic*.]
+        \item Setup OCSP using pkispawn in separate Tomcat Instance. Use the below configuration with pkispawn
+            \begin{enumerate}[label*=\arabic*.]
+                \item Configure CA subsystem using method specified in \ref{rootca}
+                \item Setup Directory Server for OCSP subsystem using below configuration 
+
+                ocsp-ds.inf:
+                    \begin{lstlisting}[style=configFile]
+[General]
+FullMachineName=pki1.example.org
+SuiteSpotUserID=nobody
+SuiteSpotGroup=nobody
+
+[slapd]
+ServerIdentifier=Example1-OCSP
+ServerPort=1902
+Suffix=dc=example,dc=org
+RootDN=cn=Directory Manager
+RootDNPwd=Secret123
+
+[admin]
+ServerAdminID=admin
+ServerAdminPwd=Secret123
+SysUser=nobody
+                    \end{lstlisting}
+                    \begin{lstlisting}[style=bashInputStyle]
+$ setup-ds.pl --silent --file=ocsp-ds.inf --debug                
+                    \end{lstlisting}
+                \item \label{ocsp_sep_tomcat} Setup OCSP using pkispawn in separate Tomcat Instance. Use the below configuration with pkispawn
+
+                    ocsp-inst.inf:
+                    \begin{lstlisting}[style=configFile]
+[DEFAULT]
+pki_instance_name=Example1-RootOCSP
+pki_https_port=18443
+pki_http_port=18080
+
+#NSS DB Token Password
+pki_token_password=Secret123
+
+#OCSP Admin password
+pki_admin_password=Secret123
+
+# Security Domain
+pki_hostname=pki2.example.org
+pki_security_domain_hostname=pki1.example.org
+pki_security_domain_https_port=8443
+pki_security_domain_user=caadmin
+pki_security_domain_password=Secret123
+
+#Client Dir
+pki_client_dir=/opt/Example1-RootOCSP
+pki_client_pkcs12_password=Secret123
+pki_client_database_password=Secret123
+
+# backup
+pki_backup_keys=True
+pki_backup_password=Secret123
+
+[Tomcat]
+pki_ajp_port=18009
+pki_tomcat_server_port=18005
+
+[OCSP]
+pki_admin_nickname=PKI OCSP Administrator for Example Org
+pki_import_admin_cert=False
+pki_ds_hostname=pki1.example.org
+pki_ds_ldap_port=1902
+pki_ds_bind_dn=cn=Directory Manager
+pki_ds_password=Secret123
+                    \end{lstlisting}
+            \end{enumerate}
+    \end{enumerate}
 \subsection{SmartCard Management}
 \subsubsection{Introduction}
     \begin{itemize}
