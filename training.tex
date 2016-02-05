@@ -2055,7 +2055,27 @@ $ systemctl status pki-tomcatd@Ext1-CA1
 $ pkidaemon status tomcat Ext1-CA1
                     \end{lstlisting}
                     \item Get the certificate request signed by RootCA configured in \ref{ca1}
-                    \item Import CA Admin cert to firefox and Approve the request using belwo procedure:
+                    \item \label{import_admin_p12} Import CA Admin cert to firefox: [Below procedure is same for any Subsystem Admin Cert]
+                        \begin{itemize}
+                            \item Open Firefox
+                            \item Click on Preferences (Upper Right hand Corner, check below image):
+                                \begin{figure}[H]
+                                    \centering
+                                    \includegraphics[width=10mm]{firefox-certificates1.png}
+                                    \caption{Firefox Preferences}
+                                \end{figure}
+                            \item Click Preferences
+                            \item Select Advanced from left pane
+                            \item Select "Certificates" tab
+                            \item Click on "View Certificates" to open "Certificate Manager" Window
+                            \item From the "Certificate Manager" Windows 
+                            \item Select "Your Certificates" tab and Click on Import and provide the path
+                                of Admin's P12 file 
+                            \item Should prompt for password, Give the password that is used to protect the P12 file.
+                            \item Click on "OK" to close the window
+                            \item Close the "preferences" tab
+                        \end{itemize}
+                    \item Approve the request using below procedure
                         \begin{itemize}
                             \item Access CA EE interface
                             \item Copy the certificate request and submit using the profile:
@@ -2674,7 +2694,7 @@ Archival request details
 $ pki -d /opt/rhqa_pki -c Secret123 \
     -h pki1.example.org -p 14080 \
     -n "KRA_AgentV" kra-key-generate \
-    --key-algo aes --key-size 128 \
+    --key-algorithm AES --key-size 128 \
     --usages wrap 
                     \end{lstlisting}
             \end{enumerate}
@@ -2700,7 +2720,7 @@ $ pki -d /opt/rhqa_pki -c Secret123 \
                     \end{lstlisting}
                 \item Retrieving Asymmetric Keys From Browser(firefox)
                     \begin{itemize}
-                        \item Import CA Admin Cert and KRA Admin p12 file to Firefox browser
+                        \item Import CA Admin Cert and KRA Admin p12 file to Firefox browser. Refer: \ref{import_admin_p12}
                         \item Trust the CA cert 
                         \item Access KRA Agent Page \textit{https://pki1.example.org:14443}
                         \item Authenticate it with KRA Agent Cert
@@ -2986,6 +3006,36 @@ pki_ds_bind_dn=cn=Directory Manager
 pki_ds_password=Secret123
                     \end{lstlisting}
             \end{enumerate}
+        \item Configure Publishing to OCSP with Client Authentication
+             \begin{enumerate}[label*=\arabic*.]
+                \item Configure publisher on the CA
+                    \begin{lstlisting}[style=bashInputStyle]
+$ pkiconsole https://pki1.example.org:8443/ca                    
+                    \end{lstlisting}
+                \item In the Configuration tab, select Certificate Manager from the navigation tree on
+                    the left. Select Publishing, and then Publishers.
+                \item Click Add to open the Select Publisher Plug-in Im plem entation window, which
+                    lists registered publisher modules
+                \item Select the OCSPPublisher module, then open the editor window. Make sure that the
+                    enableClientAuth checkbox is selected.
+                    \begin{itemize}
+                        \item Publisher ID: OCSPPublisher1
+                        \item host: pki1.example.org
+                        \item port: 18443
+                        \item path: /ocsp/agent/ocsp/addCRL
+                        \item nickName: subsystemCert cert-pki-tomcat
+                    \end{itemize}
+                \item From the Configuration tab, select Certificate Manager from the navigation tree on the left. 
+                    Select  Publishing, and then Rules.
+                \item Click on Add:
+                    \begin{itemize}
+                        \item Rule ID: ocspRule1
+                        \item type: crl
+                        \item enabled: click on the checkbox
+                        \item mapper: NoMap
+                        \item publisher: OCSPPublisher1
+                    \end{itemize}
+             \end{enumerate}
     \end{enumerate}
 \subsection{SmartCard Management}
 \subsubsection{Introduction}
