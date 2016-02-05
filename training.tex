@@ -3035,9 +3035,27 @@ $ pkiconsole https://pki1.example.org:8443/ca
                         \item mapper: NoMap
                         \item publisher: OCSPPublisher1
                     \end{itemize}
-                \item Using EE request 5 certs and approve them using Agent
-                \item From Agent interface revoke the 5 certs
-                \item Update Certificate Revocation List from CA Agent interface
+                \item Enroll Multiple certificate requests using \textbf{pki client-cert-request cli}
+                    \begin{lstlisting}
+$  pki -d /opt/rhqa_pki -c 'Secret123' \
+-h pki1.example.org -p 8080 \
+client-cert-request \
+"UID=test1,E=test1@example.org,CN=Test1 User,O=Example Org"
+                    \end{lstlisting}
+                \item Approve the Certificate request using Agent Cert. Repeat the below command for all the requests created above.
+                    \begin{lstlisting}[style=bashInputStyle]
+$ pki -d -d /opt/rhqa_pki -c 'Secret123' \
+    -h pki1.example.org -p 8080 \
+    -n "PKI Administrator for example.org" \
+    cert-request-review <request_id> --action approve       
+                    \end{lstlisting}
+                \item Revoke the Certs using \textbf{pki cert-revoke cli}
+                    \begin{lstlisting}[style=bashInputStyle]
+$ pki -d -d /opt/rhqa_pki -c 'Secret123' \
+    -h pki1.example.org -p 8080 \
+    -n "PKI Administrator for example.org" \
+    cert-revoke <serial_Number> --reason "Key_Compromise"
+                    \end{lstlisting}
                 \item Using OCSPClient cli verify the status of the certificate
                     \begin{lstlisting}[style=bashInputStyle]
 $ OCSPClient pki1.example.org 18080 /opt/rhqa_pki "RootCA" <serial_number> ocsp-status.out 1                    
