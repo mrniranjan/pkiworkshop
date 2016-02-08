@@ -1,0 +1,548 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="297mm"
+   height="210mm"
+   viewBox="0 0 1052.3622 744.09448"
+   id="svg13522"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="smime.svg"
+   inkscape:export-filename="/home/mniranja/NotBackedUp/whitepapers/rhcss/CS/SSL-Images/smime.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90">
+  <defs
+     id="defs13524">
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible"
+       id="marker17373"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="Arrow1Lstart">
+      <path
+         transform="scale(0.8) translate(12.5,0)"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         id="path17375" />
+    </marker>
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible"
+       id="marker16173"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="Arrow1Lstart">
+      <path
+         transform="scale(0.8) translate(12.5,0)"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         id="path16175" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Lstart"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="marker15437"
+       style="overflow:visible"
+       inkscape:isstock="true"
+       inkscape:collect="always">
+      <path
+         id="path15439"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         transform="scale(0.8) translate(12.5,0)" />
+    </marker>
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible"
+       id="marker14704"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="Arrow1Lstart"
+       inkscape:collect="always">
+      <path
+         transform="scale(0.8) translate(12.5,0)"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         id="path14706" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Lstart"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="Arrow1Lstart"
+       style="overflow:visible"
+       inkscape:isstock="true"
+       inkscape:collect="always">
+      <path
+         id="path4158"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         transform="scale(0.8) translate(12.5,0)" />
+    </marker>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.86310239"
+     inkscape:cx="526.1811"
+     inkscape:cy="785.04102"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1600"
+     inkscape:window-height="844"
+     inkscape:window-x="0"
+     inkscape:window-y="34"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata13527">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-308.26772)">
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:17.5px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="367.6181"
+       y="693.60236"
+       id="text14647"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan14649"
+         x="367.6181"
+         y="693.60236" /></text>
+    <rect
+       style="opacity:0.86000001;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:2.3627038;stroke-linecap:butt;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect14078"
+       width="111.48627"
+       height="54.591686"
+       x="548.56116"
+       y="355.50821"
+       rx="0.130293"
+       ry="0.13029301" />
+    <rect
+       style="opacity:0.86000001;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:2.3627038;stroke-linecap:butt;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect14070"
+       width="106.93581"
+       height="142.16585"
+       x="36.634384"
+       y="479.46869"
+       rx="0.13029252"
+       ry="0.13029252" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:17.97709465px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="48.004459"
+       y="547.77771"
+       id="text14082"
+       sodipodi:linespacing="125%"
+       transform="scale(1.0001267,0.99987336)"><tspan
+         sodipodi:role="line"
+         id="tspan14084"
+         x="48.004459"
+         y="547.77771"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'DejaVu Serif';-inkscape-font-specification:'DejaVu Serif'">Message</tspan></text>
+    <g
+       id="g14092"
+       transform="matrix(1.0273927,0,0,1.0271325,-40.723426,188.99545)">
+      <rect
+         ry="0.12685122"
+         rx="0.12681907"
+         y="566.26477"
+         x="66.437004"
+         height="53.149605"
+         width="108.51378"
+         id="rect14072"
+         style="opacity:0.86000001;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:2.29999995;stroke-linecap:butt;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:17.5px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         x="81.938972"
+         y="585.08856"
+         id="text14086"
+         sodipodi:linespacing="125%"><tspan
+           sodipodi:role="line"
+           id="tspan14088"
+           x="81.938972"
+           y="585.08856"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'DejaVu Serif';-inkscape-font-specification:'DejaVu Serif'">Digest </tspan><tspan
+           id="tspan14090"
+           sodipodi:role="line"
+           x="81.938972"
+           y="606.96356"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'DejaVu Serif';-inkscape-font-specification:'DejaVu Serif'"> Value</tspan></text>
+    </g>
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.02726257px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-start:url(#Arrow1Lstart)"
+       d="m 82.771782,757.89447 1.585342,-129.65056 0,0"
+       id="path14163"
+       inkscape:connector-curvature="0" />
+    <g
+       id="g15392"
+       transform="matrix(1.0273927,0,0,1.0271325,-14.558282,72.988117)">
+      <rect
+         ry="0.12685122"
+         rx="0.12681907"
+         y="341.48621"
+         x="298.18503"
+         height="393.08563"
+         width="147.26871"
+         id="rect14074"
+         style="opacity:0.86000001;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:2.29999995;stroke-linecap:butt;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:17.5px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         x="324.75983"
+         y="706.88977"
+         id="text14654"
+         sodipodi:linespacing="125%"><tspan
+           sodipodi:role="line"
+           id="tspan14656"
+           x="324.75983"
+           y="706.88977"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'DejaVu Serif';-inkscape-font-specification:'DejaVu Serif'">Signature</tspan></text>
+      <path
+         inkscape:connector-curvature="0"
+         id="path14658"
+         d="m 300.39961,679.20767 145.05413,0 -1.10728,0"
+         style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+      <text
+         sodipodi:linespacing="125%"
+         id="text14660"
+         y="644.8819"
+         x="322.54526"
+         style="font-style:normal;font-weight:normal;font-size:17.5px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         xml:space="preserve"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'DejaVu Serif';-inkscape-font-specification:'DejaVu Serif'"
+           y="644.8819"
+           x="322.54526"
+           id="tspan14662"
+           sodipodi:role="line">   Alice's </tspan><tspan
+           id="tspan14664"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'DejaVu Serif';-inkscape-font-specification:'DejaVu Serif'"
+           y="666.7569"
+           x="322.54526"
+           sodipodi:role="line">Certificate</tspan></text>
+      <path
+         style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="m 299.29233,614.98523 145.05413,0 -1.10728,0"
+         id="path14666"
+         inkscape:connector-curvature="0" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:17.5px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         x="328.08167"
+         y="483.21851"
+         id="text14668"
+         sodipodi:linespacing="125%"><tspan
+           sodipodi:role="line"
+           x="328.08167"
+           y="483.21851"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'DejaVu Serif';-inkscape-font-specification:'DejaVu Serif'"
+           id="tspan14672">  Signed </tspan><tspan
+           id="tspan14676"
+           sodipodi:role="line"
+           x="328.08167"
+           y="505.09351"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'DejaVu Serif';-inkscape-font-specification:'DejaVu Serif'">Message</tspan></text>
+    </g>
+    <g
+       transform="matrix(1.0273927,0,0,1.0271325,-40.723426,188.99545)"
+       id="g14678">
+      <rect
+         style="opacity:0.86000001;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:2.29999995;stroke-linecap:butt;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+         id="rect14680"
+         width="108.51378"
+         height="53.149605"
+         x="66.437004"
+         y="566.26477"
+         rx="0.12681907"
+         ry="0.12685122" />
+      <text
+         sodipodi:linespacing="125%"
+         id="text14682"
+         y="585.08856"
+         x="81.938972"
+         style="font-style:normal;font-weight:normal;font-size:17.5px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         xml:space="preserve"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'DejaVu Serif';-inkscape-font-specification:'DejaVu Serif'"
+           y="585.08856"
+           x="81.938972"
+           id="tspan14684"
+           sodipodi:role="line">Digest </tspan><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'DejaVu Serif';-inkscape-font-specification:'DejaVu Serif'"
+           y="606.96356"
+           x="81.938972"
+           sodipodi:role="line"
+           id="tspan14686"> Value</tspan></text>
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:17.97709465px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="96.915695"
+       y="688.8241"
+       id="text14688"
+       sodipodi:linespacing="125%"
+       transform="scale(1.0001267,0.99987336)"><tspan
+         sodipodi:role="line"
+         id="tspan14690"
+         x="96.915695"
+         y="688.8241"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'DejaVu Serif';-inkscape-font-specification:'DejaVu Serif'">1. Digest</tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text14692"
+       y="780.95923"
+       x="169.71382"
+       style="font-style:normal;font-weight:normal;font-size:17.97709465px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"
+       transform="scale(1.0001267,0.99987336)"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'DejaVu Serif';-inkscape-font-specification:'DejaVu Serif'"
+         y="780.95923"
+         x="169.71382"
+         id="tspan14694"
+         sodipodi:role="line">2. Sign</tspan></text>
+    <path
+       inkscape:connector-curvature="0"
+       id="path14702"
+       d="m 277.95716,795.43888 -129.67551,-2.1355 0,0"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.02726257px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-start:url(#marker14704)" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:17.97709465px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="158.33911"
+       y="815.08337"
+       id="text15386"
+       sodipodi:linespacing="125%"
+       transform="scale(1.0001267,0.99987336)"><tspan
+         sodipodi:role="line"
+         id="tspan15388"
+         x="158.33911"
+         y="815.08337"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'DejaVu Serif';-inkscape-font-specification:'DejaVu Serif'">   Alice's</tspan><tspan
+         sodipodi:role="line"
+         x="158.33911"
+         y="836.95837"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'DejaVu Serif';-inkscape-font-specification:'DejaVu Serif'"
+         id="tspan15390">Private Key</tspan></text>
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.42237663px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-start:url(#marker15437)"
+       d="m 790.39952,615.68064 -323.39148,-1.64171 0,0"
+       id="path15435"
+       inkscape:connector-curvature="0" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:17.97709465px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="572.37848"
+       y="642.18781"
+       id="text16161"
+       sodipodi:linespacing="125%"
+       transform="scale(1.0001267,0.99987336)"><tspan
+         sodipodi:role="line"
+         id="tspan16163"
+         x="572.37848"
+         y="642.18781"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'DejaVu Serif';-inkscape-font-specification:'DejaVu Serif'">3. Encrypt</tspan></text>
+    <path
+       inkscape:connector-curvature="0"
+       id="path16171"
+       d="m 601.54383,598.54923 1.42772,-182.27895 0,0"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.15590811px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-start:url(#marker16173)" />
+    <text
+       sodipodi:linespacing="125%"
+       id="text16597"
+       y="376.01956"
+       x="550.76654"
+       style="font-style:normal;font-weight:normal;font-size:17.97709465px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"
+       transform="scale(1.0001267,0.99987336)"><tspan
+         id="tspan16601"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'DejaVu Serif';-inkscape-font-specification:'DejaVu Serif'"
+         y="376.01956"
+         x="550.76654"
+         sodipodi:role="line">  Random</tspan><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'DejaVu Serif';-inkscape-font-specification:'DejaVu Serif'"
+         y="397.89456"
+         x="550.76654"
+         sodipodi:role="line"
+         id="tspan16605">Session key</tspan></text>
+    <path
+       inkscape:connector-curvature="0"
+       id="path17371"
+       d="M 894.30874,417.7988 C 893.85165,380.56522 845.11279,297.30755 666.69753,376.16217 l 0,2.27466"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.17859054px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-start:url(#marker17373)"
+       sodipodi:nodetypes="ccc" />
+    <text
+       sodipodi:linespacing="125%"
+       id="text19963"
+       y="352.13272"
+       x="885.18304"
+       style="font-style:normal;font-weight:normal;font-size:17.97709465px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"
+       transform="scale(1.0001267,0.99987336)"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'DejaVu Serif';-inkscape-font-specification:'DejaVu Serif'"
+         y="352.13272"
+         x="885.18304"
+         id="tspan19965"
+         sodipodi:role="line">   Bob's</tspan><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'DejaVu Serif';-inkscape-font-specification:'DejaVu Serif'"
+         y="374.00772"
+         x="885.18304"
+         sodipodi:role="line"
+         id="tspan19967">Public Key</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:17.97709465px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="749.82397"
+       y="380.56946"
+       id="text19969"
+       sodipodi:linespacing="125%"
+       transform="scale(1.0001267,0.99987336)"><tspan
+         sodipodi:role="line"
+         id="tspan19971"
+         x="749.82397"
+         y="380.56946"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'DejaVu Serif';-inkscape-font-specification:'DejaVu Serif'">4. Encrypt</tspan></text>
+    <rect
+       ry="0.13029301"
+       rx="0.130293"
+       y="428.7298"
+       x="825.99756"
+       height="403.75104"
+       width="151.3028"
+       id="rect15407"
+       style="opacity:0.86000001;fill:#ac9d93;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:2.3627038;stroke-linecap:butt;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:17.97709465px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="850.91736"
+       y="791.63733"
+       id="text15409"
+       sodipodi:linespacing="125%"
+       transform="scale(1.0001267,0.99987336)"><tspan
+         sodipodi:role="line"
+         id="tspan15411"
+         x="850.91736"
+         y="791.63733"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'DejaVu Serif';-inkscape-font-specification:'DejaVu Serif'">Encrypted</tspan><tspan
+         sodipodi:role="line"
+         x="850.91736"
+         y="813.51233"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'DejaVu Serif';-inkscape-font-specification:'DejaVu Serif'"
+         id="tspan19996"> Signature</tspan></text>
+    <path
+       inkscape:connector-curvature="0"
+       id="path15413"
+       d="m 830.54807,764.24118 149.02755,0 -1.13761,0"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.02726257px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <text
+       sodipodi:linespacing="125%"
+       id="text15415"
+       y="728.15942"
+       x="849.77991"
+       style="font-style:normal;font-weight:normal;font-size:17.97709465px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"
+       transform="scale(1.0001267,0.99987336)"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'DejaVu Serif';-inkscape-font-specification:'DejaVu Serif'"
+         y="728.15942"
+         x="849.77991"
+         id="tspan15417"
+         sodipodi:role="line">Encrypted</tspan><tspan
+         id="tspan15419"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'DejaVu Serif';-inkscape-font-specification:'DejaVu Serif'"
+         y="750.03442"
+         x="849.77991"
+         sodipodi:role="line">Certificate</tspan></text>
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.02726257px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 824.86,484.45881 149.02755,0 -1.13761,0"
+       id="path15421"
+       inkscape:connector-curvature="0" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:17.97709465px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="854.32977"
+       y="566.41815"
+       id="text15423"
+       sodipodi:linespacing="125%"
+       transform="scale(1.0001267,0.99987336)"><tspan
+         sodipodi:role="line"
+         x="854.32977"
+         y="566.41815"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'DejaVu Serif';-inkscape-font-specification:'DejaVu Serif'"
+         id="tspan15425">Encrypted </tspan><tspan
+         id="tspan15427"
+         sodipodi:role="line"
+         x="854.32977"
+         y="588.29315"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'DejaVu Serif';-inkscape-font-specification:'DejaVu Serif'">  Message</tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text19984"
+       y="448.12109"
+       x="848.6424"
+       style="font-style:normal;font-weight:normal;font-size:17.97709465px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"
+       transform="scale(1.0001267,0.99987336)"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'DejaVu Serif';-inkscape-font-specification:'DejaVu Serif'"
+         y="448.12109"
+         x="848.6424"
+         sodipodi:role="line"
+         id="tspan19988">  Wrapped </tspan><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'DejaVu Serif';-inkscape-font-specification:'DejaVu Serif'"
+         y="469.99609"
+         x="848.6424"
+         sodipodi:role="line"
+         id="tspan19992">Session Key</tspan></text>
+    <path
+       inkscape:connector-curvature="0"
+       id="path19994"
+       d="m 827.13522,702.82556 149.02756,0 -1.13762,0"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.02726257px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <text
+       transform="scale(1.0001267,0.99987333)"
+       sodipodi:linespacing="125%"
+       id="text3830"
+       y="893.63831"
+       x="454.21512"
+       style="font-style:normal;font-weight:normal;font-size:17.97709465px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'DejaVu Serif';-inkscape-font-specification:'DejaVu Serif'"
+         y="893.63831"
+         x="454.21512"
+         id="tspan3832"
+         sodipodi:role="line">Message sending process</tspan></text>
+  </g>
+</svg>

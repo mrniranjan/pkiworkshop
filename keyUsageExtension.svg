@@ -1,0 +1,399 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:osb="http://www.openswatchbook.org/uri/2009/osb"
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="297mm"
+   height="210mm"
+   viewBox="0 0 1052.3622 744.09448"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="keyUsageExtension.svg">
+  <defs
+     id="defs4">
+    <marker
+       inkscape:stockid="Arrow2Lstart"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="Arrow2Lstart"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         id="path5628"
+         style="fill-rule:evenodd;stroke-width:0.625;stroke-linejoin:round;stroke:#000000;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         d="M 8.7185878,4.0337352 L -2.2072895,0.016013256 L 8.7185884,-4.0017078 C 6.9730900,-1.6296469 6.9831476,1.6157441 8.7185878,4.0337352 z "
+         transform="scale(1.1) translate(1,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="DiamondMstart"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="DiamondMstart"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         id="path5701"
+         d="M 0,-7.0710768 L -7.0710894,0 L 0,7.0710589 L 7.0710462,0 L 0,-7.0710768 z "
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1.0pt"
+         transform="scale(0.4) translate(6.5,0)" />
+    </marker>
+    <linearGradient
+       id="linearGradient5582"
+       osb:paint="solid">
+      <stop
+         style="stop-color:#000000;stop-opacity:1;"
+         offset="0"
+         id="stop5584" />
+    </linearGradient>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.90311111"
+     inkscape:cx="336.83563"
+     inkscape:cy="504.86806"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     borderlayer="true"
+     inkscape:window-width="1600"
+     inkscape:window-height="844"
+     inkscape:window-x="0"
+     inkscape:window-y="34"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-308.26772)">
+    <g
+       id="g3394"
+       transform="translate(-78,-134)"
+       inkscape:export-filename="/home/mniranja/Documents/latex/rhcs-training/KeyUsage1.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
+      <text
+         inkscape:export-ydpi="90"
+         inkscape:export-xdpi="90"
+         inkscape:export-filename="/home/mniranja/Documents/latex/rhcs-training/KeyUsage1.png"
+         sodipodi:linespacing="125%"
+         id="text5588"
+         y="557.40643"
+         x="417.44583"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:17.5px;line-height:125%;font-family:'Courier 10 Pitch';-inkscape-font-specification:'Courier 10 Pitch';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         xml:space="preserve"><tspan
+           y="557.40643"
+           x="417.44583"
+           id="tspan5590"
+           sodipodi:role="line">   is</tspan><tspan
+           id="tspan5598"
+           y="579.28143"
+           x="417.44583"
+           sodipodi:role="line">Key Usage</tspan><tspan
+           id="tspan5600"
+           y="601.15643"
+           x="417.44583"
+           sodipodi:role="line"> present</tspan></text>
+      <path
+         inkscape:export-ydpi="90"
+         inkscape:export-xdpi="90"
+         inkscape:export-filename="/home/mniranja/Documents/latex/rhcs-training/KeyUsage1.png"
+         inkscape:connector-curvature="0"
+         id="path5592"
+         d="m 459.52315,473.79562 0,1 0.60743,0 0,52.21485 c -1.38073,-0.0907 -2.73798,-0.53968 -3.90235,-1.39649 l 3.90235,10.60938 0,0.0801 0.0293,0 0.48828,1.32813 4.41797,-12.01758 c -1.18606,0.85126 -2.55341,1.30296 -3.93554,1.39649 l 0,-53.21485 -1.60743,0 z"
+         style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:medium;line-height:normal;font-family:sans-serif;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;baseline-shift:baseline;text-anchor:start;white-space:normal;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate" />
+      <text
+         inkscape:export-ydpi="90"
+         inkscape:export-xdpi="90"
+         inkscape:export-filename="/home/mniranja/Documents/latex/rhcs-training/KeyUsage1.png"
+         sodipodi:linespacing="125%"
+         id="text5602"
+         y="467.71655"
+         x="391.97836"
+         style="font-style:normal;font-weight:normal;font-size:15px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         xml:space="preserve"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:17.5px;font-family:'Courier 10 Pitch';-inkscape-font-specification:'Courier 10 Pitch'"
+           y="467.71655"
+           x="391.97836"
+           id="tspan5604"
+           sodipodi:role="line">Read Certificate</tspan></text>
+      <path
+         inkscape:export-ydpi="90"
+         inkscape:export-xdpi="90"
+         inkscape:export-filename="/home/mniranja/Documents/latex/rhcs-training/KeyUsage1.png"
+         style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:medium;line-height:normal;font-family:sans-serif;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;baseline-shift:baseline;text-anchor:start;white-space:normal;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+         d="m 386.26595,907.67424 -1,0 0,-0.60743 -52.21485,0 c 0.0907,1.38073 0.53968,2.73798 1.39649,3.90235 l -10.60938,-3.90235 -0.0801,0 0,-0.0293 -1.32813,-0.48828 12.01758,-4.41797 c -0.85127,1.18606 -1.30296,2.55341 -1.39649,3.93554 l 53.21485,0 0,1.60743 z"
+         id="path6247"
+         inkscape:connector-curvature="0" />
+      <path
+         inkscape:export-ydpi="90"
+         inkscape:export-xdpi="90"
+         inkscape:export-filename="/home/mniranja/Documents/latex/rhcs-training/KeyUsage1.png"
+         inkscape:connector-curvature="0"
+         id="path6249"
+         d="m 465.09307,608.88419 0,1 -0.60743,0 0,52.21485 c 1.38072,-0.0907 2.73798,-0.53968 3.90234,-1.39649 l -3.90234,10.60938 0,0.0801 -0.0293,0 -0.48828,1.32813 -4.41797,-12.01758 c 1.18606,0.85127 2.55341,1.30295 3.93554,1.39649 l 0,-53.21485 1.60743,0 z"
+         style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:medium;line-height:normal;font-family:sans-serif;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;baseline-shift:baseline;text-anchor:start;white-space:normal;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate" />
+      <text
+         inkscape:export-ydpi="90"
+         inkscape:export-xdpi="90"
+         inkscape:export-filename="/home/mniranja/Documents/latex/rhcs-training/KeyUsage1.png"
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:15px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#ff0000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         x="471.70273"
+         y="629.37988"
+         id="text6251"
+         sodipodi:linespacing="125%"><tspan
+           sodipodi:role="line"
+           id="tspan6253"
+           x="471.70273"
+           y="629.37988"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:17.5px;font-family:'Courier 10 Pitch';-inkscape-font-specification:'Courier 10 Pitch';fill:#ff0000">Yes</tspan></text>
+      <text
+         inkscape:export-ydpi="90"
+         inkscape:export-xdpi="90"
+         inkscape:export-filename="/home/mniranja/Documents/latex/rhcs-training/KeyUsage1.png"
+         sodipodi:linespacing="125%"
+         id="text6255"
+         y="886.26965"
+         x="586.86023"
+         style="font-style:normal;font-weight:normal;font-size:15px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#ff0000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         xml:space="preserve"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:17.5px;font-family:'Courier 10 Pitch';-inkscape-font-specification:'Courier 10 Pitch';fill:#ff0000"
+           y="886.26965"
+           x="586.86023"
+           id="tspan6257"
+           sodipodi:role="line">No</tspan></text>
+      <text
+         inkscape:export-ydpi="90"
+         inkscape:export-xdpi="90"
+         inkscape:export-filename="/home/mniranja/Documents/latex/rhcs-training/KeyUsage1.png"
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:17.5px;line-height:125%;font-family:'Courier 10 Pitch';-inkscape-font-specification:'Courier 10 Pitch';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         x="422.98224"
+         y="688.06592"
+         id="text6259"
+         sodipodi:linespacing="125%"><tspan
+           sodipodi:role="line"
+           id="tspan6261"
+           x="422.98224"
+           y="688.06592">   is</tspan><tspan
+           sodipodi:role="line"
+           x="422.98224"
+           y="709.94092"
+           id="tspan6265">certSign</tspan><tspan
+           id="tspan6269"
+           sodipodi:role="line"
+           x="422.98224"
+           y="731.81592">    &amp;</tspan><tspan
+           id="tspan6271"
+           sodipodi:role="line"
+           x="422.98224"
+           y="753.69092">cRLSign</tspan><tspan
+           id="tspan6275"
+           sodipodi:role="line"
+           x="422.98224"
+           y="775.56592">bits set</tspan><tspan
+           id="tspan6273"
+           sodipodi:role="line"
+           x="422.98224"
+           y="797.44092" /></text>
+      <path
+         inkscape:export-ydpi="90"
+         inkscape:export-xdpi="90"
+         inkscape:export-filename="/home/mniranja/Documents/latex/rhcs-training/KeyUsage1.png"
+         style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:medium;line-height:normal;font-family:sans-serif;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;baseline-shift:baseline;text-anchor:start;white-space:normal;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+         d="m 461.77122,781.62041 0,1 -0.60743,0 0,52.21485 c 1.38072,-0.0907 2.73798,-0.53968 3.90234,-1.39649 l -3.90234,10.60938 0,0.0801 -0.0293,0 -0.48828,1.32813 -4.41797,-12.01758 c 1.18606,0.85127 2.55341,1.30295 3.93554,1.39649 l 0,-53.21485 1.60743,0 z"
+         id="path6277"
+         inkscape:connector-curvature="0" />
+      <text
+         inkscape:export-ydpi="90"
+         inkscape:export-xdpi="90"
+         inkscape:export-filename="/home/mniranja/Documents/latex/rhcs-training/KeyUsage1.png"
+         sodipodi:linespacing="125%"
+         id="text6279"
+         y="794.36511"
+         x="466.16632"
+         style="font-style:normal;font-weight:normal;font-size:15px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#ff0000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         xml:space="preserve"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:17.5px;font-family:'Courier 10 Pitch';-inkscape-font-specification:'Courier 10 Pitch';fill:#ff0000"
+           y="794.36511"
+           x="466.16632"
+           id="tspan6281"
+           sodipodi:role="line">Yes</tspan></text>
+      <path
+         inkscape:export-ydpi="90"
+         inkscape:export-xdpi="90"
+         inkscape:export-filename="/home/mniranja/Documents/latex/rhcs-training/KeyUsage1.png"
+         inkscape:connector-curvature="0"
+         id="path6283"
+         d="m 573.78333,907.67424 1,0 0,-0.60743 52.21485,0 c -0.0907,1.38073 -0.53968,2.73798 -1.39649,3.90235 l 10.60938,-3.90235 0.0801,0 0,-0.0293 1.32813,-0.48828 -12.01758,-4.41797 c 0.85127,1.18606 1.30296,2.55341 1.39649,3.93554 l -53.21485,0 0,1.60743 z"
+         style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:medium;line-height:normal;font-family:sans-serif;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;baseline-shift:baseline;text-anchor:start;white-space:normal;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate" />
+      <text
+         inkscape:export-ydpi="90"
+         inkscape:export-xdpi="90"
+         inkscape:export-filename="/home/mniranja/Documents/latex/rhcs-training/KeyUsage1.png"
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:15px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         x="574.68011"
+         y="713.53351"
+         id="text6285"
+         sodipodi:linespacing="125%"><tspan
+           sodipodi:role="line"
+           id="tspan6287"
+           x="574.68011"
+           y="713.53351"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:17.5px;font-family:'Courier 10 Pitch';-inkscape-font-specification:'Courier 10 Pitch'">Certificate cannot</tspan><tspan
+           id="tspan6289"
+           sodipodi:role="line"
+           x="574.68011"
+           y="735.40851"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:17.5px;font-family:'Courier 10 Pitch';-inkscape-font-specification:'Courier 10 Pitch'">be used to verify </tspan><tspan
+           id="tspan6291"
+           sodipodi:role="line"
+           x="574.68011"
+           y="757.28351"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:17.5px;font-family:'Courier 10 Pitch';-inkscape-font-specification:'Courier 10 Pitch'">public signatures </tspan><tspan
+           id="tspan6293"
+           sodipodi:role="line"
+           x="574.68011"
+           y="779.15851"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:17.5px;font-family:'Courier 10 Pitch';-inkscape-font-specification:'Courier 10 Pitch'">of public certs/CRL</tspan></text>
+      <text
+         inkscape:export-ydpi="90"
+         inkscape:export-xdpi="90"
+         inkscape:export-filename="/home/mniranja/Documents/latex/rhcs-training/KeyUsage1.png"
+         sodipodi:linespacing="125%"
+         id="text6295"
+         y="872.98236"
+         x="653.29724"
+         style="font-style:normal;font-weight:normal;font-size:15px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         xml:space="preserve"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:17.5px;font-family:'Courier 10 Pitch';-inkscape-font-specification:'Courier 10 Pitch'"
+           y="872.98236"
+           x="653.29724"
+           id="tspan6297"
+           sodipodi:role="line">Certificate can be</tspan><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:17.5px;font-family:'Courier 10 Pitch';-inkscape-font-specification:'Courier 10 Pitch'"
+           y="894.85736"
+           x="653.29724"
+           sodipodi:role="line"
+           id="tspan6299">used to verify </tspan><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:17.5px;font-family:'Courier 10 Pitch';-inkscape-font-specification:'Courier 10 Pitch'"
+           y="916.73236"
+           x="653.29724"
+           sodipodi:role="line"
+           id="tspan6301">public signatures </tspan><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:17.5px;font-family:'Courier 10 Pitch';-inkscape-font-specification:'Courier 10 Pitch'"
+           y="938.60736"
+           x="653.29724"
+           sodipodi:role="line"
+           id="tspan6303">of public certs/CRL</tspan></text>
+      <text
+         inkscape:export-ydpi="90"
+         inkscape:export-xdpi="90"
+         inkscape:export-filename="/home/mniranja/Documents/latex/rhcs-training/KeyUsage1.png"
+         sodipodi:linespacing="125%"
+         id="text6305"
+         y="866.3385"
+         x="401.94388"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:17.5px;line-height:125%;font-family:'Courier 10 Pitch';-inkscape-font-specification:'Courier 10 Pitch';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         xml:space="preserve"><tspan
+           y="866.3385"
+           x="401.94388"
+           id="tspan6307"
+           sodipodi:role="line">     is</tspan><tspan
+           y="888.2135"
+           x="401.94388"
+           sodipodi:role="line"
+           id="tspan6317">digitalSignature</tspan><tspan
+           id="tspan6327"
+           y="910.0885"
+           x="401.94388"
+           sodipodi:role="line">      &amp;</tspan><tspan
+           id="tspan6329"
+           y="931.9635"
+           x="401.94388"
+           sodipodi:role="line">nonRepudication</tspan><tspan
+           id="tspan6331"
+           y="953.8385"
+           x="401.94388"
+           sodipodi:role="line">  bits set?</tspan></text>
+      <text
+         inkscape:export-ydpi="90"
+         inkscape:export-xdpi="90"
+         inkscape:export-filename="/home/mniranja/Documents/latex/rhcs-training/KeyUsage1.png"
+         sodipodi:linespacing="125%"
+         id="text6333"
+         y="894.02063"
+         x="344.36511"
+         style="font-style:normal;font-weight:normal;font-size:15px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#ff0000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         xml:space="preserve"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:17.5px;font-family:'Courier 10 Pitch';-inkscape-font-specification:'Courier 10 Pitch';fill:#ff0000"
+           y="894.02063"
+           x="344.36511"
+           id="tspan6335"
+           sodipodi:role="line">Yes</tspan></text>
+      <path
+         inkscape:export-ydpi="90"
+         inkscape:export-xdpi="90"
+         inkscape:export-filename="/home/mniranja/Documents/latex/rhcs-training/KeyUsage1.png"
+         style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:medium;line-height:normal;font-family:sans-serif;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;baseline-shift:baseline;text-anchor:start;white-space:normal;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+         d="m 498.48805,739.36715 1,0 0,-0.60743 52.21485,0 c -0.0907,1.38073 -0.53968,2.73798 -1.39649,3.90235 l 10.60938,-3.90235 0.0801,0 0,-0.0293 1.32813,-0.48828 -12.01758,-4.41797 c 0.85127,1.18606 1.30296,2.55341 1.39649,3.93554 l -53.21485,0 0,1.60743 z"
+         id="path6337"
+         inkscape:connector-curvature="0" />
+      <text
+         inkscape:export-ydpi="90"
+         inkscape:export-xdpi="90"
+         inkscape:export-filename="/home/mniranja/Documents/latex/rhcs-training/KeyUsage1.png"
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:15px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#ff0000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         x="519.31592"
+         y="725.71356"
+         id="text6339"
+         sodipodi:linespacing="125%"><tspan
+           sodipodi:role="line"
+           id="tspan6341"
+           x="519.31592"
+           y="725.71356"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:17.5px;font-family:'Courier 10 Pitch';-inkscape-font-specification:'Courier 10 Pitch';fill:#ff0000">No</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:15px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         x="87.47538"
+         y="911.73724"
+         id="text6343"
+         sodipodi:linespacing="125%"><tspan
+           sodipodi:role="line"
+           id="tspan6345"
+           x="87.47538"
+           y="911.73724"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:17.5px;font-family:'Courier 10 Pitch';-inkscape-font-specification:'Courier 10 Pitch'">Security Implications</tspan></text>
+    </g>
+  </g>
+</svg>

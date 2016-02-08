@@ -1,0 +1,2892 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="297mm"
+   height="210mm"
+   viewBox="0 0 1052.3622 744.09448"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="tks-key-derivation.svg"
+   inkscape:export-filename="/home/mniranja/Documents/latex/rhcs-training/tks-tps-drm-esc-enrollment.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90">
+  <defs
+     id="defs4">
+    <marker
+       inkscape:stockid="Arrow1Lstart"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="Arrow1Lstart"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         id="path5129"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1.0pt"
+         transform="scale(0.8) translate(12.5,0)" />
+    </marker>
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible"
+       id="marker88016"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="Arrow1Lstart">
+      <path
+         transform="scale(0.8) translate(12.5,0)"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         id="path88018" />
+    </marker>
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible"
+       id="marker86906"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="Arrow1Lstart">
+      <path
+         transform="scale(0.8) translate(12.5,0)"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         id="path86908" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Lstart"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="marker86300"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         id="path86302"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         transform="scale(0.8) translate(12.5,0)" />
+    </marker>
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible"
+       id="marker85082"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="Arrow1Lstart">
+      <path
+         transform="scale(0.8) translate(12.5,0)"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         id="path85084" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Lstart"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="marker84384"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         id="path84386"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         transform="scale(0.8) translate(12.5,0)" />
+    </marker>
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible"
+       id="marker82668"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="Arrow1Lstart">
+      <path
+         transform="scale(0.8) translate(12.5,0)"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         id="path82670" />
+    </marker>
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible"
+       id="marker80007"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="Arrow1Lstart">
+      <path
+         transform="scale(0.8) translate(12.5,0)"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         id="path80009" />
+    </marker>
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible"
+       id="marker79431"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="Arrow1Lstart">
+      <path
+         transform="scale(0.8) translate(12.5,0)"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         id="path79433" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Lstart"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="marker78573"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         id="path78575"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         transform="scale(0.8) translate(12.5,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Lstart"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="marker78289"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         id="path78291"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         transform="scale(0.8) translate(12.5,0)" />
+    </marker>
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible"
+       id="marker76181"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="Arrow1Lstart">
+      <path
+         transform="scale(0.8) translate(12.5,0)"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         id="path76183" />
+    </marker>
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible"
+       id="marker75261"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="Arrow1Lstart">
+      <path
+         transform="scale(0.8) translate(12.5,0)"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         id="path75263" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Lstart"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="marker74685"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         id="path74687"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         transform="scale(0.8) translate(12.5,0)" />
+    </marker>
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible"
+       id="marker73617"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="Arrow1Lstart">
+      <path
+         transform="scale(0.8) translate(12.5,0)"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         id="path73619" />
+    </marker>
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible"
+       id="marker65498"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="Arrow1Lstart">
+      <path
+         transform="scale(0.8) translate(12.5,0)"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         id="path65500" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Lstart"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="marker61254"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         id="path61256"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         transform="scale(0.8) translate(12.5,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Lstart"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="marker58880"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         id="path58882"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         transform="scale(0.8) translate(12.5,0)" />
+    </marker>
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible"
+       id="marker43570"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="Arrow1Lstart">
+      <path
+         transform="scale(0.8) translate(12.5,0)"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         id="path43572" />
+    </marker>
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible"
+       id="marker32937"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="Arrow1Lstart">
+      <path
+         transform="scale(0.8) translate(12.5,0)"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         id="path32939" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Lstart"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="marker27859"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         id="path27861"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         transform="scale(0.8) translate(12.5,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Lstart"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="marker27421"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         id="path27423"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         transform="scale(0.8) translate(12.5,0)" />
+    </marker>
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible"
+       id="marker27169"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="Arrow1Lstart">
+      <path
+         transform="scale(0.8) translate(12.5,0)"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         id="path27171" />
+    </marker>
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible"
+       id="marker26991"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="Arrow1Lstart">
+      <path
+         transform="scale(0.8) translate(12.5,0)"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         id="path26993" />
+    </marker>
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible"
+       id="marker24286"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="Arrow1Lstart">
+      <path
+         transform="scale(0.8) translate(12.5,0)"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         id="path24288" />
+    </marker>
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible"
+       id="marker22692"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="Arrow1Lstart">
+      <path
+         transform="scale(0.8) translate(12.5,0)"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         id="path22694" />
+    </marker>
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible"
+       id="marker21744"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="Arrow1Lstart">
+      <path
+         transform="scale(0.8) translate(12.5,0)"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         id="path21746" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Lstart"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="marker21192"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         id="path21194"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         transform="scale(0.8) translate(12.5,0)" />
+    </marker>
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible"
+       id="marker20144"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="Arrow1Lstart">
+      <path
+         transform="scale(0.8) translate(12.5,0)"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         id="path20146" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Lstart"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="marker19005"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         id="path19007"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         transform="scale(0.8) translate(12.5,0)" />
+    </marker>
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible"
+       id="marker13919"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="Arrow1Lstart">
+      <path
+         transform="scale(0.8) translate(12.5,0)"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         id="path13921" />
+    </marker>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath3896">
+      <text
+         sodipodi:linespacing="125%"
+         x="-349.60364"
+         y="174.91965"
+         transform="matrix(.90887 -.42785 .43402 .89595 0 0)"
+         xml:space="preserve"
+         style="font-size:47.309px;font-family:Sans;letter-spacing:0px;line-height:125%;word-spacing:0px;fill:#999999"
+         id="text3898"><tspan
+           y="174.91965"
+           style="font-family:Liberation Mono;fill:#999999"
+           x="-349.60364"
+           sodipodi:role="line"
+           id="tspan3900">10101100110101111000011001100001101</tspan><tspan
+           y="234.05594"
+           style="font-family:Liberation Mono;fill:#999999"
+           x="-349.60364"
+           sodipodi:role="line"
+           id="tspan3902">01010100011001110111110000110001110</tspan><tspan
+           y="293.1922"
+           style="font-family:Liberation Mono;fill:#999999"
+           x="-349.60364"
+           sodipodi:role="line"
+           id="tspan3904">11100011010001100111101001101011101</tspan><tspan
+           y="352.32846"
+           style="font-family:Liberation Mono;fill:#999999"
+           x="-349.60364"
+           sodipodi:role="line"
+           id="tspan3906">11001100011010001000101111100101100</tspan><tspan
+           y="411.46478"
+           style="font-family:Liberation Mono;fill:#999999"
+           x="-349.60364"
+           sodipodi:role="line"
+           id="tspan3908">00110110101100110001100011100111100</tspan><tspan
+           y="470.60107"
+           style="font-family:Liberation Mono;fill:#999999"
+           x="-349.60364"
+           sodipodi:role="line"
+           id="tspan3910">10101010011101101110111110111011110</tspan><tspan
+           y="529.7373"
+           style="font-family:Liberation Mono;fill:#999999"
+           x="-349.60364"
+           sodipodi:role="line"
+           id="tspan3912">11100011010001100111101001101011101</tspan><tspan
+           y="588.87366"
+           style="font-family:Liberation Mono;fill:#999999"
+           x="-349.60364"
+           sodipodi:role="line"
+           id="tspan3914">11001100011010001000101111100101100</tspan><tspan
+           y="648.00989"
+           style="font-family:Liberation Mono;fill:#999999"
+           x="-349.60364"
+           sodipodi:role="line"
+           id="tspan3916">00110110101100110001100011100111100</tspan><tspan
+           y="707.14624"
+           style="font-family:Liberation Mono;fill:#999999"
+           x="-349.60364"
+           sodipodi:role="line"
+           id="tspan3918">11100011010001100111101001101011101</tspan><tspan
+           y="766.28253"
+           style="font-family:Liberation Mono;fill:#999999"
+           x="-349.60364"
+           sodipodi:role="line"
+           id="tspan3920">11001100011010001000101111100101100</tspan><tspan
+           y="825.4187"
+           style="font-family:Liberation Mono;fill:#999999"
+           x="-349.60364"
+           sodipodi:role="line"
+           id="tspan3922">00110110101100110001100011100111101</tspan></text>
+    </clipPath>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.3708681"
+     inkscape:cx="361.5306"
+     inkscape:cy="583.51054"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     borderlayer="true"
+     inkscape:window-width="1600"
+     inkscape:window-height="844"
+     inkscape:window-x="0"
+     inkscape:window-y="34"
+     inkscape:window-maximized="1"
+     showguides="false" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-308.26772)">
+    <g
+       id="g82598"
+       transform="translate(30.651768,-139.41611)"
+       inkscape:export-filename="/home/mniranja/Documents/latex/rhcs-training/tks-tps-drm-esc-enrollment3.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
+      <g
+         id="g82584">
+        <g
+           id="g82521"
+           transform="translate(-0.67012118,-40.877393)">
+          <text
+             transform="scale(1.0229206,0.97759299)"
+             sodipodi:linespacing="125%"
+             id="text4601"
+             y="620.56415"
+             x="30.768303"
+             style="font-style:normal;font-weight:normal;font-size:7.97201109px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+             xml:space="preserve"><tspan
+               id="tspan4605"
+               y="620.56415"
+               x="30.768303"
+               sodipodi:role="line">KEK</tspan></text>
+          <rect
+             ry="0"
+             rx="0"
+             y="590.95306"
+             x="26.252203"
+             height="27.7855"
+             width="27.731951"
+             id="rect4599"
+             style="opacity:0.49000005;fill:#ff0000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.88599998;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+        </g>
+        <g
+           id="g82574"
+           transform="translate(-33.50606,-58.970665)">
+          <text
+             transform="scale(1.0229206,0.97759299)"
+             xml:space="preserve"
+             style="font-style:normal;font-weight:normal;font-size:7.97201109px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+             x="95.20919"
+             y="641.78656"
+             id="text4641"
+             sodipodi:linespacing="125%"><tspan
+               sodipodi:role="line"
+               x="95.20919"
+               y="641.78656"
+               id="tspan4643">AUTH</tspan></text>
+          <rect
+             style="opacity:0.49000005;fill:#ff0000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.88599998;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+             id="rect4639"
+             width="27.731951"
+             height="27.7855"
+             x="94.531471"
+             y="610.3335"
+             rx="0"
+             ry="0" />
+        </g>
+        <g
+           id="g82579"
+           transform="translate(13.402424,-63.661513)">
+          <text
+             transform="scale(1.0229206,0.97759299)"
+             sodipodi:linespacing="125%"
+             id="text4649"
+             y="647.18927"
+             x="83.194496"
+             style="font-style:normal;font-weight:normal;font-size:7.97201109px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+             xml:space="preserve"><tspan
+               id="tspan4651"
+               y="647.18927"
+               x="83.194496"
+               sodipodi:role="line">MAC</tspan></text>
+          <rect
+             ry="0"
+             rx="0"
+             y="615.58893"
+             x="80.419853"
+             height="27.7855"
+             width="27.731951"
+             id="rect4647"
+             style="opacity:0.49000005;fill:#ff0000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.88599998;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+        </g>
+      </g>
+      <rect
+         style="opacity:0.49000005;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.62793094;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+         id="rect4763"
+         width="126.23389"
+         height="39.092999"
+         x="12.545175"
+         y="544.68036"
+         rx="23.6889"
+         ry="21.2206" />
+    </g>
+    <path
+       inkscape:connector-curvature="0"
+       id="path6032"
+       d="m 222.97549,494.64123 32.29629,-41.70639 0,0"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.55685413;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:"
+       inkscape:export-filename="/home/mniranja/Documents/latex/rhcs-training/tks-tps-drm-esc-enrollment3.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <g
+       id="g18510"
+       transform="translate(10.587213,-2.0103636)"
+       inkscape:export-filename="/home/mniranja/Documents/latex/rhcs-training/tks-tps-drm-esc-enrollment3.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
+      <rect
+         style="opacity:0.49000005;fill:#ff6600;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.88599998;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+         id="rect7334"
+         width="27.731951"
+         height="27.7855"
+         x="183.19528"
+         y="320.22412"
+         rx="0"
+         ry="0" />
+      <text
+         transform="scale(1.0229206,0.97759299)"
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:7.97201109px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         x="185.505"
+         y="343.62991"
+         id="text7336"
+         sodipodi:linespacing="125%"><tspan
+           sodipodi:role="line"
+           x="185.505"
+           y="343.62991"
+           id="tspan7338">TKS</tspan></text>
+    </g>
+    <rect
+       style="opacity:0.49000005;fill:#cdde87;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.88599998;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect8356"
+       width="52.38332"
+       height="48.449139"
+       x="232.92279"
+       y="404.35727"
+       rx="23.688883"
+       ry="21.220604"
+       inkscape:export-filename="/home/mniranja/Documents/latex/rhcs-training/tks-tps-drm-esc-enrollment3.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:7.6196661px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="259.20251"
+       y="387.35938"
+       id="text8358"
+       sodipodi:linespacing="125%"
+       transform="scale(0.91248518,1.0959082)"
+       inkscape:export-filename="/home/mniranja/Documents/latex/rhcs-training/tks-tps-drm-esc-enrollment3.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
+         id="tspan8362"
+         sodipodi:role="line"
+         x="259.20251"
+         y="387.35938">Key Transport</tspan><tspan
+         sodipodi:role="line"
+         x="259.20251"
+         y="396.88397"
+         id="tspan8370">Session Key</tspan><tspan
+         sodipodi:role="line"
+         x="259.20251"
+         y="406.40854"
+         id="tspan67876">    (KTSK)</tspan></text>
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.59908211px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-start:"
+       d="m 245.29502,400.90329 -22.25369,-48.30977 0,0"
+       id="path8744"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/mniranja/Documents/latex/rhcs-training/tks-tps-drm-esc-enrollment3.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <g
+       id="g10123"
+       transform="translate(-61.937817,73.04321)"
+       inkscape:export-filename="/home/mniranja/Documents/latex/rhcs-training/tks-tps-drm-esc-enrollment3.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
+      <rect
+         ry="0"
+         rx="0"
+         y="338.98752"
+         x="387.30243"
+         height="27.7855"
+         width="27.731951"
+         id="rect10111"
+         style="opacity:0.49000005;fill:#ff6600;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.88599998;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+      <text
+         sodipodi:linespacing="125%"
+         id="text10113"
+         y="362.82339"
+         x="385.0387"
+         style="font-style:normal;font-weight:normal;font-size:7.97201109px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         xml:space="preserve"
+         transform="scale(1.0229206,0.97759299)"><tspan
+           id="tspan10115"
+           y="362.82339"
+           x="385.0387"
+           sodipodi:role="line">TPS</tspan></text>
+    </g>
+    <g
+       transform="translate(-0.286667,-131.34375)"
+       id="g14245"
+       inkscape:export-filename="/home/mniranja/Documents/latex/rhcs-training/tks-tps-drm-esc-enrollment3.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path12796"
+       d="m 175.45114,402.24354 22.25369,-48.30977 0,0"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.59908211px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-start:"
+       inkscape:export-filename="/home/mniranja/Documents/latex/rhcs-training/tks-tps-drm-esc-enrollment3.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <g
+       id="g14760"
+       transform="translate(10.587213,-2.0103636)"
+       inkscape:export-filename="/home/mniranja/Documents/latex/rhcs-training/tks-tps-drm-esc-enrollment3.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
+      <rect
+         style="opacity:0.49000005;fill:#ff6600;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.88599998;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+         id="rect13902"
+         width="27.731951"
+         height="27.7855"
+         x="441.4303"
+         y="408.01001"
+         rx="0"
+         ry="0" />
+      <text
+         transform="scale(1.0229206,0.97759299)"
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:7.97201109px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         x="437.95374"
+         y="433.42792"
+         id="text13904"
+         sodipodi:linespacing="125%"><tspan
+           sodipodi:role="line"
+           x="437.95374"
+           y="433.42792"
+           id="tspan13906">KRA</tspan></text>
+    </g>
+    <path
+       inkscape:connector-curvature="0"
+       id="path14284"
+       d="m 464.60816,451.80651 0,-17.77997 0,0"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.44323504px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-start:"
+       inkscape:export-filename="/home/mniranja/Documents/latex/rhcs-training/tks-tps-drm-esc-enrollment3.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.44323504px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-start:"
+       d="m 473.98985,517.47839 0,-17.77997 0,0"
+       id="path14518"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/mniranja/Documents/latex/rhcs-training/tks-tps-drm-esc-enrollment3.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <text
+       transform="scale(0.88642558,1.1281263)"
+       sodipodi:linespacing="125%"
+       id="text15453"
+       y="326.07999"
+       x="600.92413"
+       style="font-style:normal;font-weight:normal;font-size:7.76182032px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"
+       inkscape:export-filename="/home/mniranja/Documents/latex/rhcs-training/tks-tps-drm-esc-enrollment3.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
+         y="326.07999"
+         x="600.92413"
+         sodipodi:role="line"
+         id="tspan15461">Archive Private Key</tspan></text>
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot15469"
+       style="font-style:normal;font-weight:normal;font-size:15px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       transform="translate(10.587213,-2.0103636)"
+       inkscape:export-filename="/home/mniranja/Documents/latex/rhcs-training/tks-tps-drm-esc-enrollment3.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><flowRegion
+         id="flowRegion15471"><rect
+           id="rect15473"
+           width="14.072545"
+           height="16.082909"
+           x="550.16949"
+           y="35.106266" /></flowRegion><flowPara
+         id="flowPara15475" /></flowRoot>    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.55650091px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-start:"
+       d="m 562.44586,372.25901 0,28.02816 0,0"
+       id="path15489"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/mniranja/Documents/latex/rhcs-training/tks-tps-drm-esc-enrollment3.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <g
+       transform="matrix(0.46352216,0,0,0.55669698,377.07214,213.70084)"
+       id="g16107"
+       inkscape:export-filename="/home/mniranja/Documents/latex/rhcs-training/tks-tps-drm-esc-enrollment3.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
+      <rect
+         ry="38.118771"
+         rx="51.106258"
+         y="342.47791"
+         x="349.19083"
+         height="79.807167"
+         width="91.325729"
+         id="rect16109"
+         style="opacity:0.49000005;fill:#cdde87;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.88599998;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+      <text
+         sodipodi:linespacing="125%"
+         id="text16111"
+         y="378.67908"
+         x="371.40518"
+         style="font-style:normal;font-weight:normal;font-size:15px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         xml:space="preserve"><tspan
+           id="tspan16113"
+           y="378.67908"
+           x="371.40518"
+           sodipodi:role="line">Private</tspan><tspan
+           y="397.42908"
+           x="371.40518"
+           sodipodi:role="line"
+           id="tspan16115"> Key</tspan></text>
+    </g>
+    <g
+       id="g16123"
+       transform="matrix(0.46352216,0,0,0.55669698,423.31051,211.02036)"
+       inkscape:export-filename="/home/mniranja/Documents/latex/rhcs-training/tks-tps-drm-esc-enrollment3.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
+      <g
+         id="g16125">
+        <rect
+           ry="38.118771"
+           rx="51.106258"
+           y="342.47791"
+           x="349.19083"
+           height="79.807167"
+           width="91.325729"
+           id="rect16127"
+           style="opacity:0.49000005;fill:#cdde87;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.88599998;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+        <text
+           sodipodi:linespacing="125%"
+           id="text16129"
+           y="378.67908"
+           x="371.40518"
+           style="font-style:normal;font-weight:normal;font-size:15px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           xml:space="preserve"><tspan
+             id="tspan16131"
+             y="378.67908"
+             x="371.40518"
+             sodipodi:role="line">Public</tspan><tspan
+             y="397.42908"
+             x="371.40518"
+             sodipodi:role="line"
+             id="tspan16133"> Key</tspan></text>
+      </g>
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:15px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="486.37326"
+       y="413.06659"
+       id="text16135"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/home/mniranja/Documents/latex/rhcs-training/tks-tps-drm-esc-enrollment3.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
+         sodipodi:role="line"
+         id="tspan16137"
+         x="486.37326"
+         y="413.06659"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10px;font-family:'Courier 10 Pitch';-inkscape-font-specification:'Courier 10 Pitch'">Generate</tspan></text>
+    <g
+       transform="translate(82.138242,241.24363)"
+       id="g16803"
+       inkscape:export-filename="/home/mniranja/Documents/latex/rhcs-training/tks-tps-drm-esc-enrollment3.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
+      <rect
+         style="opacity:0.49000005;fill:#ff6600;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.88599998;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+         id="rect16805"
+         width="27.731951"
+         height="27.7855"
+         x="387.30243"
+         y="338.98752"
+         rx="0"
+         ry="0" />
+      <text
+         transform="scale(1.0229206,0.97759299)"
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:7.97201109px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         x="385.0387"
+         y="362.82339"
+         id="text16807"
+         sodipodi:linespacing="125%"><tspan
+           sodipodi:role="line"
+           x="385.0387"
+           y="362.82339"
+           id="tspan16809">TPS</tspan></text>
+    </g>
+    <path
+       inkscape:connector-curvature="0"
+       id="path16819"
+       d="m 503.77309,590.51122 33.39311,-30.86746 0,0"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.551;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:"
+       inkscape:export-filename="/home/mniranja/Documents/latex/rhcs-training/tks-tps-drm-esc-enrollment3.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <g
+       id="g18515"
+       transform="translate(291.36799,398.72211)"
+       inkscape:export-filename="/home/mniranja/Documents/latex/rhcs-training/tks-tps-drm-esc-enrollment3.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
+      <rect
+         ry="0"
+         rx="0"
+         y="326.25522"
+         x="174.4837"
+         height="14.383076"
+         width="53.196556"
+         id="rect18517"
+         style="opacity:0.49000005;fill:#ff6600;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.88599998;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+      <text
+         sodipodi:linespacing="125%"
+         id="text18519"
+         y="345.68637"
+         x="175.02332"
+         style="font-style:normal;font-weight:normal;font-size:7.97201109px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         xml:space="preserve"
+         transform="scale(1.0229206,0.97759299)"><tspan
+           id="tspan18521"
+           y="345.68637"
+           x="175.02332"
+           sodipodi:role="line">SmartCard</tspan></text>
+    </g>
+    <path
+       inkscape:connector-curvature="0"
+       id="path20142"
+       d="m 450.09049,807.36144 24.51155,-25.25527 0,0"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.45459992px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-start:"
+       inkscape:export-filename="/home/mniranja/Documents/latex/rhcs-training/tks-tps-drm-esc-enrollment3.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <g
+       id="g20534"
+       transform="translate(144.4595,404.75321)"
+       inkscape:export-filename="/home/mniranja/Documents/latex/rhcs-training/tks-tps-drm-esc-enrollment3.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
+      <rect
+         ry="21.220604"
+         rx="23.688883"
+         y="417.08957"
+         x="343.10934"
+         height="48.449139"
+         width="52.38332"
+         id="rect20536"
+         style="opacity:0.49000005;fill:#cdde87;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.88599998;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+      <text
+         transform="scale(0.91248518,1.0959082)"
+         sodipodi:linespacing="125%"
+         id="text20538"
+         y="398.97742"
+         x="379.95685"
+         style="font-style:normal;font-weight:normal;font-size:7.6196661px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         xml:space="preserve"><tspan
+           y="398.97742"
+           x="379.95685"
+           sodipodi:role="line"
+           id="tspan20540">Key Transport</tspan><tspan
+           id="tspan20542"
+           y="408.50201"
+           x="379.95685"
+           sodipodi:role="line">Session Key</tspan></text>
+    </g>
+    <path
+       inkscape:connector-curvature="0"
+       id="path20550"
+       d="m 483.47181,845.98738 -26.79839,-10e-4 0,0"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.39101136;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:"
+       inkscape:export-filename="/home/mniranja/Documents/latex/rhcs-training/tks-tps-drm-esc-enrollment3.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <g
+       id="g22660"
+       transform="matrix(0.46352216,0,0,0.55669698,425.32086,702.88931)"
+       inkscape:export-filename="/home/mniranja/Documents/latex/rhcs-training/tks-tps-drm-esc-enrollment3.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
+      <rect
+         style="opacity:0.49000005;fill:#cdde87;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.88599998;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+         id="rect22662"
+         width="91.325729"
+         height="79.807167"
+         x="349.19083"
+         y="342.47791"
+         rx="51.106258"
+         ry="38.118771" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:15px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         x="371.40518"
+         y="378.67908"
+         id="text22664"
+         sodipodi:linespacing="125%"><tspan
+           sodipodi:role="line"
+           x="371.40518"
+           y="378.67908"
+           id="tspan22666">Private</tspan><tspan
+           id="tspan22668"
+           sodipodi:role="line"
+           x="371.40518"
+           y="397.42908"> Key</tspan></text>
+    </g>
+    <path
+       inkscape:connector-curvature="0"
+       id="path22690"
+       d="m 606.67385,891.14732 0,-23.48132 0,0"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.50936586px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-start:"
+       inkscape:export-filename="/home/mniranja/Documents/latex/rhcs-training/tks-tps-drm-esc-enrollment3.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:15px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="409.30936"
+       y="784.31372"
+       id="text23032"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/home/mniranja/Documents/latex/rhcs-training/tks-tps-drm-esc-enrollment3.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
+         sodipodi:role="line"
+         id="tspan23034"
+         x="409.30936"
+         y="784.31372"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10px;font-family:'Courier 10 Pitch';-inkscape-font-specification:'Courier 10 Pitch'">Decrypt</tspan></text>
+    <g
+       id="g63496"
+       transform="translate(10.587213,-2.0103636)"
+       inkscape:export-filename="/home/mniranja/Documents/latex/rhcs-training/tks-tps-drm-esc-enrollment3.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
+      <rect
+         style="opacity:0.49000005;fill:#ff0000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.88599998;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+         id="rect9609"
+         width="27.72411"
+         height="29.131706"
+         x="256.48221"
+         y="509.72916"
+         rx="0"
+         ry="0" />
+      <g
+         id="g63480">
+        <text
+           sodipodi:linespacing="125%"
+           id="text9611"
+           y="523.5907"
+           x="261.32828"
+           style="font-style:normal;font-weight:normal;font-size:8.16169453px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           xml:space="preserve"
+           transform="scale(0.99886468,1.0011366)"><tspan
+             id="tspan9613"
+             y="523.5907"
+             x="261.32828"
+             sodipodi:role="line">KEK</tspan></text>
+        <g
+           id="g23607"
+           transform="matrix(0.00353186,-0.00321355,-0.00317588,-0.00383905,266.78459,546.5712)"
+           style="fill:#000000">
+          <path
+             id="path23609"
+             d="m 922,3904 c -7,-13 -14,-14 -28,-6 -14,8 -25,5 -50,-14 -17,-13 -38,-22 -47,-19 -8,4 -25,-4 -40,-19 -15,-14 -30,-26 -35,-26 -5,0 -24,-19 -43,-42 -19,-23 -49,-58 -66,-79 -18,-20 -33,-44 -33,-53 0,-9 -4,-16 -10,-16 -5,0 -10,-10 -10,-22 -1,-68 -9,-160 -14,-165 -3,-3 1,-17 8,-32 7,-14 11,-32 9,-38 -3,-7 5,-26 16,-42 12,-16 21,-34 21,-40 0,-6 11,-31 25,-56 15,-26 23,-51 18,-58 -4,-6 -6,-19 -5,-29 2,-9 -2,-19 -8,-23 -5,-3 -10,-17 -10,-31 0,-13 -5,-24 -10,-24 -6,0 -8,-11 -4,-25 4,-16 2,-25 -6,-25 -8,0 -11,-9 -7,-26 2,-14 -1,-38 -8,-52 -15,-34 -5,-214 13,-220 7,-2 12,-14 12,-27 0,-12 7,-28 15,-35 8,-7 15,-18 15,-24 0,-10 120,-138 152,-161 7,-5 31,-25 53,-43 22,-18 46,-37 53,-43 9,-8 17,-7 27,1 12,10 22,7 49,-14 19,-14 37,-23 39,-19 3,5 48,8 101,7 53,0 96,3 96,8 0,4 6,8 14,8 8,0 16,4 18,9 2,5 26,11 53,12 28,2 53,8 56,13 4,5 32,10 63,11 31,1 59,4 62,8 9,9 40,-9 80,-45 35,-32 64,-105 64,-161 0,-20 7,-41 18,-50 20,-18 42,-22 42,-8 0,7 17,25 92,94 24,23 14,30 193,-144 303,-294 276,-271 311,-264 19,3 35,1 39,-5 5,-8 11,-8 21,1 10,8 22,8 44,1 19,-7 32,-7 35,-1 10,15 49,-18 188,-156 86,-84 127,-131 123,-141 -3,-8 1,-25 9,-37 8,-13 17,-40 21,-62 3,-22 9,-42 13,-45 12,-10 32,-51 27,-59 -3,-4 6,-18 20,-32 66,-63 104,-104 104,-111 0,-4 6,-8 13,-8 6,0 27,-14 45,-31 32,-30 34,-31 122,-27 l 89,3 67,-65 c 37,-36 75,-73 85,-82 23,-21 24,-34 5,-41 -8,-3 -12,-15 -9,-30 3,-14 -3,-42 -13,-62 -15,-31 -15,-38 -3,-46 12,-8 11,-12 -4,-23 -17,-13 -15,-18 33,-68 l 51,-53 67,-2 c 116,-3 163,-9 174,-24 7,-11 11,-11 15,-1 6,16 40,16 46,0 3,-10 9,-10 24,-2 14,8 25,9 38,2 13,-8 24,-7 38,1 15,10 22,9 37,-4 17,-15 19,-15 28,0 7,14 13,15 31,6 26,-14 29,3 4,18 -16,9 -16,12 -3,21 19,13 40,13 40,0 0,-5 5,-10 11,-10 8,0 8,4 -1,15 -13,16 -4,39 12,29 7,-4 8,-2 4,5 -4,6 -2,18 4,26 7,9 10,28 7,45 -4,16 -2,32 3,35 7,4 7,13 0,25 -5,10 -7,32 -4,48 4,17 1,32 -5,36 -8,5 -8,13 -1,27 9,16 7,19 -10,19 -12,0 -20,7 -20,16 0,10 -6,14 -15,10 -10,-4 -15,1 -15,14 0,11 -5,20 -11,20 -18,0 -66,45 -61,58 2,7 -3,12 -11,12 -8,0 -17,7 -21,15 -3,8 -15,15 -27,15 -16,0 -20,5 -16,19 3,14 0,17 -15,13 -15,-4 -19,0 -16,14 2,13 -4,20 -19,22 -14,2 -20,8 -16,18 3,9 -1,14 -11,14 -9,0 -19,7 -22,15 -4,8 -13,15 -21,15 -10,0 -13,6 -9,16 4,11 -1,18 -14,21 -11,3 -20,12 -20,19 0,8 -7,14 -15,14 -9,0 -19,8 -22,17 -11,29 -42,53 -60,46 -12,-5 -15,-2 -10,9 4,11 -1,18 -14,21 -10,3 -19,12 -19,21 0,9 -7,16 -15,16 -8,0 -15,7 -15,15 0,14 -12,19 -32,16 -5,0 -8,6 -8,14 0,8 -7,15 -15,15 -8,0 -15,9 -15,20 0,11 -6,20 -13,20 -16,0 -57,42 -57,58 0,7 -7,12 -15,12 -8,0 -15,7 -15,16 0,11 -6,15 -20,11 -15,-4 -20,0 -20,14 0,10 -6,19 -14,19 -7,0 -16,9 -19,20 -3,11 -12,20 -21,20 -9,0 -16,5 -16,10 0,13 -37,50 -50,50 -5,0 -10,4 -10,8 0,15 -140,152 -155,152 -8,0 -15,7 -15,15 0,8 -7,15 -15,15 -8,0 -15,5 -15,12 0,12 -19,35 -55,66 -10,9 -36,34 -57,55 -22,23 -42,36 -49,31 -8,-5 -9,-3 -4,5 8,14 -68,91 -91,91 -8,0 -14,6 -14,13 0,7 -16,28 -36,47 -20,19 -53,52 -73,73 -21,20 -43,37 -49,37 -7,0 -12,5 -12,10 0,6 -56,66 -125,133 -120,118 -142,147 -110,147 8,0 15,7 15,16 0,8 13,27 28,42 53,51 57,60 37,82 -12,13 -25,17 -45,14 -15,-4 -31,-1 -34,5 -5,7 -13,8 -25,1 -14,-7 -29,-3 -62,20 -47,31 -88,66 -90,78 -1,4 -3,43 -4,87 -1,62 2,87 17,113 13,24 16,38 9,51 -6,10 -6,22 -1,27 5,5 11,29 14,52 3,24 10,50 16,57 8,10 8,15 0,20 -6,4 -9,19 -5,34 3,15 0,41 -6,57 -7,16 -11,38 -10,50 1,11 -10,33 -24,48 -14,16 -24,35 -21,43 10,26 -175,213 -211,213 -16,0 -21,4 -16,16 5,13 2,15 -15,10 -15,-5 -32,1 -57,20 -26,19 -38,24 -48,16 -8,-7 -18,-7 -27,-2 -20,13 -107,13 -115,0 -4,-6 -13,-5 -26,3 -17,10 -22,9 -30,-6 -8,-13 -15,-15 -27,-8 -16,9 -72,-14 -72,-29 0,-4 -21,-7 -46,-7 -31,0 -51,-5 -58,-15 -12,-17 -66,-14 -66,3 0,5 -9,9 -20,9 -10,0 -41,14 -67,30 -26,17 -59,30 -73,30 -14,0 -32,6 -38,12 -10,10 -15,10 -22,-2 -8,-12 -13,-13 -30,-2 -25,15 -27,15 -38,-4 z m -5,-176 c 6,16 23,15 62,-4 18,-9 41,-14 51,-11 24,6 120,-94 120,-124 0,-11 5,-29 10,-39 6,-12 7,-21 0,-25 -5,-3 -7,-19 -3,-35 4,-20 2,-30 -7,-30 -8,0 -10,-8 -6,-25 5,-18 2,-27 -9,-31 -8,-3 -13,-10 -10,-14 8,-13 -76,-89 -92,-83 -8,3 -18,1 -22,-4 -10,-17 -78,-22 -106,-7 -14,7 -32,11 -40,8 -8,-3 -21,0 -29,8 -8,7 -33,28 -55,47 -23,19 -41,40 -41,47 0,8 -5,14 -11,14 -8,0 -10,20 -7,64 4,40 1,69 -5,75 -8,8 -8,11 1,11 7,0 17,10 22,23 25,58 84,116 118,117 13,0 22,6 22,16 0,14 2,15 17,3 13,-11 17,-11 20,-1 z"
+             inkscape:connector-curvature="0" />
+          <path
+             id="path23611"
+             d="m 4010,750 c 0,-5 5,-10 10,-10 6,0 10,5 10,10 0,6 -4,10 -10,10 -5,0 -10,-4 -10,-10 z"
+             inkscape:connector-curvature="0" />
+          <path
+             id="path23613"
+             d="m 3870,620 c 0,-5 7,-10 16,-10 8,0 12,5 9,10 -3,6 -10,10 -16,10 -5,0 -9,-4 -9,-10 z"
+             inkscape:connector-curvature="0" />
+          <path
+             id="path23615"
+             d="m 3915,580 c 3,-5 8,-10 11,-10 2,0 4,5 4,10 0,6 -5,10 -11,10 -5,0 -7,-4 -4,-10 z"
+             inkscape:connector-curvature="0" />
+          <path
+             id="path23617"
+             d="m 3810,549 c 0,-5 5,-7 10,-4 6,3 10,8 10,11 0,2 -4,4 -10,4 -5,0 -10,-5 -10,-11 z"
+             inkscape:connector-curvature="0" />
+          <path
+             id="path23619"
+             d="m 4010,550 c 0,-5 5,-10 10,-10 6,0 10,5 10,10 0,6 -4,10 -10,10 -5,0 -10,-4 -10,-10 z"
+             inkscape:connector-curvature="0" />
+          <path
+             id="path23621"
+             d="m 4040,520 c 0,-5 5,-10 10,-10 6,0 10,5 10,10 0,6 -4,10 -10,10 -5,0 -10,-4 -10,-10 z"
+             inkscape:connector-curvature="0" />
+          <path
+             id="path23623"
+             d="m 3545,480 c 3,-5 8,-10 11,-10 2,0 4,5 4,10 0,6 -5,10 -11,10 -5,0 -7,-4 -4,-10 z"
+             inkscape:connector-curvature="0" />
+          <path
+             id="path23625"
+             d="m 3880,480 c 0,-5 5,-10 10,-10 6,0 10,5 10,10 0,6 -4,10 -10,10 -5,0 -10,-4 -10,-10 z"
+             inkscape:connector-curvature="0" />
+          <path
+             id="path23627"
+             d="m 3710,450 c 0,-5 5,-10 11,-10 5,0 7,5 4,10 -3,6 -8,10 -11,10 -2,0 -4,-4 -4,-10 z"
+             inkscape:connector-curvature="0" />
+          <path
+             id="path23629"
+             d="m 3746,415 c 4,-8 10,-12 15,-9 11,6 2,24 -11,24 -5,0 -7,-7 -4,-15 z"
+             inkscape:connector-curvature="0" />
+        </g>
+      </g>
+    </g>
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.4198263px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-start:"
+       d="m 280.32585,553.76777 0,-15.95604 0,0"
+       id="path23655"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/mniranja/Documents/latex/rhcs-training/tks-tps-drm-esc-enrollment3.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <g
+       id="g26536"
+       transform="matrix(0.99971727,0,0,1.04845,29.4226,-13.471075)"
+       inkscape:export-filename="/home/mniranja/Documents/latex/rhcs-training/tks-tps-drm-esc-enrollment3.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
+      <rect
+         style="opacity:0.49000005;fill:#cdde87;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.88599998;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+         id="rect9586"
+         width="52.38332"
+         height="48.449139"
+         x="226.35631"
+         y="541.06201"
+         rx="23.695581"
+         ry="20.239977" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:7.6196661px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         x="252.00624"
+         y="516.38074"
+         id="text9588"
+         sodipodi:linespacing="125%"
+         transform="scale(0.91248518,1.0959082)"><tspan
+           id="tspan9590"
+           sodipodi:role="line"
+           x="252.00624"
+           y="516.38074">Key Transport</tspan><tspan
+           sodipodi:role="line"
+           x="252.00624"
+           y="525.90533"
+           id="tspan9592">Session Key</tspan><tspan
+           sodipodi:role="line"
+           x="252.00624"
+           y="535.42993"
+           id="tspan60634"> KEK(KTSK)</tspan></text>
+      <g
+         transform="matrix(0.02836624,0,0,0.02243933,241.03186,533.67559)"
+         inkscape:label="Layer 1"
+         id="g24666">
+        <g
+           id="g24668">
+          <ellipse
+             transform="matrix(1.0693,0,0,1.0847,-18.133,299.48)"
+             style="fill:#000000;stroke:#8574a0;stroke-width:27.8560009;stroke-linejoin:round"
+             id="ellipse24670"
+             cx="344.28571"
+             cy="371.42856"
+             rx="301.42856"
+             ry="297.14285" />
+          <ellipse
+             transform="matrix(1.0693,0,0,1.0847,-18.133,299.48)"
+             style="fill:none;stroke:#8574a0;stroke-width:27.8560009;stroke-linejoin:round"
+             id="ellipse24672"
+             cx="344.28571"
+             cy="371.42856"
+             rx="301.42856"
+             ry="297.14285" />
+          <path
+             d="m 645.71,371.43 c 0,164.11 -134.95,297.14 -301.43,297.14 -166.47,0 -301.43,-133.04 -301.43,-297.14 0,-164.11 134.95,-297.14 301.43,-297.14 166.47,0 301.43,133.04 301.43,297.14 z"
+             transform="matrix(1.0693,0,0,1.0847,-18.133,299.48)"
+             clip-path="url(#clipPath3896)"
+             style="fill:#808080"
+             id="path24674"
+             inkscape:connector-curvature="0" />
+          <g
+             transform="translate(0,-2.6589)"
+             id="g24676">
+            <rect
+               x="183.03999"
+               y="681.20001"
+               width="333.92001"
+               height="183.92"
+               ry="0"
+               rx="0"
+               style="fill:#8574a0;fill-rule:evenodd;stroke:#8574a0;stroke-width:16.08300018"
+               id="rect24678" />
+            <rect
+               x="182.5"
+               y="897.89001"
+               width="335"
+               height="35.007"
+               ry="0"
+               rx="0"
+               style="fill:#8574a0;fill-rule:evenodd;stroke:#8574a0;stroke-width:15"
+               id="rect24680" />
+            <path
+               d="m 350,433.65 c -82.631,0 -149.86,67.226 -149.86,149.86 l 0,72.431 39.962,0 0,-72.431 c 0,-60.597 49.298,-109.89 109.89,-109.89 60.597,0 109.89,49.298 109.89,109.89 l 0,72.431 39.962,0 0,-72.431 c 0,-82.631 -67.226,-149.86 -149.86,-149.86 z"
+               inkscape:connector-curvature="0"
+               style="fill:#8574a0"
+               id="path24682" />
+          </g>
+        </g>
+      </g>
+    </g>
+    <rect
+       ry="21.2206"
+       rx="23.6889"
+       y="495.74063"
+       x="254.52824"
+       height="115.64991"
+       width="58.919552"
+       id="rect24694"
+       style="opacity:0.49000005;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.71696919;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       inkscape:export-filename="/home/mniranja/Documents/latex/rhcs-training/tks-tps-drm-esc-enrollment3.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path25174"
+       d="m 526.49378,537.03383 -17.11891,-9.4e-4 0,0"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.32720366;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:"
+       inkscape:export-filename="/home/mniranja/Documents/latex/rhcs-training/tks-tps-drm-esc-enrollment3.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <g
+       transform="translate(62.709211,299.30047)"
+       id="g28925"
+       inkscape:export-filename="/home/mniranja/Documents/latex/rhcs-training/tks-tps-drm-esc-enrollment3.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
+      <rect
+         style="opacity:0.49000005;fill:#cdde87;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.88599998;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+         id="rect28927"
+         width="42.331501"
+         height="44.42841"
+         x="522.54846"
+         y="519.46246"
+         rx="23.688883"
+         ry="21.220604" />
+      <text
+         transform="scale(0.91248518,1.0959082)"
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:7.6196661px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         x="585.24774"
+         y="496.28259"
+         id="text28929"
+         sodipodi:linespacing="125%"><tspan
+           sodipodi:role="line"
+           x="585.24774"
+           y="496.28259"
+           id="tspan28931">Private</tspan><tspan
+           id="tspan28933"
+           sodipodi:role="line"
+           x="585.24774"
+           y="505.80719"> Key</tspan></text>
+      <g
+         id="g28935"
+         inkscape:label="Layer 1"
+         transform="matrix(0.02836624,0,0,0.02243933,531.97406,513.06323)">
+        <g
+           id="g28937">
+          <ellipse
+             ry="297.14285"
+             rx="301.42856"
+             cy="371.42856"
+             cx="344.28571"
+             id="ellipse28939"
+             style="fill:#000000;stroke:#8574a0;stroke-width:27.8560009;stroke-linejoin:round"
+             transform="matrix(1.0693,0,0,1.0847,-18.133,299.48)" />
+          <ellipse
+             ry="297.14285"
+             rx="301.42856"
+             cy="371.42856"
+             cx="344.28571"
+             id="ellipse28941"
+             style="fill:none;stroke:#8574a0;stroke-width:27.8560009;stroke-linejoin:round"
+             transform="matrix(1.0693,0,0,1.0847,-18.133,299.48)" />
+          <path
+             inkscape:connector-curvature="0"
+             id="path28943"
+             style="fill:#808080"
+             clip-path="url(#clipPath3896)"
+             transform="matrix(1.0693,0,0,1.0847,-18.133,299.48)"
+             d="m 645.71,371.43 c 0,164.11 -134.95,297.14 -301.43,297.14 -166.47,0 -301.43,-133.04 -301.43,-297.14 0,-164.11 134.95,-297.14 301.43,-297.14 166.47,0 301.43,133.04 301.43,297.14 z" />
+          <g
+             id="g28945"
+             transform="translate(0,-2.6589)">
+            <rect
+               id="rect28947"
+               style="fill:#8574a0;fill-rule:evenodd;stroke:#8574a0;stroke-width:16.08300018"
+               rx="0"
+               ry="0"
+               height="183.92"
+               width="333.92001"
+               y="681.20001"
+               x="183.03999" />
+            <rect
+               id="rect28949"
+               style="fill:#8574a0;fill-rule:evenodd;stroke:#8574a0;stroke-width:15"
+               rx="0"
+               ry="0"
+               height="35.007"
+               width="335"
+               y="897.89001"
+               x="182.5" />
+            <path
+               id="path28951"
+               style="fill:#8574a0"
+               inkscape:connector-curvature="0"
+               d="m 350,433.65 c -82.631,0 -149.86,67.226 -149.86,149.86 l 0,72.431 39.962,0 0,-72.431 c 0,-60.597 49.298,-109.89 109.89,-109.89 60.597,0 109.89,49.298 109.89,109.89 l 0,72.431 39.962,0 0,-72.431 c 0,-82.631 -67.226,-149.86 -149.86,-149.86 z" />
+          </g>
+        </g>
+      </g>
+    </g>
+    <path
+       inkscape:connector-curvature="0"
+       id="path24284"
+       d="m 205.42588,557.16309 0,-20.25181 0,0"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.47304296px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-start:"
+       inkscape:export-filename="/home/mniranja/Documents/latex/rhcs-training/tks-tps-drm-esc-enrollment3.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <rect
+       ry="21.2206"
+       rx="23.6889"
+       y="494.77585"
+       x="169.20854"
+       height="116.69204"
+       width="73.804283"
+       id="rect30437"
+       style="opacity:0.49000005;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.80604553;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       inkscape:export-filename="/home/mniranja/Documents/latex/rhcs-training/tks-tps-drm-esc-enrollment3.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <g
+       id="g60636"
+       transform="translate(10.587213,-2.0103636)"
+       inkscape:export-filename="/home/mniranja/Documents/latex/rhcs-training/tks-tps-drm-esc-enrollment3.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
+      <rect
+         ry="21.220604"
+         rx="23.688883"
+         y="561.83575"
+         x="166.7155"
+         height="48.449139"
+         width="52.38332"
+         id="rect30477"
+         style="opacity:0.49000005;fill:#cdde87;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.88599998;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+      <text
+         transform="scale(0.91248518,1.0959082)"
+         sodipodi:linespacing="125%"
+         id="text30479"
+         y="534.72504"
+         x="186.64542"
+         style="font-style:normal;font-weight:normal;font-size:7.6196661px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         xml:space="preserve"><tspan
+           y="534.72504"
+           x="186.64542"
+           sodipodi:role="line"
+           id="tspan30481">Key Transport</tspan><tspan
+           id="tspan30483"
+           y="544.24963"
+           x="186.64542"
+           sodipodi:role="line">Session Key</tspan><tspan
+           id="tspan60632"
+           y="553.77423"
+           x="186.64542"
+           sodipodi:role="line">  STK(KTSK)</tspan></text>
+      <g
+         id="g30485"
+         inkscape:label="Layer 1"
+         transform="matrix(0.02836624,0,0,0.02243933,182.06021,554.48999)">
+        <g
+           id="g30487">
+          <ellipse
+             ry="297.14285"
+             rx="301.42856"
+             cy="371.42856"
+             cx="344.28571"
+             id="ellipse30489"
+             style="fill:#000000;stroke:#8574a0;stroke-width:27.8560009;stroke-linejoin:round"
+             transform="matrix(1.0693,0,0,1.0847,-18.133,299.48)" />
+          <ellipse
+             ry="297.14285"
+             rx="301.42856"
+             cy="371.42856"
+             cx="344.28571"
+             id="ellipse30491"
+             style="fill:none;stroke:#8574a0;stroke-width:27.8560009;stroke-linejoin:round"
+             transform="matrix(1.0693,0,0,1.0847,-18.133,299.48)" />
+          <path
+             inkscape:connector-curvature="0"
+             id="path30493"
+             style="fill:#808080"
+             clip-path="url(#clipPath3896)"
+             transform="matrix(1.0693,0,0,1.0847,-18.133,299.48)"
+             d="m 645.71,371.43 c 0,164.11 -134.95,297.14 -301.43,297.14 -166.47,0 -301.43,-133.04 -301.43,-297.14 0,-164.11 134.95,-297.14 301.43,-297.14 166.47,0 301.43,133.04 301.43,297.14 z" />
+          <g
+             id="g30495"
+             transform="translate(0,-2.6589)">
+            <rect
+               id="rect30497"
+               style="fill:#8574a0;fill-rule:evenodd;stroke:#8574a0;stroke-width:16.08300018"
+               rx="0"
+               ry="0"
+               height="183.92"
+               width="333.92001"
+               y="681.20001"
+               x="183.03999" />
+            <rect
+               id="rect30499"
+               style="fill:#8574a0;fill-rule:evenodd;stroke:#8574a0;stroke-width:15"
+               rx="0"
+               ry="0"
+               height="35.007"
+               width="335"
+               y="897.89001"
+               x="182.5" />
+            <path
+               id="path30501"
+               style="fill:#8574a0"
+               inkscape:connector-curvature="0"
+               d="m 350,433.65 c -82.631,0 -149.86,67.226 -149.86,149.86 l 0,72.431 39.962,0 0,-72.431 c 0,-60.597 49.298,-109.89 109.89,-109.89 60.597,0 109.89,49.298 109.89,109.89 l 0,72.431 39.962,0 0,-72.431 c 0,-82.631 -67.226,-149.86 -149.86,-149.86 z" />
+          </g>
+        </g>
+      </g>
+    </g>
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.53734988;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:"
+       d="m 286.96189,493.33093 -31.03842,-40.40985 0,0"
+       id="path30552"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/mniranja/Documents/latex/rhcs-training/tks-tps-drm-esc-enrollment3.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path52554"
+       d="m 347.38984,440.28677 1.3442,196.87387 -159.72362,1.04914 0,-27.1406"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.75048226px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-start:"
+       sodipodi:nodetypes="cccc"
+       inkscape:export-filename="/home/mniranja/Documents/latex/rhcs-training/tks-tps-drm-esc-enrollment3.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       sodipodi:nodetypes="cccc"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.75;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:"
+       d="m 330.96285,440.4537 0.43695,187.18622 -52.59101,0.32382 0.67012,-17.67125"
+       id="path58878"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/mniranja/Documents/latex/rhcs-training/tks-tps-drm-esc-enrollment3.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.26929557px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-start:"
+       d="m 356.36975,412.39648 19.43351,-10.72194 0,0"
+       id="path60582"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/mniranja/Documents/latex/rhcs-training/tks-tps-drm-esc-enrollment3.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <g
+       id="g60652"
+       transform="matrix(0.87207355,0,0,0.95850569,229.60029,-176.38312)"
+       inkscape:export-filename="/home/mniranja/Documents/latex/rhcs-training/tks-tps-drm-esc-enrollment3.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
+      <rect
+         style="opacity:0.49000005;fill:#cdde87;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.88599998;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+         id="rect60654"
+         width="52.38332"
+         height="48.449139"
+         x="166.7155"
+         y="561.83575"
+         rx="27.163858"
+         ry="22.139257" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:7.6196661px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         x="186.64542"
+         y="534.72504"
+         id="text60656"
+         sodipodi:linespacing="125%"
+         transform="scale(0.91248518,1.0959082)"><tspan
+           id="tspan60658"
+           sodipodi:role="line"
+           x="186.64542"
+           y="534.72504">Key Transport</tspan><tspan
+           sodipodi:role="line"
+           x="186.64542"
+           y="544.24963"
+           id="tspan60660">Session Key</tspan><tspan
+           sodipodi:role="line"
+           x="186.64542"
+           y="553.77423"
+           id="tspan60662">  STK(KTSK)</tspan></text>
+      <g
+         transform="matrix(0.02836624,0,0,0.02243933,182.06021,554.48999)"
+         inkscape:label="Layer 1"
+         id="g60664">
+        <g
+           id="g60666">
+          <ellipse
+             transform="matrix(1.0693,0,0,1.0847,-18.133,299.48)"
+             style="fill:#000000;stroke:#8574a0;stroke-width:27.8560009;stroke-linejoin:round"
+             id="ellipse60668"
+             cx="344.28571"
+             cy="371.42856"
+             rx="301.42856"
+             ry="297.14285" />
+          <ellipse
+             transform="matrix(1.0693,0,0,1.0847,-18.133,299.48)"
+             style="fill:none;stroke:#8574a0;stroke-width:27.8560009;stroke-linejoin:round"
+             id="ellipse60670"
+             cx="344.28571"
+             cy="371.42856"
+             rx="301.42856"
+             ry="297.14285" />
+          <path
+             d="m 645.71,371.43 c 0,164.11 -134.95,297.14 -301.43,297.14 -166.47,0 -301.43,-133.04 -301.43,-297.14 0,-164.11 134.95,-297.14 301.43,-297.14 166.47,0 301.43,133.04 301.43,297.14 z"
+             transform="matrix(1.0693,0,0,1.0847,-18.133,299.48)"
+             clip-path="url(#clipPath3896)"
+             style="fill:#808080"
+             id="path60672"
+             inkscape:connector-curvature="0" />
+          <g
+             transform="translate(0,-2.6589)"
+             id="g60674">
+            <rect
+               x="183.03999"
+               y="681.20001"
+               width="333.92001"
+               height="183.92"
+               ry="0"
+               rx="0"
+               style="fill:#8574a0;fill-rule:evenodd;stroke:#8574a0;stroke-width:16.08300018"
+               id="rect60676" />
+            <rect
+               x="182.5"
+               y="897.89001"
+               width="335"
+               height="35.007"
+               ry="0"
+               rx="0"
+               style="fill:#8574a0;fill-rule:evenodd;stroke:#8574a0;stroke-width:15"
+               id="rect60678" />
+            <path
+               d="m 350,433.65 c -82.631,0 -149.86,67.226 -149.86,149.86 l 0,72.431 39.962,0 0,-72.431 c 0,-60.597 49.298,-109.89 109.89,-109.89 60.597,0 109.89,49.298 109.89,109.89 l 0,72.431 39.962,0 0,-72.431 c 0,-82.631 -67.226,-149.86 -149.86,-149.86 z"
+               inkscape:connector-curvature="0"
+               style="fill:#8574a0"
+               id="path60680" />
+          </g>
+        </g>
+      </g>
+    </g>
+    <g
+       id="g61064"
+       transform="translate(40.742666,11.39206)"
+       inkscape:export-filename="/home/mniranja/Documents/latex/rhcs-training/tks-tps-drm-esc-enrollment3.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
+      <rect
+         ry="0"
+         rx="0"
+         y="444.72742"
+         x="481.64294"
+         height="29.801828"
+         width="50.508232"
+         id="rect60684"
+         style="opacity:0.49000005;fill:#ff0000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.88599998;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+      <text
+         transform="scale(0.99886469,1.0011366)"
+         sodipodi:linespacing="125%"
+         id="text60686"
+         y="451.96918"
+         x="486.74493"
+         style="font-style:normal;font-weight:normal;font-size:8.16169453px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         xml:space="preserve"><tspan
+           id="tspan60688"
+           y="451.96918"
+           x="486.74493"
+           sodipodi:role="line">Transport</tspan><tspan
+           id="tspan60783"
+           y="462.1713"
+           x="486.74493"
+           sodipodi:role="line">Private Key</tspan></text>
+      <g
+         id="g60756"
+         transform="matrix(0.00353186,-0.00321355,-0.00317588,-0.00383905,504.00749,484.92005)"
+         style="fill:#000000">
+        <path
+           id="path60758"
+           d="m 922,3904 c -7,-13 -14,-14 -28,-6 -14,8 -25,5 -50,-14 -17,-13 -38,-22 -47,-19 -8,4 -25,-4 -40,-19 -15,-14 -30,-26 -35,-26 -5,0 -24,-19 -43,-42 -19,-23 -49,-58 -66,-79 -18,-20 -33,-44 -33,-53 0,-9 -4,-16 -10,-16 -5,0 -10,-10 -10,-22 -1,-68 -9,-160 -14,-165 -3,-3 1,-17 8,-32 7,-14 11,-32 9,-38 -3,-7 5,-26 16,-42 12,-16 21,-34 21,-40 0,-6 11,-31 25,-56 15,-26 23,-51 18,-58 -4,-6 -6,-19 -5,-29 2,-9 -2,-19 -8,-23 -5,-3 -10,-17 -10,-31 0,-13 -5,-24 -10,-24 -6,0 -8,-11 -4,-25 4,-16 2,-25 -6,-25 -8,0 -11,-9 -7,-26 2,-14 -1,-38 -8,-52 -15,-34 -5,-214 13,-220 7,-2 12,-14 12,-27 0,-12 7,-28 15,-35 8,-7 15,-18 15,-24 0,-10 120,-138 152,-161 7,-5 31,-25 53,-43 22,-18 46,-37 53,-43 9,-8 17,-7 27,1 12,10 22,7 49,-14 19,-14 37,-23 39,-19 3,5 48,8 101,7 53,0 96,3 96,8 0,4 6,8 14,8 8,0 16,4 18,9 2,5 26,11 53,12 28,2 53,8 56,13 4,5 32,10 63,11 31,1 59,4 62,8 9,9 40,-9 80,-45 35,-32 64,-105 64,-161 0,-20 7,-41 18,-50 20,-18 42,-22 42,-8 0,7 17,25 92,94 24,23 14,30 193,-144 303,-294 276,-271 311,-264 19,3 35,1 39,-5 5,-8 11,-8 21,1 10,8 22,8 44,1 19,-7 32,-7 35,-1 10,15 49,-18 188,-156 86,-84 127,-131 123,-141 -3,-8 1,-25 9,-37 8,-13 17,-40 21,-62 3,-22 9,-42 13,-45 12,-10 32,-51 27,-59 -3,-4 6,-18 20,-32 66,-63 104,-104 104,-111 0,-4 6,-8 13,-8 6,0 27,-14 45,-31 32,-30 34,-31 122,-27 l 89,3 67,-65 c 37,-36 75,-73 85,-82 23,-21 24,-34 5,-41 -8,-3 -12,-15 -9,-30 3,-14 -3,-42 -13,-62 -15,-31 -15,-38 -3,-46 12,-8 11,-12 -4,-23 -17,-13 -15,-18 33,-68 l 51,-53 67,-2 c 116,-3 163,-9 174,-24 7,-11 11,-11 15,-1 6,16 40,16 46,0 3,-10 9,-10 24,-2 14,8 25,9 38,2 13,-8 24,-7 38,1 15,10 22,9 37,-4 17,-15 19,-15 28,0 7,14 13,15 31,6 26,-14 29,3 4,18 -16,9 -16,12 -3,21 19,13 40,13 40,0 0,-5 5,-10 11,-10 8,0 8,4 -1,15 -13,16 -4,39 12,29 7,-4 8,-2 4,5 -4,6 -2,18 4,26 7,9 10,28 7,45 -4,16 -2,32 3,35 7,4 7,13 0,25 -5,10 -7,32 -4,48 4,17 1,32 -5,36 -8,5 -8,13 -1,27 9,16 7,19 -10,19 -12,0 -20,7 -20,16 0,10 -6,14 -15,10 -10,-4 -15,1 -15,14 0,11 -5,20 -11,20 -18,0 -66,45 -61,58 2,7 -3,12 -11,12 -8,0 -17,7 -21,15 -3,8 -15,15 -27,15 -16,0 -20,5 -16,19 3,14 0,17 -15,13 -15,-4 -19,0 -16,14 2,13 -4,20 -19,22 -14,2 -20,8 -16,18 3,9 -1,14 -11,14 -9,0 -19,7 -22,15 -4,8 -13,15 -21,15 -10,0 -13,6 -9,16 4,11 -1,18 -14,21 -11,3 -20,12 -20,19 0,8 -7,14 -15,14 -9,0 -19,8 -22,17 -11,29 -42,53 -60,46 -12,-5 -15,-2 -10,9 4,11 -1,18 -14,21 -10,3 -19,12 -19,21 0,9 -7,16 -15,16 -8,0 -15,7 -15,15 0,14 -12,19 -32,16 -5,0 -8,6 -8,14 0,8 -7,15 -15,15 -8,0 -15,9 -15,20 0,11 -6,20 -13,20 -16,0 -57,42 -57,58 0,7 -7,12 -15,12 -8,0 -15,7 -15,16 0,11 -6,15 -20,11 -15,-4 -20,0 -20,14 0,10 -6,19 -14,19 -7,0 -16,9 -19,20 -3,11 -12,20 -21,20 -9,0 -16,5 -16,10 0,13 -37,50 -50,50 -5,0 -10,4 -10,8 0,15 -140,152 -155,152 -8,0 -15,7 -15,15 0,8 -7,15 -15,15 -8,0 -15,5 -15,12 0,12 -19,35 -55,66 -10,9 -36,34 -57,55 -22,23 -42,36 -49,31 -8,-5 -9,-3 -4,5 8,14 -68,91 -91,91 -8,0 -14,6 -14,13 0,7 -16,28 -36,47 -20,19 -53,52 -73,73 -21,20 -43,37 -49,37 -7,0 -12,5 -12,10 0,6 -56,66 -125,133 -120,118 -142,147 -110,147 8,0 15,7 15,16 0,8 13,27 28,42 53,51 57,60 37,82 -12,13 -25,17 -45,14 -15,-4 -31,-1 -34,5 -5,7 -13,8 -25,1 -14,-7 -29,-3 -62,20 -47,31 -88,66 -90,78 -1,4 -3,43 -4,87 -1,62 2,87 17,113 13,24 16,38 9,51 -6,10 -6,22 -1,27 5,5 11,29 14,52 3,24 10,50 16,57 8,10 8,15 0,20 -6,4 -9,19 -5,34 3,15 0,41 -6,57 -7,16 -11,38 -10,50 1,11 -10,33 -24,48 -14,16 -24,35 -21,43 10,26 -175,213 -211,213 -16,0 -21,4 -16,16 5,13 2,15 -15,10 -15,-5 -32,1 -57,20 -26,19 -38,24 -48,16 -8,-7 -18,-7 -27,-2 -20,13 -107,13 -115,0 -4,-6 -13,-5 -26,3 -17,10 -22,9 -30,-6 -8,-13 -15,-15 -27,-8 -16,9 -72,-14 -72,-29 0,-4 -21,-7 -46,-7 -31,0 -51,-5 -58,-15 -12,-17 -66,-14 -66,3 0,5 -9,9 -20,9 -10,0 -41,14 -67,30 -26,17 -59,30 -73,30 -14,0 -32,6 -38,12 -10,10 -15,10 -22,-2 -8,-12 -13,-13 -30,-2 -25,15 -27,15 -38,-4 z m -5,-176 c 6,16 23,15 62,-4 18,-9 41,-14 51,-11 24,6 120,-94 120,-124 0,-11 5,-29 10,-39 6,-12 7,-21 0,-25 -5,-3 -7,-19 -3,-35 4,-20 2,-30 -7,-30 -8,0 -10,-8 -6,-25 5,-18 2,-27 -9,-31 -8,-3 -13,-10 -10,-14 8,-13 -76,-89 -92,-83 -8,3 -18,1 -22,-4 -10,-17 -78,-22 -106,-7 -14,7 -32,11 -40,8 -8,-3 -21,0 -29,8 -8,7 -33,28 -55,47 -23,19 -41,40 -41,47 0,8 -5,14 -11,14 -8,0 -10,20 -7,64 4,40 1,69 -5,75 -8,8 -8,11 1,11 7,0 17,10 22,23 25,58 84,116 118,117 13,0 22,6 22,16 0,14 2,15 17,3 13,-11 17,-11 20,-1 z"
+           inkscape:connector-curvature="0" />
+        <path
+           id="path60760"
+           d="m 4010,750 c 0,-5 5,-10 10,-10 6,0 10,5 10,10 0,6 -4,10 -10,10 -5,0 -10,-4 -10,-10 z"
+           inkscape:connector-curvature="0" />
+        <path
+           id="path60762"
+           d="m 3870,620 c 0,-5 7,-10 16,-10 8,0 12,5 9,10 -3,6 -10,10 -16,10 -5,0 -9,-4 -9,-10 z"
+           inkscape:connector-curvature="0" />
+        <path
+           id="path60764"
+           d="m 3915,580 c 3,-5 8,-10 11,-10 2,0 4,5 4,10 0,6 -5,10 -11,10 -5,0 -7,-4 -4,-10 z"
+           inkscape:connector-curvature="0" />
+        <path
+           id="path60766"
+           d="m 3810,549 c 0,-5 5,-7 10,-4 6,3 10,8 10,11 0,2 -4,4 -10,4 -5,0 -10,-5 -10,-11 z"
+           inkscape:connector-curvature="0" />
+        <path
+           id="path60768"
+           d="m 4010,550 c 0,-5 5,-10 10,-10 6,0 10,5 10,10 0,6 -4,10 -10,10 -5,0 -10,-4 -10,-10 z"
+           inkscape:connector-curvature="0" />
+        <path
+           id="path60770"
+           d="m 4040,520 c 0,-5 5,-10 10,-10 6,0 10,5 10,10 0,6 -4,10 -10,10 -5,0 -10,-4 -10,-10 z"
+           inkscape:connector-curvature="0" />
+        <path
+           id="path60772"
+           d="m 3545,480 c 3,-5 8,-10 11,-10 2,0 4,5 4,10 0,6 -5,10 -11,10 -5,0 -7,-4 -4,-10 z"
+           inkscape:connector-curvature="0" />
+        <path
+           id="path60774"
+           d="m 3880,480 c 0,-5 5,-10 10,-10 6,0 10,5 10,10 0,6 -4,10 -10,10 -5,0 -10,-4 -10,-10 z"
+           inkscape:connector-curvature="0" />
+        <path
+           id="path60776"
+           d="m 3710,450 c 0,-5 5,-10 11,-10 5,0 7,5 4,10 -3,6 -8,10 -11,10 -2,0 -4,-4 -4,-10 z"
+           inkscape:connector-curvature="0" />
+        <path
+           id="path60778"
+           d="m 3746,415 c 4,-8 10,-12 15,-9 11,6 2,24 -11,24 -5,0 -7,-7 -4,-15 z"
+           inkscape:connector-curvature="0" />
+      </g>
+    </g>
+    <g
+       id="g60848"
+       transform="translate(-189.07781,-24.525032)"
+       inkscape:export-filename="/home/mniranja/Documents/latex/rhcs-training/tks-tps-drm-esc-enrollment3.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
+      <g
+         style="fill:#000000"
+         transform="matrix(0.00353286,-0.00293787,-0.00317678,-0.0035097,395.33003,568.39176)"
+         id="g30441">
+        <path
+           inkscape:connector-curvature="0"
+           d="m 922,3904 c -7,-13 -14,-14 -28,-6 -14,8 -25,5 -50,-14 -17,-13 -38,-22 -47,-19 -8,4 -25,-4 -40,-19 -15,-14 -30,-26 -35,-26 -5,0 -24,-19 -43,-42 -19,-23 -49,-58 -66,-79 -18,-20 -33,-44 -33,-53 0,-9 -4,-16 -10,-16 -5,0 -10,-10 -10,-22 -1,-68 -9,-160 -14,-165 -3,-3 1,-17 8,-32 7,-14 11,-32 9,-38 -3,-7 5,-26 16,-42 12,-16 21,-34 21,-40 0,-6 11,-31 25,-56 15,-26 23,-51 18,-58 -4,-6 -6,-19 -5,-29 2,-9 -2,-19 -8,-23 -5,-3 -10,-17 -10,-31 0,-13 -5,-24 -10,-24 -6,0 -8,-11 -4,-25 4,-16 2,-25 -6,-25 -8,0 -11,-9 -7,-26 2,-14 -1,-38 -8,-52 -15,-34 -5,-214 13,-220 7,-2 12,-14 12,-27 0,-12 7,-28 15,-35 8,-7 15,-18 15,-24 0,-10 120,-138 152,-161 7,-5 31,-25 53,-43 22,-18 46,-37 53,-43 9,-8 17,-7 27,1 12,10 22,7 49,-14 19,-14 37,-23 39,-19 3,5 48,8 101,7 53,0 96,3 96,8 0,4 6,8 14,8 8,0 16,4 18,9 2,5 26,11 53,12 28,2 53,8 56,13 4,5 32,10 63,11 31,1 59,4 62,8 9,9 40,-9 80,-45 35,-32 64,-105 64,-161 0,-20 7,-41 18,-50 20,-18 42,-22 42,-8 0,7 17,25 92,94 24,23 14,30 193,-144 303,-294 276,-271 311,-264 19,3 35,1 39,-5 5,-8 11,-8 21,1 10,8 22,8 44,1 19,-7 32,-7 35,-1 10,15 49,-18 188,-156 86,-84 127,-131 123,-141 -3,-8 1,-25 9,-37 8,-13 17,-40 21,-62 3,-22 9,-42 13,-45 12,-10 32,-51 27,-59 -3,-4 6,-18 20,-32 66,-63 104,-104 104,-111 0,-4 6,-8 13,-8 6,0 27,-14 45,-31 32,-30 34,-31 122,-27 l 89,3 67,-65 c 37,-36 75,-73 85,-82 23,-21 24,-34 5,-41 -8,-3 -12,-15 -9,-30 3,-14 -3,-42 -13,-62 -15,-31 -15,-38 -3,-46 12,-8 11,-12 -4,-23 -17,-13 -15,-18 33,-68 l 51,-53 67,-2 c 116,-3 163,-9 174,-24 7,-11 11,-11 15,-1 6,16 40,16 46,0 3,-10 9,-10 24,-2 14,8 25,9 38,2 13,-8 24,-7 38,1 15,10 22,9 37,-4 17,-15 19,-15 28,0 7,14 13,15 31,6 26,-14 29,3 4,18 -16,9 -16,12 -3,21 19,13 40,13 40,0 0,-5 5,-10 11,-10 8,0 8,4 -1,15 -13,16 -4,39 12,29 7,-4 8,-2 4,5 -4,6 -2,18 4,26 7,9 10,28 7,45 -4,16 -2,32 3,35 7,4 7,13 0,25 -5,10 -7,32 -4,48 4,17 1,32 -5,36 -8,5 -8,13 -1,27 9,16 7,19 -10,19 -12,0 -20,7 -20,16 0,10 -6,14 -15,10 -10,-4 -15,1 -15,14 0,11 -5,20 -11,20 -18,0 -66,45 -61,58 2,7 -3,12 -11,12 -8,0 -17,7 -21,15 -3,8 -15,15 -27,15 -16,0 -20,5 -16,19 3,14 0,17 -15,13 -15,-4 -19,0 -16,14 2,13 -4,20 -19,22 -14,2 -20,8 -16,18 3,9 -1,14 -11,14 -9,0 -19,7 -22,15 -4,8 -13,15 -21,15 -10,0 -13,6 -9,16 4,11 -1,18 -14,21 -11,3 -20,12 -20,19 0,8 -7,14 -15,14 -9,0 -19,8 -22,17 -11,29 -42,53 -60,46 -12,-5 -15,-2 -10,9 4,11 -1,18 -14,21 -10,3 -19,12 -19,21 0,9 -7,16 -15,16 -8,0 -15,7 -15,15 0,14 -12,19 -32,16 -5,0 -8,6 -8,14 0,8 -7,15 -15,15 -8,0 -15,9 -15,20 0,11 -6,20 -13,20 -16,0 -57,42 -57,58 0,7 -7,12 -15,12 -8,0 -15,7 -15,16 0,11 -6,15 -20,11 -15,-4 -20,0 -20,14 0,10 -6,19 -14,19 -7,0 -16,9 -19,20 -3,11 -12,20 -21,20 -9,0 -16,5 -16,10 0,13 -37,50 -50,50 -5,0 -10,4 -10,8 0,15 -140,152 -155,152 -8,0 -15,7 -15,15 0,8 -7,15 -15,15 -8,0 -15,5 -15,12 0,12 -19,35 -55,66 -10,9 -36,34 -57,55 -22,23 -42,36 -49,31 -8,-5 -9,-3 -4,5 8,14 -68,91 -91,91 -8,0 -14,6 -14,13 0,7 -16,28 -36,47 -20,19 -53,52 -73,73 -21,20 -43,37 -49,37 -7,0 -12,5 -12,10 0,6 -56,66 -125,133 -120,118 -142,147 -110,147 8,0 15,7 15,16 0,8 13,27 28,42 53,51 57,60 37,82 -12,13 -25,17 -45,14 -15,-4 -31,-1 -34,5 -5,7 -13,8 -25,1 -14,-7 -29,-3 -62,20 -47,31 -88,66 -90,78 -1,4 -3,43 -4,87 -1,62 2,87 17,113 13,24 16,38 9,51 -6,10 -6,22 -1,27 5,5 11,29 14,52 3,24 10,50 16,57 8,10 8,15 0,20 -6,4 -9,19 -5,34 3,15 0,41 -6,57 -7,16 -11,38 -10,50 1,11 -10,33 -24,48 -14,16 -24,35 -21,43 10,26 -175,213 -211,213 -16,0 -21,4 -16,16 5,13 2,15 -15,10 -15,-5 -32,1 -57,20 -26,19 -38,24 -48,16 -8,-7 -18,-7 -27,-2 -20,13 -107,13 -115,0 -4,-6 -13,-5 -26,3 -17,10 -22,9 -30,-6 -8,-13 -15,-15 -27,-8 -16,9 -72,-14 -72,-29 0,-4 -21,-7 -46,-7 -31,0 -51,-5 -58,-15 -12,-17 -66,-14 -66,3 0,5 -9,9 -20,9 -10,0 -41,14 -67,30 -26,17 -59,30 -73,30 -14,0 -32,6 -38,12 -10,10 -15,10 -22,-2 -8,-12 -13,-13 -30,-2 -25,15 -27,15 -38,-4 z m -5,-176 c 6,16 23,15 62,-4 18,-9 41,-14 51,-11 24,6 120,-94 120,-124 0,-11 5,-29 10,-39 6,-12 7,-21 0,-25 -5,-3 -7,-19 -3,-35 4,-20 2,-30 -7,-30 -8,0 -10,-8 -6,-25 5,-18 2,-27 -9,-31 -8,-3 -13,-10 -10,-14 8,-13 -76,-89 -92,-83 -8,3 -18,1 -22,-4 -10,-17 -78,-22 -106,-7 -14,7 -32,11 -40,8 -8,-3 -21,0 -29,8 -8,7 -33,28 -55,47 -23,19 -41,40 -41,47 0,8 -5,14 -11,14 -8,0 -10,20 -7,64 4,40 1,69 -5,75 -8,8 -8,11 1,11 7,0 17,10 22,23 25,58 84,116 118,117 13,0 22,6 22,16 0,14 2,15 17,3 13,-11 17,-11 20,-1 z"
+           id="path30443" />
+        <path
+           inkscape:connector-curvature="0"
+           d="m 4010,750 c 0,-5 5,-10 10,-10 6,0 10,5 10,10 0,6 -4,10 -10,10 -5,0 -10,-4 -10,-10 z"
+           id="path30445" />
+        <path
+           inkscape:connector-curvature="0"
+           d="m 3870,620 c 0,-5 7,-10 16,-10 8,0 12,5 9,10 -3,6 -10,10 -16,10 -5,0 -9,-4 -9,-10 z"
+           id="path30447" />
+        <path
+           inkscape:connector-curvature="0"
+           d="m 3915,580 c 3,-5 8,-10 11,-10 2,0 4,5 4,10 0,6 -5,10 -11,10 -5,0 -7,-4 -4,-10 z"
+           id="path30449" />
+        <path
+           inkscape:connector-curvature="0"
+           d="m 3810,549 c 0,-5 5,-7 10,-4 6,3 10,8 10,11 0,2 -4,4 -10,4 -5,0 -10,-5 -10,-11 z"
+           id="path30451" />
+        <path
+           inkscape:connector-curvature="0"
+           d="m 4010,550 c 0,-5 5,-10 10,-10 6,0 10,5 10,10 0,6 -4,10 -10,10 -5,0 -10,-4 -10,-10 z"
+           id="path30453" />
+        <path
+           inkscape:connector-curvature="0"
+           d="m 4040,520 c 0,-5 5,-10 10,-10 6,0 10,5 10,10 0,6 -4,10 -10,10 -5,0 -10,-4 -10,-10 z"
+           id="path30455" />
+        <path
+           inkscape:connector-curvature="0"
+           d="m 3545,480 c 3,-5 8,-10 11,-10 2,0 4,5 4,10 0,6 -5,10 -11,10 -5,0 -7,-4 -4,-10 z"
+           id="path30457" />
+        <path
+           inkscape:connector-curvature="0"
+           d="m 3880,480 c 0,-5 5,-10 10,-10 6,0 10,5 10,10 0,6 -4,10 -10,10 -5,0 -10,-4 -10,-10 z"
+           id="path30459" />
+        <path
+           inkscape:connector-curvature="0"
+           d="m 3710,450 c 0,-5 5,-10 11,-10 5,0 7,5 4,10 -3,6 -8,10 -11,10 -2,0 -4,-4 -4,-10 z"
+           id="path30461" />
+        <path
+           inkscape:connector-curvature="0"
+           d="m 3746,415 c 4,-8 10,-12 15,-9 11,6 2,24 -11,24 -5,0 -7,-7 -4,-15 z"
+           id="path30463" />
+      </g>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:7.45990467px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         x="400.12225"
+         y="499.56284"
+         id="text30469"
+         sodipodi:linespacing="125%"
+         transform="scale(0.93202699,1.0729303)"><tspan
+           id="tspan30471"
+           sodipodi:role="line"
+           x="400.12225"
+           y="499.56284">KRA Transport</tspan><tspan
+           sodipodi:role="line"
+           x="400.12225"
+           y="508.88773"
+           id="tspan30473">    Public Key</tspan></text>
+    </g>
+    <rect
+       ry="0"
+       rx="0"
+       y="503.02802"
+       x="174.5927"
+       height="31.142071"
+       width="63.91066"
+       id="rect60826"
+       style="opacity:0.49000005;fill:#ff0000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.88599998;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       inkscape:export-filename="/home/mniranja/Documents/latex/rhcs-training/tks-tps-drm-esc-enrollment3.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <g
+       transform="translate(281.31617,-111.91023)"
+       id="g61034"
+       inkscape:export-filename="/home/mniranja/Documents/latex/rhcs-training/tks-tps-drm-esc-enrollment3.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
+      <rect
+         ry="21.220604"
+         rx="23.688883"
+         y="561.83575"
+         x="166.7155"
+         height="48.449139"
+         width="52.38332"
+         id="rect61036"
+         style="opacity:0.49000005;fill:#cdde87;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.88599998;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+      <text
+         transform="scale(0.91248518,1.0959082)"
+         sodipodi:linespacing="125%"
+         id="text61038"
+         y="534.72504"
+         x="186.64542"
+         style="font-style:normal;font-weight:normal;font-size:7.6196661px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         xml:space="preserve"><tspan
+           y="534.72504"
+           x="186.64542"
+           sodipodi:role="line"
+           id="tspan61040">Key Transport</tspan><tspan
+           id="tspan61042"
+           y="544.24963"
+           x="186.64542"
+           sodipodi:role="line">Session Key</tspan><tspan
+           id="tspan61044"
+           y="553.77423"
+           x="186.64542"
+           sodipodi:role="line">  STK(KTSK)</tspan></text>
+      <g
+         id="g61046"
+         inkscape:label="Layer 1"
+         transform="matrix(0.02836624,0,0,0.02243933,182.06021,554.48999)">
+        <g
+           id="g61048">
+          <ellipse
+             ry="297.14285"
+             rx="301.42856"
+             cy="371.42856"
+             cx="344.28571"
+             id="ellipse61050"
+             style="fill:#000000;stroke:#8574a0;stroke-width:27.8560009;stroke-linejoin:round"
+             transform="matrix(1.0693,0,0,1.0847,-18.133,299.48)" />
+          <ellipse
+             ry="297.14285"
+             rx="301.42856"
+             cy="371.42856"
+             cx="344.28571"
+             id="ellipse61052"
+             style="fill:none;stroke:#8574a0;stroke-width:27.8560009;stroke-linejoin:round"
+             transform="matrix(1.0693,0,0,1.0847,-18.133,299.48)" />
+          <path
+             inkscape:connector-curvature="0"
+             id="path61054"
+             style="fill:#808080"
+             clip-path="url(#clipPath3896)"
+             transform="matrix(1.0693,0,0,1.0847,-18.133,299.48)"
+             d="m 645.71,371.43 c 0,164.11 -134.95,297.14 -301.43,297.14 -166.47,0 -301.43,-133.04 -301.43,-297.14 0,-164.11 134.95,-297.14 301.43,-297.14 166.47,0 301.43,133.04 301.43,297.14 z" />
+          <g
+             id="g61056"
+             transform="translate(0,-2.6589)">
+            <rect
+               id="rect61058"
+               style="fill:#8574a0;fill-rule:evenodd;stroke:#8574a0;stroke-width:16.08300018"
+               rx="0"
+               ry="0"
+               height="183.92"
+               width="333.92001"
+               y="681.20001"
+               x="183.03999" />
+            <rect
+               id="rect61060"
+               style="fill:#8574a0;fill-rule:evenodd;stroke:#8574a0;stroke-width:15"
+               rx="0"
+               ry="0"
+               height="35.007"
+               width="335"
+               y="897.89001"
+               x="182.5" />
+            <path
+               id="path61062"
+               style="fill:#8574a0"
+               inkscape:connector-curvature="0"
+               d="m 350,433.65 c -82.631,0 -149.86,67.226 -149.86,149.86 l 0,72.431 39.962,0 0,-72.431 c 0,-60.597 49.298,-109.89 109.89,-109.89 60.597,0 109.89,49.298 109.89,109.89 l 0,72.431 39.962,0 0,-72.431 c 0,-82.631 -67.226,-149.86 -149.86,-149.86 z" />
+          </g>
+        </g>
+      </g>
+    </g>
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.32720366;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:"
+       d="m 504.01391,470.02078 17.11891,9.5e-4 0,0"
+       id="path61252"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/mniranja/Documents/latex/rhcs-training/tks-tps-drm-esc-enrollment3.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <g
+       id="g69576"
+       transform="translate(46.908484,-18.763393)"
+       inkscape:export-filename="/home/mniranja/Documents/latex/rhcs-training/tks-tps-drm-esc-enrollment3.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
+      <g
+         transform="translate(-53.609695,18.763394)"
+         id="g69540">
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-weight:normal;font-size:7.6196661px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           x="500.81726"
+           y="485.80695"
+           id="text14239"
+           sodipodi:linespacing="125%"
+           transform="scale(0.91248518,1.0959082)"><tspan
+             id="tspan14241"
+             sodipodi:role="line"
+             x="500.81726"
+             y="485.80695">Key Transport</tspan><tspan
+             sodipodi:role="line"
+             x="500.81726"
+             y="495.33154"
+             id="tspan14243">Session Key</tspan></text>
+        <g
+           id="g25110"
+           transform="matrix(0.00353286,-0.00306505,-0.00317678,-0.00366164,478.16739,567.35698)"
+           style="fill:#000000">
+          <path
+             id="path25112"
+             d="m 922,3904 c -7,-13 -14,-14 -28,-6 -14,8 -25,5 -50,-14 -17,-13 -38,-22 -47,-19 -8,4 -25,-4 -40,-19 -15,-14 -30,-26 -35,-26 -5,0 -24,-19 -43,-42 -19,-23 -49,-58 -66,-79 -18,-20 -33,-44 -33,-53 0,-9 -4,-16 -10,-16 -5,0 -10,-10 -10,-22 -1,-68 -9,-160 -14,-165 -3,-3 1,-17 8,-32 7,-14 11,-32 9,-38 -3,-7 5,-26 16,-42 12,-16 21,-34 21,-40 0,-6 11,-31 25,-56 15,-26 23,-51 18,-58 -4,-6 -6,-19 -5,-29 2,-9 -2,-19 -8,-23 -5,-3 -10,-17 -10,-31 0,-13 -5,-24 -10,-24 -6,0 -8,-11 -4,-25 4,-16 2,-25 -6,-25 -8,0 -11,-9 -7,-26 2,-14 -1,-38 -8,-52 -15,-34 -5,-214 13,-220 7,-2 12,-14 12,-27 0,-12 7,-28 15,-35 8,-7 15,-18 15,-24 0,-10 120,-138 152,-161 7,-5 31,-25 53,-43 22,-18 46,-37 53,-43 9,-8 17,-7 27,1 12,10 22,7 49,-14 19,-14 37,-23 39,-19 3,5 48,8 101,7 53,0 96,3 96,8 0,4 6,8 14,8 8,0 16,4 18,9 2,5 26,11 53,12 28,2 53,8 56,13 4,5 32,10 63,11 31,1 59,4 62,8 9,9 40,-9 80,-45 35,-32 64,-105 64,-161 0,-20 7,-41 18,-50 20,-18 42,-22 42,-8 0,7 17,25 92,94 24,23 14,30 193,-144 303,-294 276,-271 311,-264 19,3 35,1 39,-5 5,-8 11,-8 21,1 10,8 22,8 44,1 19,-7 32,-7 35,-1 10,15 49,-18 188,-156 86,-84 127,-131 123,-141 -3,-8 1,-25 9,-37 8,-13 17,-40 21,-62 3,-22 9,-42 13,-45 12,-10 32,-51 27,-59 -3,-4 6,-18 20,-32 66,-63 104,-104 104,-111 0,-4 6,-8 13,-8 6,0 27,-14 45,-31 32,-30 34,-31 122,-27 l 89,3 67,-65 c 37,-36 75,-73 85,-82 23,-21 24,-34 5,-41 -8,-3 -12,-15 -9,-30 3,-14 -3,-42 -13,-62 -15,-31 -15,-38 -3,-46 12,-8 11,-12 -4,-23 -17,-13 -15,-18 33,-68 l 51,-53 67,-2 c 116,-3 163,-9 174,-24 7,-11 11,-11 15,-1 6,16 40,16 46,0 3,-10 9,-10 24,-2 14,8 25,9 38,2 13,-8 24,-7 38,1 15,10 22,9 37,-4 17,-15 19,-15 28,0 7,14 13,15 31,6 26,-14 29,3 4,18 -16,9 -16,12 -3,21 19,13 40,13 40,0 0,-5 5,-10 11,-10 8,0 8,4 -1,15 -13,16 -4,39 12,29 7,-4 8,-2 4,5 -4,6 -2,18 4,26 7,9 10,28 7,45 -4,16 -2,32 3,35 7,4 7,13 0,25 -5,10 -7,32 -4,48 4,17 1,32 -5,36 -8,5 -8,13 -1,27 9,16 7,19 -10,19 -12,0 -20,7 -20,16 0,10 -6,14 -15,10 -10,-4 -15,1 -15,14 0,11 -5,20 -11,20 -18,0 -66,45 -61,58 2,7 -3,12 -11,12 -8,0 -17,7 -21,15 -3,8 -15,15 -27,15 -16,0 -20,5 -16,19 3,14 0,17 -15,13 -15,-4 -19,0 -16,14 2,13 -4,20 -19,22 -14,2 -20,8 -16,18 3,9 -1,14 -11,14 -9,0 -19,7 -22,15 -4,8 -13,15 -21,15 -10,0 -13,6 -9,16 4,11 -1,18 -14,21 -11,3 -20,12 -20,19 0,8 -7,14 -15,14 -9,0 -19,8 -22,17 -11,29 -42,53 -60,46 -12,-5 -15,-2 -10,9 4,11 -1,18 -14,21 -10,3 -19,12 -19,21 0,9 -7,16 -15,16 -8,0 -15,7 -15,15 0,14 -12,19 -32,16 -5,0 -8,6 -8,14 0,8 -7,15 -15,15 -8,0 -15,9 -15,20 0,11 -6,20 -13,20 -16,0 -57,42 -57,58 0,7 -7,12 -15,12 -8,0 -15,7 -15,16 0,11 -6,15 -20,11 -15,-4 -20,0 -20,14 0,10 -6,19 -14,19 -7,0 -16,9 -19,20 -3,11 -12,20 -21,20 -9,0 -16,5 -16,10 0,13 -37,50 -50,50 -5,0 -10,4 -10,8 0,15 -140,152 -155,152 -8,0 -15,7 -15,15 0,8 -7,15 -15,15 -8,0 -15,5 -15,12 0,12 -19,35 -55,66 -10,9 -36,34 -57,55 -22,23 -42,36 -49,31 -8,-5 -9,-3 -4,5 8,14 -68,91 -91,91 -8,0 -14,6 -14,13 0,7 -16,28 -36,47 -20,19 -53,52 -73,73 -21,20 -43,37 -49,37 -7,0 -12,5 -12,10 0,6 -56,66 -125,133 -120,118 -142,147 -110,147 8,0 15,7 15,16 0,8 13,27 28,42 53,51 57,60 37,82 -12,13 -25,17 -45,14 -15,-4 -31,-1 -34,5 -5,7 -13,8 -25,1 -14,-7 -29,-3 -62,20 -47,31 -88,66 -90,78 -1,4 -3,43 -4,87 -1,62 2,87 17,113 13,24 16,38 9,51 -6,10 -6,22 -1,27 5,5 11,29 14,52 3,24 10,50 16,57 8,10 8,15 0,20 -6,4 -9,19 -5,34 3,15 0,41 -6,57 -7,16 -11,38 -10,50 1,11 -10,33 -24,48 -14,16 -24,35 -21,43 10,26 -175,213 -211,213 -16,0 -21,4 -16,16 5,13 2,15 -15,10 -15,-5 -32,1 -57,20 -26,19 -38,24 -48,16 -8,-7 -18,-7 -27,-2 -20,13 -107,13 -115,0 -4,-6 -13,-5 -26,3 -17,10 -22,9 -30,-6 -8,-13 -15,-15 -27,-8 -16,9 -72,-14 -72,-29 0,-4 -21,-7 -46,-7 -31,0 -51,-5 -58,-15 -12,-17 -66,-14 -66,3 0,5 -9,9 -20,9 -10,0 -41,14 -67,30 -26,17 -59,30 -73,30 -14,0 -32,6 -38,12 -10,10 -15,10 -22,-2 -8,-12 -13,-13 -30,-2 -25,15 -27,15 -38,-4 z m -5,-176 c 6,16 23,15 62,-4 18,-9 41,-14 51,-11 24,6 120,-94 120,-124 0,-11 5,-29 10,-39 6,-12 7,-21 0,-25 -5,-3 -7,-19 -3,-35 4,-20 2,-30 -7,-30 -8,0 -10,-8 -6,-25 5,-18 2,-27 -9,-31 -8,-3 -13,-10 -10,-14 8,-13 -76,-89 -92,-83 -8,3 -18,1 -22,-4 -10,-17 -78,-22 -106,-7 -14,7 -32,11 -40,8 -8,-3 -21,0 -29,8 -8,7 -33,28 -55,47 -23,19 -41,40 -41,47 0,8 -5,14 -11,14 -8,0 -10,20 -7,64 4,40 1,69 -5,75 -8,8 -8,11 1,11 7,0 17,10 22,23 25,58 84,116 118,117 13,0 22,6 22,16 0,14 2,15 17,3 13,-11 17,-11 20,-1 z"
+             inkscape:connector-curvature="0" />
+          <path
+             id="path25114"
+             d="m 4010,750 c 0,-5 5,-10 10,-10 6,0 10,5 10,10 0,6 -4,10 -10,10 -5,0 -10,-4 -10,-10 z"
+             inkscape:connector-curvature="0" />
+          <path
+             id="path25116"
+             d="m 3870,620 c 0,-5 7,-10 16,-10 8,0 12,5 9,10 -3,6 -10,10 -16,10 -5,0 -9,-4 -9,-10 z"
+             inkscape:connector-curvature="0" />
+          <path
+             id="path25118"
+             d="m 3915,580 c 3,-5 8,-10 11,-10 2,0 4,5 4,10 0,6 -5,10 -11,10 -5,0 -7,-4 -4,-10 z"
+             inkscape:connector-curvature="0" />
+          <path
+             id="path25120"
+             d="m 3810,549 c 0,-5 5,-7 10,-4 6,3 10,8 10,11 0,2 -4,4 -10,4 -5,0 -10,-5 -10,-11 z"
+             inkscape:connector-curvature="0" />
+          <path
+             id="path25122"
+             d="m 4010,550 c 0,-5 5,-10 10,-10 6,0 10,5 10,10 0,6 -4,10 -10,10 -5,0 -10,-4 -10,-10 z"
+             inkscape:connector-curvature="0" />
+          <path
+             id="path25124"
+             d="m 4040,520 c 0,-5 5,-10 10,-10 6,0 10,5 10,10 0,6 -4,10 -10,10 -5,0 -10,-4 -10,-10 z"
+             inkscape:connector-curvature="0" />
+          <path
+             id="path25126"
+             d="m 3545,480 c 3,-5 8,-10 11,-10 2,0 4,5 4,10 0,6 -5,10 -11,10 -5,0 -7,-4 -4,-10 z"
+             inkscape:connector-curvature="0" />
+          <path
+             id="path25128"
+             d="m 3880,480 c 0,-5 5,-10 10,-10 6,0 10,5 10,10 0,6 -4,10 -10,10 -5,0 -10,-4 -10,-10 z"
+             inkscape:connector-curvature="0" />
+          <path
+             id="path25130"
+             d="m 3710,450 c 0,-5 5,-10 11,-10 5,0 7,5 4,10 -3,6 -8,10 -11,10 -2,0 -4,-4 -4,-10 z"
+             inkscape:connector-curvature="0" />
+          <path
+             id="path25132"
+             d="m 3746,415 c 4,-8 10,-12 15,-9 11,6 2,24 -11,24 -5,0 -7,-7 -4,-15 z"
+             inkscape:connector-curvature="0" />
+        </g>
+      </g>
+      <rect
+         ry="0"
+         rx="0"
+         y="542.56519"
+         x="400.42352"
+         height="35.1628"
+         width="56.539326"
+         id="rect62310"
+         style="opacity:0.49000005;fill:#ff0000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.88599998;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+    </g>
+    <g
+       transform="matrix(0.99971727,0,0,1.04845,304.84241,75.551411)"
+       id="g63032"
+       inkscape:export-filename="/home/mniranja/Documents/latex/rhcs-training/tks-tps-drm-esc-enrollment3.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
+      <rect
+         ry="20.239977"
+         rx="23.695581"
+         y="541.06201"
+         x="226.35631"
+         height="48.449139"
+         width="52.38332"
+         id="rect63034"
+         style="opacity:0.49000005;fill:#cdde87;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.88599998;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+      <text
+         transform="scale(0.91248518,1.0959082)"
+         sodipodi:linespacing="125%"
+         id="text63036"
+         y="516.38074"
+         x="252.00624"
+         style="font-style:normal;font-weight:normal;font-size:7.6196661px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         xml:space="preserve"><tspan
+           y="516.38074"
+           x="252.00624"
+           sodipodi:role="line"
+           id="tspan63038">Key Transport</tspan><tspan
+           id="tspan63040"
+           y="525.90533"
+           x="252.00624"
+           sodipodi:role="line">Session Key</tspan><tspan
+           id="tspan63042"
+           y="535.42993"
+           x="252.00624"
+           sodipodi:role="line"> KEK(KTSK)</tspan></text>
+      <g
+         id="g63044"
+         inkscape:label="Layer 1"
+         transform="matrix(0.02836624,0,0,0.02243933,241.03186,533.67559)">
+        <g
+           id="g63046">
+          <ellipse
+             ry="297.14285"
+             rx="301.42856"
+             cy="371.42856"
+             cx="344.28571"
+             id="ellipse63048"
+             style="fill:#000000;stroke:#8574a0;stroke-width:27.8560009;stroke-linejoin:round"
+             transform="matrix(1.0693,0,0,1.0847,-18.133,299.48)" />
+          <ellipse
+             ry="297.14285"
+             rx="301.42856"
+             cy="371.42856"
+             cx="344.28571"
+             id="ellipse63050"
+             style="fill:none;stroke:#8574a0;stroke-width:27.8560009;stroke-linejoin:round"
+             transform="matrix(1.0693,0,0,1.0847,-18.133,299.48)" />
+          <path
+             inkscape:connector-curvature="0"
+             id="path63052"
+             style="fill:#808080"
+             clip-path="url(#clipPath3896)"
+             transform="matrix(1.0693,0,0,1.0847,-18.133,299.48)"
+             d="m 645.71,371.43 c 0,164.11 -134.95,297.14 -301.43,297.14 -166.47,0 -301.43,-133.04 -301.43,-297.14 0,-164.11 134.95,-297.14 301.43,-297.14 166.47,0 301.43,133.04 301.43,297.14 z" />
+          <g
+             id="g63054"
+             transform="translate(0,-2.6589)">
+            <rect
+               id="rect63056"
+               style="fill:#8574a0;fill-rule:evenodd;stroke:#8574a0;stroke-width:16.08300018"
+               rx="0"
+               ry="0"
+               height="183.92"
+               width="333.92001"
+               y="681.20001"
+               x="183.03999" />
+            <rect
+               id="rect63058"
+               style="fill:#8574a0;fill-rule:evenodd;stroke:#8574a0;stroke-width:15"
+               rx="0"
+               ry="0"
+               height="35.007"
+               width="335"
+               y="897.89001"
+               x="182.5" />
+            <path
+               id="path63060"
+               style="fill:#8574a0"
+               inkscape:connector-curvature="0"
+               d="m 350,433.65 c -82.631,0 -149.86,67.226 -149.86,149.86 l 0,72.431 39.962,0 0,-72.431 c 0,-60.597 49.298,-109.89 109.89,-109.89 60.597,0 109.89,49.298 109.89,109.89 l 0,72.431 39.962,0 0,-72.431 c 0,-82.631 -67.226,-149.86 -149.86,-149.86 z" />
+          </g>
+        </g>
+      </g>
+    </g>
+    <path
+       inkscape:connector-curvature="0"
+       id="path63062"
+       d="m 442.74893,409.47108 -18.11228,-12.82834 0,0"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.66900003;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:"
+       inkscape:export-filename="/home/mniranja/Documents/latex/rhcs-training/tks-tps-drm-esc-enrollment3.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <g
+       id="g63514"
+       transform="translate(218.32478,239.90339)"
+       inkscape:export-filename="/home/mniranja/Documents/latex/rhcs-training/tks-tps-drm-esc-enrollment3.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
+      <rect
+         ry="0"
+         rx="0"
+         y="509.72916"
+         x="256.48221"
+         height="29.131706"
+         width="27.72411"
+         id="rect63516"
+         style="opacity:0.49000005;fill:#ff0000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.88599998;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+      <g
+         id="g63518">
+        <text
+           transform="scale(0.99886468,1.0011366)"
+           xml:space="preserve"
+           style="font-style:normal;font-weight:normal;font-size:8.16169453px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           x="261.32828"
+           y="523.5907"
+           id="text63520"
+           sodipodi:linespacing="125%"><tspan
+             sodipodi:role="line"
+             x="261.32828"
+             y="523.5907"
+             id="tspan63522">KEK</tspan></text>
+        <g
+           style="fill:#000000"
+           transform="matrix(0.00353186,-0.00321355,-0.00317588,-0.00383905,266.78459,546.5712)"
+           id="g63524">
+          <path
+             inkscape:connector-curvature="0"
+             d="m 922,3904 c -7,-13 -14,-14 -28,-6 -14,8 -25,5 -50,-14 -17,-13 -38,-22 -47,-19 -8,4 -25,-4 -40,-19 -15,-14 -30,-26 -35,-26 -5,0 -24,-19 -43,-42 -19,-23 -49,-58 -66,-79 -18,-20 -33,-44 -33,-53 0,-9 -4,-16 -10,-16 -5,0 -10,-10 -10,-22 -1,-68 -9,-160 -14,-165 -3,-3 1,-17 8,-32 7,-14 11,-32 9,-38 -3,-7 5,-26 16,-42 12,-16 21,-34 21,-40 0,-6 11,-31 25,-56 15,-26 23,-51 18,-58 -4,-6 -6,-19 -5,-29 2,-9 -2,-19 -8,-23 -5,-3 -10,-17 -10,-31 0,-13 -5,-24 -10,-24 -6,0 -8,-11 -4,-25 4,-16 2,-25 -6,-25 -8,0 -11,-9 -7,-26 2,-14 -1,-38 -8,-52 -15,-34 -5,-214 13,-220 7,-2 12,-14 12,-27 0,-12 7,-28 15,-35 8,-7 15,-18 15,-24 0,-10 120,-138 152,-161 7,-5 31,-25 53,-43 22,-18 46,-37 53,-43 9,-8 17,-7 27,1 12,10 22,7 49,-14 19,-14 37,-23 39,-19 3,5 48,8 101,7 53,0 96,3 96,8 0,4 6,8 14,8 8,0 16,4 18,9 2,5 26,11 53,12 28,2 53,8 56,13 4,5 32,10 63,11 31,1 59,4 62,8 9,9 40,-9 80,-45 35,-32 64,-105 64,-161 0,-20 7,-41 18,-50 20,-18 42,-22 42,-8 0,7 17,25 92,94 24,23 14,30 193,-144 303,-294 276,-271 311,-264 19,3 35,1 39,-5 5,-8 11,-8 21,1 10,8 22,8 44,1 19,-7 32,-7 35,-1 10,15 49,-18 188,-156 86,-84 127,-131 123,-141 -3,-8 1,-25 9,-37 8,-13 17,-40 21,-62 3,-22 9,-42 13,-45 12,-10 32,-51 27,-59 -3,-4 6,-18 20,-32 66,-63 104,-104 104,-111 0,-4 6,-8 13,-8 6,0 27,-14 45,-31 32,-30 34,-31 122,-27 l 89,3 67,-65 c 37,-36 75,-73 85,-82 23,-21 24,-34 5,-41 -8,-3 -12,-15 -9,-30 3,-14 -3,-42 -13,-62 -15,-31 -15,-38 -3,-46 12,-8 11,-12 -4,-23 -17,-13 -15,-18 33,-68 l 51,-53 67,-2 c 116,-3 163,-9 174,-24 7,-11 11,-11 15,-1 6,16 40,16 46,0 3,-10 9,-10 24,-2 14,8 25,9 38,2 13,-8 24,-7 38,1 15,10 22,9 37,-4 17,-15 19,-15 28,0 7,14 13,15 31,6 26,-14 29,3 4,18 -16,9 -16,12 -3,21 19,13 40,13 40,0 0,-5 5,-10 11,-10 8,0 8,4 -1,15 -13,16 -4,39 12,29 7,-4 8,-2 4,5 -4,6 -2,18 4,26 7,9 10,28 7,45 -4,16 -2,32 3,35 7,4 7,13 0,25 -5,10 -7,32 -4,48 4,17 1,32 -5,36 -8,5 -8,13 -1,27 9,16 7,19 -10,19 -12,0 -20,7 -20,16 0,10 -6,14 -15,10 -10,-4 -15,1 -15,14 0,11 -5,20 -11,20 -18,0 -66,45 -61,58 2,7 -3,12 -11,12 -8,0 -17,7 -21,15 -3,8 -15,15 -27,15 -16,0 -20,5 -16,19 3,14 0,17 -15,13 -15,-4 -19,0 -16,14 2,13 -4,20 -19,22 -14,2 -20,8 -16,18 3,9 -1,14 -11,14 -9,0 -19,7 -22,15 -4,8 -13,15 -21,15 -10,0 -13,6 -9,16 4,11 -1,18 -14,21 -11,3 -20,12 -20,19 0,8 -7,14 -15,14 -9,0 -19,8 -22,17 -11,29 -42,53 -60,46 -12,-5 -15,-2 -10,9 4,11 -1,18 -14,21 -10,3 -19,12 -19,21 0,9 -7,16 -15,16 -8,0 -15,7 -15,15 0,14 -12,19 -32,16 -5,0 -8,6 -8,14 0,8 -7,15 -15,15 -8,0 -15,9 -15,20 0,11 -6,20 -13,20 -16,0 -57,42 -57,58 0,7 -7,12 -15,12 -8,0 -15,7 -15,16 0,11 -6,15 -20,11 -15,-4 -20,0 -20,14 0,10 -6,19 -14,19 -7,0 -16,9 -19,20 -3,11 -12,20 -21,20 -9,0 -16,5 -16,10 0,13 -37,50 -50,50 -5,0 -10,4 -10,8 0,15 -140,152 -155,152 -8,0 -15,7 -15,15 0,8 -7,15 -15,15 -8,0 -15,5 -15,12 0,12 -19,35 -55,66 -10,9 -36,34 -57,55 -22,23 -42,36 -49,31 -8,-5 -9,-3 -4,5 8,14 -68,91 -91,91 -8,0 -14,6 -14,13 0,7 -16,28 -36,47 -20,19 -53,52 -73,73 -21,20 -43,37 -49,37 -7,0 -12,5 -12,10 0,6 -56,66 -125,133 -120,118 -142,147 -110,147 8,0 15,7 15,16 0,8 13,27 28,42 53,51 57,60 37,82 -12,13 -25,17 -45,14 -15,-4 -31,-1 -34,5 -5,7 -13,8 -25,1 -14,-7 -29,-3 -62,20 -47,31 -88,66 -90,78 -1,4 -3,43 -4,87 -1,62 2,87 17,113 13,24 16,38 9,51 -6,10 -6,22 -1,27 5,5 11,29 14,52 3,24 10,50 16,57 8,10 8,15 0,20 -6,4 -9,19 -5,34 3,15 0,41 -6,57 -7,16 -11,38 -10,50 1,11 -10,33 -24,48 -14,16 -24,35 -21,43 10,26 -175,213 -211,213 -16,0 -21,4 -16,16 5,13 2,15 -15,10 -15,-5 -32,1 -57,20 -26,19 -38,24 -48,16 -8,-7 -18,-7 -27,-2 -20,13 -107,13 -115,0 -4,-6 -13,-5 -26,3 -17,10 -22,9 -30,-6 -8,-13 -15,-15 -27,-8 -16,9 -72,-14 -72,-29 0,-4 -21,-7 -46,-7 -31,0 -51,-5 -58,-15 -12,-17 -66,-14 -66,3 0,5 -9,9 -20,9 -10,0 -41,14 -67,30 -26,17 -59,30 -73,30 -14,0 -32,6 -38,12 -10,10 -15,10 -22,-2 -8,-12 -13,-13 -30,-2 -25,15 -27,15 -38,-4 z m -5,-176 c 6,16 23,15 62,-4 18,-9 41,-14 51,-11 24,6 120,-94 120,-124 0,-11 5,-29 10,-39 6,-12 7,-21 0,-25 -5,-3 -7,-19 -3,-35 4,-20 2,-30 -7,-30 -8,0 -10,-8 -6,-25 5,-18 2,-27 -9,-31 -8,-3 -13,-10 -10,-14 8,-13 -76,-89 -92,-83 -8,3 -18,1 -22,-4 -10,-17 -78,-22 -106,-7 -14,7 -32,11 -40,8 -8,-3 -21,0 -29,8 -8,7 -33,28 -55,47 -23,19 -41,40 -41,47 0,8 -5,14 -11,14 -8,0 -10,20 -7,64 4,40 1,69 -5,75 -8,8 -8,11 1,11 7,0 17,10 22,23 25,58 84,116 118,117 13,0 22,6 22,16 0,14 2,15 17,3 13,-11 17,-11 20,-1 z"
+             id="path63526" />
+          <path
+             inkscape:connector-curvature="0"
+             d="m 4010,750 c 0,-5 5,-10 10,-10 6,0 10,5 10,10 0,6 -4,10 -10,10 -5,0 -10,-4 -10,-10 z"
+             id="path63528" />
+          <path
+             inkscape:connector-curvature="0"
+             d="m 3870,620 c 0,-5 7,-10 16,-10 8,0 12,5 9,10 -3,6 -10,10 -16,10 -5,0 -9,-4 -9,-10 z"
+             id="path63530" />
+          <path
+             inkscape:connector-curvature="0"
+             d="m 3915,580 c 3,-5 8,-10 11,-10 2,0 4,5 4,10 0,6 -5,10 -11,10 -5,0 -7,-4 -4,-10 z"
+             id="path63532" />
+          <path
+             inkscape:connector-curvature="0"
+             d="m 3810,549 c 0,-5 5,-7 10,-4 6,3 10,8 10,11 0,2 -4,4 -10,4 -5,0 -10,-5 -10,-11 z"
+             id="path63534" />
+          <path
+             inkscape:connector-curvature="0"
+             d="m 4010,550 c 0,-5 5,-10 10,-10 6,0 10,5 10,10 0,6 -4,10 -10,10 -5,0 -10,-4 -10,-10 z"
+             id="path63536" />
+          <path
+             inkscape:connector-curvature="0"
+             d="m 4040,520 c 0,-5 5,-10 10,-10 6,0 10,5 10,10 0,6 -4,10 -10,10 -5,0 -10,-4 -10,-10 z"
+             id="path63538" />
+          <path
+             inkscape:connector-curvature="0"
+             d="m 3545,480 c 3,-5 8,-10 11,-10 2,0 4,5 4,10 0,6 -5,10 -11,10 -5,0 -7,-4 -4,-10 z"
+             id="path63540" />
+          <path
+             inkscape:connector-curvature="0"
+             d="m 3880,480 c 0,-5 5,-10 10,-10 6,0 10,5 10,10 0,6 -4,10 -10,10 -5,0 -10,-4 -10,-10 z"
+             id="path63542" />
+          <path
+             inkscape:connector-curvature="0"
+             d="m 3710,450 c 0,-5 5,-10 11,-10 5,0 7,5 4,10 -3,6 -8,10 -11,10 -2,0 -4,-4 -4,-10 z"
+             id="path63544" />
+          <path
+             inkscape:connector-curvature="0"
+             d="m 3746,415 c 4,-8 10,-12 15,-9 11,6 2,24 -11,24 -5,0 -7,-7 -4,-15 z"
+             id="path63546" />
+        </g>
+      </g>
+    </g>
+    <g
+       id="g63548"
+       transform="matrix(0.99971727,0,0,1.04845,175.50901,242.51523)"
+       inkscape:export-filename="/home/mniranja/Documents/latex/rhcs-training/tks-tps-drm-esc-enrollment3.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
+      <rect
+         style="opacity:0.49000005;fill:#cdde87;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.88599998;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+         id="rect63550"
+         width="52.38332"
+         height="48.449139"
+         x="226.35631"
+         y="541.06201"
+         rx="23.695581"
+         ry="20.239977" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:7.6196661px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         x="252.00624"
+         y="516.38074"
+         id="text63552"
+         sodipodi:linespacing="125%"
+         transform="scale(0.91248518,1.0959082)"><tspan
+           id="tspan63554"
+           sodipodi:role="line"
+           x="252.00624"
+           y="516.38074">Key Transport</tspan><tspan
+           sodipodi:role="line"
+           x="252.00624"
+           y="525.90533"
+           id="tspan63556">Session Key</tspan><tspan
+           sodipodi:role="line"
+           x="252.00624"
+           y="535.42993"
+           id="tspan63558"> KEK(KTSK)</tspan></text>
+      <g
+         transform="matrix(0.02836624,0,0,0.02243933,241.03186,533.67559)"
+         inkscape:label="Layer 1"
+         id="g63560">
+        <g
+           id="g63562">
+          <ellipse
+             transform="matrix(1.0693,0,0,1.0847,-18.133,299.48)"
+             style="fill:#000000;stroke:#8574a0;stroke-width:27.8560009;stroke-linejoin:round"
+             id="ellipse63564"
+             cx="344.28571"
+             cy="371.42856"
+             rx="301.42856"
+             ry="297.14285" />
+          <ellipse
+             transform="matrix(1.0693,0,0,1.0847,-18.133,299.48)"
+             style="fill:none;stroke:#8574a0;stroke-width:27.8560009;stroke-linejoin:round"
+             id="ellipse63566"
+             cx="344.28571"
+             cy="371.42856"
+             rx="301.42856"
+             ry="297.14285" />
+          <path
+             d="m 645.71,371.43 c 0,164.11 -134.95,297.14 -301.43,297.14 -166.47,0 -301.43,-133.04 -301.43,-297.14 0,-164.11 134.95,-297.14 301.43,-297.14 166.47,0 301.43,133.04 301.43,297.14 z"
+             transform="matrix(1.0693,0,0,1.0847,-18.133,299.48)"
+             clip-path="url(#clipPath3896)"
+             style="fill:#808080"
+             id="path63568"
+             inkscape:connector-curvature="0" />
+          <g
+             transform="translate(0,-2.6589)"
+             id="g63570">
+            <rect
+               x="183.03999"
+               y="681.20001"
+               width="333.92001"
+               height="183.92"
+               ry="0"
+               rx="0"
+               style="fill:#8574a0;fill-rule:evenodd;stroke:#8574a0;stroke-width:16.08300018"
+               id="rect63572" />
+            <rect
+               x="182.5"
+               y="897.89001"
+               width="335"
+               height="35.007"
+               ry="0"
+               rx="0"
+               style="fill:#8574a0;fill-rule:evenodd;stroke:#8574a0;stroke-width:15"
+               id="rect63574" />
+            <path
+               d="m 350,433.65 c -82.631,0 -149.86,67.226 -149.86,149.86 l 0,72.431 39.962,0 0,-72.431 c 0,-60.597 49.298,-109.89 109.89,-109.89 60.597,0 109.89,49.298 109.89,109.89 l 0,72.431 39.962,0 0,-72.431 c 0,-82.631 -67.226,-149.86 -149.86,-149.86 z"
+               inkscape:connector-curvature="0"
+               style="fill:#8574a0"
+               id="path63576" />
+          </g>
+        </g>
+      </g>
+    </g>
+    <text
+       sodipodi:linespacing="125%"
+       id="text64112"
+       y="829.21185"
+       x="542.66345"
+       style="font-style:normal;font-weight:normal;font-size:15px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"
+       inkscape:export-filename="/home/mniranja/Documents/latex/rhcs-training/tks-tps-drm-esc-enrollment3.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10px;font-family:'Courier 10 Pitch';-inkscape-font-specification:'Courier 10 Pitch'"
+         y="829.21185"
+         x="542.66345"
+         id="tspan64114"
+         sodipodi:role="line">Decrypt</tspan></text>
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.39101136;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:"
+       d="m 572.59793,843.3069 -26.79839,-0.001 0,0"
+       id="path64128"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/mniranja/Documents/latex/rhcs-training/tks-tps-drm-esc-enrollment3.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path68720"
+       d="m 486.05204,633.40935 0,-17.77997 0,0"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.44323504px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-start:"
+       inkscape:export-filename="/home/mniranja/Documents/latex/rhcs-training/tks-tps-drm-esc-enrollment3.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <rect
+       ry="21.2206"
+       rx="23.6889"
+       y="509.2753"
+       x="531.59332"
+       height="53.797859"
+       width="116.12444"
+       id="rect69597"
+       style="opacity:0.49000005;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.70651072;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       inkscape:export-filename="/home/mniranja/Documents/latex/rhcs-training/tks-tps-drm-esc-enrollment3.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <g
+       id="g69655"
+       inkscape:export-filename="/home/mniranja/Documents/latex/rhcs-training/tks-tps-drm-esc-enrollment3.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
+      <g
+         transform="translate(11.257334,-3.350606)"
+         id="g26034">
+        <rect
+           ry="21.220604"
+           rx="23.688883"
+           y="519.46246"
+           x="522.54846"
+           height="44.42841"
+           width="42.331501"
+           id="rect16785"
+           style="opacity:0.49000005;fill:#cdde87;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.88599998;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+        <text
+           sodipodi:linespacing="125%"
+           id="text16787"
+           y="496.28259"
+           x="585.24774"
+           style="font-style:normal;font-weight:normal;font-size:7.6196661px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           xml:space="preserve"
+           transform="scale(0.91248518,1.0959082)"><tspan
+             id="tspan16789"
+             y="496.28259"
+             x="585.24774"
+             sodipodi:role="line">Private</tspan><tspan
+             y="505.80719"
+             x="585.24774"
+             sodipodi:role="line"
+             id="tspan16791"> Key</tspan></text>
+        <g
+           transform="matrix(0.02836624,0,0,0.02243933,531.97406,513.06323)"
+           inkscape:label="Layer 1"
+           id="g25134">
+          <g
+             id="g25136">
+            <ellipse
+               transform="matrix(1.0693,0,0,1.0847,-18.133,299.48)"
+               style="fill:#000000;stroke:#8574a0;stroke-width:27.8560009;stroke-linejoin:round"
+               id="ellipse25138"
+               cx="344.28571"
+               cy="371.42856"
+               rx="301.42856"
+               ry="297.14285" />
+            <ellipse
+               transform="matrix(1.0693,0,0,1.0847,-18.133,299.48)"
+               style="fill:none;stroke:#8574a0;stroke-width:27.8560009;stroke-linejoin:round"
+               id="ellipse25140"
+               cx="344.28571"
+               cy="371.42856"
+               rx="301.42856"
+               ry="297.14285" />
+            <path
+               d="m 645.71,371.43 c 0,164.11 -134.95,297.14 -301.43,297.14 -166.47,0 -301.43,-133.04 -301.43,-297.14 0,-164.11 134.95,-297.14 301.43,-297.14 166.47,0 301.43,133.04 301.43,297.14 z"
+               transform="matrix(1.0693,0,0,1.0847,-18.133,299.48)"
+               clip-path="url(#clipPath3896)"
+               style="fill:#808080"
+               id="path25142"
+               inkscape:connector-curvature="0" />
+            <g
+               transform="translate(0,-2.6589)"
+               id="g25144">
+              <rect
+                 x="183.03999"
+                 y="681.20001"
+                 width="333.92001"
+                 height="183.92"
+                 ry="0"
+                 rx="0"
+                 style="fill:#8574a0;fill-rule:evenodd;stroke:#8574a0;stroke-width:16.08300018"
+                 id="rect25146" />
+              <rect
+                 x="182.5"
+                 y="897.89001"
+                 width="335"
+                 height="35.007"
+                 ry="0"
+                 rx="0"
+                 style="fill:#8574a0;fill-rule:evenodd;stroke:#8574a0;stroke-width:15"
+                 id="rect25148" />
+              <path
+                 d="m 350,433.65 c -82.631,0 -149.86,67.226 -149.86,149.86 l 0,72.431 39.962,0 0,-72.431 c 0,-60.597 49.298,-109.89 109.89,-109.89 60.597,0 109.89,49.298 109.89,109.89 l 0,72.431 39.962,0 0,-72.431 c 0,-82.631 -67.226,-149.86 -149.86,-149.86 z"
+                 inkscape:connector-curvature="0"
+                 style="fill:#8574a0"
+                 id="path25150" />
+            </g>
+          </g>
+        </g>
+      </g>
+      <g
+         id="g69518"
+         transform="matrix(0.46352216,0,0,0.55669698,431.35196,322.9306)">
+        <g
+           id="g69520">
+          <rect
+             ry="38.118771"
+             rx="51.106258"
+             y="342.47791"
+             x="349.19083"
+             height="79.807167"
+             width="91.325729"
+             id="rect69522"
+             style="opacity:0.49000005;fill:#cdde87;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.88599998;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+          <text
+             sodipodi:linespacing="125%"
+             id="text69524"
+             y="378.67908"
+             x="371.40518"
+             style="font-style:normal;font-weight:normal;font-size:15px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+             xml:space="preserve"><tspan
+               id="tspan69526"
+               y="378.67908"
+               x="371.40518"
+               sodipodi:role="line">Public</tspan><tspan
+               y="397.42908"
+               x="371.40518"
+               sodipodi:role="line"
+               id="tspan69528"> Key</tspan></text>
+        </g>
+      </g>
+      <g
+         inkscape:label="Capa 1"
+         id="g69530"
+         transform="matrix(0.02781282,0,0,0.03683879,578.13766,527.2411)">
+        <g
+           id="g69532"
+           transform="matrix(9.0322583,0,0,9.0322583,-325.77086,-702.24281)">
+          <circle
+             r="22.142857"
+             cy="101.17513"
+             cx="58.133789"
+             id="circle69534"
+             style="opacity:1;fill:#468c00;fill-opacity:1;stroke:none;stroke-width:1.80565524;stroke-miterlimit:6.66666651;stroke-dasharray:5.41696572, 1.80565524;stroke-dashoffset:0;stroke-opacity:1" />
+          <text
+             sodipodi:linespacing="125%"
+             id="text69536"
+             y="114.10482"
+             x="40.790039"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:40px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+             xml:space="preserve"><tspan
+               y="114.10482"
+               x="40.790039"
+               id="tspan69538"
+               sodipodi:role="line">+</tspan></text>
+        </g>
+      </g>
+      <rect
+         ry="21.2206"
+         rx="23.6889"
+         y="509.2753"
+         x="531.59332"
+         height="53.797859"
+         width="116.12444"
+         id="rect69599"
+         style="opacity:0.49000005;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.70651072;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+    </g>
+    <g
+       transform="translate(-124.77726,128.66327)"
+       id="g69685"
+       inkscape:export-filename="/home/mniranja/Documents/latex/rhcs-training/tks-tps-drm-esc-enrollment3.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
+      <rect
+         ry="21.220604"
+         rx="23.688883"
+         y="519.46246"
+         x="522.54846"
+         height="44.42841"
+         width="42.331501"
+         id="rect69687"
+         style="opacity:0.49000005;fill:#cdde87;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.88599998;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+      <text
+         sodipodi:linespacing="125%"
+         id="text69689"
+         y="496.28259"
+         x="585.24774"
+         style="font-style:normal;font-weight:normal;font-size:7.6196661px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         xml:space="preserve"
+         transform="scale(0.91248518,1.0959082)"><tspan
+           id="tspan69691"
+           y="496.28259"
+           x="585.24774"
+           sodipodi:role="line">Private</tspan><tspan
+           y="505.80719"
+           x="585.24774"
+           sodipodi:role="line"
+           id="tspan69693"> Key</tspan></text>
+      <g
+         transform="matrix(0.02836624,0,0,0.02243933,531.97406,513.06323)"
+         inkscape:label="Layer 1"
+         id="g69695">
+        <g
+           id="g69697">
+          <ellipse
+             transform="matrix(1.0693,0,0,1.0847,-18.133,299.48)"
+             style="fill:#000000;stroke:#8574a0;stroke-width:27.8560009;stroke-linejoin:round"
+             id="ellipse69699"
+             cx="344.28571"
+             cy="371.42856"
+             rx="301.42856"
+             ry="297.14285" />
+          <ellipse
+             transform="matrix(1.0693,0,0,1.0847,-18.133,299.48)"
+             style="fill:none;stroke:#8574a0;stroke-width:27.8560009;stroke-linejoin:round"
+             id="ellipse69701"
+             cx="344.28571"
+             cy="371.42856"
+             rx="301.42856"
+             ry="297.14285" />
+          <path
+             d="m 645.71,371.43 c 0,164.11 -134.95,297.14 -301.43,297.14 -166.47,0 -301.43,-133.04 -301.43,-297.14 0,-164.11 134.95,-297.14 301.43,-297.14 166.47,0 301.43,133.04 301.43,297.14 z"
+             transform="matrix(1.0693,0,0,1.0847,-18.133,299.48)"
+             clip-path="url(#clipPath3896)"
+             style="fill:#808080"
+             id="path69703"
+             inkscape:connector-curvature="0" />
+          <g
+             transform="translate(0,-2.6589)"
+             id="g69705">
+            <rect
+               x="183.03999"
+               y="681.20001"
+               width="333.92001"
+               height="183.92"
+               ry="0"
+               rx="0"
+               style="fill:#8574a0;fill-rule:evenodd;stroke:#8574a0;stroke-width:16.08300018"
+               id="rect69707" />
+            <rect
+               x="182.5"
+               y="897.89001"
+               width="335"
+               height="35.007"
+               ry="0"
+               rx="0"
+               style="fill:#8574a0;fill-rule:evenodd;stroke:#8574a0;stroke-width:15"
+               id="rect69709" />
+            <path
+               d="m 350,433.65 c -82.631,0 -149.86,67.226 -149.86,149.86 l 0,72.431 39.962,0 0,-72.431 c 0,-60.597 49.298,-109.89 109.89,-109.89 60.597,0 109.89,49.298 109.89,109.89 l 0,72.431 39.962,0 0,-72.431 c 0,-82.631 -67.226,-149.86 -149.86,-149.86 z"
+               inkscape:connector-curvature="0"
+               style="fill:#8574a0"
+               id="path69711" />
+          </g>
+        </g>
+      </g>
+    </g>
+    <g
+       id="g69713"
+       transform="matrix(0.46352216,0,0,0.55669698,302.01857,454.27436)"
+       inkscape:export-filename="/home/mniranja/Documents/latex/rhcs-training/tks-tps-drm-esc-enrollment3.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
+      <g
+         id="g69715">
+        <rect
+           ry="38.118771"
+           rx="51.106258"
+           y="342.47791"
+           x="349.19083"
+           height="79.807167"
+           width="91.325729"
+           id="rect69717"
+           style="opacity:0.49000005;fill:#cdde87;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.88599998;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+        <text
+           sodipodi:linespacing="125%"
+           id="text69719"
+           y="378.67908"
+           x="371.40518"
+           style="font-style:normal;font-weight:normal;font-size:15px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           xml:space="preserve"><tspan
+             id="tspan69721"
+             y="378.67908"
+             x="371.40518"
+             sodipodi:role="line">Public</tspan><tspan
+             y="397.42908"
+             x="371.40518"
+             sodipodi:role="line"
+             id="tspan69723"> Key</tspan></text>
+      </g>
+    </g>
+    <g
+       inkscape:label="Capa 1"
+       id="g69725"
+       transform="matrix(0.02781282,0,0,0.03683879,442.10307,658.58486)"
+       inkscape:export-filename="/home/mniranja/Documents/latex/rhcs-training/tks-tps-drm-esc-enrollment3.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
+      <g
+         id="g69727"
+         transform="matrix(9.0322583,0,0,9.0322583,-325.77086,-702.24281)">
+        <circle
+           r="22.142857"
+           cy="101.17513"
+           cx="58.133789"
+           id="circle69729"
+           style="opacity:1;fill:#468c00;fill-opacity:1;stroke:none;stroke-width:1.80565524;stroke-miterlimit:6.66666651;stroke-dasharray:5.41696572, 1.80565524;stroke-dashoffset:0;stroke-opacity:1" />
+        <text
+           sodipodi:linespacing="125%"
+           id="text69731"
+           y="114.10482"
+           x="40.790039"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:40px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           xml:space="preserve"><tspan
+             y="114.10482"
+             x="40.790039"
+             id="tspan69733"
+             sodipodi:role="line">+</tspan></text>
+      </g>
+    </g>
+    <rect
+       ry="21.2206"
+       rx="23.6889"
+       y="640.73865"
+       x="386.29666"
+       height="53.558578"
+       width="209.03201"
+       id="rect69735"
+       style="opacity:0.49000005;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.94579136;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       inkscape:export-filename="/home/mniranja/Documents/latex/rhcs-training/tks-tps-drm-esc-enrollment3.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <g
+       transform="matrix(0.02781282,0,0,0.03683879,512.46578,656.57449)"
+       id="g69737"
+       inkscape:label="Capa 1"
+       inkscape:export-filename="/home/mniranja/Documents/latex/rhcs-training/tks-tps-drm-esc-enrollment3.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
+      <g
+         transform="matrix(9.0322583,0,0,9.0322583,-325.77086,-702.24281)"
+         id="g69739">
+        <circle
+           style="opacity:1;fill:#468c00;fill-opacity:1;stroke:none;stroke-width:1.80565524;stroke-miterlimit:6.66666651;stroke-dasharray:5.41696572, 1.80565524;stroke-dashoffset:0;stroke-opacity:1"
+           id="circle69741"
+           cx="58.133789"
+           cy="101.17513"
+           r="22.142857" />
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:40px;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           x="40.790039"
+           y="114.10482"
+           id="text69743"
+           sodipodi:linespacing="125%"><tspan
+             sodipodi:role="line"
+             id="tspan69745"
+             x="40.790039"
+             y="114.10482">+</tspan></text>
+      </g>
+    </g>
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.44323504px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-start:"
+       d="m 484.04168,718.51474 0,-17.77997 0,0"
+       id="path70109"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/mniranja/Documents/latex/rhcs-training/tks-tps-drm-esc-enrollment3.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <g
+       transform="matrix(0.46352216,0,0,0.55669698,375.73191,701.54907)"
+       id="g70583"
+       inkscape:export-filename="/home/mniranja/Documents/latex/rhcs-training/tks-tps-drm-esc-enrollment3.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
+      <g
+         id="g70585">
+        <rect
+           style="opacity:0.49000005;fill:#cdde87;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.88599998;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+           id="rect70587"
+           width="91.325729"
+           height="79.807167"
+           x="349.19083"
+           y="342.47791"
+           rx="51.106258"
+           ry="38.118771" />
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-weight:normal;font-size:15px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           x="371.40518"
+           y="378.67908"
+           id="text70589"
+           sodipodi:linespacing="125%"><tspan
+             sodipodi:role="line"
+             x="371.40518"
+             y="378.67908"
+             id="tspan70591">Public</tspan><tspan
+             id="tspan70593"
+             sodipodi:role="line"
+             x="371.40518"
+             y="397.42908"> Key</tspan></text>
+      </g>
+    </g>
+    <g
+       id="g82614"
+       transform="translate(585.68593,166.19006)"
+       inkscape:export-filename="/home/mniranja/Documents/latex/rhcs-training/tks-tps-drm-esc-enrollment3.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
+      <g
+         id="g82616">
+        <g
+           transform="translate(-0.67012118,-40.877393)"
+           id="g82618">
+          <text
+             xml:space="preserve"
+             style="font-style:normal;font-weight:normal;font-size:7.97201109px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+             x="30.768303"
+             y="620.56415"
+             id="text82620"
+             sodipodi:linespacing="125%"
+             transform="scale(1.0229206,0.97759299)"><tspan
+               sodipodi:role="line"
+               x="30.768303"
+               y="620.56415"
+               id="tspan82622">KEK</tspan></text>
+          <rect
+             style="opacity:0.49000005;fill:#ff0000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.88599998;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+             id="rect82624"
+             width="27.731951"
+             height="27.7855"
+             x="26.252203"
+             y="590.95306"
+             rx="0"
+             ry="0" />
+        </g>
+        <g
+           transform="translate(-33.50606,-58.970665)"
+           id="g82626">
+          <text
+             sodipodi:linespacing="125%"
+             id="text82628"
+             y="641.78656"
+             x="95.20919"
+             style="font-style:normal;font-weight:normal;font-size:7.97201109px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+             xml:space="preserve"
+             transform="scale(1.0229206,0.97759299)"><tspan
+               id="tspan82630"
+               y="641.78656"
+               x="95.20919"
+               sodipodi:role="line">AUTH</tspan></text>
+          <rect
+             ry="0"
+             rx="0"
+             y="610.3335"
+             x="94.531471"
+             height="27.7855"
+             width="27.731951"
+             id="rect82632"
+             style="opacity:0.49000005;fill:#ff0000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.88599998;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+        </g>
+        <g
+           transform="translate(13.402424,-63.661513)"
+           id="g82634">
+          <text
+             xml:space="preserve"
+             style="font-style:normal;font-weight:normal;font-size:7.97201109px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+             x="83.194496"
+             y="647.18927"
+             id="text82636"
+             sodipodi:linespacing="125%"
+             transform="scale(1.0229206,0.97759299)"><tspan
+               sodipodi:role="line"
+               x="83.194496"
+               y="647.18927"
+               id="tspan82638">MAC</tspan></text>
+          <rect
+             style="opacity:0.49000005;fill:#ff0000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.88599998;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+             id="rect82640"
+             width="27.731951"
+             height="27.7855"
+             x="80.419853"
+             y="615.58893"
+             rx="0"
+             ry="0" />
+        </g>
+      </g>
+      <rect
+         ry="21.2206"
+         rx="23.6889"
+         y="544.68036"
+         x="12.545175"
+         height="39.092999"
+         width="126.23389"
+         id="rect82642"
+         style="opacity:0.49000005;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.62793094;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+    </g>
+    <path
+       inkscape:connector-curvature="0"
+       id="path85080"
+       d="m 286.96189,493.33093 -31.03842,-40.40985 0,0"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.53734988;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:"
+       inkscape:export-filename="/home/mniranja/Documents/latex/rhcs-training/tks-tps-drm-esc-enrollment3.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.51429993;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:"
+       d="m 594.45814,731.36886 -73.4949,-5.4e-4 0,0"
+       id="path85386"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/mniranja/Documents/latex/rhcs-training/tks-tps-drm-esc-enrollment3.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path86904"
+       d="m 505.10336,769.59291 121.34234,6.5e-4 0,-24.79448"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.38644552;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:"
+       sodipodi:nodetypes="ccc"
+       inkscape:export-filename="/home/mniranja/Documents/latex/rhcs-training/tks-tps-drm-esc-enrollment3.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <text
+       sodipodi:linespacing="125%"
+       id="text5687"
+       y="380.54449"
+       x="49.46413"
+       style="font-style:normal;font-weight:normal;font-size:8.02725029px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"
+       transform="scale(0.95198311,1.0504388)"
+       inkscape:export-filename="/home/mniranja/Documents/latex/rhcs-training/tks-tps-drm-esc-enrollment3.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Courier 10 Pitch';-inkscape-font-specification:'Courier 10 Pitch'"
+         y="380.54449"
+         x="49.46413"
+         sodipodi:role="line"
+         id="tspan5689">Developer Key Set (Index 0)</tspan></text>
+    <text
+       transform="scale(0.95198311,1.0504388)"
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:8.02725029px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="642.14801"
+       y="669.41144"
+       id="text7187"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/home/mniranja/Documents/latex/rhcs-training/tks-tps-drm-esc-enrollment3.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
+         id="tspan7189"
+         sodipodi:role="line"
+         x="642.14801"
+         y="669.41144"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Courier 10 Pitch';-inkscape-font-specification:'Courier 10 Pitch'">Developer Key Set (Index 0)</tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text8462"
+       y="372.51511"
+       x="240.26765"
+       style="font-style:normal;font-weight:normal;font-size:15px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"
+       inkscape:export-filename="/home/mniranja/Documents/latex/rhcs-training/tks-tps-drm-esc-enrollment3.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10px;font-family:'Courier 10 Pitch';-inkscape-font-specification:'Courier 10 Pitch'"
+         y="372.51511"
+         x="240.26765"
+         id="tspan8464"
+         sodipodi:role="line">Generate</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:15px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="248.65761"
+       y="955.61761"
+       id="text8466"
+       sodipodi:linespacing="125%"
+       inkscape:export-filename="/home/mniranja/Documents/latex/rhcs-training/tks-tps-drm-esc-enrollment3.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
+         sodipodi:role="line"
+         id="tspan8468"
+         x="248.65761"
+         y="955.61761"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10px;font-family:'Courier 10 Pitch';-inkscape-font-specification:'Courier 10 Pitch'">Server Side Key Generation/Archival</tspan></text>
+  </g>
+</svg>

@@ -1,0 +1,725 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="297mm"
+   height="210mm"
+   viewBox="0 0 1052.3622 744.09448"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="key-archival.svg">
+  <defs
+     id="defs4">
+    <marker
+       inkscape:stockid="Arrow2Lstart"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="marker11573"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         id="path11575"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         transform="matrix(1.1,0,0,1.1,1.1,0)"
+         inkscape:connector-curvature="0" />
+    </marker>
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible"
+       id="marker10625"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow2Lstart"
+       inkscape:collect="always">
+      <path
+         inkscape:connector-curvature="0"
+         transform="matrix(1.1,0,0,1.1,1.1,0)"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
+         id="path10627" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow2Lstart"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="marker7952"
+       style="overflow:visible"
+       inkscape:isstock="true"
+       inkscape:collect="always">
+      <path
+         id="path7954"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         transform="matrix(1.1,0,0,1.1,1.1,0)"
+         inkscape:connector-curvature="0" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow2Lstart"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="marker7352"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         id="path7354"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         transform="matrix(1.1,0,0,1.1,1.1,0)"
+         inkscape:connector-curvature="0" />
+    </marker>
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible"
+       id="marker6949"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow2Lstart">
+      <path
+         inkscape:connector-curvature="0"
+         transform="matrix(1.1,0,0,1.1,1.1,0)"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
+         id="path6951" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow2Lstart"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="marker6445"
+       style="overflow:visible"
+       inkscape:isstock="true"
+       inkscape:collect="always">
+      <path
+         id="path6447"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         transform="matrix(1.1,0,0,1.1,1.1,0)"
+         inkscape:connector-curvature="0" />
+    </marker>
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible"
+       id="marker6145"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow2Lstart"
+       inkscape:collect="always">
+      <path
+         inkscape:connector-curvature="0"
+         transform="matrix(1.1,0,0,1.1,1.1,0)"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
+         id="path6147" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow2Lstart"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="marker5869"
+       style="overflow:visible"
+       inkscape:isstock="true"
+       inkscape:collect="always">
+      <path
+         id="path5871"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         transform="matrix(1.1,0,0,1.1,1.1,0)"
+         inkscape:connector-curvature="0" />
+    </marker>
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible"
+       id="marker7631"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow2Lstart"
+       inkscape:collect="always">
+      <path
+         inkscape:connector-curvature="0"
+         transform="matrix(1.1,0,0,1.1,1.1,0)"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
+         id="path7633" />
+    </marker>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.61389108"
+     inkscape:cx="217.89549"
+     inkscape:cy="357.82304"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     borderlayer="true"
+     inkscape:window-width="1600"
+     inkscape:window-height="844"
+     inkscape:window-x="0"
+     inkscape:window-y="34"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-308.26772)">
+    <text
+       sodipodi:linespacing="125%"
+       id="text3389"
+       y="466.1394"
+       x="337.6153"
+       style="font-style:normal;font-weight:normal;font-size:15px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
+         id="tspan3395"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:17.5px;font-family:'Courier 10 Pitch';-inkscape-font-specification:'Courier 10 Pitch'"
+         y="466.1394"
+         x="337.6153"
+         sodipodi:role="line" /><tspan
+         id="tspan3397"
+         y="488.0144"
+         x="337.6153"
+         sodipodi:role="line" /></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:15px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="561.72687"
+       y="426.39548"
+       id="text3404"
+       sodipodi:linespacing="125%"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
+         sodipodi:role="line"
+         id="tspan3406"
+         x="561.72687"
+         y="426.39548" /></text>
+    <g
+       id="g4254"
+       transform="translate(-48,0)"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
+      <text
+         sodipodi:linespacing="125%"
+         id="text3374"
+         y="334.76367"
+         x="232.8795"
+         style="font-style:normal;font-weight:normal;font-size:15px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#0000ff;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         xml:space="preserve"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:17.5px;font-family:'Courier 10 Pitch';-inkscape-font-specification:'Courier 10 Pitch';fill:#0000ff"
+           y="334.76367"
+           x="232.8795"
+           id="tspan3376"
+           sodipodi:role="line">Firefox(31.0 or before)/pki/</tspan><tspan
+           id="tspan3414"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:17.5px;font-family:'Courier 10 Pitch';-inkscape-font-specification:'Courier 10 Pitch';fill:#0000ff"
+           y="356.63867"
+           x="232.8795"
+           sodipodi:role="line">CRMFPopClient</tspan><tspan
+           id="tspan3387"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:17.5px;font-family:'Courier 10 Pitch';-inkscape-font-specification:'Courier 10 Pitch';fill:#0000ff"
+           y="378.51367"
+           x="232.8795"
+           sodipodi:role="line">generate 2 certificate requests. </tspan><tspan
+           id="tspan3412"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:17.5px;font-family:'Courier 10 Pitch';-inkscape-font-specification:'Courier 10 Pitch';fill:#0000ff"
+           y="400.38867"
+           x="232.8795"
+           sodipodi:role="line">(2 sets of key pairs)</tspan><tspan
+           id="tspan3410"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:17.5px;font-family:'Courier 10 Pitch';-inkscape-font-specification:'Courier 10 Pitch';fill:#0000ff"
+           y="422.26367"
+           x="232.8795"
+           sodipodi:role="line">Encryption &amp; Signing cert Request</tspan><tspan
+           id="tspan3380"
+           y="444.13867"
+           x="232.8795"
+           sodipodi:role="line" /></text>
+      <rect
+         ry="0"
+         rx="0"
+         y="319.13803"
+         x="213.94186"
+         height="112.9471"
+         width="380.11456"
+         id="rect3416"
+         style="opacity:0.49000005;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:2.96154976;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+    </g>
+    <g
+       id="g4314"
+       transform="translate(-43.584009,19.247974)"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:15px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#0000ff;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         x="232.8795"
+         y="466.82742"
+         id="text4266"
+         sodipodi:linespacing="125%"><tspan
+           sodipodi:role="line"
+           x="232.8795"
+           y="466.82742"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:17.5px;font-family:'Courier 10 Pitch';-inkscape-font-specification:'Courier 10 Pitch';fill:#0000ff"
+           id="tspan4276">Private key from the Encryption</tspan><tspan
+           id="tspan4304"
+           sodipodi:role="line"
+           x="232.8795"
+           y="488.70242"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:17.5px;font-family:'Courier 10 Pitch';-inkscape-font-specification:'Courier 10 Pitch';fill:#0000ff">Certificate request is wrapped</tspan><tspan
+           id="tspan4306"
+           sodipodi:role="line"
+           x="232.8795"
+           y="510.57742"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:17.5px;font-family:'Courier 10 Pitch';-inkscape-font-specification:'Courier 10 Pitch';fill:#0000ff">(encrypted) with KRA Transport </tspan><tspan
+           id="tspan4308"
+           sodipodi:role="line"
+           x="232.8795"
+           y="532.45239"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:17.5px;font-family:'Courier 10 Pitch';-inkscape-font-specification:'Courier 10 Pitch';fill:#0000ff">Cert (or public key)</tspan><tspan
+           sodipodi:role="line"
+           x="232.8795"
+           y="554.32739"
+           id="tspan4278" /></text>
+      <rect
+         style="opacity:0.49000005;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:2.74369049;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+         id="rect4280"
+         width="381.43643"
+         height="96.604988"
+         x="213.83293"
+         y="447.09286"
+         rx="0"
+         ry="0" />
+    </g>
+    <g
+       id="g4399"
+       transform="translate(-45.792004,20.975958)"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
+      <text
+         transform="scale(0.972864,1.0278929)"
+         sodipodi:linespacing="125%"
+         id="text4325"
+         y="580.33405"
+         x="253.02783"
+         style="font-style:normal;font-weight:normal;font-size:15.41532326px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#0000ff;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         xml:space="preserve"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:17.98454285px;font-family:'Courier 10 Pitch';-inkscape-font-specification:'Courier 10 Pitch';fill:#0000ff"
+           y="580.33405"
+           x="253.02783"
+           sodipodi:role="line"
+           id="tspan4333">CA Validates the requests, </tspan><tspan
+           id="tspan4355"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:17.98454285px;font-family:'Courier 10 Pitch';-inkscape-font-specification:'Courier 10 Pitch';fill:#0000ff"
+           y="602.8147"
+           x="253.02783"
+           sodipodi:role="line">private key wrapped with KRA </tspan><tspan
+           id="tspan4395"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:17.98454285px;font-family:'Courier 10 Pitch';-inkscape-font-specification:'Courier 10 Pitch';fill:#0000ff"
+           y="625.29541"
+           x="253.02783"
+           sodipodi:role="line">transport cert. </tspan><tspan
+           id="tspan4335"
+           y="647.77606"
+           x="253.02783"
+           sodipodi:role="line" /></text>
+      <rect
+         ry="0"
+         rx="0"
+         y="573.3656"
+         x="214.87387"
+         height="87.899124"
+         width="381.56256"
+         id="rect4337"
+         style="opacity:0.49000005;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:2.6175766;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+    </g>
+    <g
+       id="g4388"
+       transform="translate(-49.296057,40.911937)"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:15.41532326px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#0000ff;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         x="264.37573"
+         y="697.40442"
+         id="text4359"
+         sodipodi:linespacing="125%"
+         transform="scale(0.972864,1.0278929)"><tspan
+           sodipodi:role="line"
+           x="264.37573"
+           y="697.40442"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:17.98454285px;font-family:'Courier 10 Pitch';-inkscape-font-specification:'Courier 10 Pitch';fill:#0000ff"
+           id="tspan4365">CA Authenticates to KRA using </tspan><tspan
+           id="tspan4376"
+           sodipodi:role="line"
+           x="264.37573"
+           y="719.88507"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:17.98454285px;font-family:'Courier 10 Pitch';-inkscape-font-specification:'Courier 10 Pitch';fill:#0000ff">CA Subsystem Certificate </tspan><tspan
+           sodipodi:role="line"
+           x="264.37573"
+           y="742.36578"
+           id="tspan4367" /></text>
+      <path
+         inkscape:connector-curvature="0"
+         id="path4384"
+         d="m 398.27375,675.04744 -216.71812,47.62175 213.9397,42.40294 211.16123,-49.57881 0,0 z"
+         style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.21947646px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    </g>
+    <g
+       id="g4407"
+       transform="translate(137.31199,288.14341)"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
+      <g
+         id="g4444"
+         transform="translate(0,-6)">
+        <text
+           transform="scale(0.972864,1.0278929)"
+           sodipodi:linespacing="125%"
+           id="text4409"
+           y="562.82251"
+           x="80.703613"
+           style="font-style:normal;font-weight:normal;font-size:15.41532326px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#0000ff;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           xml:space="preserve"><tspan
+             id="tspan4415"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:17.98454285px;font-family:'Courier 10 Pitch';-inkscape-font-specification:'Courier 10 Pitch';fill:#0000ff"
+             y="562.82251"
+             x="80.703613"
+             sodipodi:role="line">KRA unwraps(decrypts) the </tspan><tspan
+             id="tspan4426"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:17.98454285px;font-family:'Courier 10 Pitch';-inkscape-font-specification:'Courier 10 Pitch';fill:#0000ff"
+             y="585.30316"
+             x="80.703613"
+             sodipodi:role="line">certificate request</tspan><tspan
+             id="tspan4417"
+             y="607.78387"
+             x="80.703613"
+             sodipodi:role="line" /></text>
+        <rect
+           ry="0"
+           rx="0"
+           y="555.10596"
+           x="32.614189"
+           height="56.402542"
+           width="382.08191"
+           id="rect4419"
+           style="opacity:0.49000005;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:2.09822392;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+      </g>
+    </g>
+    <g
+       transform="translate(-46.896001,251.7755)"
+       id="g4503"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
+      <path
+         style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.21947646px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="m 398.27375,675.04744 -216.71812,47.62175 213.9397,42.40294 211.16123,-49.57881 0,0 z"
+         id="path4486"
+         inkscape:connector-curvature="0" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:15.41532326px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#0000ff;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         x="297.2847"
+         y="694.18231"
+         id="text4495"
+         sodipodi:linespacing="125%"
+         transform="scale(0.972864,1.0278929)"><tspan
+           sodipodi:role="line"
+           x="297.2847"
+           y="694.18231"
+           id="tspan4497">KRA confirms if the private key </tspan><tspan
+           id="tspan4499"
+           sodipodi:role="line"
+           x="297.2847"
+           y="713.45148">corresponds to public key</tspan></text>
+    </g>
+    <g
+       id="g4540"
+       transform="translate(71.743919,213.07156)"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
+      <text
+         transform="scale(0.972864,1.0278929)"
+         sodipodi:linespacing="125%"
+         id="text4513"
+         y="438.84097"
+         x="651.33936"
+         style="font-style:normal;font-weight:normal;font-size:15.41532326px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#0000ff;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         xml:space="preserve"><tspan
+           id="tspan4517"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:17.98454285px;font-family:'Courier 10 Pitch';-inkscape-font-specification:'Courier 10 Pitch';fill:#0000ff"
+           y="438.84097"
+           x="651.33936"
+           sodipodi:role="line">KRA wraps(Encrypts) private key</tspan><tspan
+           id="tspan4536"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:17.98454285px;font-family:'Courier 10 Pitch';-inkscape-font-specification:'Courier 10 Pitch';fill:#0000ff"
+           y="461.32166"
+           x="651.33936"
+           sodipodi:role="line">with Storage Public Key and </tspan><tspan
+           id="tspan4538"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:17.98454285px;font-family:'Courier 10 Pitch';-inkscape-font-specification:'Courier 10 Pitch';fill:#0000ff"
+           y="483.80234"
+           x="651.33936"
+           sodipodi:role="line">  archives in internal LDAP </tspan><tspan
+           id="tspan4519"
+           y="506.28302"
+           x="651.33936"
+           sodipodi:role="line" /></text>
+      <rect
+         ry="0"
+         rx="0"
+         y="433.33636"
+         x="593.43536"
+         height="73.766121"
+         width="381.78149"
+         id="rect4521"
+         style="opacity:0.49000005;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:2.39861298;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+    </g>
+    <text
+       transform="scale(1.0283921,0.97239176)"
+       sodipodi:linespacing="125%"
+       id="text4550"
+       y="795.37488"
+       x="658.59753"
+       style="font-style:normal;font-weight:normal;font-size:14.58297253px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#0000ff;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
+         id="tspan4558"
+         y="795.37488"
+         x="658.59753"
+         sodipodi:role="line"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:17.5px;font-family:'Courier 10 Pitch';-inkscape-font-specification:'Courier 10 Pitch'">CA Approves the request and issues</tspan><tspan
+         y="817.24988"
+         x="658.59753"
+         sodipodi:role="line"
+         id="tspan4577"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:17.5px;font-family:'Courier 10 Pitch';-inkscape-font-specification:'Courier 10 Pitch'">2 cert,One Encyrption Cert </tspan><tspan
+         y="839.12488"
+         x="658.59753"
+         sodipodi:role="line"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:17.5px;font-family:'Courier 10 Pitch';-inkscape-font-specification:'Courier 10 Pitch'"
+         id="tspan8271">with Extension Key Usage set to </tspan><tspan
+         y="860.99988"
+         x="658.59753"
+         sodipodi:role="line"
+         id="tspan4585"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:17.5px;font-family:'Courier 10 Pitch';-inkscape-font-specification:'Courier 10 Pitch'">Key Encipherment and Signing Cert </tspan><tspan
+         y="882.87488"
+         x="658.59753"
+         sodipodi:role="line"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:17.5px;font-family:'Courier 10 Pitch';-inkscape-font-specification:'Courier 10 Pitch'"
+         id="tspan8279">with Key Usage set to </tspan><tspan
+         y="904.74988"
+         x="658.59753"
+         sodipodi:role="line"
+         id="tspan4587"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:17.5px;font-family:'Courier 10 Pitch';-inkscape-font-specification:'Courier 10 Pitch'">Non-Repudiation and </tspan><tspan
+         y="926.62488"
+         x="658.59753"
+         sodipodi:role="line"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:17.5px;font-family:'Courier 10 Pitch';-inkscape-font-specification:'Courier 10 Pitch'"
+         id="tspan8285">DigitalSignatuare</tspan></text>
+    <rect
+       ry="0"
+       rx="0"
+       y="750.86932"
+       x="666.13684"
+       height="158.7628"
+       width="380.66638"
+       id="rect4560"
+       style="opacity:0.49000005;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:3.51375031;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path7629"
+       d="m 354.35863,461.08768 0.23768,-28.6823 0,0"
+       style="fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:0.8319664;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#marker7631)"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       style="fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:0.8319664;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#marker5869)"
+       d="m 353.25464,592.46342 0.23768,-28.6823 0,0"
+       id="path5867"
+       inkscape:connector-curvature="0" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path6143"
+       d="m 349.94264,713.90318 0.23768,-28.6823 0,0"
+       style="fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:0.8319664;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#marker6145)"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       style="fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:0.8319664;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#marker6445)"
+       d="m 346.63065,836.44693 0.23768,-28.6823 0,0"
+       id="path6443"
+       inkscape:connector-curvature="0" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path6947"
+       d="m 349.94265,924.76675 0.23768,-28.6823 0,0"
+       style="fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:0.8319664;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#marker6949)"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 560.81493,968.45837 47.4719,-2.20799 -4.41599,-363.21526 219.69555,-1.104 1.104,1.104"
+       id="path7342"
+       inkscape:connector-curvature="0"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       style="fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:0.96262848;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#marker7352)"
+       d="m 825.77799,645.42526 0.20454,-44.61988 0,0"
+       id="path7350"
+       inkscape:connector-curvature="0" />
+    <path
+       inkscape:export-ydpi="90"
+       inkscape:export-xdpi="90"
+       style="fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:0.8319664;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#marker7952)"
+       d="m 830.18166,748.1271 0.23768,-28.6823 0,0"
+       id="path7950"
+       inkscape:connector-curvature="0" />
+    <g
+       id="g8487"
+       transform="matrix(1.001041,0,0,0.66331294,-588.02156,597.0413)"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
+      <rect
+         rx="30.879789"
+         ry="46.602341"
+         y="379.87405"
+         x="613.87933"
+         height="45.570911"
+         width="102.97879"
+         id="rect8481"
+         style="opacity:0.49000005;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.57899702;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:15px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="54.095905"
+       y="869.09857"
+       id="text8483"
+       sodipodi:linespacing="125%"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
+         sodipodi:role="line"
+         id="tspan8485"
+         x="54.095905"
+         y="869.09857"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:22.5px;font-family:'Courier 10 Pitch';-inkscape-font-specification:'Courier 10 Pitch';fill:#0000ff">Stop</tspan></text>
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.08662462px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-start:url(#marker10625)"
+       d="m 70.173663,844.92141 0,-83.40434 61.116067,1.81315 0,0"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/mniranja/Pictures/rhcs-training/key-archival1.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"
+       id="path101" />
+    <path
+       inkscape:connector-curvature="0"
+       d="m 69.187389,881.67104 0.413895,95.73239 63.801866,-2.4563 0,0"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.18957031px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-start:url(#marker11573)"
+       id="path11571"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <text
+       sodipodi:linespacing="125%"
+       id="text4288"
+       y="751.21521"
+       x="22.403244"
+       style="font-style:normal;font-weight:normal;font-size:15px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:22.5px;font-family:'Courier 10 Pitch';-inkscape-font-specification:'Courier 10 Pitch';fill:#ff0000"
+         y="751.21521"
+         x="22.403244"
+         id="tspan4290"
+         sodipodi:role="line">Auth Fails</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:15px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="356.33871"
+       y="826.14709"
+       id="text5009"
+       sodipodi:linespacing="125%"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
+         sodipodi:role="line"
+         id="tspan5011"
+         x="356.33871"
+         y="826.14709"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:22.5px;font-family:'Courier 10 Pitch';-inkscape-font-specification:'Courier 10 Pitch';fill:#ff0000">Auth Succeeds</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:15px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="17.516382"
+       y="1008.5898"
+       id="text5013"
+       sodipodi:linespacing="125%"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
+         sodipodi:role="line"
+         id="tspan5015"
+         x="17.516382"
+         y="1008.5898"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:22.5px;font-family:'Courier 10 Pitch';-inkscape-font-specification:'Courier 10 Pitch';fill:#ff0000">Match Failed</tspan></text>
+    <text
+       sodipodi:linespacing="125%"
+       id="text5017"
+       y="992.30023"
+       x="568.10266"
+       style="font-style:normal;font-weight:normal;font-size:15px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:22.5px;font-family:'Courier 10 Pitch';-inkscape-font-specification:'Courier 10 Pitch';fill:#ff0000"
+         y="992.30023"
+         x="568.10266"
+         id="tspan5019"
+         sodipodi:role="line">Match Pass</tspan></text>
+  </g>
+</svg>
