@@ -3400,6 +3400,744 @@ userPassword: secret
                 \caption{Server side key Generation}
             \end{figure}
     \end{itemize}
+\subsubsection{Exercises}
+    \begin{enumerate}[label*=\arabic*.]
+        \item \label{shared_tomcat_tms}Setup TMS Subsystem (Include KRA) all sharing single Tomcat Instance
+            \begin{enumerate}[label*=\arabic*.]
+                \item \label{shared_ca} Configure CA subsystem using method specified in \ref{rootca}
+                \item \label{shared_kra} Configure KRA subsystem using pkispawn interactive method and 
+                    make KRA subsystem part of tomcat instance used by RootCA.
+                    \begin{lstlisting}
+Subsystem (CA/KRA/OCSP/TKS/TPS) [CA]: KRA
 
+Tomcat:
+  Instance [pki-tomcat]: 
+
+Administrator:
+  Username [kraadmin]: 
+  Password: 
+  Verify password: 
+  Import certificate (Yes/No) [Y]? 
+  Import certificate from [/root/.dogtag/pki-tomcat/ca_admin.cert]: 
+  Export certificate to [/root/.dogtag/pki-tomcat/kra_admin.cert]: 
+Directory Server:
+  Hostname [pki1.example.org]: 
+  Use a secure LDAPS connection (Yes/No/Quit) [N]? 
+  LDAP Port [389]: 
+  Bind DN [cn=Directory Manager]:  
+  Password: 
+  Base DN [o=pki-tomcat-KRA]: 
+
+Security Domain:
+  Hostname [pki1.example.org]: 
+  Secure HTTP port [8443]: 
+  Name: example.org Security Domain
+  Username [caadmin]: 
+  Password: 
+
+Begin installation (Yes/No/Quit)? Yes
+                    \end{lstlisting}
+                \item \label {shared_tks} Configure TKS subsystem using pkispawn interactive method and join to 
+                    ROOTCA Tomcat Instance
+                    \begin{lstlisting}
+Subsystem (CA/KRA/OCSP/TKS/TPS) [CA]: TKS
+
+Tomcat:
+  Instance [pki-tomcat]:
+
+Administrator:
+  Username [tksadmin]:
+  Password:
+  Verify password:
+  Import certificate (Yes/No) [Y]?
+  Import certificate from [/root/.dogtag/pki-tomcat/ca_admin.cert]:
+  Export certificate to [/root/.dogtag/pki-tomcat/tks_admin.cert]:
+Directory Server:
+  Hostname [pki1.example.org]:
+  Use a secure LDAPS connection (Yes/No/Quit) [N]?
+  LDAP Port [389]:
+  Bind DN [cn=Directory Manager]:
+  Password:
+  Base DN [o=pki-tomcat-TKS]:
+
+Security Domain:
+  Hostname [pki1.example.org]:
+  Secure HTTP port [8443]:
+  Name: example.org Security Domain
+  Username [caadmin]:
+  Password:
+
+Begin installation (Yes/No/Quit)? Yes
+                    \end{lstlisting}
+                \item \label {shared_tps} Configure TPS subsystem using pkispawn interactive method and join to RootCA Tomcat Instance
+                    \begin{lstlisting}
+Subsystem (CA/KRA/OCSP/TKS/TPS) [CA]: TPS
+
+Tomcat:
+  Instance [pki-tomcat]: 
+
+Administrator:
+  Username [tpsadmin]: 
+  Password: 
+  Verify password: 
+  Import certificate (Yes/No) [Y]? 
+  Import certificate from [/root/.dogtag/pki-tomcat/ca_admin.cert]: 
+  Export certificate to [/root/.dogtag/pki-tomcat/tps_admin.cert]: 
+Directory Server:
+  Hostname [pki1.example.org]: 
+  Use a secure LDAPS connection (Yes/No/Quit) [N]? 
+  LDAP Port [389]: 
+  Bind DN [cn=Directory Manager]: 
+  Password: 
+  Base DN [o=pki-tomcat-TPS]: 
+
+Security Domain:
+  Hostname [pki1.example.org]: 
+  Secure HTTP port [8443]: 
+  Name: example.org Security Domain
+  Username [caadmin]: 
+  Password: 
+
+External Servers:
+  CA URL [https://pki2.example.org:8443]: 
+  TKS URL [https://pki2.example.org:8443]: 
+  Enable server side key generation (Yes/No) [N]? 
+
+Authentication Database:
+  Hostname [pki2.example.org]: 
+  Port [389]: 
+  Base DN: dc=example,dc=org
+
+Begin installation (Yes/No/Quit)? Yes
+                    \end{lstlisting}
+                \item \label{shared_tps_secret} Verify the sharedSecret has been created for TPS and TKS with pkispawn 
+
+                    Note: When TPS and TKS share the same tomcat instance, sharedSecret is created
+                    as part of pkispawn configuration process.
+                    \begin{lstlisting}[style=bashInputStyle]
+$ cd /var/lib/pki/pki-tomcat/conf
+$ cat password.conf
+internal=153622747649
+internaldb=Secret123
+replicationdb=-1899602373
+                    \end{lstlisting}
+                    Use the password mentioned under \textit{\textbf{internal}} for tkstool 
+                    \begin{lstlisting}[style=bashInputStyle]
+$ tkstool -L -d /var/lib/pki/pki-tomcat/tps/alias
+
+ slot:  NSS User Private Key and Certificate Services
+ token: NSS Certificate DB
+
+ Enter Password or Pin for "NSS Certificate DB":
+         <0> defKeySet-macKey
+         <1> TPS-pki1.example.org-8443 sharedSecret
+                    \end{lstlisting}
+              \item Run pkidaemon against Tomcat Instance pki-tomcat and find out which is the phone home url for TPS
+                  \begin{lstlisting}[style=bashInputStyle]
+$  pkidaemon status tomcat pki-tomcat                  
+                  \end{lstlisting}
+               \item Open TKS CS.cfg file and Verify what keysets information can be seen:
+                   \begin{lstlisting}[style=bashInputStyle]
+$ vim /var/lib/pki/pki-tomcat/tks/conf/CS.cfg                   
+                   \end{lstlisting}
+                   \begin{lstlisting}
+tks.defKeySet._000=##
+tks.defKeySet._001=## Axalto default key set:
+tks.defKeySet._002=##
+tks.defKeySet._003=## tks.defKeySet.mk_mappings.#02#01=<tokenname>:<nickname>
+tks.defKeySet._004=##
+tks.defKeySet.auth_key=#40#41#42#43#44#45#46#47#48#49#4a#4b#4c#4d#4e#4f
+tks.defKeySet.kek_key=#40#41#42#43#44#45#46#47#48#49#4a#4b#4c#4d#4e#4f
+tks.defKeySet.mac_key=#40#41#42#43#44#45#46#47#48#49#4a#4b#4c#4d#4e#4f
+tks.defKeySet.nistSP800-108KdfOnKeyVersion=00
+tks.defKeySet.nistSP800-108KdfUseCuidAsKdd=false
+tks.defaultSlot=Internal Key Storage Token
+tks.drm_transport_cert_nickname=
+tks.jForte._000=##
+tks.jForte._001=## SAFLink's jForte default key set:
+tks.jForte._002=##
+tks.jForte._003=## tks.jForte.mk_mappings.#02#01=<tokenname>:<nickname>
+tks.jForte._004=##
+tks.jForte.auth_key=#30#31#32#33#34#35#36#37#38#39#3a#3b#3c#3d#3e#3f
+tks.jForte.kek_key=#50#51#52#53#54#55#56#57#58#59#5a#5b#5c#5d#5e#5f
+tks.jForte.mac_key=#40#41#42#43#44#45#46#47#48#49#4a#4b#4c#4d#4e#4f
+tks.jForte.nistSP800-108KdfOnKeyVersion=00
+tks.jForte.nistSP800-108KdfUseCuidAsKdd=false
+tks.master_key_prefix=
+                   \end{lstlisting}
+                \item Open TPS CS.cfg and Check what authentication Directory is mentioned which 
+                    will be looked to authenticate users against to enroll tokens
+                    \begin{lstlisting}[style=bashInputStyle]
+$ vim /var/lib/pki/pki-tomcat/tps/conf/CS.cfg
+                    \end{lstlisting}
+                    \begin{lstlisting}
+auths.instance.ldap1.ldap.basedn=dc=example,dc=org
+auths.instance.ldap1.ldap.ldapauth.authtype=BasicAuth
+auths.instance.ldap1.ldap.ldapauth.bindDN=
+auths.instance.ldap1.ldap.ldapauth.bindPWPrompt=ldap1
+auths.instance.ldap1.ldap.ldapauth.clientCertNickname=subsystemCert cert-pki-tomcat
+auths.instance.ldap1.ldap.ldapconn.host=pki2.example.org
+auths.instance.ldap1.ldap.ldapconn.port=389
+auths.instance.ldap1.ldap.ldapconn.secureConn=False
+auths.instance.ldap1.ldap.ldapconn.version=3
+auths.instance.ldap1.ldap.maxConns=15
+auths.instance.ldap1.ldap.minConns=3
+auths.instance.ldap1.ldapByteAttributes=
+                    \end{lstlisting}
+
+            \item Go through all the entries starting with op.enroll.userKey. What does the entries tell about 
+            \item Go through all the entries starting witn op.format.userKey and find out more about them
+            \item From the entries of userKey, can you find where is CA , TKS and KRA information ?
+            \item \label{token_ex1} Add few users to ldap (Authenticating Directory) used by LDAP to enroll tokens
+                
+            users.ldif
+            \begin{lstlisting}
+            # jdoe, example.org
+            dn: uid=jdoe,ou=People,dc=example,dc=org
+            uid: jdoe
+            givenName: jdoe
+            objectClass: top
+            objectClass: person
+            objectClass: organizationalPerson
+            objectClass: inetorgperson
+            userPassword: redhat
+            sn: doe
+            cn: jdoe
+
+            # foo1, example.org
+            dn: uid=foo1,ou=People,dc=example,dc=org
+            uid: foo1
+            givenName: foo1
+            objectClass: top
+            objectClass: person
+            objectClass: organizationalPerson
+            objectClass: inetorgperson
+            userPassword: redhat
+            sn: 1
+            cn: foo1
+
+            # foo2, example.org
+            dn: uid=foo2,ou=People,dc=example,dc=org
+            uid: foo2
+            givenName: foo
+            objectClass: top
+            objectClass: person
+            objectClass: organizationalPerson
+            objectClass: inetorgperson
+            userPassword: redhat
+            sn: 2
+            cn: foo2
+
+            # foo3, example.org
+            dn: uid=foo3,ou=People,dc=example,dc=org
+            uid: foo3
+            givenName: foo
+            objectClass: top
+            objectClass: person
+            objectClass: organizationalPerson
+            objectClass: inetorgperson
+            userPassword: redhat
+            sn: 3
+            cn: foo3
+
+            # foo4, example.org
+            dn: uid=foo4,ou=People,dc=example,dc=org
+            uid: foo4
+            givenName: foo4
+            objectClass: top
+            objectClass: person
+            objectClass: organizationalPerson
+            objectClass: inetorgperson
+            userPassword: redhat
+            sn: 4
+            cn: foo4
+            \end{lstlisting}
+            \begin{lstlisting}[style=bashInputStyle]
+$ ldapadd -x -D "cn=Directory Manager" -h pki1.example.org -w Secret123 -f users.ldif
+            \end{lstlisting}
+        \item \label{token_ex2} Enroll a token with user jdoe with token CUID "40000000000000000001" using tpsclient
+                \begin{itemize}
+                    \item create a file ``enroll.jdoe.tps'' with below contents:
+                        \begin{lstlisting}[style=configFile]
+op=var_set name=ra_host value=pki1.example.org
+op=var_set name=ra_port value=8080
+op=var_set name=ra_uri value=/tps/tps
+op=token_set cuid=40000000000000000001 msn=01020304 app_ver=6FBBC105 key_info=0101 major_ver=0 minor_ver=0
+op=token_set auth_key=404142434445464748494a4b4c4d4e4f
+op=token_set mac_key=404142434445464748494a4b4c4d4e4f
+op=token_set kek_key=404142434445464748494a4b4c4d4e4f
+op=token_status
+op=ra_enroll uid=jdoe num_threads=1 pwd=redhat new_pin=redhat extensions=tokenType=userKey
+op=token_status
+op=exit
+                        \end{lstlisting}
+                    \item \label{token_ex3} Run tpsclient using the above input file 
+                        \begin{lstlisting}[style=bashInputStyle]
+$ tpsclient < enroll.jdoe.tps               
+                        \end{lstlisting}
+                    \item \label{token_ex4} Output of tpsclient should look like below
+                        \begin{lstlisting}
+ -----
+ Output> Thread (0) status='1' time='104606 msec'
+ Result> Success - Operation 'ra_enroll' Success (104607 msec)
+ Command>op=token_status
+ Output> life_cycle_state : '0'
+ Output> pin : 'redhat'
+ Output> app_ver : '05' (4 bytes)
+ Output> major_ver : '0'
+ Output> minor_ver : '0'
+ Output> cuid : '01' (10 bytes)
+ Output> msn : '04' (4 bytes)
+ Output> key_info : '01' (2 bytes)
+ Output> auth_key : '4f' (16 bytes)
+ Output> mac_key : '4f' (16 bytes)
+ Output> kek_key : '4f' (16 bytes)
+ Result> Success - Operation 'token_status' Success (0 msec)
+ Command>op=exit
+                        \end{lstlisting}
+                \end{itemize}
+            \item \label{token_ex5} Import CA Admin Cert and KRA Admin p12 file to Firefox browser. Refer: \ref{import_admin_p12}
+            \item \label{token_ex6} From the browser Access CA EE Page and check what certificates were issued
+            \item \label{token_ex7} Access KRA Agent Interface and verify if the Private Key has been archived
+            \item \label{token_ex8} From the TPS UI check the token information 
+                \begin{itemize}
+                    \item Access https://pki1.example.org:8443
+                    \item Use the Admin cert when prompted
+                    \item Open each subsystem on different tabs
+                    \item From TPS UI, click on "Login"
+                        \begin{itemize}
+                            \item Click on Tokens , Should see the list of enrolled tokens
+                            \item click on "Certificates" and should see the certificates associated with tokens
+                        \end{itemize}
+                \end{itemize}
+            \item \label{token_ex9}Format tthe token ``40000000000000000001'' and verify the associated certs are revoked
+                \begin{itemize}
+                    \item \label{token_ex10} Create a file format.jdoe.tps with below contents
+                        \begin{lstlisting}
+op=var_set name=ra_host value=pki1.example.org
+op=var_set name=ra_port value=8080
+op=var_set name=ra_uri value=/tps/tps
+op=token_set cuid=40000000000000000002 msn=01020304 app_ver=6FBBC105 key_info=0101 major_ver=0 minor_ver=0
+op=token_set auth_key=404142434445464748494a4b4c4d4e4f
+op=token_set mac_key=404142434445464748494a4b4c4d4e4f
+op=token_set kek_key=404142434445464748494a4b4c4d4e4f
+op=token_status
+op=ra_format uid=jdoe num_threads=1 pwd=redhat new_pin=redhat extensions=tokenType=userKey
+op=token_status
+op=exit
+                        \end{lstlisting}
+                        \begin{lstlisting}[style=bashInputStyle]
+$ tpsclient < format.jdoe.tps
+                        \end{lstlisting}
+                \end{itemize}
+            \item \label{token_ex10} Check the TPS UI and CA EE interface to verify the associated certs have been revoked. 
+            \item \label{token_ex11} Enroll a token with user foo1 with token CUID "40000000000000000002" using tpsclient
+                    \item create a file ``enroll.foo1.tps'' with below contents:
+                        \begin{lstlisting}[style=configFile]
+op=var_set name=ra_host value=pki1.example.org
+op=var_set name=ra_port value=8080
+op=var_set name=ra_uri value=/tps/tps
+op=token_set cuid=40000000000000000002 msn=01020304 app_ver=6FBBC105 key_info=0101 major_ver=0 minor_ver=0
+op=token_set auth_key=404142434445464748494a4b4c4d4e4f
+op=token_set mac_key=404142434445464748494a4b4c4d4e4f
+op=token_set kek_key=404142434445464748494a4b4c4d4e4f
+op=token_status
+op=ra_enroll uid=foo1 num_threads=1 pwd=redhat new_pin=redhat extensions=tokenType=userKey
+op=token_status
+op=exit
+                        \end{lstlisting}
+                    \item Run tpsclient using the above input file 
+                        \begin{lstlisting}[style=bashInputStyle]
+$ tpsclient < enroll.foo1.tps
+                        \end{lstlisting}
+                    \item \label{token_ex12} Login to TPS UI , select the token ``40000000000000000002'' , On the righ side click 
+                        on ``Change Status``, Mark the status to ``Temporary Lost''. From CA EE page and TPS Certificates
+                        page, verify the status of the certificates
+                    \item \label{token_ex13} Login to TPS UI and mark the token ``40000000000000000002'' as "Active" and check the status
+                        of certificates from TPS and CA UI 
+                    \item \label{token_ex14} Login to TPS UI and mark the token ``40000000000000000002'' as  Permanently Lost.  Verify the
+                        status of Certificates from TPS UI and CA EE pages.
+        \end{enumerate}
+    \item Setup TMS Subsystem (Include KRA) on separate Tomcat Instance
+        \begin{enumerate}[label*=\arabic*.]
+            \item Configure CA subsystem using below config file.\\
+                Note: We will be using existing Directory Server
+
+                ca-inst.inf:
+                \begin{lstlisting}[style=configFile]
+[DEFAULT]
+pki_instance_name=FoobarCA
+pki_https_port=30042
+pki_http_port=30044
+
+#NSS DB Token Password
+pki_token_password=Secret123
+
+#Admin Password
+pki_admin_password=Secret123
+
+#Security Domain
+pki_hostname=pki1.example.org
+pki_security_domain_name=Foobar Org
+pki_security_domain_password=Secret123
+
+#client Dir
+pki_client_dir=/opt/FoobarCA
+pki_client_pkcs12_password=Secret123
+
+#Backup
+pki_backup_keys=True
+pki_backup_password=Secret123
+
+#DS
+pki_ds_hostname=pki1.example.org
+pki_ds_ldap_port=389
+pki_ds_password=Secret123
+pki_ds_secure_connection=False
+
+[Tomcat]
+pki_ajp_port=30009
+pki_tomcat_server_port=30005
+
+[CA]
+pki_admin_nickname=PKI CA Administrator for Foobar Org
+pki_import_admin_cert=False
+                \end{lstlisting}
+                \begin{lstlisting}
+$ pkispawn -s CA -f ca-inst.inf -vv                
+                \end{lstlisting}
+
+            \item Configure KRA subsystem using below config file 
+
+                kra-inst.inf:
+                \begin{lstlisting}[style=configFile]
+[DEFAULT]
+pki_instance_name=FoobarKRA
+pki_https_port=14443
+pki_http_port=14080
+
+#NSS DB Token Password
+pki_token_password=Secret123
+
+#RootKRA Admin password
+pki_admin_password=Secret123
+
+#Security Domain
+pki_hostname=pki1.example.org
+pki_security_domain_hostname=pki2.example.org
+pki_security_domain_https_port=30042
+pki_security_domain_user=caadmin
+pki_security_domain_password=Secret123
+
+#Client Dir
+pki_client_dir=/opt/FoobarKRA
+pki_client_pkcs12_password=Secret123
+pki_client_database_password=Secret123
+
+#Backup
+pki_backup_keys=True
+pki_backup_password=Secret123
+#DS
+pki_ds_hostname=pki1.example.org
+pki_ds_ldap_port=389
+pki_ds_bind_dn=cn=Directory Manager
+pki_ds_password=Secret123
+
+
+[Tomcat]
+pki_ajp_port=14009
+pki_tomcat_server_port=14005
+
+[KRA]
+pki_admin_nickname=PKI KRA Administrator for Foobar Org
+pki_import_admin_cert=False
+                \end{lstlisting}
+                \begin{lstlisting}[style=bashInputStyle]
+$ pkispawn -s KRA -f kra-inst.inf -vv 
+                \end{lstlisting}
+            
+            \item Configure TKS subsystem using below config file 
+
+            tks-inst.inf:
+            \begin{lstlisting}[style=configFile]
+[DEFAULT]
+pki_instance_name=FoobarTKS
+pki_https_port=18443
+pki_http_port=18080
+
+#NSS DB Token Password
+pki_token_password=Secret123
+
+#TKS Admin password
+pki_admin_password=Secret123
+
+# Security Domain
+pki_hostname=pki1.example.org
+pki_security_domain_hostname=pki1.example.org
+pki_security_domain_https_port=30042
+pki_security_domain_user=caadmin
+pki_security_domain_password=Secret123
+
+#Client Dir
+pki_client_dir=/opt/FoobarTKS
+pki_client_pkcs12_password=Secret123
+pki_client_database_password=Secret123
+
+# backup
+pki_backup_keys=True
+pki_backup_password=Secret123
+
+# DS
+pki_ds_hostname=pki1.example.org
+pki_ds_ldap_port=389
+pki_ds_bind_dn=cn=Directory Manager
+pki_ds_password=Secret123
+
+[Tomcat]
+pki_ajp_port=18009
+pki_tomcat_server_port=18005
+
+[TKS]
+pki_admin_nickname=PKI TKS Administrator for Example Org
+pki_import_admin_cert=False
+            \end{lstlisting}
+            \begin{lstlisting}[style=bashInputStyle]
+$ pkispawn -s TKS -f tks-inst.inf -vv
+            \end{lstlisting}
+            \item Stop the TKS subsystem and create shared Secret in TKS
+                \begin{lstlisting}[style=bashInputStyle]
+$ systemctl stop pki-tomcatd@FoobarTKS                
+                \end{lstlisting}
+                \begin{lstlisting}[style=bashInputStyle]
+$ cd /var/lib/pki/FoobarTKS/conf
+$ cat password.conf
+internal=187041555763
+internaldb=Secret123
+replicationdb=1433722269
+# Use the password mentioned in internal for tkstool
+$ cd /var/lib/pki/FoobarTKS/alias
+#This creates 3 session keys, #save each session keys
+#and KCV values for each session in file
+$ tkstool -T -d . -n sharedSecret
+$ reset
+                \end{lstlisting}
+            \item Start the TKS subsystem 
+            \begin{lstlisting}[style=bashInputStyle]                
+$ systemctl start pki-tomcatd@FoobarTKS            
+            \end{lstlisting}
+            \item Configure TPS subsystem on separate Tomcat instance using below config file
+
+            tps-inst.inf:
+            \begin{lstlisting}[style=configFile]
+[DEFAULT]
+pki_instance_name=FoobarTPS
+pki_https_port=20443
+pki_http_port=20080
+
+##NSS DB Token Password
+pki_token_password=Secret123
+
+#Security Domain
+pki_hostname=pki1.example.org
+pki_security_domain_hostname=pki1.example.org
+pki_security_domain_https_port=30042
+pki_security_domain_user=caadmin
+pki_security_domain_password=Secret123
+
+#TPS Admin password
+pki_admin_password=Secret123
+
+# Client dir
+pki_client_database_dir=/opt/FoobarTPS
+pki_client_pkcs12_password=Secret123
+pki_client_database_password=Secret123
+
+#backup
+pki_backup_keys=True
+pki_backup_password=Secret123
+
+#DS
+pki_ds_hostname=pki1.example.org
+pki_ds_ldap_port=389
+pki_ds_bind_dn=cn=Directory Manager
+pki_ds_password=Secret123
+
+[Tomcat]
+pki_ajp_port=20009
+pki_tomcat_server_port=20005
+
+
+[TPS]
+pki_admin_nickname=PKI TPS Administrator for Foobar Org
+pki_import_admin_cert=False
+pki_ca_uri=https://pki1.example.org:30042
+pki_kra_uri=https://pki1.example.org:14443
+pki_tks_uri=https://pki1.example.org:18443
+pki_authdb_hostname=pki1.example.org
+pki_authdb_port=389
+pki_authdb_basedn=dc=example,dc=org
+pki_authdb_secure_conn=False
+pki_import_shared_secret=False
+            \end{lstlisting}            
+            \begin{lstlisting}[style=bashInputStyle]
+$ pkispawn -s TPS -f tps_inst.inf -vv
+            \end{lstlisting}
+        \item Stop TPS Instance and Import the shared Secret created earlier 
+            \begin{lstlisting}[style=bashInputStyle]
+$ systemctl stop pki-tomcatd@FoobarTPS            
+            \end{lstlisting}
+        \item Import the sharedSecret from TPS
+            \begin{lstlisting}[style=bashInputStyle]
+$ cd /var/lib/pki/FoobarTPS/conf/
+$ cat password.conf
+internal=321588268669
+internaldb=Secret123
+replicationdb=1975043500
+# use the password mentioned under "internal" variable 
+# with tkstool
+$ cd /var/lib/pki/FoobarTPS/alias
+# when running this command will prompt to enter session
+# keys , Enter the session keys and KCV which were saved while 
+# creating sharedSecret in TKS
+$ tkstool -I -d . -n sharedSecret
+            \end{lstlisting}
+        \item Edit TPS CS.cfg to modify the below line to specify correct sharedSecret nickname
+            \begin{lstlisting}
+conn.tks1.tksSharedSymKeyName=TPS-pki2.example.org-20443 sharedSecret                
+            \end{lstlisting}
+            \begin{lstlisting}[style=bashInputStyle]
+$ vim /var/lib/pki/FoobarTPS/tps/conf/CS.cfg
+conn.tks1.tksSharedSymKeyName=sharedSecret
+            \end{lstlisting}
+        \item Edit TKS CS.cfg to remove ``TPS-pki2.example.org-20443 sharedSecret'' and replace with ``sharedSecret''
+            \begin{lstlisting}
+tps.0.nickname=TPS-pki2.example.org-20443 sharedSecret            
+            \end{lstlisting}
+            \begin{lstlisting}[style=bashInputStyle]
+$ vim /var/lib/pki/FoobarTPS/tps/conf/CS.cfg
+tps.0.nickname=sharedSecret
+            \end{lstlisting}
+        \item Restart TKS and TPS subsystems
+            \begin{lstlisting}[style=bashInputStyle]
+$ systemctl restart pki-tomcatd@FoobarTKS
+$ systemctl restart pki-tomcatd@FoobarTPS
+            \end{lstlisting}
+        \item Do all the exercises from \ref{token_ex1} to \ref{token_ex14}
+        \end{enumerate}            
+        \item Configure Multiple Master Keys and do a key changeover
+             \begin{enumerate}[label*=\arabic*.]
+                \item Change to TKS alias directory and create a Master key master\_key\_v2
+                    \begin{lstlisting}[style=bashInputStyle]
+$ tkstool -M -n master_key_v2 -d /var/lib/pki/FoobarTKS/alias/ -h internal                    
+                    \end{lstlisting}
+                    \begin{lstlisting}
+Enter Password or Pin for "NSS Certificate DB":
+
+Generating and storing the master key on the specified token . . .
+
+Naming the master key "master_key_v2" . . .
+
+Computing and displaying KCV of the master key on the specified token . . .
+
+    master_key_v2 key KCV:  3EA6 B8F3
+
+
+    Successfully generated, stored, and named the master key
+    including computing and displaying its KCV!
+                    \end{lstlisting}
+                \item List the Keys in NSS database
+                    \begin{lstlisting}[style=bashInputStyle]
+$ tkstool -L -d /var/lib/pki/FoobarTKS/alias/                    
+Enter Password or Pin for "NSS Certificate DB":
+        <0> master_key_v2
+        <1> TPS-pki2.example.org-20443 sharedSecret
+        <2> sharedSecret
+                    \end{lstlisting}
+                \item Edit TKS CS.cfg and add the below lines
+                    \begin{lstlisting}
+tks.mk_mappings.#02#01=internal:master_key_v2
+tks.defKeySet.mk_mappings.#02#01=internal:master_key_v2
+                    \end{lstlisting}
+                \item Enroll a token which will be in the default \textbf{\#01\#01} \\
+                    enroll.foo2.tps
+                    \begin{lstlisting}[style=configFile]
+op=var_set name=ra_host value=pki1.example.org
+op=var_set name=ra_port value=8080
+op=var_set name=ra_uri value=/tps/tps
+op=token_set cuid=40000000000000000003 msn=01020304 app_ver=6FBBC105 key_info=0101 major_ver=0 minor_ver=0
+op=token_set auth_key=404142434445464748494a4b4c4d4e4f
+op=token_set mac_key=404142434445464748494a4b4c4d4e4f
+op=token_set kek_key=404142434445464748494a4b4c4d4e4f
+op=token_status
+op=ra_format uid=foo2 num_threads=1 pwd=redhat new_pin=redhat extensions=tokenType=userKey
+op=token_status
+op=exit
+                    \end{lstlisting}
+                    \begin{lstlisting}[style=bashInputStyle]
+$ tpsclient < enroll.foo2.tps
+                    \end{lstlisting}
+                \item Do a Key Change over from \#01 to \#02 . Mofify the tps CS.cfg to upgrade the symmetric Keys from v1 to v2.
+                    \begin{lstlisting}
+op.enroll.userKey.update.symmetricKeys.enable=true
+op.enroll.userKey.update.symmetricKeys.requiredVersion=2
+                    \end{lstlisting}
+                    \begin{lstlisting}[style=bashInputStyle]
+$ tpsclient < enroll.foo2.tps
+                    \end{lstlisting}
+                \item Go to TPS UI and verify in the tokens tab and click on token enrolled should show key info \#01\#02
+                \item Do a Key Change over from \#02 to \#01 . Mofify the tps CS.cfg to upgrade the symmetric Keys from v1 to v2.
+                    \begin{lstlisting}
+op.enroll.userKey.update.symmetricKeys.enable=true
+op.enroll.userKey.update.symmetricKeys.requiredVersion=1
+                    \end{lstlisting}
+                    \begin{lstlisting}[style=bashInputStyle]
+$ tpsclient < enroll.foo2.tps
+                    \end{lstlisting}
+             \end{enumerate}
+    \end{enumerate}                 
 \bibliography{references}
-\end{document} 
+\end{document}              
+                                        
+                                        
+                            
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                            
+                                        
+                                        
+                            
+                                        
+                                        
+                                        
+                                        
+                            
+                                        
+                                        
+                                        
+                            
+                                        
+                                        
+                                        
+                                        
+                                        
+                            
+                                        
+                                        
+                                        
+                            
+                            
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
