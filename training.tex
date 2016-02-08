@@ -14,6 +14,7 @@ Red Hat Certificate System}
 \usepackage{float}
 \usepackage{url}
 \usepackage{hyperref}
+\usepackage{bookmark}
 \hypersetup{
     colorlinks=true, 
     linktoc=all,     
@@ -3125,7 +3126,7 @@ $ OCSPClient pki1.example.org 18080 /opt/rhqa_pki "RootCA" <serial_number> ocsp-
     \begin{itemize}
         \item Secure Channel Protocol: A secure communication protocol and set of security protocol used to 
             create a secure channel with token during TPS Operations.
-        \item Applets: TPS communicates with an applet on the smartcard. 
+        \item Applets: Applet is a smartcard application that holds the certs and keys
         \item APDU(Application Protocol Data Unit): Standard communication messaging protocol between a card accepting device(Reader)
             and a smart card 
         \item SmartCards come with a cardmanager applet and a vendor applet or with only card manager applet. 
@@ -3172,22 +3173,11 @@ $ OCSPClient pki1.example.org 18080 /opt/rhqa_pki "RootCA" <serial_number> ocsp-
                 \begin{itemize}
                     \item Secure Channel
                         \begin{itemize}
-                            \item The Token Key Service (TKS) generates the (token) keys (a set of 3 keys derived) from Master keys
-                            \item These keys are used by TPS to communicate with ESC(smartcard)
-                            \item TPS communicates with the TKS over SSL but TPS communicates with ESC over secure channel
-                            \item Every smartcard has 3 keys:
-                                \begin{itemize}
-                                    \item An \textbf{auth key} which is used for encryption and authentication: a session key dervied from the auth key
-                                        each time a secure channel is opened.
-                                    \item A \textbf{MAC key} which is used for message authentication; like the auth keys, a session key is derived
-                                        from the MAC key each time a secure channel is opened.
-                                    \item A \textbf{key encryption key (KEK)} which is to encrypt the session keys.
-                                \end{itemize}
-                            \begin{figure}[H]
-                                \centering
-                                \includegraphics[width=80mm]{tks-key-derivation1.png}
-                                \caption{TKS Key Derivation}
-                            \end{figure}
+                            \item TPS Interacts with Smartcard over a secure channel. Based on the keys derived
+                                by TKS.
+                            \item TPS uses developer key sets(KEK,AUTH,MAC) to initially setup Secure Channel
+                            \item In case smartcard wants to upgrade keys, A new set of keys created by TKS are used
+                                to setup Secure Channel
                         \end{itemize}
                     \item Supported TPS Operations
                         \begin{itemize}
@@ -3215,12 +3205,6 @@ $ OCSPClient pki1.example.org 18080 /opt/rhqa_pki "RootCA" <serial_number> ocsp-
                                         \end{figure}
                                 \end{itemize}
                         \end{itemize}
-                    \item TPS-TKS-Smartcard Workflow
-                        \begin{figure}[H]
-                            \centering
-                            \includegraphics[width=120mm]{tks-tps-drm-esc-enrollment2.png}
-                            \caption{TPS-TKS-Smartcard Worfklow}
-                        \end{figure}
                     \item TKS Configuration 
                         \begin{itemize}
                             \item RPM: \textbf{pki-tks}
@@ -3308,12 +3292,114 @@ $ OCSPClient pki1.example.org 18080 /opt/rhqa_pki "RootCA" <serial_number> ocsp-
                                     \includegraphics[width=80mm]{tkstool-import-sharedSecret5.png}
                                     \caption{tkstool to import third session key}
                                 \end{figure}
-                            \item TKS Instance Layout
-                                \begin{itemize}
-                                    \item 
-                                \end{itemize}
                         \end{itemize}
                 \end{itemize}
     \end{itemize}
+\subsubsection{Enterprise Security Client}
+    \begin{itemize}
+        \item \textbf{Features:}
+            \begin{itemize}
+                \item Enterprise Security Client is the conduit through which TPS communicates with each token over a
+                    secure HTTP channel (HTTPS), and, through the TPS, with the Certificate System.
+                \item Enterprise Security Client provides the user interface for end entities to enroll tokens.
+            \end{itemize}
+        \item \textbf{RPM}: esc
+        \item \textbf{Platforms}:
+            \begin{itemize}
+                \item RHEL5(x86\_64,i686)
+                \item RHEL6(x86\_64,i686)
+                \item RHEL7(x86\_64,i686)
+                \item Windows Vista(x86\_64, i686)
+                \item Windows XP
+                \item Apple Mac OSx 10.5.8 and higher
+            \end{itemize}
+        \item \textbf{Supported Smartcards:}
+             \begin{itemize}
+                \item Safenet 330J Java smart cards
+                \item Gemalto 64K V2 tokens, both as a smart card and GemPCKey USB form factor key
+                \item Safenet 650 Smartcards
+                \item Personal identity verification (PIV) cards, compliant with FIPS 201
+            \end{itemize}
+        \item \textbf{Installation:}
+             \begin{lstlisting}[style=bashInputStyle]
+$ yum install esc coolkey
+            \end{lstlisting}
+        \item \textbf{Configuration:}
+             \begin{itemize}
+                \item  {Configuring Phone Home}
+                    \begin{itemize}
+                        \item The Phone Home feature in the Enterprise Security Client associates information within each smart card
+                            with information that points to distinct T PS servers and Enterprise Security Client UI pages.
+                        \item  Phone Home retrieves and then caches this information; because the information is cached locally,
+                            the TPS subsystem does not have to be contacted each time a formatted smart card is inserted
+                        \item The information can be different for every key or token, which means that different TPS servers and
+                             enrollment URLs can be configured for different corporate or customer groups.
+                        \item Phone Home makes it possible to configure different TPS servers for different issuers or company units,
+                             without having to configure the Enterprise Security Client manually to locate the correct server and URL.
+                             \begin{figure}[H]
+                                 \centering
+                                 \includegraphics[width=80mm]{phonehomeurl.png}
+                                 \caption{ESC Phone Home URL ~\cite{RedHat:smartcard}}
+                             \end{figure}
+                    \end{itemize}
+                 \item {Setting up Users to be enrolled}
+                     \begin{itemize}
+                        \item When the Token Processing System is installed, one of its configuration settings is the LDAP directory
+                            which contains the users who are allowed to enroll a token
+                        \item Only users who are stored within this authentication directory are allowed to enroll,
+                             format, or have a token.
+                        \item The TPS is configured to look at a specific base DN in the LDAP directory. This is configured in the TPS's CS.cfg
+                            \begin{lstlisting}[style=configFile]
+auth.instance.0.baseDN=dc=example,dc=com
+auth.instance.0.hostport=server.example.com:389
+                            \end{lstlisting}
+                        \item  If the user does not already have an entry, then the administrator must add the user to the
+                            specified LDAP directory in the specified base DN before any tokens can be enrolled for the user.
+                            \begin{lstlisting}[style=bashInputStyle]
+$ usr/bin/ldapmodify -a -D "cn=Directory Manager" -w secret -p 389 -h server.example.com
+dn: uid=jsmith,ou=People, dc=example,dc=com
+objectclass: person
+objectclass: inetorgperson
+objectclass: top
+uid: jsmith
+cn: John Smith
+email: jsmith@example.com
+userPassword: secret
+                            \end{lstlisting}
+                     \end{itemize}
+            \end{itemize}
+    \end{itemize}    
+\subsubsection{Smartcard Workflow}
+    \begin{itemize}
+        \item \textbf{Secure Channel}~\cite{RedHat:securechannel}
+            \begin{itemize}
+                \item TPS, TKS and Smartcard need to communicate with each other over a Secure Channel (once TLS is established).
+                \item This secure channel is necessary for certain sensitive operations to be performed upon the token on behalf of the host
+                    \begin{figure}[H]
+                        \centering
+                        \includegraphics[width=120mm]{tps-tks-smartcard-securechannel.png}
+                        \caption{TKS-TPS-Smartcard Securechannel}
+                    \end{figure}
+            \end{itemize}
+        \item \textbf{Token Format}
+            \begin{figure}[H]
+                \centering
+                \includegraphics[width=120mm]{TPS_Format.png}
+                \caption{Token Format Operation Workflow. ~\cite{RedHat:securechannel}}
+            \end{figure}
+        \item \textbf{Token Enrollment}
+            \begin{figure}[H]
+                \centering
+                \includegraphics[width=120mm]{TPS_Enrollment.png}
+                \caption{Token Enrollment Operation Workflow.~\cite{RedHat:securechannel}}
+            \end{figure}
+        \item \textbf{Server Side Key Generation}
+            \begin{figure}[H]
+                \centering
+                \includegraphics[width=120mm]{tks-tps-drm-esc-enrollment3.png}
+                \caption{Server side key Generation}
+            \end{figure}
+    \end{itemize}
+
 \bibliography{references}
 \end{document} 
