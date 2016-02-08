@@ -1412,7 +1412,7 @@ $ certutil -L -d CA_db -n "Example RootCA" -a -o rootca.crt
                 \end{lstlisting}
             \item Display the contents fot the CA's Certificate database
                 \begin{lstlisting}[style=BashInputStyle] 
-$ certutil -L -d .
+$ certutil -L -d CA_db
                 \end{lstlisting}
             \item Creating Certificates for Servers, For servers SSL servers or clients
                 \begin{lstlisting}[style=BashInputStyle]
@@ -2347,6 +2347,20 @@ $ pki -d /opt/rhqa_pki -c Secret123 \
     cert-show 0xc
                 \end{lstlisting}
         \end{enumerate}
+        \item Remove CA subsystems created above using pkidestroy 
+            \begin{lstlisting}[style=bashInputStyle]
+$ pkidestory -s CA -i Example1-CloneCA
+$ pkidestroy -s CA -i Example1-ExtCA1 
+$ pkidestroy -s CA -i Example1-SubCA1
+$ pkidestroy -s CA -i pki-tomcat
+            \end{lstlisting}
+        \item Remove Directory Server Instances 
+            \begin{lstlisting}[style=bashInputStyle]
+$ remove-ds.pl -i slapd-Example1-Clone-CA1
+$ remove-ds.pl -i slapd-Example1-ExtCA1
+$ remove-ds.pl -i Example1-SubCA
+$ remove-ds.pl -i pki-tomcat-RootCA
+            \end{lstlisting}
     \end{enumerate}
 \subsection{Key Recovery Authority}
 \subsubsection{Introduction}
@@ -4095,6 +4109,8 @@ $ tpsclient < enroll.foo2.tps
                     \end{lstlisting}
              \end{enumerate}
     \end{enumerate}                 
+%\section{References}
+\addcontentsline{toc}{section}{Bibliography}
 \bibliography{references}
 \end{document}              
                                         
