@@ -3090,10 +3090,6 @@ $ pki -d -d /opt/rhqa_pki -c 'Secret123' \
     -n "PKI Administrator for example.org" \
     cert-revoke <serial_Number> --reason "Key_Compromise"
                     \end{lstlisting}
-                \item Using OCSPClient cli verify the status of the certificate
-                    \begin{lstlisting}[style=bashInputStyle]
-$ OCSPClient pki1.example.org 18080 /opt/rhqa_pki "RootCA" <serial_number> ocsp-status.out 1                    
-                    \end{lstlisting}
              \end{enumerate}
     \end{enumerate}
 \subsection{SmartCard Management}
