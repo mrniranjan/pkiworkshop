@@ -3746,7 +3746,7 @@ $ tpsclient < enroll.jdoe.tps
 op=var_set name=ra_host value=pki1.example.org
 op=var_set name=ra_port value=8080
 op=var_set name=ra_uri value=/tps/tps
-op=token_set cuid=40000000000000000002 msn=01020304 app_ver=6FBBC105 key_info=0101 major_ver=0 minor_ver=0
+op=token_set cuid=40000000000000000001 msn=01020304 app_ver=6FBBC105 key_info=0101 major_ver=0 minor_ver=0
 op=token_set auth_key=404142434445464748494a4b4c4d4e4f
 op=token_set mac_key=404142434445464748494a4b4c4d4e4f
 op=token_set kek_key=404142434445464748494a4b4c4d4e4f
@@ -3853,7 +3853,7 @@ pki_admin_password=Secret123
 
 #Security Domain
 pki_hostname=pki1.example.org
-pki_security_domain_hostname=pki2.example.org
+pki_security_domain_hostname=pki1.example.org
 pki_security_domain_https_port=30042
 pki_security_domain_user=caadmin
 pki_security_domain_password=Secret123
