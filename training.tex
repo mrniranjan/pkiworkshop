@@ -2086,14 +2086,14 @@ $ pkidaemon status tomcat Ext1-CA1
                                 \end{figure}
                             \item Click Preferences
                             \item Select Advanced from left pane
-                            \item Select "Certificates" tab
-                            \item Click on "View Certificates" to open "Certificate Manager" Window
-                            \item From the "Certificate Manager" Windows 
-                            \item Select "Your Certificates" tab and Click on Import and provide the path
+                            \item Select ``Certificates'' tab
+                            \item Click on ``View Certificates'' to open ``Certificate Manager'' Window
+                            \item From the ``Certificate Manager'' Windows 
+                            \item Select ``Your Certificates'' tab and Click on Import and provide the path
                                 of Admin's P12 file 
                             \item Should prompt for password, Give the password that is used to protect the P12 file.
-                            \item Click on "OK" to close the window
-                            \item Close the "preferences" tab
+                            \item Click on ``OK'' to close the window
+                            \item Close the ``preferences'' tab
                         \end{itemize}
                     \item Approve the request using below procedure
                         \begin{itemize}
@@ -2296,8 +2296,8 @@ $ pkiconsole https://pki1.example.org:8443/ca
                                                     \item exkeyUsageOIDs: 1.3.6.1.5.5.7.3.2.1,1.3.6.1.5.5.7.3.4
                                                 \end{itemize}
                                         \end{itemize}
-                                    \item Using \textbf{openssl} generate CSR for server "www.example.org" with SubjectAltName extensions and specifying alternat
-                                        hostnames "host1.example.org", host2.example.org"
+                                    \item Using \textbf{openssl} generate CSR for server ``www.example.org'' with SubjectAltName extensions and specifying alternat
+                                        hostnames ``host1.example.org'', ``host2.example.org''
                                         \begin{itemize}
                                             \item Alternatively you could Download CSR from below url
                                             \begin{lstlisting}
@@ -2308,10 +2308,10 @@ https://github.com/mrniranjan/pkiworkshop/blob/master/san.csr
                         \item Enable the profile from Agent Interface
                             \begin{itemize}
                                 \item Select Manage Certificate Profiles
-                                \item Select "Manual Server Certificate with SAN from CSR"
-                                \item Click on "Approve"
+                                \item Select \textbf{``Manual Server Certificate with SAN from CSR''}
+                                \item Click on \textbf{``Approve''}
                             \end{itemize}
-                        \item From EE page Slect profile "Manual Server Certificate with SAN from CSR" and submit the CSR
+                        \item From EE page Select profile \textbf{``Manual Server Certificate with SAN from CSR''} and submit the CSR
                         \item From Agent page Approve the certificate request
                     \end{itemize}
                     \end{enumerate}
@@ -2329,7 +2329,7 @@ $ pki -d /opt/rhqa_pki -c Secret123 client-cert-import --pkcs12 /root/.dogtag/pk
                     \begin{lstlisting}[style=bashInputStyle]
 $ pki -d /opt/rhqa_pki1 -c Secret123 -h pki1.example.org -p 8080 client-cert-import "RootCA" --ca-server                                    
                     \end{lstlisting}
-                \item \label{pki4} Submit a certificate request for user "foo" with subject DN:
+                \item \label{pki4} Submit a certificate request for user ``foo'' with subject DN:
                     \begin{lstlisting}
 UID=foo,E=foo@example.org,CN=Foo User1,OU=IDMQE,O=Example Org
                     \end{lstlisting}
@@ -2352,7 +2352,7 @@ Approved certificate request 12
   Operation Result: success
   Certificate ID: 0xc
                     \end{lstlisting}
-                \item Revoke a certificate with reason "Certificate On Hold"
+                \item Revoke a certificate with reason ``Certificate On Hold''
                     \begin{lstlisting}[style=bashInputStyle]
 $ pki -d /opt/rhqa_pki -c Secret123 \
     -h pki1.example.org -p 8080 \
@@ -2646,7 +2646,7 @@ $ pki -d /opt/rhqa_pki -c Secret123 -h pki1.example.org \
     -p 14080 -n "PKI KRA Administrator for Example Org" \
     kra-group-find                                
                             \end{lstlisting}
-                        \item Create a User "KRA\_AgentV" and add him as member of \textbf{Data Recovery Manager Agents} 
+                        \item Create a User ``KRA\_AgentV'' and add him as member of \textbf{Data Recovery Manager Agents} 
                             \begin{lstlisting}[style=bashInputStyle]
 $ pki -d /opt/rhqa_pki -c Secret123 \
 -h pki1.example.org -p 14080 \
@@ -2659,7 +2659,7 @@ Added user "KRA_AgentV"
   User ID: KRA_AgentV
   Full name: KRA Agent User
                             \end{lstlisting}
-                        \item Create a Cert request for "KRA Agent User" using CA Subsystem 
+                        \item Create a Cert request for ``KRA Agent User'' using CA Subsystem 
                             \begin{lstlisting}[style=bashInputStyle]
 #This command returns a request id , use the request id to approve the request
 $ pki -d /opt/rhqa_pki -c Secret123 \
@@ -2691,7 +2691,7 @@ $ pki -d /opt/rhqa_pki -c Secret123 \
     kra-user-cert-add KRA_AgentV --serial \
     <certificate_serial_Number>
                             \end{lstlisting}
-                        \item Make the KRA Agent user member of \textbf{"Data Recovery Manager Agents"}
+                        \item Make the KRA Agent user member of \textbf{``Data Recovery Manager Agents''}
                             \begin{lstlisting}[style=bashInputStyle]
 $ pki -d /opt/rhqa_pki -c Secret123 \
     -h pki1.example.org -p 14080 \
@@ -2758,14 +2758,14 @@ $ pki -d /opt/rhqa_pki -c Secret123 \
                         \item Trust the CA cert 
                         \item Access KRA Agent Page \textit{https://pki1.example.org:14443}
                         \item Authenticate it with KRA Agent Cert
-                        \item Click "Recover Keys" 
-                        \item From the Available Recovery Options select "Certificate"
+                        \item Click \textbf{``Recover Keys''}
+                        \item From the Available Recovery Options select \textbf{``Certificate''}
                         \item Paste the Certificate foo1 user archived, use CA EE interface to get the certificate
                         \item Click on Show key 
-                        \item From the Search Results , Click on "Recover"
-                        \item In the Next screen , Select "Async Recovery", Click on "Recover"
+                        \item From the Search Results , Click on \textbf{``Recover''}
+                        \item In the Next screen , Select \textbf{``Async Recovery''}, Click on \textbf{``Recover''}
                         \item This should return a Key Recovery Status with reference Number
-                        \item Click on The request Number and "Grant" the request
+                        \item Click on The request Number and \textbf{``Grant''} the request
                         \item click on the request id shown on the page
                         \item Specify the PKCS12 Password and click on Retrieve PKCS12
                     \end{itemize}
@@ -3733,10 +3733,10 @@ $ tpsclient < enroll.jdoe.tps
                     \item Access https://pki1.example.org:8443
                     \item Use the Admin cert when prompted
                     \item Open each subsystem on different tabs
-                    \item From TPS UI, click on "Login"
+                    \item From TPS UI, click on ``Login''
                         \begin{itemize}
                             \item Click on Tokens , Should see the list of enrolled tokens
-                            \item click on "Certificates" and should see the certificates associated with tokens
+                            \item click on ``Certificates'' and should see the certificates associated with tokens
                         \end{itemize}
                 \end{itemize}
             \item \label{token_ex9}Format tthe token ``40000000000000000001'' and verify the associated certs are revoked
