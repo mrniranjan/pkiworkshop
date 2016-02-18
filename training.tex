@@ -2071,11 +2071,11 @@ $ pkispawn -s CA -f ca-ext.inf -vv
                         \end{lstlisting}
                     \item Verify subsystem status using systemctl and pkidaemon commands
                     \begin{lstlisting}[style=bashInputStyle]
-$ systemctl status pki-tomcatd@Ext1-CA1
-$ pkidaemon status tomcat Ext1-CA1
+$ systemctl status pki-tomcatd@Example1-ExtCA1
+$ pkidaemon status tomcat Example1-ExtCA1
                     \end{lstlisting}
                     \item Get the certificate request signed by RootCA configured in \ref{ca1}
-                    \item \label{import_admin_p12} Import CA Admin cert to firefox: [Below procedure is same for any Subsystem Admin Cert]
+                    \item \label{import_admin_p12} Import Root CA Admin cert to firefox: [Below procedure is same for any Subsystem Admin Cert]
                         \begin{itemize}
                             \item Open Firefox
                             \item Click on Preferences (Upper Right hand Corner, check below image):
@@ -2097,10 +2097,10 @@ $ pkidaemon status tomcat Ext1-CA1
                         \end{itemize}
                     \item Approve the request using below procedure
                         \begin{itemize}
-                            \item Access CA EE interface
-                            \item Copy the certificate request and submit using the profile:
+                            \item Access Root CA EE interface
+                            \item Copy the certificate request (contents of /tmp/ca\_signing.csr) and submit using the profile:
                                     "Manual Certificate Manager Signing Certificate Enrollment"
-                            \item From Agent interface approve the request
+                            \item From Root CA Agent interface approve the request
                             \item Copy the Approved cert and save it to a file /tmp/ca\_signing.cert
                             \item Also copy the CA cert chain and save it to file /tmp/ca\_cert\_chain.cert
                         \end{itemize}
@@ -4043,7 +4043,7 @@ conn.tks1.tksSharedSymKeyName=sharedSecret
 tps.0.nickname=TPS-pki2.example.org-20443 sharedSecret            
             \end{lstlisting}
             \begin{lstlisting}[style=bashInputStyle]
-$ vim /var/lib/pki/FoobarTPS/tps/conf/CS.cfg
+$ vim /var/lib/pki/FoobarTKS/tps/conf/CS.cfg
 tps.0.nickname=sharedSecret
             \end{lstlisting}
         \item Restart TKS and TPS subsystems
