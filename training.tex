@@ -2156,11 +2156,11 @@ $ PKCS12Export -d /var/lib/pki/pki-tomcat/alias -p /tmp/nssdb-pass  -w /tmp/pkcs
                         \end{lstlisting}
                         \begin{itemize}
                             \item File \texttt{/tmp/nssdb-pass} should be created with contents of password stored in
-                        \texttt{"Internal"} in the file \texttt{/var/lib/pki-tomcat/conf/password.conf}. 
+                        \texttt{"Internal"} in the file \texttt{/var/lib/pki/pki-tomcat/conf/password.conf}. 
                             \item File \texttt{/tmp/pkcs12-pass} should be craated with the passwod that you want set on
                                 the backup file. 
                         \end{itemize}
-                    \item Copy \textit{ca-backup.p12} to the Clone system
+                    \item Copy \textit{ca\_backup\_keys.p12} to the Clone system
                     \item On clone system setup Directory Server using silent mode
 
 ca-clone-ds.inf:                         
