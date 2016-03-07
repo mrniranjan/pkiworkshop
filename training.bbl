@@ -1,0 +1,61 @@
+\begin{thebibliography}{10}
+
+\bibitem{RedHat:CSoverview}
+Red Hat Certificate System Installation \&~Deployment Guide.
+\newblock Red hat certificate system overview.
+\newblock
+  \url{https://access.redhat.com/documentation/en-US/Red_Hat_Certificate_System/8.1/html/Deploy_and_Install_Guide/SubsystemOverview.html},
+  2015.
+
+\bibitem{RedHat:AdminGuide}
+Red Hat.
+\newblock Red hat certificate services 8.0 admin guide.
+\newblock
+  \url{https://access.redhat.com/documentation/en-US/Red_Hat_Certificate_System/8.1/html/Admin_Guide/index.html},
+  2015.
+
+\bibitem{RedHat:Symmetric}
+Red Hat.
+\newblock Symmetric encryption.
+\newblock
+  \url{https://access.redhat.com/documentation/en-US/Red_Hat_Certificate_System/9/html/Planning_Installation_and_Deployment_Guide/Introduction_to_Public_Key_Cryptography.html#Symmetric_Key_Encryption-Symmetric_Key_Encryption},
+  2015.
+
+\bibitem{2986}
+B.~Kaliski M.~Nystrom.
+\newblock {PKCS \#10: Certification Request Syntax Specification}.
+\newblock {RFC} 2986, {RFC Editor}, November 2000.
+
+\bibitem{nist:fips}
+NIST.
+\newblock Fips publication.
+\newblock \url{http://csrc.nist.gov/publications/PubsFIPS.html}, 2015.
+
+\bibitem{eric}
+Eric Rescorla.
+\newblock {\em {SSL and TLS Designing and Building Secure System}}.
+\newblock {Addison-Wesely}, 2001.
+
+\bibitem{5280}
+S.~Santesson, S.~Farrell, S.~Boeyen, R.~Housley, and W.~Polk.
+\newblock {Internet X.509 Public Key Infrastructure Certificate and Certificate
+  Revocation List (CRL) Profile}.
+\newblock {RFC} 5280, {RFC Editor}, MAY 2008.
+
+\bibitem{4211}
+J.~Schaad.
+\newblock {Internet X.509 Public Key Infrastructure Certificate Request Message
+  Format (CRMF)}.
+\newblock {RFC} 4211, {RFC Editor}, September 2005.
+
+\bibitem{RedHat:huzaifs}
+Huzaif Sidhpurwala.
+\newblock Understanding rsa for people who don't have a phd in maths.
+\newblock \url{http://file.pnq.redhat.com/~huzaifas/RSA.pdf}, 2015.
+
+\bibitem{wiki:ccid}
+Wikipedia.
+\newblock Ccid (protocol).
+\newblock \url{https://en.wikipedia.org/wiki/CCID_%28protocol%29}, 2015.
+
+\end{thebibliography}

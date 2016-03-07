@@ -1,28 +1,10 @@
-%
-% Latex file containing contents of PKI and CS Workshop
-% Copyright (C) 2015 Niranjan M.R
-%
-% This program is free software; you can redistribute it and/or
-% modify it under the terms of the GNU General Public License
-% as published by the Free Software Foundation; either version 2
-% of the License, or (at your option) any later version.
-%
-% This program is distributed in the hope that it will be useful,
-% but WITHOUT ANY WARRANTY; without even the implied warranty of
-% MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-% GNU General Public License for more details.
-%
-% You should have received a copy of the GNU General Public License
-% along with this program; if not, write to the Free Software
-% Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
-
-
-\documentclass[a4paper]{article}
+\documentclass[12pt]{book}
 \title{Workshop on Public Key Infrastructure \\
 and \\
 Red Hat Certificate System}
 \author{\underline{Asha Akkiangady, Huzaifa Sidhpurwala, Niranjan Mallapadi}}
 \date{}
+\usepackage[top=1.5 in,bottom=1.5 in]{geometry}
 \usepackage{color}
 \usepackage{xcolor}
 \usepackage{graphics}
@@ -32,8 +14,26 @@ Red Hat Certificate System}
 \usepackage{enumitem}
 \usepackage{float}
 \usepackage{url}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+%\renewcommand{\baselinestretch}{1.5}
+\cfoot{}
+\lhead{}
+\lfoot{PKI Workshop}
+\fancyfoot[RO,RE]{\thepage}
+\renewcommand{\headrulewidth}{1pt}
+\renewcommand{\footrulewidth}{1pt}
+
+\makeatletter
+\renewcommand\chapter{\if@openright\cleardoublepage\else\clearpage\fi
+                    \thispagestyle{fancy}%
+                    \global\@topnum\z@
+                    \@afterindentfalse
+                    \secdef\@chapter\@schapter}
+\makeatother
+
 \usepackage{hyperref}
-\usepackage{bookmark}
 \hypersetup{
     colorlinks=true, 
     linktoc=all,     
@@ -66,25 +66,13 @@ Red Hat Certificate System}
     columns=fullflexible,
     backgroundcolor=\color{red!5}
 }
-\lstdefinestyle{configFile}{
-  frame=tb
-  aboveskip=3mm,
-  belowskip=3mm,
-  showstringspaces=false,
-  columns=flexible,
-  basicstyle={\small\ttfamily},
-  commentstyle=\color{dkgreen},
-  numbers=left,
-  stepnumber=1,
-  firstnumber=1,
-  breaklines=true,
-  breakatwhitespace=true,
-  tabsize=3
-}
 \begin{document}
 \maketitle
+\pagenumbering{Roman}
 \tableofcontents
-\section{Introduction to Public Key Cryptography}
+\newpage
+\pagenumbering{arabic}
+\chapter{Introduction to Public Key Cryptography}
 Before we start discussing about public key cryptography, we will in general discuss about how systems communicate
 and what are the various threat models that are associated with the communication medium and what are the tools to 
 overcome them.~\cite{eric}
@@ -136,7 +124,7 @@ To mitigate above threat models, we will look in to cryptology as one of the too
 \textbf{Cryptology:} Cryptology is the theory of designing the various algorithms we use to provide security
 
 \textbf{Cryptography:} Cryptography is the study of using these algorithms to secure systems and protocols.
-\subsection{Encryption}
+\section{Encryption}
 An encryption algorithm takes some data(called plaintext) and converts it to cipher-text under control of a key. 
 cipher text contains random data which makes no sense without the key.  
 
@@ -162,15 +150,15 @@ If the attacker knows the plaintext corresponding to the ciphertext it's called 
 
 An attack where attacker doesn't know the plaintext , it's called \textit{``ciphertext-only attack''}.
 \textit{Ex:} If the attacker knows that plaintext is ASCII , so any decryption which uses non-ascii characters must be using the wrong key.
-\subsubsection{Symmetric Encryption}
+\subsection{Symmetric Encryption}
 When Sender and recipient share the same key(which must be kept secret) is referred to as \textit{Symmetric Key Cryptograph} or also
 referred to as \textit{Secret Key Cryptography} as opposed to \textit{Public Key Cryptography}~\cite{eric}.
 \begin{figure}[h]
     \centering
-    \includegraphics[width=50mm]{symmetric.png}
+    \includegraphics[width=50mm]{Images/symmetric.png}
     \caption{Symmetric Encryption ~\cite{RedHat:Symmetric}}
 \end{figure}
-\subsubsection{Assymetric Encryption}
+\subsection{Assymetric Encryption}
 \begin{itemize}
     \item First started in stanford university by Whitfield Diffie and Martin Hellman
     \item The most commonly used implementation of PKC are based on algorithm based on algorithm patented by RSA data security.
@@ -181,13 +169,13 @@ referred to as \textit{Secret Key Cryptography} as opposed to \textit{Public Key
     \item It is possible to use public-key encryption to send a symmetric key, which can then be used to encrypt additional data.
         \begin{figure}[h]
             \centering
-            \includegraphics[width=80mm]{assymetric.png}
+            \includegraphics[width=80mm]{Images/assymetric.png}
             \caption{Assymetric Encryption}
         \end{figure}
     \item Reverse of the above figure also happens i.e. encrypt with private key and decrypt with public-key. But not useful for sensitive information
         \begin{figure}[h]
         \centering
-        \includegraphics[width=80mm]{digitalsignature.png}
+        \includegraphics[width=80mm]{Images/digitalsignature.png}
         \caption{Digital Signature ~\cite{RedHat:CSoverview}} 
         \end{figure}
     \item There's a problem with the above method, how would the parties get each other's public-key ? 
@@ -196,7 +184,7 @@ referred to as \textit{Secret Key Cryptography} as opposed to \textit{Public Key
         thus each party encrypts to him and \& he re-encrypts it to the real recipient. 
         This is called \textit{man-in-the-middle attack}
 \end{itemize}
-\subsection{Message Digest}
+\section{Message Digest}
 A message digest is simply a function that takes as an input an arbitrary message and outputs a fixed length string 
 which is characteristic of the message. The important property here is irreversibility.  
 It's extremely difficult to compute a message from the given digest. 
@@ -208,12 +196,12 @@ Property of the message digest:
         This property is called collision-resistance. It turns out that the strength of any message digest 
         against finding collision is only half the size of the digest., so a 128-bit digest is only 64 bits strong against collisions.
 \end{itemize}
-\subsubsection{Message Authentication Code}
+\subsection{Message Authentication Code}
 Consider \textit{Alice} and \textit{Bob} share a key and Alice wants to send a message to \textit{Bob}. The message can be encrypted, 
 and send it across to \textit{Bob}, but we are not sure that the encrypted message would be tampered and also not sure 
 if \textit{Alice} was the one who sent the encrypted message.  So we use a new tool called \textit{MAC} . \textit{MAC} is a digest algorithm,
 but with a key, So the MAC is dependent on both the key and the message being MACed ~\cite{eric}.
-\subsection{Algorithms}
+\section{Algorithms}
 \begin{itemize}
     \item \textbf{RSA ~\cite{eric}}
         \begin{itemize}
@@ -324,9 +312,9 @@ but with a key, So the MAC is dependent on both the key and the message being MA
             \item MD5 and SHA share a common ancestor MD4 also designed by Ron Rivest
         \end{itemize}
 \end{itemize}
-\subsection{Mathematics behind cryptography}
+\section{Mathematics behind cryptography}
     For more information on mathematics behind Cryptography please refer to: ~\cite{RedHat:huzaifs}
-\subsection{Protocols}
+\section{Protocols}
 \subsubsection{SSL}
     \begin{itemize}
         \item Secure Socket Layer (SSL) is a protocol that provides a secure channel between machines
@@ -368,9 +356,9 @@ but with a key, So the MAC is dependent on both the key and the message being MA
                     \textit{the pre\_master\_secret} and client and server's random values
                 \item Client sends a MAC of all the handshake messages to the server
                 \item The server sends a MAC of all the handshake messages to the client
-                \item \begin{figure}[ht!]
+                	 \begin{figure}[ht!]
                         \centering
-                        \includegraphics[width=40mm]{sslhandshake1.png}
+                        \includegraphics[width=40mm]{Images/sslhandshake1.png}
                         \caption{SSL Handshake}
                       \end{figure}
                 \item Step:1 corresponds to single SSL Handshake message, Client Hello
@@ -384,9 +372,9 @@ but with a key, So the MAC is dependent on both the key and the message being MA
                     message that's the protected using Just-Negotiated algorithms.
                 \item To protect the handshake from tampering, the content of the message is MAC of 
                     all the previous handshake messages
-                \item \begin{figure}[ht!]
+                	 \begin{figure}[ht!]
                         \centering
-                        \includegraphics[width=40mm]{sslhandshake2.png}
+                        \includegraphics[height=40 mm, width=40 mm]{Images/sslhandshake2.png}
                         \caption{SSL Handshake}
                       \end{figure}
                 \item \textbf{Resuming Session}
@@ -414,7 +402,7 @@ but with a key, So the MAC is dependent on both the key and the message being MA
                     that encrypted payload which we refer to as a record
                 \item \begin{figure}[ht!]
                         \centering
-                        \includegraphics[width=50mm]{ssldatafrag.png}
+                        \includegraphics[width=50mm]{Images/ssldatafrag.png}
                         \caption{ssl data fragment and protection ~\cite{eric}}
                       \end{figure}
                 \item The record header provides the information for the other end to interpret the record. It contains:
@@ -428,19 +416,20 @@ but with a key, So the MAC is dependent on both the key and the message being MA
                     sent to indicate that those keys will now be used.
                     \begin{figure}[H]
                         \centering
-                        \includegraphics[width=30mm]{ssl-overview.png}
+                        \includegraphics[width=30mm]{Images/ssl-overview.png}
                         \caption{SSL Overview}
                     \end{figure}
             \end{itemize}
     \end{itemize}
-\section{Introduction to Public Key Infrastructure}
+
+\chapter{Introduction to Public Key Infrastructure}
 Below is a simplified architectural model of Public Key Infrastructure using X.509 (PKIX) Specifications
 \begin{figure}[ht!]
     \centering
-    \includegraphics[width=70mm]{pki-architectural-model.png}
+    \includegraphics[width=70mm]{Images/pki-architectural-model.png}
     \caption{PKI Architectural Model ~\cite{5280}}
 \end{figure}
-\subsection{Common Terms used in PKI}
+\section{Common Terms used in PKI}
 \begin{itemize}
     \item \underline{End Entity}: User of the PKI certificates and/or end user system that is the subject of a certificate
     \item \underline{CA}: Certificate Authority
@@ -448,7 +437,7 @@ Below is a simplified architectural model of Public Key Infrastructure using X.5
     \item \underline{CRL issuers}: A system that generates CRL
     \item \underline{repository}: a system or collection of distributed systems that stores certificates and CRLs and services as a means of distributing these certificates and CRLs to end entities
 \end{itemize}
-\subsection{Detailed look on certificate/CRL}
+\section{Detailed look on certificate/CRL}
     \subsubsection {Certificates}
         \begin{itemize}
             \item Certificates are data structures that bind public key values to the subject. This binding is asserted by a trusted Certificate Authority.
@@ -482,7 +471,7 @@ Below is a simplified architectural model of Public Key Infrastructure using X.5
                         \end{itemize}
                 \end{itemize}
         \end{itemize}
-    \subsubsection{Basic Certificate Fields}
+    \subsection{Basic Certificate Fields}
         \begin{itemize}
             \item Version:
                 \begin{itemize}
@@ -527,7 +516,7 @@ Below is a simplified architectural model of Public Key Infrastructure using X.5
                     \item Values:
                     \begin{itemize}
                         \item \textbf{C=US, O=VeriSign, Inc., OU=Class 1 Public Primary Certification Authority}
-                        \item \textbf{C=DE, ST=Bayern, L=Muenchen, O=Whatever it is, CN=IO::Socket::SSL Demo CA}
+                        \item \textbf{C=DE, ST=Bayern, L=Muenchen, O=Whatever it is,}\\\textbf{CN=IO::Socket::SSL Demo CA}
                         \item \textbf{C=US, O=VeriSign, Inc., OU=Class 1 Public Primary Certification Authority}
                     \end{itemize}
                 \end{itemize}
@@ -576,7 +565,7 @@ Below is a simplified architectural model of Public Key Infrastructure using X.5
                         \end{itemize}
                 \end{itemize}
             \end{itemize}
-    \subsubsection{Extensions}
+    \subsection{Extensions}
         \begin{itemize}
             \item This field only appears in v3 Certs
             \item This contains sequence of one or more Certificate Extensions 
@@ -586,7 +575,7 @@ Below is a simplified architectural model of Public Key Infrastructure using X.5
             \item Each Extension is either Critical / Non Critical
             \item Each Extension includes OID and ASN.1 DER  (OCTET)
                 \begin{itemize}
-                    \item Example: DE:65:01:16:19:2E:51:E0:9A:51:1A:37:50:94:7D:39:29:2A:42:2C
+                    \item Example:\\ \textbf{DE:65:01:16:19:2E:51:E0:9A:51:1A:37:50:94:7D:39:29:2A:42:2C}
                 \end{itemize}
             \item There cannot be duplicates of Extensions
             \item Default CRITICAL value is false
@@ -606,7 +595,7 @@ Below is a simplified architectural model of Public Key Infrastructure using X.5
                     \item Authority key Identifier helps in identifying the issuer certificate. 
                     \item Values:
                         \begin{itemize}
-                            \item \textbf{keyid:48:E6:68:F9:2B:D2:B2:95:D7:47:D8:23:20:10:4F:33:98:90:9F:D4}
+                            \item \textbf{keyid:} \\ \textbf{48:E6:68:F9:2B:D2:B2:95:D7:47:D8:23:20:10:4F:33:98:90:9F:D4}
                         \end{itemize}
                 \end{itemize}
             \item \textbf{Subject Key Identifier:}
@@ -669,7 +658,7 @@ Below is a simplified architectural model of Public Key Infrastructure using X.5
                             \begin{itemize}
                                 \item \begin{figure}[ht!]
                                     \centering
-                                    \includegraphics[width=70mm]{KeyUsage1.png}
+                                    \includegraphics[width=70mm]{Images/KeyUsage1.png}
                                     \caption{Key Usage restrictions}
                                 \end{figure}
                             \end{itemize}
@@ -808,7 +797,7 @@ Below is a simplified architectural model of Public Key Infrastructure using X.5
                     \item If the subject is EE, information describes the type of services offerred and how to access them
                 \end{itemize}
         \end{itemize}
-    \subsubsection{Revocation}
+    \subsection{Revocation}
         When a certificate is issued, it is expected to be used for it's entire validity period. Due to various circumstances, certificate can be invalidated like:
         \begin{itemize}
             \item Change of name
@@ -846,7 +835,7 @@ Below is a simplified architectural model of Public Key Infrastructure using X.5
                 \item When CRL's are issued CRLs must be version 2 CRLs. 
             \end{itemize}
         \end{itemize}
-    \subsubsection{CRL Fields}
+    \subsection{CRL Fields}
     \begin{itemize}
         \item \textbf{Version} All CRLs must be Version 2 CRLs
         \item \textbf{Signature Algorithm}
@@ -886,7 +875,7 @@ Below is a simplified architectural model of Public Key Infrastructure using X.5
                 \item Date on which revocation occurred is specified.
             \end{itemize}
     \end{itemize}
-    \subsubsection{CRL Extensions}
+    \subsection{CRL Extensions}
         \begin{itemize}
             \item \textbf{Authority Key Identifier}
                 \begin{itemize}
@@ -897,7 +886,7 @@ Below is a simplified architectural model of Public Key Infrastructure using X.5
 
                                 \begin{figure}[ht!]
                                     \centering
-                                    \includegraphics[width=65mm]{crl-aki.png}
+                                    \includegraphics[width=65mm]{Images/crl-aki.png}
                                     \caption{CRL Authority Key identifier}
                                 \end{figure}
                         \end{itemize}
@@ -924,7 +913,7 @@ Below is a simplified architectural model of Public Key Infrastructure using X.5
                         \begin{itemize}
                             \item \begin{figure}[ht!]
                                     \centering
-                                    \includegraphics[width=80mm]{delta-crl-extension.png}
+                                    \includegraphics[width=80mm]{Images/delta-crl-extension.png}
                                     \caption{Delta CRL Indicator Extension}
                                 \end{figure}
                         \end{itemize}
@@ -937,14 +926,14 @@ Below is a simplified architectural model of Public Key Infrastructure using X.5
                         \begin{itemize}
                             \item \begin{figure}[ht!]
                                     \centering
-                                    \includegraphics[width=80mm]{issuing-distribution-point.png}
+                                    \includegraphics[width=80mm]{Images/issuing-distribution-point.png}
                                     \caption{Issuing Distribution Point extension}
                                   \end{figure}
                         \end{itemize}
                 \end{itemize}
     \end{itemize}
-    \subsection{Mozilla NSS}
-        \subsubsection{Introduction}
+    \section{Mozilla NSS}
+        \subsection{Introduction}
             \begin{itemize}
                 \item RHEL has 3 sets of security libraries:
                         \begin{itemize}
@@ -956,7 +945,7 @@ Below is a simplified architectural model of Public Key Infrastructure using X.5
                     \textit{Firefox}, \textit{Thunderbird}. 
                 \item Mozilla NSS provides all the Public Key cryptography stands which other implementations provide. 
             \end{itemize}
-        \subsubsection{Architecture}
+        \subsection{Architecture}
             \begin{itemize}
                 \item With default installation of RHEL, a NSS directory \textbf{/etc/pki/nssdb} is created for system wide usage. 
                 \item Unlike openssl where certificates are created and stored in text files, certificates created by nss-tools are stored in nss database
@@ -967,7 +956,7 @@ Below is a simplified architectural model of Public Key Infrastructure using X.5
                         \item \textbf{secmod.db} contains pathnames of pkcs\#11 modules
                     \end{itemize}
              \end{itemize}
-    \subsection{Exercises}
+    \section{Exercises}
 \begin{enumerate}[label*=\arabic*.]
     \item Setup: Create PKI Infrastructure using OpenSSL
         \begin{lstlisting}[style=BashInputStyle]
@@ -1005,7 +994,7 @@ into your certificate request.
 What you are about to enter is what is called a Distinguished Name or a DN.
 There are quite a few fields but you can leave some blank
 For some fields there will be a default value,
-If you enter '.', the field will be left blank.
+If you enter `.', the field will be left blank.
 -----
 Country Name (2 letter code) [IN]:
 State or Province Name (full name) [Maharashtra]:
@@ -1034,7 +1023,7 @@ $ openssl ca -config openssl.cnf -extensions usr_cert \
 # view the certificate
 $ openssl x509 -in certs/pkiuser1.cert.pem -noout -text
         \end{lstlisting}
-    \item Create a User cert \textit{cn=Pki User2} with adding extension "Authority Key Identifier" where 
+    \item Create a User cert \textit{cn=Pki User2} with adding extension ``Authority Key Identifier" where 
         extension adds the hash of CA public key
 
         Add the below lines to \textbf{usr\_cert} section of openssl.cnf
@@ -1044,7 +1033,7 @@ authorityKeyIdentifier=keyid
         \end{lstlisting}
         \begin{lstlisting}[style=bashInputStyle]
 # Generate Key pair
-$ openssl genrsa -out private/pkiuser2.key 2048
+$ openssl genrsa -out private/pkiuser2.key 2048
 
 # Generate Certificate Request 
 $ openssl req -new -key private/pkiuser2.key -out pkiuser2.csr -config openssl.cnf
@@ -1086,7 +1075,7 @@ Common Name (eg, your name or your server's hostname) []:pkiuser3
 Email Address []:pkiuser3@example.org
 
 # CA sign the Certificate request 
-$ openssl ca -config openssl.cnf -extensions usr_cert -days 375 -in pkiuser3.csr -out certs/pkiuser3.cert.pem
+$ openssl ca -config openssl.cnf -extensions usr_cert -days 375 -in pkiuser3.csr -out certs/pkiuser3.cert.pem
 #view the certificate
 $ openssl x509 -in certs/pkiuser3.cert.pem -noout -text
         \end{lstlisting}
@@ -1099,7 +1088,7 @@ keyUsage = keyAgreement, digitalSignature
         \end{lstlisting}
         \begin{lstlisting}[style=bashInputStyle]
 # Generate key pair
-$  openssl genrsa -out private/server1.key 2048        
+$  openssl genrsa -out private/server1.key 2048        
 
 #Generate certificate request
 $ openssl req -new -key private/server1.key -out server1.csr -config openssl.cnf
@@ -1140,7 +1129,7 @@ Common Name (eg, your name or your server's hostname) []:pkiuser4
 Email Address []:pkiuser4@example.org
 
 # CA sign the Certificate request 
-$ openssl ca -config openssl.cnf -extensions usr_cert -days 375 -in pkiuser4.csr -out certs/pkiuser4.cert.pem
+$ openssl ca -config openssl.cnf -extensions usr_cert -days 375 -in pkiuser4.csr -out certs/pkiuser4.cert.pem
 
 #view the certificate
 $ openssl x509 -in certs/pkiuser4.cert.pem -noout -text
@@ -1311,7 +1300,7 @@ $ openssl ca -config openssl.cnf -extensions server_cert -days 375 -in server3.c
 $ openssl x509 -in certs/server3.cert.pem -noout -text
        \end{lstlisting}
 
-    \item Create a Name constraint where permitted DN attribute is "CN=pki*,OU=PKI,O=Example Org,C=US"
+    \item Create a Name constraint where permitted DN attribute is ``CN=pki*,OU=PKI,\\ O=Example Org,C=US"
 
             Add below lines to \textbf{v3\_usr\_ca} 
             \begin{lstlisting}
@@ -1431,7 +1420,7 @@ $ certutil -L -d CA_db -n "Example RootCA" -a -o rootca.crt
                 \end{lstlisting}
             \item Display the contents fot the CA's Certificate database
                 \begin{lstlisting}[style=BashInputStyle] 
-$ certutil -L -d CA_db
+$ certutil -L -d .
                 \end{lstlisting}
             \item Creating Certificates for Servers, For servers SSL servers or clients
                 \begin{lstlisting}[style=BashInputStyle]
@@ -1492,7 +1481,7 @@ $ openssl pkcs12 -nocerts -in pki1.pk12 -out pki1.key.pem -nodes
                 \end{lstlisting}
         \end{itemize}
 \end{enumerate}
-\section{Common Terms Used in RHCS}
+\chapter{Common Terms Used in RHCS}
 \begin{itemize}
     \item Enrollment
         The point when the certificate is issued to the User/client is called enrollment
@@ -1535,11 +1524,11 @@ $ openssl pkcs12 -nocerts -in pki1.pk12 -out pki1.key.pem -nodes
 
         FIPS 140-2 is primarily of interest to U.S., Canadian, and UK government agencies which have formal policies requiring use of FIPS 140 validated cryptographic software. ~\cite{nist:fips}
 
-        Products that have received a NIST/CSE validation are listed on the Cryptographic Module Validation List : http://csrc.nist.gov/groups/STM/cmvp/documents/140-1/140val-all.htm
+        Products that have received a NIST/CSE validation are listed on the Cryptographic Module Validation List\\ : http://csrc.nist.gov/groups/STM/cmvp/documents/140-1/140val-all.htm
     \item HSM
         is a physical computing device that safeguards and manages digital keys for strong authentication and provides cryptoprocessing. HSM's are used in PKI environment. HSM's are designed to protect keys(private). A private key in HSM cannot be extracted.     
 \end{itemize}
-\section{Red Hat Certificate System}
+\chapter{Red Hat Certificate System}
     \begin{itemize}
         \item RHCS is an Enterprise PKI implementation providing various PKI operations like Enrollment, renewal, revocation
         \item Provides Certificate Lifecycle Management  like CA, Key archival, smartcard management. 
@@ -1552,7 +1541,7 @@ $ openssl pkcs12 -nocerts -in pki1.pk12 -out pki1.key.pem -nodes
                 \item Smartcard lifecycle management 
             \end{itemize}
     \end{itemize}
-\subsection{Overview}
+\section{Overview}
     RHCS Comprises of 5 subsystems each providing a set of PKI operations:
     \begin{itemize}
         \item Certificate Manager:Also called Certificate Authority is the core of PKI.
@@ -1590,28 +1579,28 @@ $ openssl pkcs12 -nocerts -in pki1.pk12 -out pki1.key.pem -nodes
     \end{itemize}
     \begin{figure}[H]
         \centering
-        \includegraphics[width=80mm]{rhcs-subsystem-overview.png}
+        \includegraphics[width=80mm]{Images/rhcs-subsystem-overview.png}
         \caption{RHCS Subsystems ~\cite{RedHat:CSoverview}}
     \end{figure}
-\subsection{Version}
-    \subsubsection{Older Versions}
+\section{Version}
+    \subsection{Older Versions}
         \begin{itemize}
             \item Red Hat Certificate System 7.2 (2006) 
             \item Red Hat Certificate System 7.3 (2007)
         \end{itemize}
-    \subsubsection{Current Version}
+    \subsection{Current Version}
         \begin{itemize}
             \item Red Hat Certificate System 8 (2009) 
                 \begin{itemize}
-                    \item Support Status: Maintenance Support (July 22, 2014 to July 03, 2017
+                    \item Support Status: Maintenance Support (July 22, 2014 to July 03, 2017) 
                 \end{itemize}
             \item Red Hat Certificate System 9 (2015)
                 \begin{itemize}
                     \item Full support (including hardware updates): September 02, 2015 to September 02, 2018
                 \end{itemize}
         \end{itemize}
-\subsection{Builds}
-    \subsubsection{Architecture}
+\section{Builds}
+    \subsection{Architecture}
         \begin{itemize}
             \item RHCS8 is supported in below architectures:
                 \begin{itemize}
@@ -1620,7 +1609,7 @@ $ openssl pkcs12 -nocerts -in pki1.pk12 -out pki1.key.pem -nodes
                 \end{itemize}
             \item RHCS9 is supported in x86\_64 only
         \end{itemize}
-    \subsubsection{Builds}
+    \subsection{Builds}
         \begin{itemize}
             \item RHCS8 Brew Tags:
                 \begin{itemize}
@@ -1650,7 +1639,7 @@ $ openssl pkcs12 -nocerts -in pki1.pk12 -out pki1.key.pem -nodes
                     \item redhat-pki-theme-10.2.6-1.el7pki
                 \end{itemize}
         \end{itemize}
-\subsection{Features}
+\section{Features}
     Some of Key Features of RHCS9 are: 
     \begin{itemize}
         \item RHCS 9 continues to support separate PKI instances for all subsystems
@@ -1667,10 +1656,10 @@ $ openssl pkcs12 -nocerts -in pki1.pk12 -out pki1.key.pem -nodes
         \item Web User Interface (UI) Customization
         \item New Command-Line Interface (CLI) Utilities
     \end{itemize}
-\subsection{Certificate Manager}
-\subsubsection{Introduction}
+\section{Certificate Manager}
+\subsection{Introduction}
 Certificate Manager is the first subsystem that needs to be configured in PKI Environment, Certificate Manager can be configured as RootCA, Subordinate CA
-\subsubsection{Installation}
+\subsection{Installation}
     \begin{itemize}
         \item RPM: \textrm{\textbf{pki-ca}}
         \item configuration:  CA subsystem is configured using utility \textbf{pkispawn}. 
@@ -1683,13 +1672,13 @@ Certificate Manager is the first subsystem that needs to be configured in PKI En
             pkispawn then passes this information to a java servlet which performs the configuration. 
         \begin{figure}[ht!]
             \centering
-            \includegraphics[width=65mm]{pkispawn-ca.png}
+            \includegraphics[width=65mm]{Images/pkispawn-ca.png}
             \caption{Configuring CA subsystem using pkispawn}
         \end{figure}
     \end{itemize}
-\subsubsection{Installation Layout}
+\subsection{Installation Layout}
     \begin{itemize}
-        \item \textbf{/var/lib/pki/$<$instanceName$>$}: <Instance> here is the tomcat Instance name given during configuring subsystem
+        \item \textbf{/var/lib/pki/$<$instanceName$>$}: $<$Instance$>$ here is the tomcat Instance name given during configuring subsystem
         \item \textbf{/var/lib/pki/$<$instance$>$/alias}: Is the NSS Database of the system where the subsystem system certs are stored.
             When a subsystem is configured, Certain certificates are created for certain tasks like audit signing, OCSP Signing, CA Signing cert.
             These system certificates reside in alias directory. List of system certs are mentioned below, All the below system certs are issued by
@@ -1706,26 +1695,26 @@ Certificate Manager is the first subsystem that needs to be configured in PKI En
         \item \textbf{/var/lib/pki/$<$instance$>$/ca/:} Contains CA Subsystem configuration 
                 file CS.cfg. This file is the main configuration file for CA subsystem
     \end{itemize}
-\subsubsection{Key Features}
+\subsection{Key Features}
     \begin{itemize}
         \item CA subsystem issues, renews, revokes Certificates, generates Certificat Revocation lists
         \item Publishes Certificates/CRL in form of files or can publish to LDAP or OCSP responder
         \item CA also has an inbuilt OCSP responder enabling OCSP-Compliant clients to query CA about revocation status of Certificate
         \item Some CA's can delegate some of it's responsibility to another Subordinate CA
     \end{itemize}
-\subsubsection{Architecture}
+\subsection{Architecture}
      \begin{figure}[H]
           \centering
-          \includegraphics[width=80mm]{CA-subsystem-Arch3.png}
+          \includegraphics[width=80mm]{Images/CA-subsystem-Arch3.png}
           \caption{CA Subsystem Architecture}
     \end{figure}
-\subsubsection{Interfaces}
+\subsection{Interfaces}
     \begin{itemize}
         \item End User Interface(Browser/CLI)
         \item Agent Interface(Browser/CLI)
         \item Admin interface(java console)
     \end{itemize}
-\subsubsection{Features}
+\subsection{Features}
     \begin{itemize}
         \item Enrollment:
 
@@ -1760,7 +1749,7 @@ Certificate Manager is the first subsystem that needs to be configured in PKI En
                 \item The new certificate is stored in Certificate Managers internal database.
                     \begin{figure}[ht!]
                     \centering
-                    \includegraphics[width=35mm]{enrollment.png}
+                    \includegraphics[width=35mm]{Images/enrollment.png}
                     \caption{Certificate Enrollment}
                     \end{figure}
                 \end{itemize}
@@ -1780,13 +1769,13 @@ Certificate Manager is the first subsystem that needs to be configured in PKI En
             \end{itemize}
             \begin{figure}[ht!]
                 \centering
-                \includegraphics[width=90mm]{CA-profiles-arch.png}
+                \includegraphics[width=90mm]{Images/CA-profiles-arch.png}
                 \caption{Certificate Profile Architecture}
             \end{figure}
             Profile Workflow:
             \begin{figure}[ht!]
                 \centering
-                \includegraphics[width=80mm]{CA-Profiles-workflow.png}
+                \includegraphics[width=80mm]{Images/CA-Profiles-workflow.png}
                 \caption{Certificate Profiles Workflow}
             \end{figure}
             
@@ -1798,14 +1787,14 @@ Certificate Manager is the first subsystem that needs to be configured in PKI En
             enabled it. 
             \begin{figure}[ht!]
                 \centering
-                \includegraphics[width=80mm]{profile-1.png}
+                \includegraphics[width=80mm]{Images/profile-1.png}
                 \caption{Profile Description}
             \end{figure}
             
             The second part of the profile describes the inputs:
             \begin{figure}[ht!]
                 \centering
-                \includegraphics[width=80mm]{profile-2.png}
+                \includegraphics[width=80mm]{Images/profile-2.png}
                 \caption{Profile inputs}
             \end{figure}
             \begin{itemize}
@@ -1817,7 +1806,7 @@ Certificate Manager is the first subsystem that needs to be configured in PKI En
             \end{itemize}
             \begin{figure}[ht!]
                 \centering
-                \includegraphics[width=80mm]{profile-3.png}
+                \includegraphics[width=80mm]{Images/profile-3.png}
                 \caption{Profile output}
             \end{figure}
             Third part of the profile is output, 
@@ -1826,7 +1815,7 @@ Certificate Manager is the first subsystem that needs to be configured in PKI En
             \end{itemize}
             \begin{figure}[ht!]
                 \centering
-                \includegraphics[width=80mm]{profile-4.png}
+                \includegraphics[width=80mm]{Images/profile-4.png}
                 \caption{Profile Policies}
             \end{figure}
 
@@ -1841,7 +1830,7 @@ Certificate Manager is the first subsystem that needs to be configured in PKI En
             Certificate System provides customizable framework from CA's to publish.
             \begin{figure}[h!]
                 \centering
-                \includegraphics[width=40mm]{publishing3.png}
+                \includegraphics[width=40mm]{Images/publishing3.png}
                 \caption{Publishing Architecture}
             \end{figure}
             \begin{itemize}
@@ -1882,7 +1871,7 @@ Certificate Manager is the first subsystem that needs to be configured in PKI En
                         \end{itemize}
             \end{itemize}
     \end{itemize}
-\subsubsection{Exercises}
+\subsection{Exercises}
     \begin{enumerate}[label*=\arabic*.]
         \item \label{setup1} Require 2 RHEL7/Fedora 23 systems , setup hostnames as specified below and make setup hostname
             resolutions through \textit{/etc/hosts}:
@@ -1897,7 +1886,8 @@ $ cat /etc/yum.repos.d/rhcs9.repo
 
 [rhcs9]
 name=Red Hat Certificate Services 9
-baseurl=http://download.eng.bos.redhat.com/rcm-guest/puddles/RHCS/9.0.1/latest/x86_64/os/
+baseurl=http://download.eng.bos.redhat.com/rcm-guest/puddles/RHCS/
+9.0.1/latest/x86_64/os/
 enabled=1   
 gpgcheck=0
 
@@ -1905,7 +1895,8 @@ $ cat /etc/yum.repos.d/rhel7-optional.repo
 
 [rhel7-optional]
 name=Red Hat Enterprise Linux 7.2 Optional
-baseurl=http://download.eng.pnq.redhat.com/released/RHEL-7/7.2/Server-optional/x86_64/os/
+baseurl=http://download.eng.pnq.redhat.com/released/RHEL-7/7.2/
+Server-optional/x86_64/os/
 enabled=1
 gpgcheck=0
             \end{lstlisting}
@@ -1919,15 +1910,16 @@ $ yum install 389-ds-base
         
         \item \label{rootca} Setup CA Subsystem using pkispawn in interactive mode
             \begin{enumerate}[label*=\arabic*.]
-                \item \label{ds1} Setup Directory Server in silent mode by specify config parameters in file \textbf{ca-ds.inf}
-                    \begin{lstlisting}[style=configFile]]
+                \item \label{ds1} Setup Directory Server in silent mode by specify config parameters in file 
+                    \begin{lstlisting}[style=bashInputStyle]
+$vim ca-ds.inf
 [General]
 FullMachineName=pki1.example.org 
 SuiteSpotUserID=nobody
 SuiteSpotGroup=nobody
 
 [slapd]
-ServerIdentifier=pki-tomcat-RootCA
+ServerIdentifier=Example1-RootCA
 ServerPort=389
 Suffix=dc=example,dc=org
 RootDN=cn=Directory Manager
@@ -1937,12 +1929,12 @@ RootDNPwd=Secret123
 ServerAdminID=admin
 ServerAdminPwd=Secret123
 SysUser=nobody
-                        \end{lstlisting}
+                    \end{lstlisting}
                     \begin{lstlisting}[style=bashInputStyle]
 $ setup-ds.pl --silent --file=ca-ds.inf --debug
                     \end{lstlisting}
                 \item \label{ca1}Run \textbf{\textit{pkispawn}} in interactive mode use default ports and specify Directory
-                    server information configured above. Use Tomcat Instance name as 'pki-tomcat'
+                    server information configured above. Use Tomcat Instance name as `pki-tomcat'
                     \begin{lstlisting}
 Subsystem (CA/KRA/OCSP/TKS/TPS) [CA]:
 
@@ -1976,8 +1968,10 @@ Begin installation (Yes/No/Quit)? Yes
         \item \label{ca2} Setup Subordinate CA to the CA configured in \ref{ca1} within the same security domain as RootCA
             \begin{enumerate}[label*=\arabic*.]
                 \item Configure Directory server instance similar to \ref{ds1} but with different port and use instance name as Example1-SubCA
-                \item Create a config file \textbf{subca1.inf} with below information to setup Subordinate CA or RootCA in same security Domain
-                    \begin{lstlisting}[style=configFile]
+                \item Create a config file with below information to setup Subordinate CA or RootCA in same security Domain
+                    \begin{lstlisting}
+$ cat subca1.inf 
+
 [DEFAULT]
 pki_instance_name=Example1-SubCA1
 pki_https_port=18443
@@ -2010,15 +2004,16 @@ $ pkispawn -s CA -f subca1.inf -vv
                     \end{lstlisting}
                 \item Verify Subsystem status using systemctl and pkidaemon commands
                     \begin{lstlisting}[style=bashInputStyle]
-$ systemctl status pki-tomcatd@Example1-SubCA1
+$ systemctl status pki-tomcatd@Example-SubCA1
 $ pkidaemon status tomcat Example1-SubCA1
                     \end{lstlisting}
                 \end{enumerate}
             \item \label{ca3} Configure External CA signed by RootCA configured in \ref{ca1}
                 \begin{enumerate}[label*=\arabic*.]
-                    \item Configure Directory server instance similar to \ref{ds1} but with different port and use instance name as Example1-SubCA2.
-                        Create \textbf{ca-ext-ds.inf} with below informtion
-                        \begin{lstlisting}[style=configFile]
+                    \item Configure Directory server instance similar to \ref{ds1} but with different port and use instance name as Example1-SubCA2
+                        \begin{lstlisting}
+$vim ca-ds.inf
+
 [General]
 FullMachineName=pki1.example.org 
 SuiteSpotUserID=nobody
@@ -2036,12 +2031,11 @@ ServerAdminID=admin
 ServerAdminPwd=Secret123
 SysUser=nobody
                         \end{lstlisting}            
-                        \begin{lstlisting}[style=bashInputStyle]
-$ setup-ds.pl --silent --file=ca-ext-ds.inf --debug                        
-                        \end{lstlisting}
                     \item \label{ca3.1} Setting up External CA is 2 step process.  In the first step, a certificate signing request (CSR) 
-                        is generated for the signing certificate. Create a config file \textbf{ca-ext.inf} with below information:
-                        \begin{lstlisting}[style=configFile]
+                    is generated for the signing certificate and ca-ext.inf contains the following text:
+                        \begin{lstlisting}
+$ vim ca-ext.inf 
+
 [DEFAULT]
 pki_instance_name=Example1-ExtCA1
 pki_https_port=30042
@@ -2059,7 +2053,7 @@ pki_tomcat_server_port=30005
 [CA]
 pki_external=True
 pki_external_csr_path=/tmp/ca_signing.csr
-pki_ca_signing_subject_dn=cn=CA Signing, ou=External,o=example.org
+pki_ca_signing_subject_dn=cn=CA Signing,ou=External,o=example.org
 pki_ds_hostname=pki1.example.org
 pki_ds_ldap_port=2389
 pki_ds_password=Secret123
@@ -2071,41 +2065,21 @@ $ pkispawn -s CA -f ca-ext.inf -vv
                         \end{lstlisting}
                     \item Verify subsystem status using systemctl and pkidaemon commands
                     \begin{lstlisting}[style=bashInputStyle]
-$ systemctl status pki-tomcatd@Example1-ExtCA1
-$ pkidaemon status tomcat Example1-ExtCA1
+$ systemctl status pki-tomcatd@Example-SubCA1
+$ pkidaemon status tomcat Example1-SubCA1
                     \end{lstlisting}
                     \item Get the certificate request signed by RootCA configured in \ref{ca1}
-                    \item \label{import_admin_p12} Import Root CA Admin cert to firefox: [Below procedure is same for any Subsystem Admin Cert]
+                    \item Import CA Admin cert to firefox and Approve the request using belwo procedure:
                         \begin{itemize}
-                            \item Open Firefox
-                            \item Click on Preferences (Upper Right hand Corner, check below image):
-                                \begin{figure}[H]
-                                    \centering
-                                    \includegraphics[width=10mm]{firefox-certificates1.png}
-                                    \caption{Firefox Preferences}
-                                \end{figure}
-                            \item Click Preferences
-                            \item Select Advanced from left pane
-                            \item Select ``Certificates'' tab
-                            \item Click on ``View Certificates'' to open ``Certificate Manager'' Window
-                            \item From the ``Certificate Manager'' Windows 
-                            \item Select ``Your Certificates'' tab and Click on Import and provide the path
-                                of Admin's P12 file 
-                            \item Should prompt for password, Give the password that is used to protect the P12 file.
-                            \item Click on ``OK'' to close the window
-                            \item Close the ``preferences'' tab
-                        \end{itemize}
-                    \item Approve the request using below procedure
-                        \begin{itemize}
-                            \item Access Root CA EE interface
-                            \item Copy the certificate request (contents of /tmp/ca\_signing.csr) and submit using the profile:
-                                    "Manual Certificate Manager Signing Certificate Enrollment"
-                            \item From Root CA Agent interface approve the request
+                            \item Access CA EE interface
+                            \item Copy the certificate request and submit using the profile:
+                                    ``Manual Certificate Manager Signing Certificate Enrollment"
+                            \item From Agent interface approve the request
                             \item Copy the Approved cert and save it to a file /tmp/ca\_signing.cert
                             \item Also copy the CA cert chain and save it to file /tmp/ca\_cert\_chain.cert
                         \end{itemize}
                     \item Edit ca-ext.inf as show below
-                        \begin{lstlisting}[style=configFile]
+                        \begin{lstlisting}
 [DEFAULT]
 pki_instance_name=Example1-ExtCA1
 pki_https_port=30042
@@ -2138,7 +2112,7 @@ $ pkispawn -s CA -f ca-ext.inf -vv
                         \end{lstlisting}
                     \item Verify subsystem status using systemctl and pkidaemon commands
                     \begin{lstlisting}[style=bashInputStyle]
-$ systemctl status pki-tomcatd@Example1-ExtCA1
+$ systemctl status pki-tomcatd@Example-ExtCA1
 $ pkidaemon status tomcat Example1-ExtCA1
                     \end{lstlisting}
                 \end{enumerate}
@@ -2154,17 +2128,11 @@ $ pkidaemon status tomcat Example1-ExtCA1
                         \begin{lstlisting}[style=bashInputStyle]
 $ PKCS12Export -d /var/lib/pki/pki-tomcat/alias -p /tmp/nssdb-pass  -w /tmp/pkcs12-pass -o ca_backup_keys.p12
                         \end{lstlisting}
-                        \begin{itemize}
-                            \item File \texttt{/tmp/nssdb-pass} should be created with contents of password stored in
-                        \texttt{"Internal"} in the file \texttt{/var/lib/pki-tomcat/conf/password.conf}. 
-                            \item File \texttt{/tmp/pkcs12-pass} should be craated with the passwod that you want set on
-                                the backup file. 
-                        \end{itemize}
                     \item Copy \textit{ca-backup.p12} to the Clone system
                     \item On clone system setup Directory Server using silent mode
 
 ca-clone-ds.inf:                         
-                        \begin{lstlisting}[style=configFile]
+                        \begin{lstlisting}
 [General]
 FullMachineName=pki2.example.org
 SuiteSpotUserID=nobody
@@ -2193,7 +2161,7 @@ $ setup-ds.pl --silent --file=ca-clone-ds.inf --debug
                     an input file containing all configuration parameters to be passed to pkispawn.
 
 ca-clone-inst.inf:                    
-                    \begin{lstlisting}[style=configFile]
+                    \begin{lstlisting}
 [DEFAULT]
 pki_instance_name=Example1-CloneCA
 pki_https_port=8443
@@ -2227,7 +2195,7 @@ pki_clone_uri=https://pki1.example.org:8443
 pki_ds_password=Secret123
 pki_ds_hostname=pki2.example.org
 pki_ds_ldap_port=389
-pki_ds_base_dn=o=pki-tomcat-CA
+pki_ds_base_dn=o=Example1-RootCA-CA
 pki_clone_replication_master_port=389
 pki_clone_replication_clone_port=389
 pki_ds_secure_connection=False
@@ -2268,11 +2236,12 @@ $ pkiconsole https://pki1.example.org:8443/ca
                                 \begin{itemize}
                                     \item To add a policy, click Add.
                                     \item Choose the \textbf{User Supplied Extension Default}  from the Default field, 
+                                        choose the constraint \textbf{Subject Name Constraint} and click OK
                                     \item Select \textbf{No Constraint}.
                                     \item In the profile editor 
                                         \begin{itemize}
                                             \item Policy Id: p6
-                                            \item Under Default tab: userExtOID: 2.5.29.17
+                                            \item Under Default tab->userExtOID: 2.5.29.17
                                             \item click Ok
                                         \end{itemize}
                                     \item Select \textbf{Subject Alternative Name Extension Default} and select \textbf{No Constraint}
@@ -2296,8 +2265,8 @@ $ pkiconsole https://pki1.example.org:8443/ca
                                                     \item exkeyUsageOIDs: 1.3.6.1.5.5.7.3.2.1,1.3.6.1.5.5.7.3.4
                                                 \end{itemize}
                                         \end{itemize}
-                                    \item Using \textbf{openssl} generate CSR for server ``www.example.org'' with SubjectAltName extensions and specifying alternat
-                                        hostnames ``host1.example.org'', ``host2.example.org''
+                                    \item Using \textbf{openssl} generate CSR for server ``www.example.org" with SubjectAltName extensions and specifying alternat
+                                        hostnames ``host1.example.org", host2.example.org"
                                         \begin{itemize}
                                             \item Alternatively you could Download CSR from below url
                                             \begin{lstlisting}
@@ -2308,40 +2277,40 @@ https://github.com/mrniranjan/pkiworkshop/blob/master/san.csr
                         \item Enable the profile from Agent Interface
                             \begin{itemize}
                                 \item Select Manage Certificate Profiles
-                                \item Select \textbf{``Manual Server Certificate with SAN from CSR''}
-                                \item Click on \textbf{``Approve''}
+                                \item Select ``Manual Server Certificate with SAN from CSR"
+                                \item Click on ``Approve"
                             \end{itemize}
-                        \item From EE page Select profile \textbf{``Manual Server Certificate with SAN from CSR''} and submit the CSR
+                        \item From EE page Slect profile ``Manual Server Certificate with SAN from CSR" and submit the CSR
                         \item From Agent page Approve the certificate request
                     \end{itemize}
                     \end{enumerate}
         \item Use \textbf{pki} cli and try different options
             \begin{enumerate}[label*=\arabic*.]
-                \item \label{pki1} Create a NSS database using pki client cli with password Secret123
+                \item \label{pki1} Create a NSS database using pki client cli with password `Secret123'
                     \begin{lstlisting}[style=bashInputStyle]
-$ pki -d /opt/rhqa_pki -c Secret123 client-init                                    
+$ pki -d /opt/rhqa_pki -c `Secret123' client-init                                    
                     \end{lstlisting}
                 \item \label{pki2} Import CA Admin Cert of RootCA(\ref{ca1}) to /opt/rhqa\_pki
                     \begin{lstlisting}[style=bashInputStyle]
-$ pki -d /opt/rhqa_pki -c Secret123 client-cert-import --pkcs12 /root/.dogtag/pki-tomcat/ca_admin_cert.p12  --pkcs12-password Secret123                                    
+$ pki -d /opt/rhqa_pki -c `Secret123' client-cert-import --pkcs12 /root/.dogtag/pki-tomcat/ca_admin_cert.p12  --pkcs12-password Secret123                                    
                     \end{lstlisting}
                 \item \label{pki3} Import CA Cert of RootCA(\ref{ca1})
                     \begin{lstlisting}[style=bashInputStyle]
-$ pki -d /opt/rhqa_pki1 -c Secret123 -h pki1.example.org -p 8080 client-cert-import "RootCA" --ca-server                                    
+$ pki -d /opt/rhqa_pki1 -c `Secret123' -h pki1.example.org -p 8080 client-cert-import "RootCA" --ca-server                                    
                     \end{lstlisting}
-                \item \label{pki4} Submit a certificate request for user ``foo'' with subject DN:
+                \item \label{pki4} Submit a certificate request for user ``foo" with subject DN:
                     \begin{lstlisting}
 UID=foo,E=foo@example.org,CN=Foo User1,OU=IDMQE,O=Example Org
                     \end{lstlisting}
                     \begin{lstlisting}[style=bashInputStyle]
-$ pki -d /opt/rhqa_pki -c Secret123 \
+$ pki -d /opt/rhqa_pki -c `Secret123' \
     -h pki1.example.org -p 8080 client-cert-request \
     "UID=foo,E=foo@example.org,CN=Foo User1,O=Example Org" 
                     \end{lstlisting}
                 \item \label{pki5} Approve the Certificate request using Admin Cert
                     \begin{lstlisting}[style=bashInputStyle]
-$ pki -d /opt/rhqa_pki -c Secret123 -h pki1.example.org\
-    -p 8080 -n "PKI Administrator for example.org" \
+$ pki -d /opt/rhqa_pki -c `Secret123' -h pki1.example.org\
+    -p 8080 -n ``PKI Administrator for example.org" \
     cert-request-review 12 --action approve
 -------------------------------
 Approved certificate request 12
@@ -2352,41 +2321,27 @@ Approved certificate request 12
   Operation Result: success
   Certificate ID: 0xc
                     \end{lstlisting}
-                \item Revoke a certificate with reason ``Certificate On Hold''
+                \item Revoke a certificate with reason "Certificate On Hold"
                     \begin{lstlisting}[style=bashInputStyle]
-$ pki -d /opt/rhqa_pki -c Secret123 \
+$ pki -d /opt/rhqa_pki -c `Secret123' \
     -h pki1.example.org -p 8080 \
-    -n "PKI Administrator for example.org" \
-    cert-revoke 0xc --reason "Certificate_Hold"
+    -n ``PKI Administrator for example.org" \
+    cert-revoke 0xc --reason ``Certificate_Hold"
                     \end{lstlisting}
             \item Verify the status of the certificate
                 \begin{lstlisting}[style=bashInputStyle]
-$ pki -d /opt/rhqa_pki -c Secret123 \
+$ pki -d /opt/rhqa_pki -c `Secret123' \
     -h pki2.example.org -p 8080 \
     cert-show 0xc
                 \end{lstlisting}
         \end{enumerate}
-        \item Remove CA subsystems created above using pkidestroy 
-            \begin{lstlisting}[style=bashInputStyle]
-$ pkidestory -s CA -i Example1-CloneCA
-$ pkidestroy -s CA -i Example1-ExtCA1 
-$ pkidestroy -s CA -i Example1-SubCA1
-$ pkidestroy -s CA -i pki-tomcat
-            \end{lstlisting}
-        \item Remove Directory Server Instances 
-            \begin{lstlisting}[style=bashInputStyle]
-$ remove-ds.pl -i slapd-Example1-Clone-CA1
-$ remove-ds.pl -i slapd-Example1-ExtCA1
-$ remove-ds.pl -i Example1-SubCA
-$ remove-ds.pl -i pki-tomcat-RootCA
-            \end{lstlisting}
     \end{enumerate}
-\subsection{Key Recovery Authority}
-\subsubsection{Introduction}
+\section{Key Recovery Authority}
+\subsection{Introduction}
 Key Recovery Authority is an optional subsystem that is configured to archive private keys. Key Recovery Authority
 subsystem is by default installed after CA subsystem is installed and is dependent on CA for certain operations
 but can be installed as a standalone subsystem too.
-\subsubsection{Installation}
+\subsection{Installation}
 \begin{itemize}
     \item RPM: pki-kra
     \item Configuration: KRA subsystem can be configured through pkispawn using interactive or to have a customize
@@ -2398,11 +2353,11 @@ but can be installed as a standalone subsystem too.
 
         \begin{figure}[H]
             \centering
-            \includegraphics[width=80mm]{pkispawn-kra.png}
+            \includegraphics[width=80mm]{Images/pkispawn-kra.png}
             \caption{pkispawn KRA subsystem}
         \end{figure}
 \end{itemize}
-\subsubsection{Installation Layout}
+\subsection{Installation Layout}
 \begin{itemize}
     \item \textbf{/var/lib/pki/$<$instance$>$}: $<$Instance$>$ here is the tomcat Instance name 
         given during configuring subsystem
@@ -2425,7 +2380,7 @@ but can be installed as a standalone subsystem too.
     \item \textbf{/var/lib/pki/$<$instance$>$/lib/}: Contains kra subsystem related jar files 
     \item \textbf{/var/lib/pki/$<$instance$>$/bin/}: Tomcat related jar files
 \end{itemize}
-\subsubsection{Key Features}
+\subsection{Key Features}
 \begin{itemize}
     \item Key Recovery Authority when configured with with certificate Manager(CA) stores private keys as part of
         certificate issuance process
@@ -2439,19 +2394,19 @@ but can be installed as a standalone subsystem too.
     \item Private keys are generally wrapped with a key called storage key and private keys
         while transporting are wrapped with transport keys, These keys can be rotated
 \end{itemize}
-\subsubsection{Architecture}
+\subsection{Architecture}
 \begin{figure}[H]
     \centering
-    \includegraphics[width=80mm]{KRA-Architecture.png}
+    \includegraphics[width=80mm]{Images/KRA-Architecture.png}
     \caption{KRA Architecture}
 \end{figure}
-\subsubsection{Interfaces}
+\subsection{Interfaces}
 \begin{itemize}
     \item End User Interface through \textbf{pki} cli
     \item Agent Interface(Browser/CLI)
     \item Admin Interface(Java console)
 \end{itemize}
-\subsubsection{Features}
+\subsection{Features}
 \begin{itemize}
     \item Key Archival
         \begin{itemize}
@@ -2467,12 +2422,12 @@ but can be installed as a standalone subsystem too.
         \end{itemize}
         \begin{figure}[H]
             \centering
-            \includegraphics[width=100mm]{key-archival2.png}
+            \includegraphics[width=100mm]{Images/key-archival1.png}
             \caption{Key Archival Workflow}
         \end{figure}
         \begin{figure}[H]
             \centering
-            \includegraphics[width=70mm]{key-archival-process.png}
+            \includegraphics[width=70mm]{Images/key-archival-process.png}
             \caption{Key Archival Process}
         \end{figure}
     \item Key Recovery
@@ -2487,7 +2442,7 @@ but can be installed as a standalone subsystem too.
             \item Recovery request is executed only when m of n agents have granted authorization
             \begin{figure}[H]
                 \centering
-                \includegraphics[width=70mm]{key-recovery.png}
+                \includegraphics[width=70mm]{Images/key-recovery.png}
                 \caption{Key Recovery Process}
             \end{figure}
         \end{itemize}
@@ -2512,16 +2467,14 @@ but can be installed as a standalone subsystem too.
             \item The feature here adds support for second Transport Key 
         \end{itemize}
 \end{itemize}
-\subsubsection{Exercises}
+\subsection{Exercises}
     \begin{enumerate}[label*=\arabic*.]
         \item Setup required for KRA is same as CA, Refer \ref{setup1}, \ref{setup2}, \ref{setup3}, \ref{setup4}
         \item Setup KRA using pkispawn in separate Tomcat Instance. Use the below configuration with pkispawn
             \begin{enumerate}[label*=\arabic*.]
                 \item Configure CA subsystem using method specified in \ref{rootca}
-                \item Setup Directory Server for KRA subsystem using below configuration 
-
-                    kra-ds.inf:
-                    \begin{lstlisting}[style=configFile]
+                \item Setup Directory Server for KRA subsystem  using below configuration
+                    \begin{lstlisting}
 [General]
 FullMachineName=pki1.example.org
 SuiteSpotUserID=nobody
@@ -2543,9 +2496,9 @@ SysUser=nobody
 $ setup-ds.pl --silent --file=kra-ds.inf --debug            
                     \end{lstlisting}
                 \item \label{kra_sep_tomcat} Setup KRA using pkispawn in separate Tomcat Instance. Use the below configuration with pkispawn
-                    
-                    kra-inst.inf:
-                    \begin{lstlisting}[style=configFile]
+                    \begin{lstlisting}
+kra_inst.inf:
+
 [DEFAULT]
 pki_instance_name=Example1-RootKRA
 pki_https_port=14443
@@ -2587,7 +2540,7 @@ pki_ds_bind_dn=cn=Directory Manager
 pki_ds_password=Secret123
                 \end{lstlisting}
                 \begin{lstlisting}[style=bashInputStyle]
-$ pkispawn -s KRA -f kra-inst.inf -vv   
+$ pkispawn -s KRA -f kra_inst -vv            
                 \end{lstlisting}
             \end{enumerate}
         \item \label{arch_privatekey} Enroll a certificate for user Foo1 and archive Private Key in KRA instance
@@ -2595,18 +2548,18 @@ $ pkispawn -s KRA -f kra-inst.inf -vv
                 \item Create a NSS Database and Import CA Admin cert , CA cert. Refer:\ref{pki1}, \ref{pki2}, \ref{pki3}
                 \item Import KRA Admin cert from /opt/Example1-RootKRA
                     \begin{lstlisting}[style=bashInputStyle]
-$ pki -d /opt/rhqa_pki -c Secret123 \
+$ pki -d /opt/rhqa_pki -c \'Secret123\' \
     client-cert-import --pkcs12 \
-    /opt/Example1-RootKRA/kra_admin_cert.p12 \
+    /opt/Example1-RootKRA \
     --pkcs12-password Secret123
                     \end{lstlisting}
                     \begin{lstlisting}
-Certificate Nickname                                         Trust Attributes
-                                                             SSL,S/MIME,JAR/XPI
+Certificate Nickname                                 Trust Attributes
+                                                     SSL,S/MIME,JAR/XPI
 
-PKI Administrator for example.org                            u,u,u
-Root CA                                                      CT,c,
-PKI KRA Administrator for Example Org                        u,u,u                    
+PKI Administrator for example.org                        u,u,u
+Root CA                                                  CT,c,
+PKI KRA Administrator for Example Org                    u,u,u                    
                     \end{lstlisting}
                 \item Get the transportCert of the KRA instance 
                     \begin{lstlisting}[style=bashInputStyle]
@@ -2616,22 +2569,22 @@ $ certutil -L -d /var/lib/pki/Example1-RootKRA/alias/ \
                     \end{lstlisting}
                 \item Create a certificate request for user Foo1 to a profile in CA which archives private key
                     \begin{lstlisting}[style=bashInputStyle]
-$ pki -d /opt/rhqa_pki -c Secret123 \
+$ pki -d /opt/rhqa_pki -c `Secret123' \
     -h pki1.example.org -p 8080 client-cert-request \
     "uid=foo1,O=Example Org" --profile caDualCert \
-    --type crmf --transport /opt/rhqa_pki/transportCert.pem                    
+    --type crmf --transport transportCert.pem                    
                     \end{lstlisting}
                 \item Approve The certificate request using CA Admin cert
                     \begin{lstlisting}[style=bashInputStyle]
-$ pki -d /opt/rhqa_pki -c Secret123 \
-    -h pki1.example.org -p 8080 \
+$ pki -d /opt/rhqa_pki -c 'Secret123' \
+    -h pki2.example.org -p 8080 \
     -n "PKI Administrator for example.org" \
     cert-request-review <request_id> --action approve                    
                     \end{lstlisting}
                 \item Check Audit logs of KRA instance and see if the Archival request was successful
                 \item Use kra key cli to list the keys archived
                     \begin{lstlisting}[style=bashInputStyle]
-$ pki -d /opt/rhqa_pki -c Secret123 \
+$ pki -d /opt/rhqa_pki -c 'Secret123' \
     -h pki1.example.org -p 14080 \
     -n "PKI KRA Administrator for Example Org" kra-key-find
                     \end{lstlisting}
@@ -2642,36 +2595,36 @@ $ pki -d /opt/rhqa_pki -c Secret123 \
                     \begin{enumerate}[label*=\arabic*.]
                         \item List all the Groups available for KRA Subsystem
                             \begin{lstlisting}[style=bashInputStyle]
-$ pki -d /opt/rhqa_pki -c Secret123 -h pki1.example.org \
+$ pki -d /opt/rhqa_pki -c 'Secret123' -h pki1.example.org \
     -p 14080 -n "PKI KRA Administrator for Example Org" \
     kra-group-find                                
                             \end{lstlisting}
-                        \item Create a User ``KRA\_AgentV'' and add him as member of \textbf{Data Recovery Manager Agents} 
+                        \item Create a User ``KRA\_AgentV" and add him as member of \textbf{Data Recovery Manager Agents} 
                             \begin{lstlisting}[style=bashInputStyle]
-$ pki -d /opt/rhqa_pki -c Secret123 \
+$ pki -d /opt/rhqa_pki -c 'Secret123' \
 -h pki1.example.org -p 14080 \
--n "PKI KRA Administrator for Exmaple Org" \
-kra-user-add KRA_AgentV --fullName "KRA Agent User" \
---password Secret123
+-n ``PKI KRA Administrator for Exmaple Org" \
+kra-user-add KRA_AgentV --fullName ``KRA Agent User" \
+--password 'Secret123'
 -----------------------
-Added user "KRA_AgentV"
+Added user ``KRA_AgentV"
 -----------------------
   User ID: KRA_AgentV
   Full name: KRA Agent User
                             \end{lstlisting}
-                        \item Create a Cert request for ``KRA Agent User'' using CA Subsystem 
+                        \item Create a Cert request for ``KRA Agent User" using CA Subsystem 
                             \begin{lstlisting}[style=bashInputStyle]
 #This command returns a request id , use the request id to approve the request
-$ pki -d /opt/rhqa_pki -c Secret123 \
+$ pki -d /opt/rhqa_pki -c 'Secret123' \
     -h pki1.example.org -p 8080 client-cert-request \
-    "UID=KRA_AgentV,E=KRA_AgentV@example.org,CN=KRA Agent User,O=Example Org" 
+    ``UID=KRA_AgentV,E=KRA_AgentV@example.org,CN=``KRA Agent User",O=Example Org" 
                             \end{lstlisting}
                         \item Approve the certificate request using CA Admin User
                             \begin{lstlisting}[style=bashInputStyle]
 #This command after approving the request returns certificate serial Number
-$ pki -d  /opt/rhqa_pki -c Secret123 \
+$ pki -d  /opt/rhqa_pki -c 'Secret123' \
     -h pki1.example.org -p 8080 \
-    -n "PKI Administrator for example.org" \
+    -n ``PKI Administrator for example.org" \
     cert-request-review <request_id> --action approve
 -------------------------------
 Approved certificate request 29
@@ -2685,34 +2638,34 @@ Approved certificate request 29
                         \item Add the certificate created above to KRA Agent User
                             \begin{lstlisting}[style=bashInputStyle]
 #This will prompt for the CA URL, specify CA's Non secure url(8080)                            
-$ pki -d /opt/rhqa_pki -c Secret123 \
+$ pki -d /opt/rhqa_pki -c 'Secret123' \
     -h pki1.example.org -p 14080 \
-    -n "PKI KRA Administrator for Example Org" \
+    -n ``PKI KRA Administrator for Example Org" \
     kra-user-cert-add KRA_AgentV --serial \
     <certificate_serial_Number>
                             \end{lstlisting}
-                        \item Make the KRA Agent user member of \textbf{``Data Recovery Manager Agents''}
+                        \item Make the KRA Agent user member of \textbf{``Data Recovery Manager Agents"}
                             \begin{lstlisting}[style=bashInputStyle]
-$ pki -d /opt/rhqa_pki -c Secret123 \
+$ pki -d /opt/rhqa_pki -c 'Secret123' \
     -h pki1.example.org -p 14080 \
-    -n "PKI KRA Administrator for Example Org" \
-    kra-group-member-add "Data Recovery Manager Agents" \
+    -n ``PKI KRA Administrator for Example Org" \
+    kra-group-member-add ``Data Recovery Manager Agents" \
     KRA_AgentV
                             \end{lstlisting}
                         \item Import the KRA Agent Cert to NSS DB /opt/rhqa\_pki Directory
                             \begin{lstlisting}[style=bashInputStyle]
-$  pki -d /opt/rhqa_pki -c Secret123\
+$  pki -d /opt/rhqa_pki -c 'Secret123'\
     -h pki1.example.org -p 8080 \
-    client-cert-import "KRA_AgentV" \
+    client-cert-import ``KRA_AgentV" \
     --serial \
     <certificate_serial_Number_of Agent_Cert>
                             \end{lstlisting}
                     \end{enumerate}
                 \item \label{arch_password}  Archive a passphrase(password) using Agent User
                     \begin{lstlisting}[style=bashInputStyle]
-$ pki -d /opt/rhqa_pki -c Secret123 \
+$ pki -d /opt/rhqa_pki -c 'Secret123' \
     -h pki1.example.org -p 14080 \
-    -n "KRA_AgentV" kra-key-archive \
+    -n ``KRA_AgentV" kra-key-archive \
     --clientKeyID beaker_server1 \
     --passphrase "MySecretSauce"
 ------------------------
@@ -2725,10 +2678,10 @@ Archival request details
                     \end{lstlisting}
                 \item \label{arch_symmetric} Generate Symmetric keys with AES algo of size 128 and archive it
                     \begin{lstlisting}[style=bashInputStyle]
-$ pki -d /opt/rhqa_pki -c Secret123 \
+$ pki -d /opt/rhqa_pki -c 'Secret123' \
     -h pki1.example.org -p 14080 \
-    -n "KRA_AgentV" kra-key-generate \
-    --key-algorithm AES --key-size 128 \
+    -n ``KRA_AgentV" kra-key-generate \
+    --key-algo aes --key-size 128 \
     --usages wrap 
                     \end{lstlisting}
             \end{enumerate}
@@ -2736,36 +2689,36 @@ $ pki -d /opt/rhqa_pki -c Secret123 \
             \begin{enumerate}[label*=\arabic*.]
                 \item Retrieve Archived Symmetric key using \textbf{key-retreive}
                     \begin{lstlisting}[style=bashInputStyle]
-$ pki -d /opt/rhqa_pki -c Secret123 \
+$ pki -d /opt/rhqa_pki -c 'Secret123' \
     -h pki1.example.org -p 14080 \
-    -n "KRA_AgentV" kra-key-retrieve --keyID <KEY_ID>
+    -n ``KRA_AgentV" kra-key-retrieve --keyID <KEY_ID>
                     \end{lstlisting}
                 \item Retrieve Archived Passwords , Refer \ref{arch_password}
                     \begin{lstlisting}[style=bashInputStyle]
-$ pki -d /opt/rhqa_pki -c Secret123 \
+$ pki -d /opt/rhqa_pki -c 'Secret123' \
     -h pki1.example.org -p 14080 \
-    -n "KRA_AgentV" kra-key-retrieve --keyID <KEY_ID>
+    -n ``KRA_AgentV" kra-key-retrieve --keyID <KEY_ID>
                     \end{lstlisting}
                 \item Retrieve Asymmetric keys (private Key). Refer Section \ref{arch_privatekey}
                     \begin{lstlisting}[style=bashInputStyle]
-$ pki -d /opt/rhqa_pki -c Secret123 \
+$ pki -d /opt/rhqa_pki -c 'Secret123' \
     -h pki1.example.org -p 14080 \
-    -n "KRA_AgentV" kra-key-retrieve --keyID <KEY_ID>
+    -n ``KRA_AgentV" kra-key-retrieve --keyID <KEY_ID>
                     \end{lstlisting}
                 \item Retrieving Asymmetric Keys From Browser(firefox)
                     \begin{itemize}
-                        \item Import CA Admin Cert and KRA Admin p12 file to Firefox browser. Refer: \ref{import_admin_p12}
+                        \item Import CA Admin Cert and KRA Admin p12 file to Firefox browser
                         \item Trust the CA cert 
                         \item Access KRA Agent Page \textit{https://pki1.example.org:14443}
                         \item Authenticate it with KRA Agent Cert
-                        \item Click \textbf{``Recover Keys''}
-                        \item From the Available Recovery Options select \textbf{``Certificate''}
+                        \item Click ``Recover Keys" 
+                        \item From the Available Recovery Options select ``Certificate"
                         \item Paste the Certificate foo1 user archived, use CA EE interface to get the certificate
                         \item Click on Show key 
-                        \item From the Search Results , Click on \textbf{``Recover''}
-                        \item In the Next screen , Select \textbf{``Async Recovery''}, Click on \textbf{``Recover''}
+                        \item From the Search Results , Click on ``Recover"
+                        \item In the Next screen , Select ``Async Recovery", Click on ``Recover"
                         \item This should return a Key Recovery Status with reference Number
-                        \item Click on The request Number and \textbf{``Grant''} the request
+                        \item Click on The request Number and "Grant" the request
                         \item click on the request id shown on the page
                         \item Specify the PKCS12 Password and click on Retrieve PKCS12
                     \end{itemize}
@@ -2791,9 +2744,7 @@ total 104
                         \item Copy the kra\_backup\_keys.p12 to clone system \texttt{pki2.example.org}
 
                         \item Setup Directory server on clone system for KRA
-
-                            kra-clone-ds.inf
-                            \begin{lstlisting}[style=configFile]
+                            \begin{lstlisting}
 [General]
 FullMachineName=pki2.example.org
 SuiteSpotUserID=nobody
@@ -2811,13 +2762,10 @@ ServerAdminID=admin
 ServerAdminPwd=Secret123
 SysUser=nobody
                             \end{lstlisting}
-                            \begin{lstlisting}[style=bashInputStyle]
-$ setup-ds.pl --silent --file=kra-clone-ds.inf
-                            \end{lstlisting}
                         \item Setup Clone KRA using below configuration
-                            
-                            kra-clone.inf :
-                            \begin{lstlisting}[style=configFile]
+                            \begin{lstlisting}
+clone_kra.inf :
+
 [DEFAULT]
 pki_instance_name=Example1-CloneKRA
 pki_https_port=14443
@@ -2863,7 +2811,7 @@ pki_ds_remove_data=True
 pki_ds_base_dn=o=Example1-RootKRA-KRA
                             \end{lstlisting}
                             \begin{lstlisting}[style=bashInputStyle]
-$ pkispawn -s KRA -f kra-clone.inf -vv                            
+$ pkispawn -s KRA -f clone_kra.inf -vv                            
                             \end{lstlisting}
                         \item Request a new DRM Transport Cert
                             \begin{enumerate}[label*=\arabic*.]
@@ -2880,12 +2828,12 @@ $ cp -a *.db backup
                                     \end{lstlisting}
                                 \item \label{transport-new-pkcs10} Create a new pkcs10 request
                                     \begin{lstlisting}[style=bashInputStyle]
-$  PKCS10Client -p <password> -d '.' -o 'req.txt' -n 'CN=DRM Transport 2 Certificate,O=Example Org'
+$  PKCS10Client -p <password> -d `.' -o `req.txt' -n `CN=DRM Transport 2 Certificate,O=Example Org'
                                     \end{lstlisting}
                                     \textbf{Note:} password of NSS Database can be found in password.conf in conf directory of KRA instance
                                 \item Submit the certificate request to CA using EE interface and approve the request using Agent inteface
                                     \begin{itemize}
-                                        \item Open the CA EE Page and select profile "Manual Data recovery Manager transport certificate Enrollment"
+                                        \item Open the CA EE Page and select profile ``Manual Data recovery Manager transport certificate Enrollment"
                                         \item paste the certificate request created in step \ref{transport-new-pkcs10}  and submit the request
                                         \item From CA Agent page approve the request
                                     \end{itemize}
@@ -2893,7 +2841,7 @@ $  PKCS10Client -p <password> -d '.' -o 'req.txt' -n 'CN=DRM Transport 2 Certifi
                                 \item Import the DRM Certificate in NSSDB and Update DRM Configuration
                                     \begin{lstlisting}[style=bashInputStyle]
 $ certutil -d /var/lib/pki/Example1-RootKRA/alias \
-    -A -n "transportCert-new Cert-Example1-Rootkra KRA" \
+    -A -n ``transportCert-new Cert-Example1-Rootkra KRA" \
     -t u,u,u -i new-drm-transport.pem 
                                     \end{lstlisting}
                                 \item Add the new transport certs nick name in KRA's CS.cfg
@@ -2921,15 +2869,15 @@ ca.connector.KRA.transportCert=<new transport cert> [ base64 cert which has been
                     \end{enumerate}
             \end{enumerate}
     \end{enumerate}
-\subsection{Online Certificate Status Protocol}
-\subsubsection{Introduction}
+\section{Online Certificate Status Protocol}
+\subsection{Introduction}
     \begin{itemize}
         \item Online Certificate Status Manager is an subsystem external to CA.
         \item This subsystem acts as an external OCSP which can be publicly accessible.
         \item Multiple CA's can publish CRL to a single OCSP 
         \item Clients can verify certs using OCSP 
     \end{itemize}
-\subsubsection{Installation}
+\subsection{Installation}
     \begin{itemize}
         \item RPM: \textbf{pki-ocsp}
             OCSP subsystem can be configured through pkispawn using interactive or to have a customize
@@ -2939,161 +2887,19 @@ ca.connector.KRA.transportCert=<new transport cert> [ base64 cert which has been
             OCSP to use same ports as that of CA.
             \begin{figure}[H]
                 \centering
-                \includegraphics[width=80mm]{pkispawn-ocsp.png}
-                \caption{pkispawn OCSP subsystem}
+                \includegraphics[width=80mm]{Images/pkispawn-ocsp.png}
+                \caption{pkispawn KRA subsystem}
             \end{figure}
     \end{itemize}
-\subsubsection{Instance Layout}
-    \begin{itemize}
-        \item \textbf{/var/lib/pki/$<$instance$>$}: $<$Instance$>$ here is the tomcat Instance name 
-            given during configuring subsystem
-        \item \textbf{/var/lib/pki/$<$instance$>$/alias}: Is the NSS Database of the system where the subsystem system 
-            certs are stored. 
-        \begin{itemize}
-            \item Server-Cert
-            \item auditSigningCert
-            \item ocspSigningCert
-            \item subsystemCert
-        \end{itemize}
-        \item \textbf{/var/lib/pki/$<$instance$>$/conf/}: Configuration directory containing tomcat configuration,
-            password file containing internal database(ldap) password, and NSS Database password
-        \item \textbf{/var/lib/pki/$<$instance$>$/OCSP/}: Contains KRA Subsystem configuration file CS.cfg. This file is
-            the main configuration file for KRA subsystem
-        \item \textbf{/var/lib/pki/$<$instance$>$/ocsp/}: Contains kra subsystem related jar files 
-    \end{itemize}
-\subsubsection{Interfaces}
+\subsection{Interfaces}
 \begin{itemize}
     \item End User Interface through \textbf{pki} cli
     \item Agent Interface(Browser/CLI)
     \item Admin Interface(Java console)
 \end{itemize}
-\subsubsection{Exercises}
-    \begin{enumerate}[label*=\arabic*.]
-        \item Setup OCSP using pkispawn in separate Tomcat Instance. Use the below configuration with pkispawn
-            \begin{enumerate}[label*=\arabic*.]
-                \item Configure CA subsystem using method specified in \ref{rootca}
-                \item Setup Directory Server for OCSP subsystem using below configuration 
-
-                ocsp-ds.inf:
-                    \begin{lstlisting}[style=configFile]
-[General]
-FullMachineName=pki1.example.org
-SuiteSpotUserID=nobody
-SuiteSpotGroup=nobody
-
-[slapd]
-ServerIdentifier=Example1-OCSP
-ServerPort=1902
-Suffix=dc=example,dc=org
-RootDN=cn=Directory Manager
-RootDNPwd=Secret123
-
-[admin]
-ServerAdminID=admin
-ServerAdminPwd=Secret123
-SysUser=nobody
-                    \end{lstlisting}
-                    \begin{lstlisting}[style=bashInputStyle]
-$ setup-ds.pl --silent --file=ocsp-ds.inf --debug                
-                    \end{lstlisting}
-                \item \label{ocsp_sep_tomcat} Setup OCSP using pkispawn in separate Tomcat Instance. Use the below configuration with pkispawn
-
-                    ocsp-inst.inf:
-                    \begin{lstlisting}[style=configFile]
-[DEFAULT]
-pki_instance_name=Example1-RootOCSP
-pki_https_port=18443
-pki_http_port=18080
-
-#NSS DB Token Password
-pki_token_password=Secret123
-
-#OCSP Admin password
-pki_admin_password=Secret123
-
-# Security Domain
-pki_hostname=pki2.example.org
-pki_security_domain_hostname=pki1.example.org
-pki_security_domain_https_port=8443
-pki_security_domain_user=caadmin
-pki_security_domain_password=Secret123
-
-#Client Dir
-pki_client_dir=/opt/Example1-RootOCSP
-pki_client_pkcs12_password=Secret123
-pki_client_database_password=Secret123
-
-# backup
-pki_backup_keys=True
-pki_backup_password=Secret123
-
-[Tomcat]
-pki_ajp_port=18009
-pki_tomcat_server_port=18005
-
-[OCSP]
-pki_admin_nickname=PKI OCSP Administrator for Example Org
-pki_import_admin_cert=False
-pki_ds_hostname=pki1.example.org
-pki_ds_ldap_port=1902
-pki_ds_bind_dn=cn=Directory Manager
-pki_ds_password=Secret123
-                    \end{lstlisting}
-            \end{enumerate}
-        \item Configure Publishing to OCSP with Client Authentication
-             \begin{enumerate}[label*=\arabic*.]
-                \item Configure publisher on the CA
-                    \begin{lstlisting}[style=bashInputStyle]
-$ pkiconsole https://pki1.example.org:8443/ca                    
-                    \end{lstlisting}
-                \item In the Configuration tab, select Certificate Manager from the navigation tree on
-                    the left. Select Publishing, and then Publishers.
-                \item Click Add to open the Select Publisher Plug-in Im plem entation window, which
-                    lists registered publisher modules
-                \item Select the OCSPPublisher module, then open the editor window. Make sure that the
-                    enableClientAuth checkbox is selected.
-                    \begin{itemize}
-                        \item Publisher ID: OCSPPublisher1
-                        \item host: pki1.example.org
-                        \item port: 18443
-                        \item path: /ocsp/agent/ocsp/addCRL
-                        \item nickName: subsystemCert cert-pki-tomcat
-                    \end{itemize}
-                \item From the Configuration tab, select Certificate Manager from the navigation tree on the left. 
-                    Select  Publishing, and then Rules.
-                \item Click on Add:
-                    \begin{itemize}
-                        \item Rule ID: ocspRule1
-                        \item type: crl
-                        \item enabled: click on the checkbox
-                        \item mapper: NoMap
-                        \item publisher: OCSPPublisher1
-                    \end{itemize}
-                \item Enroll Multiple certificate requests using \textbf{pki client-cert-request cli}
-                    \begin{lstlisting}
-$  pki -d /opt/rhqa_pki -c 'Secret123' \
--h pki1.example.org -p 8080 \
-client-cert-request \
-"UID=test1,E=test1@example.org,CN=Test1 User,O=Example Org"
-                    \end{lstlisting}
-                \item Approve the Certificate request using Agent Cert. Repeat the below command for all the requests created above.
-                    \begin{lstlisting}[style=bashInputStyle]
-$ pki -d -d /opt/rhqa_pki -c 'Secret123' \
-    -h pki1.example.org -p 8080 \
-    -n "PKI Administrator for example.org" \
-    cert-request-review <request_id> --action approve       
-                    \end{lstlisting}
-                \item Revoke the Certs using \textbf{pki cert-revoke cli}
-                    \begin{lstlisting}[style=bashInputStyle]
-$ pki -d -d /opt/rhqa_pki -c 'Secret123' \
-    -h pki1.example.org -p 8080 \
-    -n "PKI Administrator for example.org" \
-    cert-revoke <serial_Number> --reason "Key_Compromise"
-                    \end{lstlisting}
-             \end{enumerate}
-    \end{enumerate}
-\subsection{SmartCard Management}
-\subsubsection{Introduction}
+\subsection{Exercises}
+\section{SmartCard Management}
+\subsection{Introduction}
     \begin{itemize}
         \item \textbf{What:} Smartcard contains an embedded microprocessor. This microprocess runs Java Virtual Machine(JVM) and 
             provides environment to run applications on top of it. 
@@ -3145,17 +2951,17 @@ $ pki -d -d /opt/rhqa_pki -c 'Secret123' \
                     \end{itemize}
             \end{itemize}
     \end{itemize}
-\subsubsection{Architecture}
+\subsection{Architecture}
 \begin{figure}[H]
     \centering
-    \includegraphics[width=80mm]{TMS-workflow.png}
+    \includegraphics[width=80mm]{Images/TMS-workflow.png}
     \caption{Token Management System}
 \end{figure}
-\subsubsection{Common Terms Used with regard to Smartcard}
+\subsection{Common Terms Used with regard to Smartcard}
     \begin{itemize}
         \item Secure Channel Protocol: A secure communication protocol and set of security protocol used to 
             create a secure channel with token during TPS Operations.
-        \item Applets: Applet is a smartcard application that holds the certs and keys
+        \item Applets: TPS communicates with an applet on the smartcard. 
         \item APDU(Application Protocol Data Unit): Standard communication messaging protocol between a card accepting device(Reader)
             and a smart card 
         \item SmartCards come with a cardmanager applet and a vendor applet or with only card manager applet. 
@@ -3165,7 +2971,7 @@ $ pki -d -d /opt/rhqa_pki -c 'Secret123' \
             connected to a computer via a card reader using a standard USB interface, without the need for 
             each manufacturer of smartcards to provide its own reader or protocol.~\cite{wiki:ccid}
     \end{itemize}
-\subsubsection{Token Key Service}
+\subsection{Token Key Service}
     \begin{itemize}
         \item Introduction
             \begin{itemize}
@@ -3190,7 +2996,7 @@ $ pki -d -d /opt/rhqa_pki -c 'Secret123' \
                     \end{itemize}
             \end{itemize}
     \end{itemize}
-\subsubsection{Token Processing Service}
+\subsection{Token Processing Service}
     \begin{itemize}
             \item Introduction
                 \begin{itemize}
@@ -3202,11 +3008,22 @@ $ pki -d -d /opt/rhqa_pki -c 'Secret123' \
                 \begin{itemize}
                     \item Secure Channel
                         \begin{itemize}
-                            \item TPS Interacts with Smartcard over a secure channel. Based on the keys derived
-                                by TKS.
-                            \item TPS uses developer key sets(KEK,AUTH,MAC) to initially setup Secure Channel
-                            \item In case smartcard wants to upgrade keys, A new set of keys created by TKS are used
-                                to setup Secure Channel
+                            \item The Token Key Service (TKS) generates the (token) keys (a set of 3 keys derived) from Master keys
+                            \item These keys are used by TPS to communicate with ESC(smartcard)
+                            \item TPS communicates with the TKS over SSL but TPS communicates with ESC over secure channel
+                            \item Every smartcard has 3 keys:
+                                \begin{itemize}
+                                    \item An \textbf{auth key} which is used for encryption and authentication: a session key dervied from the auth key
+                                        each time a secure channel is opened.
+                                    \item A \textbf{MAC key} which is used for message authentication; like the auth keys, a session key is derived
+                                        from the MAC key each time a secure channel is opened.
+                                    \item A \textbf{key encryption key (KEK)} which is to encrypt the session keys.
+                                \end{itemize}
+                            \begin{figure}[H]
+                                \centering
+                                \includegraphics[width=80mm]{Images/tks-key-derivation1.png}
+                                \caption{TKS Key Derivation}
+                            \end{figure}
                         \end{itemize}
                     \item Supported TPS Operations
                         \begin{itemize}
@@ -3229,11 +3046,17 @@ $ pki -d -d /opt/rhqa_pki -c 'Secret123' \
                                     \item List of Token profiles:
                                         \begin{figure}[H]
                                             \centering
-                                            \includegraphics[width=80mm]{tokenprofiles1.png}
+                                            \includegraphics[width=80mm]{Images/tokenprofiles1.png}
                                             \caption{List of Token Profiles}
                                         \end{figure}
                                 \end{itemize}
                         \end{itemize}
+                    \item TPS-TKS-Smartcard Workflow
+                        \begin{figure}[H]
+                            \centering
+                            \includegraphics[width=120mm]{Images/tks-tps-drm-esc-enrollment2.png}
+                            \caption{TPS-TKS-Smartcard Worfklow}
+                        \end{figure}
                     \item TKS Configuration 
                         \begin{itemize}
                             \item RPM: \textbf{pki-tks}
@@ -3243,7 +3066,7 @@ $ pki -d -d /opt/rhqa_pki -c 'Secret123' \
                                 TKS to use same ports as that of CA
                             \begin{figure}[H]
                                 \centering
-                                \includegraphics[width=80mm]{pkispawn-tks.png}
+                                \includegraphics[width=80mm]{Images/pkispawn-tks.png}
                                 \caption{Interactive installation of TKS using pkispawn}
                             \end{figure}
                         \end{itemize}
@@ -3253,27 +3076,27 @@ $ pki -d -d /opt/rhqa_pki -c 'Secret123' \
                             \item This sharedSecret is to be created on TKS NSS database using tool called \textbf{tkstool}
                             \begin{figure}[H]
                                 \centering
-                                \includegraphics[width=50mm]{tkstool-create-sharedSecret1.png}
+                                \includegraphics[width=50mm]{Images/tkstool-create-sharedSecret1.png}
                                 \caption{NSS Internal database password}
                             \end{figure}
                             \begin{figure}[H]
                                 \centering
-                                \includegraphics[width=50mm]{tkstool-create-sharedSecret2.png}
+                                \includegraphics[width=50mm]{Images/tkstool-create-sharedSecret2.png}
                                 \caption{tkstool Usage}
                             \end{figure}
                             \begin{figure}[H]
                                 \centering
-                                \includegraphics[width=50mm]{tkstool-create-sharedSecret3.png}
+                                \includegraphics[width=50mm]{Images/tkstool-create-sharedSecret3.png}
                                 \caption{First Session Key}
                             \end{figure}
                             \begin{figure}[H]
                                 \centering
-                                \includegraphics[width=50mm]{tkstool-create-sharedSecret4.png}
+                                \includegraphics[width=50mm]{Images/tkstool-create-sharedSecret4.png}
                                 \caption{Second Session Key}
                             \end{figure}
                             \begin{figure}[H]
                                 \centering
-                                \includegraphics[width=50mm]{tkstool-create-sharedSecret5.png}
+                                \includegraphics[width=50mm]{Images/tkstool-create-sharedSecret5.png}
                                 \caption{Third Session Key}
                             \end{figure}
                             \item tkstool utility prints out the key shares and KCV values for each of the three
@@ -3288,12 +3111,12 @@ $ pki -d -d /opt/rhqa_pki -c 'Secret123' \
                                     TPS to use same ports as that of CA
                                 \begin{figure}[H]
                                     \centering
-                                    \includegraphics[width=80mm]{pkispawn-tps.png}
+                                    \includegraphics[width=80mm]{Images/pkispawn-tps.png}
                                     \caption{Interactive installation of TKS using pkispawn}
                                 \end{figure}
                                 \begin{figure}[H]
                                     \centering
-                                    \includegraphics[width=80mm]{pkispawn-tps2.png}
+                                    \includegraphics[width=80mm]{Images/pkispawn-tps2.png}
                                     \caption{Continuation of pkispawn}
                                 \end{figure}
                             \item Import SharedSecret
@@ -3303,872 +3126,30 @@ $ pki -d -d /opt/rhqa_pki -c 'Secret123' \
                                 \end{itemize}
                                 \begin{figure}[H]
                                     \centering
-                                    \includegraphics[width=80mm]{tkstool-import-sharedSecret1.png}
+                                    \includegraphics[width=80mm]{Images/tkstool-import-sharedSecret1.png}
                                     \caption{Get NSS Password of TPS NSS database}
                                 \end{figure}
                                 \begin{figure}[H]
                                     \centering
-                                    \includegraphics[width=80mm]{tkstool-import-sharedSecret2.png}
+                                    \includegraphics[width=80mm]{Images/tkstool-import-sharedSecret2.png}
                                     \caption{tkstool to import first session key}
                                 \end{figure}
                                 \begin{figure}[H]
                                     \centering
-                                    \includegraphics[width=80mm]{tkstool-import-sharedSecret4.png}
+                                    \includegraphics[width=80mm]{Images/tkstool-import-sharedSecret4.png}
                                     \caption{tkstool to import second session key}
                                 \end{figure}
                                 \begin{figure}[H]
                                     \centering
-                                    \includegraphics[width=80mm]{tkstool-import-sharedSecret5.png}
+                                    \includegraphics[width=80mm]{Images/tkstool-import-sharedSecret5.png}
                                     \caption{tkstool to import third session key}
                                 \end{figure}
+                            \item TKS Instance Layout
+                                \begin{itemize}
+                                    \item 
+                                \end{itemize}
                         \end{itemize}
                 \end{itemize}
     \end{itemize}
-\subsubsection{Enterprise Security Client}
-    \begin{itemize}
-        \item \textbf{Features:}
-            \begin{itemize}
-                \item Enterprise Security Client is the conduit through which TPS communicates with each token over a
-                    secure HTTP channel (HTTPS), and, through the TPS, with the Certificate System.
-                \item Enterprise Security Client provides the user interface for end entities to enroll tokens.
-            \end{itemize}
-        \item \textbf{RPM}: esc
-        \item \textbf{Platforms}:
-            \begin{itemize}
-                \item RHEL5(x86\_64,i686)
-                \item RHEL6(x86\_64,i686)
-                \item RHEL7(x86\_64,i686)
-                \item Windows Vista(x86\_64, i686)
-                \item Windows XP
-                \item Apple Mac OSx 10.5.8 and higher
-            \end{itemize}
-        \item \textbf{Supported Smartcards:}
-             \begin{itemize}
-                \item Safenet 330J Java smart cards
-                \item Gemalto 64K V2 tokens, both as a smart card and GemPCKey USB form factor key
-                \item Safenet 650 Smartcards
-                \item Personal identity verification (PIV) cards, compliant with FIPS 201
-            \end{itemize}
-        \item \textbf{Installation:}
-             \begin{lstlisting}[style=bashInputStyle]
-$ yum install esc coolkey
-            \end{lstlisting}
-        \item \textbf{Configuration:}
-             \begin{itemize}
-                \item  {Configuring Phone Home}
-                    \begin{itemize}
-                        \item The Phone Home feature in the Enterprise Security Client associates information within each smart card
-                            with information that points to distinct T PS servers and Enterprise Security Client UI pages.
-                        \item  Phone Home retrieves and then caches this information; because the information is cached locally,
-                            the TPS subsystem does not have to be contacted each time a formatted smart card is inserted
-                        \item The information can be different for every key or token, which means that different TPS servers and
-                             enrollment URLs can be configured for different corporate or customer groups.
-                        \item Phone Home makes it possible to configure different TPS servers for different issuers or company units,
-                             without having to configure the Enterprise Security Client manually to locate the correct server and URL.
-                             \begin{figure}[H]
-                                 \centering
-                                 \includegraphics[width=80mm]{phonehomeurl.png}
-                                 \caption{ESC Phone Home URL ~\cite{RedHat:smartcard}}
-                             \end{figure}
-                    \end{itemize}
-                 \item {Setting up Users to be enrolled}
-                     \begin{itemize}
-                        \item When the Token Processing System is installed, one of its configuration settings is the LDAP directory
-                            which contains the users who are allowed to enroll a token
-                        \item Only users who are stored within this authentication directory are allowed to enroll,
-                             format, or have a token.
-                        \item The TPS is configured to look at a specific base DN in the LDAP directory. This is configured in the TPS's CS.cfg
-                            \begin{lstlisting}[style=configFile]
-auth.instance.0.baseDN=dc=example,dc=com
-auth.instance.0.hostport=server.example.com:389
-                            \end{lstlisting}
-                        \item  If the user does not already have an entry, then the administrator must add the user to the
-                            specified LDAP directory in the specified base DN before any tokens can be enrolled for the user.
-                            \begin{lstlisting}[style=bashInputStyle]
-$ usr/bin/ldapmodify -a -D "cn=Directory Manager" -w secret -p 389 -h server.example.com
-dn: uid=jsmith,ou=People, dc=example,dc=com
-objectclass: person
-objectclass: inetorgperson
-objectclass: top
-uid: jsmith
-cn: John Smith
-email: jsmith@example.com
-userPassword: secret
-                            \end{lstlisting}
-                     \end{itemize}
-            \end{itemize}
-    \end{itemize}    
-\subsubsection{Smartcard Workflow}
-    \begin{itemize}
-        \item \textbf{Secure Channel}~\cite{RedHat:securechannel}
-            \begin{itemize}
-                \item TPS, TKS and Smartcard need to communicate with each other over a Secure Channel (once TLS is established).
-                \item This secure channel is necessary for certain sensitive operations to be performed upon the token on behalf of the host
-                    \begin{figure}[H]
-                        \centering
-                        \includegraphics[width=120mm]{tps-tks-smartcard-securechannel.png}
-                        \caption{TKS-TPS-Smartcard Securechannel}
-                    \end{figure}
-            \end{itemize}
-        \item \textbf{Token Format}
-            \begin{figure}[H]
-                \centering
-                \includegraphics[width=120mm]{TPS_Format.png}
-                \caption{Token Format Operation Workflow. ~\cite{RedHat:securechannel}}
-            \end{figure}
-        \item \textbf{Token Enrollment}
-            \begin{figure}[H]
-                \centering
-                \includegraphics[width=120mm]{TPS_Enrollment.png}
-                \caption{Token Enrollment Operation Workflow.~\cite{RedHat:securechannel}}
-            \end{figure}
-        \item \textbf{Server Side Key Generation}
-            \begin{figure}[H]
-                \centering
-                \includegraphics[width=120mm]{tks-tps-drm-esc-enrollment3.png}
-                \caption{Server side key Generation}
-            \end{figure}
-    \end{itemize}
-\subsubsection{Exercises}
-    \begin{enumerate}[label*=\arabic*.]
-        \item \label{shared_tomcat_tms}Setup TMS Subsystem (Include KRA) all sharing single Tomcat Instance
-            \begin{enumerate}[label*=\arabic*.]
-                \item \label{shared_ca} Configure CA subsystem using method specified in \ref{rootca}
-                \item \label{shared_kra} Configure KRA subsystem using pkispawn interactive method and 
-                    make KRA subsystem part of tomcat instance used by RootCA.
-                    \begin{lstlisting}
-Subsystem (CA/KRA/OCSP/TKS/TPS) [CA]: KRA
-
-Tomcat:
-  Instance [pki-tomcat]: 
-
-Administrator:
-  Username [kraadmin]: 
-  Password: 
-  Verify password: 
-  Import certificate (Yes/No) [Y]? 
-  Import certificate from [/root/.dogtag/pki-tomcat/ca_admin.cert]: 
-  Export certificate to [/root/.dogtag/pki-tomcat/kra_admin.cert]: 
-Directory Server:
-  Hostname [pki1.example.org]: 
-  Use a secure LDAPS connection (Yes/No/Quit) [N]? 
-  LDAP Port [389]: 
-  Bind DN [cn=Directory Manager]:  
-  Password: 
-  Base DN [o=pki-tomcat-KRA]: 
-
-Security Domain:
-  Hostname [pki1.example.org]: 
-  Secure HTTP port [8443]: 
-  Name: example.org Security Domain
-  Username [caadmin]: 
-  Password: 
-
-Begin installation (Yes/No/Quit)? Yes
-                    \end{lstlisting}
-                \item \label {shared_tks} Configure TKS subsystem using pkispawn interactive method and join to 
-                    ROOTCA Tomcat Instance
-                    \begin{lstlisting}
-Subsystem (CA/KRA/OCSP/TKS/TPS) [CA]: TKS
-
-Tomcat:
-  Instance [pki-tomcat]:
-
-Administrator:
-  Username [tksadmin]:
-  Password:
-  Verify password:
-  Import certificate (Yes/No) [Y]?
-  Import certificate from [/root/.dogtag/pki-tomcat/ca_admin.cert]:
-  Export certificate to [/root/.dogtag/pki-tomcat/tks_admin.cert]:
-Directory Server:
-  Hostname [pki1.example.org]:
-  Use a secure LDAPS connection (Yes/No/Quit) [N]?
-  LDAP Port [389]:
-  Bind DN [cn=Directory Manager]:
-  Password:
-  Base DN [o=pki-tomcat-TKS]:
-
-Security Domain:
-  Hostname [pki1.example.org]:
-  Secure HTTP port [8443]:
-  Name: example.org Security Domain
-  Username [caadmin]:
-  Password:
-
-Begin installation (Yes/No/Quit)? Yes
-                    \end{lstlisting}
-                \item \label {shared_tps} Configure TPS subsystem using pkispawn interactive method and join to RootCA Tomcat Instance
-                    \begin{lstlisting}
-Subsystem (CA/KRA/OCSP/TKS/TPS) [CA]: TPS
-
-Tomcat:
-  Instance [pki-tomcat]: 
-
-Administrator:
-  Username [tpsadmin]: 
-  Password: 
-  Verify password: 
-  Import certificate (Yes/No) [Y]? 
-  Import certificate from [/root/.dogtag/pki-tomcat/ca_admin.cert]: 
-  Export certificate to [/root/.dogtag/pki-tomcat/tps_admin.cert]: 
-Directory Server:
-  Hostname [pki1.example.org]: 
-  Use a secure LDAPS connection (Yes/No/Quit) [N]? 
-  LDAP Port [389]: 
-  Bind DN [cn=Directory Manager]: 
-  Password: 
-  Base DN [o=pki-tomcat-TPS]: 
-
-Security Domain:
-  Hostname [pki1.example.org]: 
-  Secure HTTP port [8443]: 
-  Name: example.org Security Domain
-  Username [caadmin]: 
-  Password: 
-
-External Servers:
-  CA URL [https://pki2.example.org:8443]: 
-  TKS URL [https://pki2.example.org:8443]: 
-  Enable server side key generation (Yes/No) [N]? 
-
-Authentication Database:
-  Hostname [pki2.example.org]: 
-  Port [389]: 
-  Base DN: dc=example,dc=org
-
-Begin installation (Yes/No/Quit)? Yes
-                    \end{lstlisting}
-                \item \label{shared_tps_secret} Verify the sharedSecret has been created for TPS and TKS with pkispawn 
-
-                    Note: When TPS and TKS share the same tomcat instance, sharedSecret is created
-                    as part of pkispawn configuration process.
-                    \begin{lstlisting}[style=bashInputStyle]
-$ cd /var/lib/pki/pki-tomcat/conf
-$ cat password.conf
-internal=153622747649
-internaldb=Secret123
-replicationdb=-1899602373
-                    \end{lstlisting}
-                    Use the password mentioned under \textit{\textbf{internal}} for tkstool 
-                    \begin{lstlisting}[style=bashInputStyle]
-$ tkstool -L -d /var/lib/pki/pki-tomcat/tps/alias
-
- slot:  NSS User Private Key and Certificate Services
- token: NSS Certificate DB
-
- Enter Password or Pin for "NSS Certificate DB":
-         <0> defKeySet-macKey
-         <1> TPS-pki1.example.org-8443 sharedSecret
-                    \end{lstlisting}
-              \item Run pkidaemon against Tomcat Instance pki-tomcat and find out which is the phone home url for TPS
-                  \begin{lstlisting}[style=bashInputStyle]
-$  pkidaemon status tomcat pki-tomcat                  
-                  \end{lstlisting}
-               \item Open TKS CS.cfg file and Verify what keysets information can be seen:
-                   \begin{lstlisting}[style=bashInputStyle]
-$ vim /var/lib/pki/pki-tomcat/tks/conf/CS.cfg                   
-                   \end{lstlisting}
-                   \begin{lstlisting}
-tks.defKeySet._000=##
-tks.defKeySet._001=## Axalto default key set:
-tks.defKeySet._002=##
-tks.defKeySet._003=## tks.defKeySet.mk_mappings.#02#01=<tokenname>:<nickname>
-tks.defKeySet._004=##
-tks.defKeySet.auth_key=#40#41#42#43#44#45#46#47#48#49#4a#4b#4c#4d#4e#4f
-tks.defKeySet.kek_key=#40#41#42#43#44#45#46#47#48#49#4a#4b#4c#4d#4e#4f
-tks.defKeySet.mac_key=#40#41#42#43#44#45#46#47#48#49#4a#4b#4c#4d#4e#4f
-tks.defKeySet.nistSP800-108KdfOnKeyVersion=00
-tks.defKeySet.nistSP800-108KdfUseCuidAsKdd=false
-tks.defaultSlot=Internal Key Storage Token
-tks.drm_transport_cert_nickname=
-tks.jForte._000=##
-tks.jForte._001=## SAFLink's jForte default key set:
-tks.jForte._002=##
-tks.jForte._003=## tks.jForte.mk_mappings.#02#01=<tokenname>:<nickname>
-tks.jForte._004=##
-tks.jForte.auth_key=#30#31#32#33#34#35#36#37#38#39#3a#3b#3c#3d#3e#3f
-tks.jForte.kek_key=#50#51#52#53#54#55#56#57#58#59#5a#5b#5c#5d#5e#5f
-tks.jForte.mac_key=#40#41#42#43#44#45#46#47#48#49#4a#4b#4c#4d#4e#4f
-tks.jForte.nistSP800-108KdfOnKeyVersion=00
-tks.jForte.nistSP800-108KdfUseCuidAsKdd=false
-tks.master_key_prefix=
-                   \end{lstlisting}
-                \item Open TPS CS.cfg and Check what authentication Directory is mentioned which 
-                    will be looked to authenticate users against to enroll tokens
-                    \begin{lstlisting}[style=bashInputStyle]
-$ vim /var/lib/pki/pki-tomcat/tps/conf/CS.cfg
-                    \end{lstlisting}
-                    \begin{lstlisting}
-auths.instance.ldap1.ldap.basedn=dc=example,dc=org
-auths.instance.ldap1.ldap.ldapauth.authtype=BasicAuth
-auths.instance.ldap1.ldap.ldapauth.bindDN=
-auths.instance.ldap1.ldap.ldapauth.bindPWPrompt=ldap1
-auths.instance.ldap1.ldap.ldapauth.clientCertNickname=subsystemCert cert-pki-tomcat
-auths.instance.ldap1.ldap.ldapconn.host=pki2.example.org
-auths.instance.ldap1.ldap.ldapconn.port=389
-auths.instance.ldap1.ldap.ldapconn.secureConn=False
-auths.instance.ldap1.ldap.ldapconn.version=3
-auths.instance.ldap1.ldap.maxConns=15
-auths.instance.ldap1.ldap.minConns=3
-auths.instance.ldap1.ldapByteAttributes=
-                    \end{lstlisting}
-
-            \item Go through all the entries starting with op.enroll.userKey. What does the entries tell about 
-            \item Go through all the entries starting witn op.format.userKey and find out more about them
-            \item From the entries of userKey, can you find where is CA , TKS and KRA information ?
-            \item \label{token_ex1} Add few users to ldap (Authenticating Directory) used by LDAP to enroll tokens
-                
-            users.ldif
-            \begin{lstlisting}
-            # jdoe, example.org
-            dn: uid=jdoe,ou=People,dc=example,dc=org
-            uid: jdoe
-            givenName: jdoe
-            objectClass: top
-            objectClass: person
-            objectClass: organizationalPerson
-            objectClass: inetorgperson
-            userPassword: redhat
-            sn: doe
-            cn: jdoe
-
-            # foo1, example.org
-            dn: uid=foo1,ou=People,dc=example,dc=org
-            uid: foo1
-            givenName: foo1
-            objectClass: top
-            objectClass: person
-            objectClass: organizationalPerson
-            objectClass: inetorgperson
-            userPassword: redhat
-            sn: 1
-            cn: foo1
-
-            # foo2, example.org
-            dn: uid=foo2,ou=People,dc=example,dc=org
-            uid: foo2
-            givenName: foo
-            objectClass: top
-            objectClass: person
-            objectClass: organizationalPerson
-            objectClass: inetorgperson
-            userPassword: redhat
-            sn: 2
-            cn: foo2
-
-            # foo3, example.org
-            dn: uid=foo3,ou=People,dc=example,dc=org
-            uid: foo3
-            givenName: foo
-            objectClass: top
-            objectClass: person
-            objectClass: organizationalPerson
-            objectClass: inetorgperson
-            userPassword: redhat
-            sn: 3
-            cn: foo3
-
-            # foo4, example.org
-            dn: uid=foo4,ou=People,dc=example,dc=org
-            uid: foo4
-            givenName: foo4
-            objectClass: top
-            objectClass: person
-            objectClass: organizationalPerson
-            objectClass: inetorgperson
-            userPassword: redhat
-            sn: 4
-            cn: foo4
-            \end{lstlisting}
-            \begin{lstlisting}[style=bashInputStyle]
-$ ldapadd -x -D "cn=Directory Manager" -h pki1.example.org -w Secret123 -f users.ldif
-            \end{lstlisting}
-        \item \label{token_ex2} Enroll a token with user jdoe with token CUID "40000000000000000001" using tpsclient
-                \begin{itemize}
-                    \item create a file ``enroll.jdoe.tps'' with below contents:
-                        \begin{lstlisting}[style=configFile]
-op=var_set name=ra_host value=pki1.example.org
-op=var_set name=ra_port value=8080
-op=var_set name=ra_uri value=/tps/tps
-op=token_set cuid=40000000000000000001 msn=01020304 app_ver=6FBBC105 key_info=0101 major_ver=0 minor_ver=0
-op=token_set auth_key=404142434445464748494a4b4c4d4e4f
-op=token_set mac_key=404142434445464748494a4b4c4d4e4f
-op=token_set kek_key=404142434445464748494a4b4c4d4e4f
-op=token_status
-op=ra_enroll uid=jdoe num_threads=1 pwd=redhat new_pin=redhat extensions=tokenType=userKey
-op=token_status
-op=exit
-                        \end{lstlisting}
-                    \item \label{token_ex3} Run tpsclient using the above input file 
-                        \begin{lstlisting}[style=bashInputStyle]
-$ tpsclient < enroll.jdoe.tps               
-                        \end{lstlisting}
-                    \item \label{token_ex4} Output of tpsclient should look like below
-                        \begin{lstlisting}
- -----
- Output> Thread (0) status='1' time='104606 msec'
- Result> Success - Operation 'ra_enroll' Success (104607 msec)
- Command>op=token_status
- Output> life_cycle_state : '0'
- Output> pin : 'redhat'
- Output> app_ver : '05' (4 bytes)
- Output> major_ver : '0'
- Output> minor_ver : '0'
- Output> cuid : '01' (10 bytes)
- Output> msn : '04' (4 bytes)
- Output> key_info : '01' (2 bytes)
- Output> auth_key : '4f' (16 bytes)
- Output> mac_key : '4f' (16 bytes)
- Output> kek_key : '4f' (16 bytes)
- Result> Success - Operation 'token_status' Success (0 msec)
- Command>op=exit
-                        \end{lstlisting}
-                \end{itemize}
-            \item \label{token_ex5} Import CA Admin Cert and KRA Admin p12 file to Firefox browser. Refer: \ref{import_admin_p12}
-            \item \label{token_ex6} From the browser Access CA EE Page and check what certificates were issued
-            \item \label{token_ex7} Access KRA Agent Interface and verify if the Private Key has been archived
-            \item \label{token_ex8} From the TPS UI check the token information 
-                \begin{itemize}
-                    \item Access https://pki1.example.org:8443
-                    \item Use the Admin cert when prompted
-                    \item Open each subsystem on different tabs
-                    \item From TPS UI, click on ``Login''
-                        \begin{itemize}
-                            \item Click on Tokens , Should see the list of enrolled tokens
-                            \item click on ``Certificates'' and should see the certificates associated with tokens
-                        \end{itemize}
-                \end{itemize}
-            \item \label{token_ex9}Format tthe token ``40000000000000000001'' and verify the associated certs are revoked
-                \begin{itemize}
-                    \item \label{token_ex10} Create a file format.jdoe.tps with below contents
-                        \begin{lstlisting}
-op=var_set name=ra_host value=pki1.example.org
-op=var_set name=ra_port value=8080
-op=var_set name=ra_uri value=/tps/tps
-op=token_set cuid=40000000000000000001 msn=01020304 app_ver=6FBBC105 key_info=0101 major_ver=0 minor_ver=0
-op=token_set auth_key=404142434445464748494a4b4c4d4e4f
-op=token_set mac_key=404142434445464748494a4b4c4d4e4f
-op=token_set kek_key=404142434445464748494a4b4c4d4e4f
-op=token_status
-op=ra_format uid=jdoe num_threads=1 pwd=redhat new_pin=redhat extensions=tokenType=userKey
-op=token_status
-op=exit
-                        \end{lstlisting}
-                        \begin{lstlisting}[style=bashInputStyle]
-$ tpsclient < format.jdoe.tps
-                        \end{lstlisting}
-                \end{itemize}
-            \item \label{token_ex10} Check the TPS UI and CA EE interface to verify the associated certs have been revoked. 
-            \item \label{token_ex11} Enroll a token with user foo1 with token CUID "40000000000000000002" using tpsclient
-                    \item create a file ``enroll.foo1.tps'' with below contents:
-                        \begin{lstlisting}[style=configFile]
-op=var_set name=ra_host value=pki1.example.org
-op=var_set name=ra_port value=8080
-op=var_set name=ra_uri value=/tps/tps
-op=token_set cuid=40000000000000000002 msn=01020304 app_ver=6FBBC105 key_info=0101 major_ver=0 minor_ver=0
-op=token_set auth_key=404142434445464748494a4b4c4d4e4f
-op=token_set mac_key=404142434445464748494a4b4c4d4e4f
-op=token_set kek_key=404142434445464748494a4b4c4d4e4f
-op=token_status
-op=ra_enroll uid=foo1 num_threads=1 pwd=redhat new_pin=redhat extensions=tokenType=userKey
-op=token_status
-op=exit
-                        \end{lstlisting}
-                    \item Run tpsclient using the above input file 
-                        \begin{lstlisting}[style=bashInputStyle]
-$ tpsclient < enroll.foo1.tps
-                        \end{lstlisting}
-                    \item \label{token_ex12} Login to TPS UI , select the token ``40000000000000000002'' , On the righ side click 
-                        on ``Change Status``, Mark the status to ``Temporary Lost''. From CA EE page and TPS Certificates
-                        page, verify the status of the certificates
-                    \item \label{token_ex13} Login to TPS UI and mark the token ``40000000000000000002'' as "Active" and check the status
-                        of certificates from TPS and CA UI 
-                    \item \label{token_ex14} Login to TPS UI and mark the token ``40000000000000000002'' as  Permanently Lost.  Verify the
-                        status of Certificates from TPS UI and CA EE pages.
-        \end{enumerate}
-    \item Setup TMS Subsystem (Include KRA) on separate Tomcat Instance
-        \begin{enumerate}[label*=\arabic*.]
-            \item Configure CA subsystem using below config file.\\
-                Note: We will be using existing Directory Server
-
-                ca-inst.inf:
-                \begin{lstlisting}[style=configFile]
-[DEFAULT]
-pki_instance_name=FoobarCA
-pki_https_port=30042
-pki_http_port=30044
-
-#NSS DB Token Password
-pki_token_password=Secret123
-
-#Admin Password
-pki_admin_password=Secret123
-
-#Security Domain
-pki_hostname=pki1.example.org
-pki_security_domain_name=Foobar Org
-pki_security_domain_password=Secret123
-
-#client Dir
-pki_client_dir=/opt/FoobarCA
-pki_client_pkcs12_password=Secret123
-
-#Backup
-pki_backup_keys=True
-pki_backup_password=Secret123
-
-#DS
-pki_ds_hostname=pki1.example.org
-pki_ds_ldap_port=389
-pki_ds_password=Secret123
-pki_ds_secure_connection=False
-
-[Tomcat]
-pki_ajp_port=30009
-pki_tomcat_server_port=30005
-
-[CA]
-pki_admin_nickname=PKI CA Administrator for Foobar Org
-pki_import_admin_cert=False
-                \end{lstlisting}
-                \begin{lstlisting}
-$ pkispawn -s CA -f ca-inst.inf -vv                
-                \end{lstlisting}
-
-            \item Configure KRA subsystem using below config file 
-
-                kra-inst.inf:
-                \begin{lstlisting}[style=configFile]
-[DEFAULT]
-pki_instance_name=FoobarKRA
-pki_https_port=14443
-pki_http_port=14080
-
-#NSS DB Token Password
-pki_token_password=Secret123
-
-#RootKRA Admin password
-pki_admin_password=Secret123
-
-#Security Domain
-pki_hostname=pki1.example.org
-pki_security_domain_hostname=pki1.example.org
-pki_security_domain_https_port=30042
-pki_security_domain_user=caadmin
-pki_security_domain_password=Secret123
-
-#Client Dir
-pki_client_dir=/opt/FoobarKRA
-pki_client_pkcs12_password=Secret123
-pki_client_database_password=Secret123
-
-#Backup
-pki_backup_keys=True
-pki_backup_password=Secret123
-#DS
-pki_ds_hostname=pki1.example.org
-pki_ds_ldap_port=389
-pki_ds_bind_dn=cn=Directory Manager
-pki_ds_password=Secret123
-
-
-[Tomcat]
-pki_ajp_port=14009
-pki_tomcat_server_port=14005
-
-[KRA]
-pki_admin_nickname=PKI KRA Administrator for Foobar Org
-pki_import_admin_cert=False
-                \end{lstlisting}
-                \begin{lstlisting}[style=bashInputStyle]
-$ pkispawn -s KRA -f kra-inst.inf -vv 
-                \end{lstlisting}
-            
-            \item Configure TKS subsystem using below config file 
-
-            tks-inst.inf:
-            \begin{lstlisting}[style=configFile]
-[DEFAULT]
-pki_instance_name=FoobarTKS
-pki_https_port=18443
-pki_http_port=18080
-
-#NSS DB Token Password
-pki_token_password=Secret123
-
-#TKS Admin password
-pki_admin_password=Secret123
-
-# Security Domain
-pki_hostname=pki1.example.org
-pki_security_domain_hostname=pki1.example.org
-pki_security_domain_https_port=30042
-pki_security_domain_user=caadmin
-pki_security_domain_password=Secret123
-
-#Client Dir
-pki_client_dir=/opt/FoobarTKS
-pki_client_pkcs12_password=Secret123
-pki_client_database_password=Secret123
-
-# backup
-pki_backup_keys=True
-pki_backup_password=Secret123
-
-# DS
-pki_ds_hostname=pki1.example.org
-pki_ds_ldap_port=389
-pki_ds_bind_dn=cn=Directory Manager
-pki_ds_password=Secret123
-
-[Tomcat]
-pki_ajp_port=18009
-pki_tomcat_server_port=18005
-
-[TKS]
-pki_admin_nickname=PKI TKS Administrator for Example Org
-pki_import_admin_cert=False
-            \end{lstlisting}
-            \begin{lstlisting}[style=bashInputStyle]
-$ pkispawn -s TKS -f tks-inst.inf -vv
-            \end{lstlisting}
-            \item Stop the TKS subsystem and create shared Secret in TKS
-                \begin{lstlisting}[style=bashInputStyle]
-$ systemctl stop pki-tomcatd@FoobarTKS                
-                \end{lstlisting}
-                \begin{lstlisting}[style=bashInputStyle]
-$ cd /var/lib/pki/FoobarTKS/conf
-$ cat password.conf
-internal=187041555763
-internaldb=Secret123
-replicationdb=1433722269
-# Use the password mentioned in internal for tkstool
-$ cd /var/lib/pki/FoobarTKS/alias
-#This creates 3 session keys, #save each session keys
-#and KCV values for each session in file
-$ tkstool -T -d . -n sharedSecret
-$ reset
-                \end{lstlisting}
-            \item Start the TKS subsystem 
-            \begin{lstlisting}[style=bashInputStyle]                
-$ systemctl start pki-tomcatd@FoobarTKS            
-            \end{lstlisting}
-            \item Configure TPS subsystem on separate Tomcat instance using below config file
-
-            tps-inst.inf:
-            \begin{lstlisting}[style=configFile]
-[DEFAULT]
-pki_instance_name=FoobarTPS
-pki_https_port=20443
-pki_http_port=20080
-
-##NSS DB Token Password
-pki_token_password=Secret123
-
-#Security Domain
-pki_hostname=pki1.example.org
-pki_security_domain_hostname=pki1.example.org
-pki_security_domain_https_port=30042
-pki_security_domain_user=caadmin
-pki_security_domain_password=Secret123
-
-#TPS Admin password
-pki_admin_password=Secret123
-
-# Client dir
-pki_client_database_dir=/opt/FoobarTPS
-pki_client_pkcs12_password=Secret123
-pki_client_database_password=Secret123
-
-#backup
-pki_backup_keys=True
-pki_backup_password=Secret123
-
-#DS
-pki_ds_hostname=pki1.example.org
-pki_ds_ldap_port=389
-pki_ds_bind_dn=cn=Directory Manager
-pki_ds_password=Secret123
-
-[Tomcat]
-pki_ajp_port=20009
-pki_tomcat_server_port=20005
-
-
-[TPS]
-pki_admin_nickname=PKI TPS Administrator for Foobar Org
-pki_import_admin_cert=False
-pki_ca_uri=https://pki1.example.org:30042
-pki_kra_uri=https://pki1.example.org:14443
-pki_tks_uri=https://pki1.example.org:18443
-pki_authdb_hostname=pki1.example.org
-pki_authdb_port=389
-pki_authdb_basedn=dc=example,dc=org
-pki_authdb_secure_conn=False
-pki_import_shared_secret=False
-            \end{lstlisting}            
-            \begin{lstlisting}[style=bashInputStyle]
-$ pkispawn -s TPS -f tps_inst.inf -vv
-            \end{lstlisting}
-        \item Stop TPS Instance and Import the shared Secret created earlier 
-            \begin{lstlisting}[style=bashInputStyle]
-$ systemctl stop pki-tomcatd@FoobarTPS            
-            \end{lstlisting}
-        \item Import the sharedSecret from TPS
-            \begin{lstlisting}[style=bashInputStyle]
-$ cd /var/lib/pki/FoobarTPS/conf/
-$ cat password.conf
-internal=321588268669
-internaldb=Secret123
-replicationdb=1975043500
-# use the password mentioned under "internal" variable 
-# with tkstool
-$ cd /var/lib/pki/FoobarTPS/alias
-# when running this command will prompt to enter session
-# keys , Enter the session keys and KCV which were saved while 
-# creating sharedSecret in TKS
-$ tkstool -I -d . -n sharedSecret
-            \end{lstlisting}
-        \item Edit TPS CS.cfg to modify the below line to specify correct sharedSecret nickname
-            \begin{lstlisting}
-conn.tks1.tksSharedSymKeyName=TPS-pki2.example.org-20443 sharedSecret                
-            \end{lstlisting}
-            \begin{lstlisting}[style=bashInputStyle]
-$ vim /var/lib/pki/FoobarTPS/tps/conf/CS.cfg
-conn.tks1.tksSharedSymKeyName=sharedSecret
-            \end{lstlisting}
-        \item Edit TKS CS.cfg to remove ``TPS-pki2.example.org-20443 sharedSecret'' and replace with ``sharedSecret''
-            \begin{lstlisting}
-tps.0.nickname=TPS-pki2.example.org-20443 sharedSecret            
-            \end{lstlisting}
-            \begin{lstlisting}[style=bashInputStyle]
-$ vim /var/lib/pki/FoobarTKS/tps/conf/CS.cfg
-tps.0.nickname=sharedSecret
-            \end{lstlisting}
-        \item Restart TKS and TPS subsystems
-            \begin{lstlisting}[style=bashInputStyle]
-$ systemctl restart pki-tomcatd@FoobarTKS
-$ systemctl restart pki-tomcatd@FoobarTPS
-            \end{lstlisting}
-        \item Do all the exercises from \ref{token_ex1} to \ref{token_ex14}
-        \end{enumerate}            
-        \item Configure Multiple Master Keys and do a key changeover
-             \begin{enumerate}[label*=\arabic*.]
-                \item Change to TKS alias directory and create a Master key master\_key\_v2
-                    \begin{lstlisting}[style=bashInputStyle]
-$ tkstool -M -n master_key_v2 -d /var/lib/pki/FoobarTKS/alias/ -h internal                    
-                    \end{lstlisting}
-                    \begin{lstlisting}
-Enter Password or Pin for "NSS Certificate DB":
-
-Generating and storing the master key on the specified token . . .
-
-Naming the master key "master_key_v2" . . .
-
-Computing and displaying KCV of the master key on the specified token . . .
-
-    master_key_v2 key KCV:  3EA6 B8F3
-
-
-    Successfully generated, stored, and named the master key
-    including computing and displaying its KCV!
-                    \end{lstlisting}
-                \item List the Keys in NSS database
-                    \begin{lstlisting}[style=bashInputStyle]
-$ tkstool -L -d /var/lib/pki/FoobarTKS/alias/                    
-Enter Password or Pin for "NSS Certificate DB":
-        <0> master_key_v2
-        <1> TPS-pki2.example.org-20443 sharedSecret
-        <2> sharedSecret
-                    \end{lstlisting}
-                \item Edit TKS CS.cfg and add the below lines
-                    \begin{lstlisting}
-tks.mk_mappings.#02#01=internal:master_key_v2
-tks.defKeySet.mk_mappings.#02#01=internal:master_key_v2
-                    \end{lstlisting}
-                \item Enroll a token which will be in the default \textbf{\#01\#01} \\
-                    enroll.foo2.tps
-                    \begin{lstlisting}[style=configFile]
-op=var_set name=ra_host value=pki1.example.org
-op=var_set name=ra_port value=8080
-op=var_set name=ra_uri value=/tps/tps
-op=token_set cuid=40000000000000000003 msn=01020304 app_ver=6FBBC105 key_info=0101 major_ver=0 minor_ver=0
-op=token_set auth_key=404142434445464748494a4b4c4d4e4f
-op=token_set mac_key=404142434445464748494a4b4c4d4e4f
-op=token_set kek_key=404142434445464748494a4b4c4d4e4f
-op=token_status
-op=ra_format uid=foo2 num_threads=1 pwd=redhat new_pin=redhat extensions=tokenType=userKey
-op=token_status
-op=exit
-                    \end{lstlisting}
-                    \begin{lstlisting}[style=bashInputStyle]
-$ tpsclient < enroll.foo2.tps
-                    \end{lstlisting}
-                \item Do a Key Change over from \#01 to \#02 . Mofify the tps CS.cfg to upgrade the symmetric Keys from v1 to v2.
-                    \begin{lstlisting}
-op.enroll.userKey.update.symmetricKeys.enable=true
-op.enroll.userKey.update.symmetricKeys.requiredVersion=2
-                    \end{lstlisting}
-                    \begin{lstlisting}[style=bashInputStyle]
-$ tpsclient < enroll.foo2.tps
-                    \end{lstlisting}
-                \item Go to TPS UI and verify in the tokens tab and click on token enrolled should show key info \#01\#02
-                \item Do a Key Change over from \#02 to \#01 . Mofify the tps CS.cfg to upgrade the symmetric Keys from v1 to v2.
-                    \begin{lstlisting}
-op.enroll.userKey.update.symmetricKeys.enable=true
-op.enroll.userKey.update.symmetricKeys.requiredVersion=1
-                    \end{lstlisting}
-                    \begin{lstlisting}[style=bashInputStyle]
-$ tpsclient < enroll.foo2.tps
-                    \end{lstlisting}
-             \end{enumerate}
-    \end{enumerate}                 
-%\section{References}
-\addcontentsline{toc}{section}{Bibliography}
 \bibliography{references}
-\end{document}              
-                                        
-                                        
-                            
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                            
-                                        
-                                        
-                            
-                                        
-                                        
-                                        
-                                        
-                            
-                                        
-                                        
-                                        
-                            
-                                        
-                                        
-                                        
-                                        
-                                        
-                            
-                                        
-                                        
-                                        
-                            
-                            
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
+\end{document} 
