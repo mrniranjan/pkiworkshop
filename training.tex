@@ -1414,7 +1414,7 @@ $ certutil -N -d CA_db
                 \end{lstlisting}
             \item Create a Self signed Root CA certificate, specify the subject name
                 \begin{lstlisting}[style=BashInputStyle]
-$ certutil -s -d CA_db -n "Example RootCA" -s "CN=Example RootCA,OU=IDMQE,O=Example Org,L=Pune,ST=Maharashtra,C=IN" -t "CT,," -x -2
+$ certutil -S -d CA_db -n "Example RootCA" -s "CN=Example RootCA,OU=IDMQE,O=Example Org,L=Pune,ST=Maharashtra,C=IN" -t "CT,," -x -2
                 \end{lstlisting}
                 Explanation of the flags:
                 \begin{lstlisting}
